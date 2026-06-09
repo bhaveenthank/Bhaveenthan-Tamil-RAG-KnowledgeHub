@@ -1,0 +1,8 @@
+interface:
+  display_name: "TVU Security Analyser"
+  short_description: "Review crawl, cloud, and secrets risk."
+  brand_color: "#DC2626"
+  default_prompt: "Use $TVU_Security_Analyser to review the TamilVU project for crawl, cloud, and secret risks."
+policy:
+  allow_implicit_invocation: true
+

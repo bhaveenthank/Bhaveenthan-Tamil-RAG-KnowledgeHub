@@ -1,0 +1,8 @@
+interface:
+  display_name: "TVU User"
+  short_description: "Represent Tamil corpus users."
+  brand_color: "#7C3AED"
+  default_prompt: "Use $TVU_User to evaluate this Tamil corpus feature from a poet or researcher perspective."
+policy:
+  allow_implicit_invocation: true
+

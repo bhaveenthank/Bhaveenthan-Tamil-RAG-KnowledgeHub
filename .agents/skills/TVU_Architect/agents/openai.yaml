@@ -1,0 +1,8 @@
+interface:
+  display_name: "TVU Architect"
+  short_description: "Plan corpus architecture and phases."
+  brand_color: "#2563EB"
+  default_prompt: "Use $TVU_Architect to design the next practical phase for the TamilVU corpus project."
+policy:
+  allow_implicit_invocation: true
+

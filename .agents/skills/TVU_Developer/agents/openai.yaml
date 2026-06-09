@@ -1,0 +1,8 @@
+interface:
+  display_name: "TVU Developer"
+  short_description: "Implement scraper and index code."
+  brand_color: "#059669"
+  default_prompt: "Use $TVU_Developer to implement the next scoped scraper or index change."
+policy:
+  allow_implicit_invocation: true
+

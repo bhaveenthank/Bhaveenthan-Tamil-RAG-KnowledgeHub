@@ -1,0 +1,46 @@
+site:
+  name: "Tamil Virtual Academy Library"
+  root_url: "https://www.tamilvu.org"
+  seed_url: "https://www.tamilvu.org/ta/library-libcontnt-273141"
+  user_agent: "tvu-literary-corpus-research-bot/0.1"
+
+crawl:
+  enabled: false
+  politeness_delay_seconds: 2.0
+  timeout_seconds: 30
+  max_retries: 3
+  max_concurrency: 1
+  obey_robots_txt: true
+  allowed_hosts:
+    - "www.tamilvu.org"
+  allowed_path_prefixes:
+    - "/ta/library-"
+    - "/library/"
+    - "/slet/"
+    - "/node/"
+  deny_extensions:
+    - ".zip"
+    - ".exe"
+    - ".mp4"
+
+storage:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  index_dir: "data/indexes"
+  manifest_db: "data/processed/manifest.duckdb"
+
+extraction:
+  preserve_html: true
+  normalize_unicode: "NFC"
+  keep_navigation_text: false
+  capture_images: true
+  capture_tables: true
+  min_tamil_ratio: 0.15
+
+indexing:
+  chunk_strategy: "literary_unit_then_token_window"
+  target_chunk_chars: 1200
+  chunk_overlap_chars: 150
+  vector_store: "chromadb"
+  lexical_store: "tantivy"
+

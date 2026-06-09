@@ -1,0 +1,10 @@
+{
+  "corpus_name": "Irandaam Thirumurai Corpus",
+  "version": "candidate-v1",
+  "record_count": 1331,
+  "hymn_count": 122,
+  "schema_version": "irandaam-thirumurai-jsonl-v0.1",
+  "extractor_version": "irandaam_thirumurai_builder:0.1",
+  "source": "TamilVU",
+  "audit_date": "2026-06-07"
+}

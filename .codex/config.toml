@@ -1,0 +1,11 @@
+# Project-local Codex defaults for the TamilVU corpus repo.
+# Keep this conservative; escalate only for cloud auth, network installs, or approved scraping.
+
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+project_doc_max_bytes = 32768
+project_doc_fallback_filenames = ["AGENTS.md"]
+
+[sandbox_workspace_write]
+network_access = false
+

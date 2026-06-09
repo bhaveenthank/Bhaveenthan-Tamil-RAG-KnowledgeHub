@@ -1,0 +1,49 @@
+{
+  "schema_version": "irandaam-thirumurai-jsonl-v0.1",
+  "format": "jsonl",
+  "record_type": "verse_with_commentary",
+  "required_fields": {
+    "record_type": "string",
+    "source": "string",
+    "source_site": "string",
+    "language": "string",
+    "domain": "string",
+    "genre": "string",
+    "religious_tradition": "string",
+    "collection": "string",
+    "work": "string",
+    "thirumurai": "string",
+    "thirumurai_number": "integer",
+    "author": "string",
+    "hymn_id": "string",
+    "hymn_title": "string",
+    "hymn_location": "string",
+    "hymn_note": "string",
+    "pann": "string",
+    "song_no": "string",
+    "verse_index_in_hymn": "integer",
+    "verse_text": "string",
+    "commentary_available": "boolean",
+    "pozhppurai": "string",
+    "kurippurai": "string",
+    "hymn_url": "string",
+    "commentary_url": "string",
+    "source_parameters": "object",
+    "text_statistics": "object",
+    "extraction_metadata": "object"
+  },
+  "nullable_fields": [],
+  "known_empty_string_fields": [
+    "hymn_note",
+    "pann",
+    "pozhppurai",
+    "kurippurai"
+  ],
+  "identifier_fields": [
+    "hymn_id",
+    "song_no",
+    "hymn_url",
+    "commentary_url"
+  ],
+  "language": "ta"
+}
