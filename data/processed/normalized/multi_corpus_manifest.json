@@ -1,0 +1,14 @@
+{
+  "available_corpora": [
+    "thirumurai_02"
+  ],
+  "manifest_version": "multi-corpus-readiness-v1",
+  "missing_fields_summary": {},
+  "normalized_corpora": [
+    "thirumurai_02"
+  ],
+  "readiness_status": "READY_FOR_CONTROLLED_EXPANSION",
+  "schema_version": "unified-thirumurai-v1",
+  "total_corpora_registered": 12,
+  "total_normalized_records": 1331
+}

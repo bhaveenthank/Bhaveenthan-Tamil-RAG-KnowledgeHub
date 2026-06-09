@@ -21,3 +21,10 @@ data/indexes/**
 !data/processed/eval/
 data/processed/eval/**
 !data/processed/eval/literary_analysis_questions.jsonl
+!data/processed/corpus_registry/
+data/processed/corpus_registry/**
+!data/processed/corpus_registry/thirumurai_registry.json
+!data/processed/normalized/
+data/processed/normalized/**
+!data/processed/normalized/thirumurai_02_normalized.jsonl
+!data/processed/normalized/multi_corpus_manifest.json

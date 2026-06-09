@@ -110,6 +110,8 @@ python3 src/rag/build_context.py --query "திருப்பூந்தர�
 python3 src/rag/build_context.py --query "திருப்பூந்தராய்" --top-k 5 --output data/processed/rag/sample_context.json
 python3 src/rag/export_citations.py --input sample_context.json
 python3 src/evaluation/build_question_taxonomy.py
+python3 src/corpus/normalize_corpus.py
+python3 src/corpus/validate_corpus.py
 python3 -m pytest
 ```
 
@@ -148,3 +150,5 @@ The RAG context builder packages hybrid retrieval results with normalized verse 
 The citation exporter converts context packages into validated song-level citations with deterministic IDs, hymn grouping, exact TamilVU source URLs, and optional mappings for multiple citations per future answer segment.
 
 The question taxonomy builder generates and validates 100 deterministic Tamil literary evaluation questions spanning lookup, verse identification, word occurrence, synonym expansion, deity and epithet analysis, literary devices, poet comparison, cross-corpus analysis, and failure diagnosis. It defines evaluation requirements only and makes no LLM or network calls.
+
+The multi-Thirumurai normalization framework registers all twelve Thirumurai, maps the existing Irandaam Thirumurai v1.1 records into a shared cross-corpus schema, and validates stable IDs, literary hierarchy, text fields, and source provenance. It does not fetch any new content.
