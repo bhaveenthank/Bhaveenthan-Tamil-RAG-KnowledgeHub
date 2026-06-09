@@ -18,3 +18,6 @@ data/indexes/**
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/indexes/.gitkeep
+!data/processed/eval/
+data/processed/eval/**
+!data/processed/eval/literary_analysis_questions.jsonl

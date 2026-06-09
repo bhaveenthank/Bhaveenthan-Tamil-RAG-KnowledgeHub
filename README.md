@@ -105,6 +105,11 @@ python3 src/evaluation/evaluate_retrieval.py --mode semantic
 python3 src/evaluation/evaluate_retrieval.py --mode hybrid
 python3 src/evaluation/evaluate_retrieval.py --mode hybrid --lexical-weight 0.65 --semantic-weight 0.35
 python3 src/evaluation/evaluate_retrieval.py --mode all
+python3 src/evaluation/analyze_retrieval_failures.py
+python3 src/rag/build_context.py --query "திருப்பூந்தராய்" --top-k 5
+python3 src/rag/build_context.py --query "திருப்பூந்தராய்" --top-k 5 --output data/processed/rag/sample_context.json
+python3 src/rag/export_citations.py --input sample_context.json
+python3 src/evaluation/build_question_taxonomy.py
 python3 -m pytest
 ```
 
@@ -135,3 +140,11 @@ The embedding builder derives local sentence-transformer embedding artifacts fro
 The local vector index builder indexes generated `verse_plus_commentary` embeddings with FAISS when available, or a NumPy cosine-similarity fallback otherwise. Semantic benchmark mode uses that local index.
 
 The hybrid retriever combines lexical and semantic candidates with deterministic weighted scoring, exact-match boosts, metadata boosts, and fixed ablation reporting.
+
+The retrieval error analyzer reads saved benchmark results, classifies semantic failures, measures score/rank patterns, and explains how hybrid lexical signals recovered failed queries without rerunning retrieval.
+
+The RAG context builder packages hybrid retrieval results with normalized verse text, commentary, metadata, deterministic context IDs, citations, source URLs, and bounded context-size metadata. It does not call an LLM or generate answers.
+
+The citation exporter converts context packages into validated song-level citations with deterministic IDs, hymn grouping, exact TamilVU source URLs, and optional mappings for multiple citations per future answer segment.
+
+The question taxonomy builder generates and validates 100 deterministic Tamil literary evaluation questions spanning lookup, verse identification, word occurrence, synonym expansion, deity and epithet analysis, literary devices, poet comparison, cross-corpus analysis, and failure diagnosis. It defines evaluation requirements only and makes no LLM or network calls.
