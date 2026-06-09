@@ -112,6 +112,7 @@ python3 src/rag/export_citations.py --input sample_context.json
 python3 src/evaluation/build_question_taxonomy.py
 python3 src/corpus/normalize_corpus.py
 python3 src/corpus/validate_corpus.py
+python3 src/corpus/audit_corpus_readiness.py
 python3 -m pytest
 ```
 
@@ -152,3 +153,5 @@ The citation exporter converts context packages into validated song-level citati
 The question taxonomy builder generates and validates 100 deterministic Tamil literary evaluation questions spanning lookup, verse identification, word occurrence, synonym expansion, deity and epithet analysis, literary devices, poet comparison, cross-corpus analysis, and failure diagnosis. It defines evaluation requirements only and makes no LLM or network calls.
 
 The multi-Thirumurai normalization framework registers all twelve Thirumurai, maps the existing Irandaam Thirumurai v1.1 records into a shared cross-corpus schema, and validates stable IDs, literary hierarchy, text fields, and source provenance. It does not fetch any new content.
+
+The corpus readiness audit measures data, parser, metadata, citation, retrieval, analytical, and scaling readiness before any additional Thirumurai scrape. It is read-only and produces deterministic JSON and Markdown evidence.

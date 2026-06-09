@@ -28,3 +28,4 @@ data/processed/corpus_registry/**
 data/processed/normalized/**
 !data/processed/normalized/thirumurai_02_normalized.jsonl
 !data/processed/normalized/multi_corpus_manifest.json
+!data/processed/normalized/corpus_readiness_audit.json
