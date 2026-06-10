@@ -167,3 +167,17 @@ The controlled Fourth Thirumurai pilot ingests only five Appar hymns, preserving
 Thirumurai is now treated as one proven pilot collection family inside a future website-wide Tamil Literary KnowledgeHub. The category registry and schema v2 cover poetry, prose, grammar, dictionaries, encyclopedias, terminology tables, manuscripts, image collections, public-domain books, and external-library references.
 
 Scraping remains controlled and book-specific. No full website crawl is authorized; each parser family must pass source inspection, a bounded pilot, validation, and audit first.
+
+## Controlled Multi-Category Pilot Ingestion
+
+The category pilot framework is capped at one approved local book and ten records. It has
+no network fetch path and writes only to category-specific pilot directories. The current
+verification category is `saivam`, using the existing validated Fourth Thirumurai pilot as
+a read-only seed; other pilot categories remain blocked pending source inspection.
+
+```bash
+python3 src/corpus/pilot_ingest_category.py --category-id CATEGORY_ID --dry-run
+python3 src/corpus/pilot_ingest_category.py --category-id CATEGORY_ID --max-books 1 --max-records 10
+python3 src/corpus/normalize_category_corpus.py --category-id CATEGORY_ID
+python3 src/corpus/validate_category_corpus.py --category-id CATEGORY_ID
+```

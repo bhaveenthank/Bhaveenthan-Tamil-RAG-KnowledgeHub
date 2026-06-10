@@ -1,0 +1,76 @@
+{
+  "plan_version": "multi-category-pilot-v1",
+  "network_access": false,
+  "pilots": [
+    {
+      "pilot_id": "pilot_001",
+      "category_id": "grammar",
+      "category_tamil": "இலக்கணம்",
+      "parser_family": "grammar_parser",
+      "sample_scope": "small",
+      "max_books": 1,
+      "max_records": 10,
+      "status": "planned",
+      "source_mode": "pending_inspection"
+    },
+    {
+      "pilot_id": "pilot_002",
+      "category_id": "sangam_literature",
+      "category_tamil": "சங்க இலக்கியம்",
+      "parser_family": "verse_parser",
+      "sample_scope": "small",
+      "max_books": 1,
+      "max_records": 10,
+      "status": "planned",
+      "source_mode": "pending_inspection"
+    },
+    {
+      "pilot_id": "pilot_003",
+      "category_id": "saivam",
+      "category_tamil": "சைவம்",
+      "parser_family": "verse_parser",
+      "sample_scope": "small",
+      "max_books": 1,
+      "max_records": 10,
+      "status": "local_seed_ready",
+      "source_mode": "existing_validated_corpus",
+      "source_path": "data/processed/normalized/thirumurai_04_normalized.jsonl",
+      "book_id": "panniru_thirumurai",
+      "work_id": "thevaram_thirumurai_04",
+      "notes": "Uses existing validated Fourth Thirumurai pilot records; performs no network fetch."
+    },
+    {
+      "pilot_id": "pilot_004",
+      "category_id": "twentieth_century_prose",
+      "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
+      "parser_family": "prose_parser",
+      "sample_scope": "small",
+      "max_books": 1,
+      "max_records": 10,
+      "status": "planned",
+      "source_mode": "pending_inspection"
+    },
+    {
+      "pilot_id": "pilot_005",
+      "category_id": "dictionaries",
+      "category_tamil": "அகராதிகள்",
+      "parser_family": "dictionary_parser",
+      "sample_scope": "small",
+      "max_books": 1,
+      "max_records": 10,
+      "status": "planned",
+      "source_mode": "pending_inspection"
+    },
+    {
+      "pilot_id": "pilot_006",
+      "category_id": "encyclopedias",
+      "category_tamil": "கலைக்களஞ்சியங்கள்",
+      "parser_family": "dictionary_parser",
+      "sample_scope": "small",
+      "max_books": 1,
+      "max_records": 10,
+      "status": "planned",
+      "source_mode": "pending_inspection"
+    }
+  ]
+}
