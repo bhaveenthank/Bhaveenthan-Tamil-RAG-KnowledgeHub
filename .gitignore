@@ -29,3 +29,9 @@ data/processed/normalized/**
 !data/processed/normalized/thirumurai_02_normalized.jsonl
 !data/processed/normalized/multi_corpus_manifest.json
 !data/processed/normalized/corpus_readiness_audit.json
+!data/processed/normalized/thirumurai_04_normalized.jsonl
+!data/processed/normalized/thirumurai_04_readiness_audit.json
+!data/processed/pilot/
+data/processed/pilot/**
+!data/processed/pilot/thirumurai_04.jsonl
+!data/processed/pilot/thirumurai_04_ingestion_summary.json

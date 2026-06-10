@@ -1,14 +1,38 @@
 {
   "available_corpora": [
-    "thirumurai_02"
+    "thirumurai_02",
+    "thirumurai_04"
   ],
   "manifest_version": "multi-corpus-readiness-v1",
   "missing_fields_summary": {},
   "normalized_corpora": [
-    "thirumurai_02"
+    "thirumurai_02",
+    "thirumurai_04"
   ],
+  "per_corpus_record_counts": {
+    "thirumurai_02": 1331,
+    "thirumurai_04": 51
+  },
   "readiness_status": "READY_FOR_CONTROLLED_EXPANSION",
   "schema_version": "unified-thirumurai-v1",
   "total_corpora_registered": 12,
-  "total_normalized_records": 1331
+  "total_normalized_records": 1382,
+  "validation_summary": {
+    "thirumurai_04": {
+      "duplicate_record_ids": [],
+      "error_count": 0,
+      "extraction_status_counts": {
+        "source_error": 1,
+        "success": 50
+      },
+      "invalid_field_types": {},
+      "invalid_thirumurai_no": 0,
+      "malformed_source_urls": 0,
+      "missing_fields": {},
+      "record_count": 51,
+      "schema_inconsistencies": 0,
+      "status": "VALID",
+      "valid_record_count": 51
+    }
+  }
 }

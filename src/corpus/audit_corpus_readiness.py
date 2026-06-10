@@ -15,7 +15,7 @@ if __package__ in {None, ""}:
 
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from corpus.normalize_corpus import load_jsonl, write_json
+from corpus.normalize_corpus import CORPUS_CONFIGS, load_jsonl, write_json
 
 DEFAULT_INPUT = Path("data/processed/normalized/thirumurai_02_normalized.jsonl")
 DEFAULT_CHUNKS = Path("data/processed/chunks/irandaam_thirumurai_chunks.jsonl")
@@ -357,9 +357,23 @@ def audit_records(
     }
     scores["overall_readiness_score"] = round(mean(scores.values()))
 
+    retrieval_ready = chunk_counts.get("verse_plus_commentary", 0) == total and total > 0
+    multi_corpus_available = len(available_corpora) >= 2
     capabilities = [
-        capability("ordinary RAG", "ready", [], "Keep hybrid retrieval and citation validation as the default path."),
-        capability("verse lookup", "ready", [], "Retain exact Tamil text and verse-only chunks."),
+        capability(
+            "ordinary RAG",
+            "ready" if retrieval_ready else "not_ready",
+            [] if retrieval_ready else ["No corpus-specific chunks or retrieval index exist."],
+            "Keep hybrid retrieval and citation validation as the default path."
+            if retrieval_ready
+            else "Create and benchmark pilot-specific retrieval artifacts in a separate approved phase.",
+        ),
+        capability(
+            "verse lookup",
+            "ready" if chunk_counts.get("verse_only", 0) == total and total > 0 else "partial",
+            [] if chunk_counts.get("verse_only", 0) == total and total > 0 else ["Normalized verse text exists, but verse-only chunks do not."],
+            "Retain exact Tamil text and add deterministic verse-only chunks.",
+        ),
         capability("author lookup", "ready", [], "Preserve normalized and original author labels."),
         capability("hymn identification", "ready", [], "Keep hymn, pathigam, song, and source URL identifiers aligned."),
         capability(
@@ -388,14 +402,18 @@ def audit_records(
         ),
         capability(
             "Nayanmar comparison",
-            "not_ready",
-            ["Only one available Nayanmar corpus is normalized."],
-            "Normalize at least one additional audited author corpus before comparison.",
+            "partial" if multi_corpus_available else "not_ready",
+            ["The Appar corpus is a five-hymn pilot, not complete coverage."]
+            if multi_corpus_available
+            else ["Only one available Nayanmar corpus is normalized."],
+            "Complete and audit comparable author corpora before quantitative comparison.",
         ),
         capability(
             "cross-corpus comparison",
-            "not_ready",
-            ["Only thirumurai_02 is available."],
+            "partial" if multi_corpus_available else "not_ready",
+            ["The second corpus is pilot-sized and cannot support exhaustive claims."]
+            if multi_corpus_available
+            else ["Only thirumurai_02 is available."],
             "Pilot each new corpus family and normalize shared author, place, work, and deity metadata.",
         ),
         capability(
@@ -575,6 +593,29 @@ def render_report(audit: dict[str, Any]) -> str:
     ) or "| None | None |"
     issues = audit["issue_counts"]
     retrieval = audit["retrieval_readiness"]
+    comparison = audit.get("comparison_with_thirumurai_02")
+    comparison_section = ""
+    if comparison:
+        base = comparison["thirumurai_02_scores"]
+        pilot = comparison["pilot_scores"]
+        commentary = comparison["commentary_coverage"]
+        comparison_section = f"""
+## Comparison With Thirumurai 02
+
+| Measure | Thirumurai 02 | Pilot |
+| --- | ---: | ---: |
+| Overall readiness | {base["overall_readiness_score"]} | {pilot["overall_readiness_score"]} |
+| Parser readiness | {base["parser_readiness_score"]} | {pilot["parser_readiness_score"]} |
+| Metadata readiness | {base["metadata_readiness_score"]} | {pilot["metadata_readiness_score"]} |
+| Citation readiness | {base["citation_readiness_score"]} | {pilot["citation_readiness_score"]} |
+| Retrieval readiness | {base["retrieval_readiness_score"]} | {pilot["retrieval_readiness_score"]} |
+| Pozhppurai coverage | {commentary["thirumurai_02_pozhppurai"]:.2f}% | {commentary["pilot_pozhppurai"]:.2f}% |
+| Kurippurai coverage | {commentary["thirumurai_02_kurippurai"]:.2f}% | {commentary["pilot_kurippurai"]:.2f}% |
+
+The pilot parser is source-family specific. Its richer commentary labels and hymn-local song numbering must remain explicit rather than being forced through the Second Thirumurai assumptions.
+"""
+    corpus_label = audit["input"]["path"]
+    source_omission_count = issues["missing_pozhppurai"] + issues["missing_kurippurai"]
     return f"""# Corpus Readiness Audit Report
 
 ## Executive Summary
@@ -586,7 +627,7 @@ def render_report(audit: dict[str, Any]) -> str:
 - Overall readiness score: `{scores["overall_readiness_score"]}/100`
 - Scaling decision: `{audit["summary"]["overall_status"]}`
 
-The existing Irandaam Thirumurai corpus is strong for grounded retrieval. Controlled pilot expansion is reasonable, but broad multi-Thirumurai analytical claims remain blocked by unproven parser families, one-corpus coverage, no synonym authority, no literary-entity annotations, and no exhaustive aggregation layer.
+This audit covers `{corpus_label}`. Structural extraction is strong, but broad multi-Thirumurai analytical claims remain blocked by incomplete cross-corpus coverage, no synonym authority, no literary-entity annotations, and no exhaustive aggregation layer.
 
 ## Readiness Scores
 
@@ -613,7 +654,7 @@ The existing Irandaam Thirumurai corpus is strong for grounded retrieval. Contro
 - Missing kurippurai: `{issues["missing_kurippurai"]}`
 - Field consistency issues: `{issues["field_inconsistencies"]}`
 
-The seven empty commentary fields are known source omissions. No verified parser bug is inferred from them.
+Empty commentary field count across both commentary columns: `{source_omission_count}`. Source and parser evidence must be reviewed before assigning blame; the pilot's known missing pair is caused by a TamilVU endpoint null-pointer response.
 
 ### Duplicate Verse Review
 
@@ -640,7 +681,7 @@ These exact-text groups require source-aware human review. Repeated devotional r
 - Missing chunk types: `{retrieval["missing_chunk_types"] or "none"}`
 - Records without chunks: `{len(retrieval["records_without_chunks"])}`
 
-Current chunks are suitable for passage retrieval and citation. They are not an exhaustive analytical query engine.
+Current chunk readiness is reported exactly as observed. Even when chunks exist, they support passage retrieval and citation rather than exhaustive corpus analysis.
 
 ## Capability Readiness
 
@@ -675,6 +716,8 @@ This separates missing source data from parser, metadata, citation, retrieval, s
 ## Recommendations
 
 {recommendations}
+
+{comparison_section}
 """
 
 
@@ -689,25 +732,61 @@ def main(argv: list[str] | None = None) -> int:
         description="Audit corpus, parser, retrieval, and analytical readiness."
     )
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
+    parser.add_argument("--corpus-id", choices=sorted(CORPUS_CONFIGS), default="thirumurai_02")
     parser.add_argument("--chunks", type=Path, default=DEFAULT_CHUNKS)
     parser.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     args = parser.parse_args(argv)
 
-    before_hash = sha256(args.input)
-    records = load_jsonl(args.input)
-    chunks = load_jsonl(args.chunks)
+    config = CORPUS_CONFIGS[args.corpus_id]
+    input_path = args.input if args.input != DEFAULT_INPUT or args.corpus_id == "thirumurai_02" else config["output"]
+    chunks_path = args.chunks
+    if args.corpus_id != "thirumurai_02" and args.chunks == DEFAULT_CHUNKS:
+        chunks_path = Path("data/processed/chunks") / f"{args.corpus_id}_chunks.jsonl"
+    output_path = (
+        Path("data/processed/normalized") / f"{args.corpus_id}_readiness_audit.json"
+        if args.corpus_id != "thirumurai_02" and args.output == DEFAULT_OUTPUT
+        else args.output
+    )
+    report_path = (
+        Path("reports/pilot-corpus-readiness-report.md")
+        if args.corpus_id != "thirumurai_02" and args.report == DEFAULT_REPORT
+        else args.report
+    )
+    before_hash = sha256(input_path)
+    records = load_jsonl(input_path)
+    chunks = load_jsonl(chunks_path) if chunks_path.exists() else []
     registry = json.loads(args.registry.read_text(encoding="utf-8"))
     audit = audit_records(
         records,
         chunks,
         registry,
         input_sha256=before_hash,
-        input_path=str(args.input),
+        input_path=str(input_path),
     )
-    write_outputs(audit, args.output, args.report)
-    after_hash = sha256(args.input)
+    if args.corpus_id != "thirumurai_02":
+        existing_path = Path("data/processed/normalized/corpus_readiness_audit.json")
+        if existing_path.exists():
+            existing = json.loads(existing_path.read_text(encoding="utf-8"))
+            audit["comparison_with_thirumurai_02"] = {
+                "thirumurai_02_scores": existing["scores"],
+                "pilot_scores": audit["scores"],
+                "parser_difference": audit["scores"]["parser_readiness_score"]
+                - existing["scores"]["parser_readiness_score"],
+                "metadata_difference": audit["scores"]["metadata_readiness_score"]
+                - existing["scores"]["metadata_readiness_score"],
+                "citation_difference": audit["scores"]["citation_readiness_score"]
+                - existing["scores"]["citation_readiness_score"],
+                "commentary_coverage": {
+                    "thirumurai_02_pozhppurai": existing["field_coverage"]["pozhppurai"]["percentage"],
+                    "pilot_pozhppurai": audit["field_coverage"]["pozhppurai"]["percentage"],
+                    "thirumurai_02_kurippurai": existing["field_coverage"]["kurippurai"]["percentage"],
+                    "pilot_kurippurai": audit["field_coverage"]["kurippurai"]["percentage"],
+                },
+            }
+    write_outputs(audit, output_path, report_path)
+    after_hash = sha256(input_path)
     if before_hash != after_hash:
         raise RuntimeError("normalized corpus changed during read-only audit")
 
@@ -716,8 +795,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Parser readiness: {audit['scores']['parser_readiness_score']}")
     print(f"Analytical readiness: {audit['scores']['analytical_readiness_score']}")
     print(f"Scaling status: {audit['summary']['overall_status']}")
-    print(f"JSON: {args.output}")
-    print(f"Report: {args.report}")
+    print(f"Corpus: {args.corpus_id}")
+    print(f"JSON: {output_path}")
+    print(f"Report: {report_path}")
     return 0
 
 

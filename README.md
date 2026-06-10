@@ -113,6 +113,10 @@ python3 src/evaluation/build_question_taxonomy.py
 python3 src/corpus/normalize_corpus.py
 python3 src/corpus/validate_corpus.py
 python3 src/corpus/audit_corpus_readiness.py
+python3 src/corpus/pilot_ingest_thirumurai.py --thirumurai-no 4
+python3 src/corpus/normalize_corpus.py --corpus-id thirumurai_04
+python3 src/corpus/validate_corpus.py --corpus-id thirumurai_04
+python3 src/corpus/audit_corpus_readiness.py --corpus-id thirumurai_04
 python3 -m pytest
 ```
 
@@ -155,3 +159,5 @@ The question taxonomy builder generates and validates 100 deterministic Tamil li
 The multi-Thirumurai normalization framework registers all twelve Thirumurai, maps the existing Irandaam Thirumurai v1.1 records into a shared cross-corpus schema, and validates stable IDs, literary hierarchy, text fields, and source provenance. It does not fetch any new content.
 
 The corpus readiness audit measures data, parser, metadata, citation, retrieval, analytical, and scaling readiness before any additional Thirumurai scrape. It is read-only and produces deterministic JSON and Markdown evidence.
+
+The controlled Fourth Thirumurai pilot ingests only five Appar hymns, preserving raw snapshots and source URLs separately from existing corpora. It proves a source-specific adapter, unified normalization, validation, and readiness audit without authorizing full Fourth Thirumurai extraction.

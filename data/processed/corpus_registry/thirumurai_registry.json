@@ -1,113 +1,114 @@
 {
-  "registry_version": "thirumurai-registry-v1",
   "corpora": [
     {
-      "corpus_id": "thirumurai_01",
-      "thirumurai_no": 1,
       "canonical_title": "Mudhalaam Thirumurai",
+      "corpus_id": "thirumurai_01",
+      "notes": "Tevaram hymns; requires source inspection and parser validation.",
       "primary_author": "Tirugnanasambandar",
-      "status": "pending_scrape",
       "source_type": "web",
-      "notes": "Tevaram hymns; requires source inspection and parser validation."
+      "status": "pending_scrape",
+      "thirumurai_no": 1
     },
     {
-      "corpus_id": "thirumurai_02",
-      "thirumurai_no": 2,
       "canonical_title": "Irandaam Thirumurai",
+      "corpus_id": "thirumurai_02",
+      "notes": "Frozen v1 and retrieval-ready v1.1 are available locally; normalized by this framework.",
       "primary_author": "Tirugnanasambandar",
-      "status": "available",
       "source_type": "local",
-      "notes": "Frozen v1 and retrieval-ready v1.1 are available locally; normalized by this framework."
+      "status": "available",
+      "thirumurai_no": 2
     },
     {
-      "corpus_id": "thirumurai_03",
-      "thirumurai_no": 3,
       "canonical_title": "Moondraam Thirumurai",
+      "corpus_id": "thirumurai_03",
+      "notes": "Tevaram hymns; planned after a controlled inspection phase.",
       "primary_author": "Tirugnanasambandar",
+      "source_type": "web",
       "status": "pending_scrape",
-      "source_type": "web",
-      "notes": "Tevaram hymns; planned after a controlled inspection phase."
+      "thirumurai_no": 3
     },
     {
-      "corpus_id": "thirumurai_04",
-      "thirumurai_no": 4,
       "canonical_title": "Naangaam Thirumurai",
+      "corpus_id": "thirumurai_04",
+      "notes": "Controlled five-hymn Appar pilot ingested, normalized, validated, and audited; this is not a complete Fourth Thirumurai corpus.",
       "primary_author": "Tirunavukkarasar (Appar)",
-      "status": "planned",
-      "source_type": "web",
-      "notes": "Tevaram hymns; author aliases must be normalized."
+      "source_type": "local",
+      "status": "available",
+      "thirumurai_no": 4,
+      "verification_status": "pilot_verified"
     },
     {
-      "corpus_id": "thirumurai_05",
-      "thirumurai_no": 5,
       "canonical_title": "Aindhaam Thirumurai",
+      "corpus_id": "thirumurai_05",
+      "notes": "Tevaram hymns; planned for a later approved phase.",
       "primary_author": "Tirunavukkarasar (Appar)",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Tevaram hymns; planned for a later approved phase."
+      "status": "planned",
+      "thirumurai_no": 5
     },
     {
-      "corpus_id": "thirumurai_06",
-      "thirumurai_no": 6,
       "canonical_title": "Aaraam Thirumurai",
+      "corpus_id": "thirumurai_06",
+      "notes": "Tevaram hymns; planned for a later approved phase.",
       "primary_author": "Tirunavukkarasar (Appar)",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Tevaram hymns; planned for a later approved phase."
+      "status": "planned",
+      "thirumurai_no": 6
     },
     {
-      "corpus_id": "thirumurai_07",
-      "thirumurai_no": 7,
       "canonical_title": "Ezhaam Thirumurai",
+      "corpus_id": "thirumurai_07",
+      "notes": "Tevaram hymns; requires author and place metadata normalization.",
       "primary_author": "Sundarar",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Tevaram hymns; requires author and place metadata normalization."
+      "status": "planned",
+      "thirumurai_no": 7
     },
     {
-      "corpus_id": "thirumurai_08",
-      "thirumurai_no": 8,
       "canonical_title": "Ettaam Thirumurai",
+      "corpus_id": "thirumurai_08",
+      "notes": "Includes Tiruvacakam and Tirukkovaiyar; likely needs work-level subdivisions.",
       "primary_author": "Manikkavasagar",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Includes Tiruvacakam and Tirukkovaiyar; likely needs work-level subdivisions."
+      "status": "planned",
+      "thirumurai_no": 8
     },
     {
-      "corpus_id": "thirumurai_09",
-      "thirumurai_no": 9,
       "canonical_title": "Onbadhaam Thirumurai",
+      "corpus_id": "thirumurai_09",
+      "notes": "Includes Tiruvisaippa and Tiruppallandu; requires multi-author attribution.",
       "primary_author": "Multiple authors",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Includes Tiruvisaippa and Tiruppallandu; requires multi-author attribution."
+      "status": "planned",
+      "thirumurai_no": 9
     },
     {
-      "corpus_id": "thirumurai_10",
-      "thirumurai_no": 10,
       "canonical_title": "Patthaam Thirumurai",
+      "corpus_id": "thirumurai_10",
+      "notes": "Tirumantiram; structural units may differ from pathigam-oriented Tevaram records.",
       "primary_author": "Tirumular",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Tirumantiram; structural units may differ from pathigam-oriented Tevaram records."
+      "status": "planned",
+      "thirumurai_no": 10
     },
     {
-      "corpus_id": "thirumurai_11",
-      "thirumurai_no": 11,
       "canonical_title": "Pathinoraam Thirumurai",
+      "corpus_id": "thirumurai_11",
+      "notes": "Anthology with multiple authors and work types; requires work-level metadata.",
       "primary_author": "Multiple authors",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Anthology with multiple authors and work types; requires work-level metadata."
+      "status": "planned",
+      "thirumurai_no": 11
     },
     {
-      "corpus_id": "thirumurai_12",
-      "thirumurai_no": 12,
       "canonical_title": "Pannirandaam Thirumurai",
+      "corpus_id": "thirumurai_12",
+      "notes": "Periyapuranam; narrative structure requires a source-specific parser mapped to the shared schema.",
       "primary_author": "Sekkizhar",
-      "status": "planned",
       "source_type": "web",
-      "notes": "Periyapuranam; narrative structure requires a source-specific parser mapped to the shared schema."
+      "status": "planned",
+      "thirumurai_no": 12
     }
-  ]
+  ],
+  "registry_version": "thirumurai-registry-v1"
 }

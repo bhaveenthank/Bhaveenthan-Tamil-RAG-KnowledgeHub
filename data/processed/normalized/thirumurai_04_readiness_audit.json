@@ -1,0 +1,443 @@
+{
+  "analytical_readiness": {
+    "capabilities": [
+      {
+        "blocking_issues": [
+          "No corpus-specific chunks or retrieval index exist."
+        ],
+        "capability": "ordinary RAG",
+        "readiness": "not_ready",
+        "recommended_fix": "Create and benchmark pilot-specific retrieval artifacts in a separate approved phase."
+      },
+      {
+        "blocking_issues": [
+          "Normalized verse text exists, but verse-only chunks do not."
+        ],
+        "capability": "verse lookup",
+        "readiness": "partial",
+        "recommended_fix": "Retain exact Tamil text and add deterministic verse-only chunks."
+      },
+      {
+        "blocking_issues": [],
+        "capability": "author lookup",
+        "readiness": "ready",
+        "recommended_fix": "Preserve normalized and original author labels."
+      },
+      {
+        "blocking_issues": [],
+        "capability": "hymn identification",
+        "readiness": "ready",
+        "recommended_fix": "Keep hymn, pathigam, song, and source URL identifiers aligned."
+      },
+      {
+        "blocking_issues": [
+          "No dedicated exhaustive aggregation command or morphology handling."
+        ],
+        "capability": "word occurrence search",
+        "readiness": "partial",
+        "recommended_fix": "Add a deterministic field-aware occurrence and count layer."
+      },
+      {
+        "blocking_issues": [
+          "No versioned Tamil literary synonym lexicon or concept IDs."
+        ],
+        "capability": "synonym expansion",
+        "readiness": "not_ready",
+        "recommended_fix": "Create a curated synonym authority with source forms and review metadata."
+      },
+      {
+        "blocking_issues": [
+          "Deity is corpus-level normalized; epithets are not extracted or linked."
+        ],
+        "capability": "deity/epithet analysis",
+        "readiness": "not_ready",
+        "recommended_fix": "Add reviewed deity aliases, epithet spans, entity IDs, and evidence offsets."
+      },
+      {
+        "blocking_issues": [
+          "No simile or metaphor annotations exist."
+        ],
+        "capability": "simile/metaphor analysis",
+        "readiness": "not_ready",
+        "recommended_fix": "Design a versioned literary-device annotation schema and human-reviewed sample."
+      },
+      {
+        "blocking_issues": [
+          "The Appar corpus is a five-hymn pilot, not complete coverage."
+        ],
+        "capability": "Nayanmar comparison",
+        "readiness": "partial",
+        "recommended_fix": "Complete and audit comparable author corpora before quantitative comparison."
+      },
+      {
+        "blocking_issues": [
+          "The second corpus is pilot-sized and cannot support exhaustive claims."
+        ],
+        "capability": "cross-corpus comparison",
+        "readiness": "partial",
+        "recommended_fix": "Pilot each new corpus family and normalize shared author, place, work, and deity metadata."
+      },
+      {
+        "blocking_issues": [
+          "The data is scan-ready but no dedicated aggregation result contract exists."
+        ],
+        "capability": "corpus-wide aggregation",
+        "readiness": "partial",
+        "recommended_fix": "Add deterministic group/count/list operations with complete evidence and citations."
+      },
+      {
+        "blocking_issues": [
+          "Failure categories exist, but later analysis and LLM stages are not instrumented."
+        ],
+        "capability": "failure diagnosis",
+        "readiness": "partial",
+        "recommended_fix": "Carry failure attribution and evidence through every future pipeline stage."
+      }
+    ],
+    "motif_entity_annotations": {
+      "deity_names": true,
+      "epithets": false,
+      "literary_motifs": false,
+      "metaphors": false,
+      "natural_imagery": false,
+      "similes": false,
+      "synonym_concepts": false
+    },
+    "synonym_term_occurrences": {
+      "சந்திரன்": {
+        "commentary_records": 1,
+        "verse_records": 0
+      },
+      "திங்கள்": {
+        "commentary_records": 2,
+        "verse_records": 2
+      },
+      "நிலவு": {
+        "commentary_records": 3,
+        "verse_records": 0
+      },
+      "மதி": {
+        "commentary_records": 11,
+        "verse_records": 7
+      }
+    }
+  },
+  "audit_version": "corpus-readiness-audit-v1",
+  "citation_readiness": {
+    "traceability_percentage": 100.0,
+    "traceable_records": 51,
+    "url_identifier_mismatches": 0
+  },
+  "comparison_with_thirumurai_02": {
+    "citation_difference": 0,
+    "commentary_coverage": {
+      "pilot_kurippurai": 98.04,
+      "pilot_pozhppurai": 98.04,
+      "thirumurai_02_kurippurai": 99.77,
+      "thirumurai_02_pozhppurai": 99.7
+    },
+    "metadata_difference": 5,
+    "parser_difference": -1,
+    "pilot_scores": {
+      "analytical_readiness_score": 30,
+      "citation_readiness_score": 100,
+      "data_quality_score": 100,
+      "metadata_readiness_score": 90,
+      "overall_readiness_score": 71,
+      "parser_readiness_score": 99,
+      "retrieval_readiness_score": 0,
+      "scaling_readiness_score": 75
+    },
+    "thirumurai_02_scores": {
+      "analytical_readiness_score": 15,
+      "citation_readiness_score": 100,
+      "data_quality_score": 98,
+      "metadata_readiness_score": 85,
+      "overall_readiness_score": 80,
+      "parser_readiness_score": 100,
+      "retrieval_readiness_score": 100,
+      "scaling_readiness_score": 60
+    }
+  },
+  "data_quality": {
+    "duplicate_record_ids": [],
+    "duplicate_verse_text_groups": [],
+    "low_tamil_ratio_record_ids": [],
+    "malformed_tamil_record_ids": [],
+    "missing_tamil_record_ids": [],
+    "unusually_long_record_ids": [],
+    "unusually_short_record_ids": [],
+    "verse_length": {
+      "average": 238.92,
+      "maximum": 292,
+      "minimum": 177
+    }
+  },
+  "failure_attribution_categories": [
+    "data_gap",
+    "parser_gap",
+    "metadata_gap",
+    "citation_gap",
+    "retrieval_gap",
+    "synonym_gap",
+    "aggregation_gap",
+    "architecture_gap",
+    "llm_gap"
+  ],
+  "field_coverage": {
+    "author": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "commentary_url": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "deity": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "hymn_id": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "kurippurai": {
+      "missing": 1,
+      "percentage": 98.04,
+      "present": 50
+    },
+    "nayanmar": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "pathigam_id": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "place": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "pozhppurai": {
+      "missing": 1,
+      "percentage": 98.04,
+      "present": 50
+    },
+    "record_id": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "song_no": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "source_url": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "thirumurai_no": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "title": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    },
+    "verse_text": {
+      "missing": 0,
+      "percentage": 100.0,
+      "present": 51
+    }
+  },
+  "input": {
+    "path": "data/processed/normalized/thirumurai_04_normalized.jsonl",
+    "sha256": "0c1090fa310e323041ca2435942f8124a69b8d78ff8d3f3fcb697cd96b60a0d7"
+  },
+  "issue_counts": {
+    "duplicate_record_ids": 0,
+    "duplicate_verse_text_groups": 0,
+    "empty_records": 0,
+    "field_inconsistencies": 0,
+    "low_tamil_ratio": 0,
+    "malformed_tamil_text": 0,
+    "malformed_urls": 0,
+    "metadata_normalization_problems": 0,
+    "missing_author": 0,
+    "missing_citation_text": 0,
+    "missing_commentary_url": 0,
+    "missing_deity": 0,
+    "missing_hymn_id": 0,
+    "missing_kurippurai": 1,
+    "missing_nayanmar": 0,
+    "missing_place": 0,
+    "missing_pozhppurai": 1,
+    "missing_song_no": 0,
+    "missing_source_url": 0,
+    "missing_tamil_text": 0,
+    "missing_thirumurai_no": 0,
+    "missing_title": 0,
+    "missing_verse_text": 0,
+    "orphan_chunk_parents": 0,
+    "records_without_chunks": 51,
+    "unusually_long_verses": 0,
+    "unusually_short_verses": 0,
+    "url_identifier_mismatches": 0
+  },
+  "metadata_readiness": {
+    "annotations_present": {
+      "deity_names": true,
+      "epithets": false,
+      "literary_motifs": false,
+      "metaphors": false,
+      "natural_imagery": false,
+      "similes": false,
+      "synonym_concepts": false
+    },
+    "normalization_problems": 0
+  },
+  "parser_readiness": {
+    "commentary_source_missing_records": 2,
+    "field_consistency_issues": 0,
+    "note": "Known empty commentary fields were previously audited as source-missing, not parser bugs."
+  },
+  "recommendations": [
+    "Inspect and pilot one additional Tevaram corpus before broadening to a structurally different Thirumurai.",
+    "Create source-family adapters that emit the unified schema without assuming every work is a Tevaram pathigam.",
+    "Build deterministic corpus-wide occurrence and aggregation operations before analytical answer generation.",
+    "Design a versioned Tamil literary synonym lexicon with concept IDs, variants, citations, and reviewer metadata.",
+    "Add evidence-bearing entity, epithet, imagery, motif, simile, and metaphor annotation contracts.",
+    "Require source inspection, parser sampling, normalization validation, and corpus audit for every new registry entry."
+  ],
+  "retrieval_readiness": {
+    "analytical_chunking_note": "Current chunks support retrieval, not exhaustive corpus analysis.",
+    "chunk_types": {},
+    "commentary_retrieval_supported": false,
+    "metadata_retrieval_supported": false,
+    "missing_chunk_types": [
+      "kurippurai_only",
+      "metadata_context",
+      "pozhppurai_only",
+      "verse_only",
+      "verse_plus_commentary"
+    ],
+    "orphan_chunk_parents": [],
+    "records_without_chunks": [
+      "thevaram_04_1912_1",
+      "thevaram_04_1912_10",
+      "thevaram_04_1912_2",
+      "thevaram_04_1912_3",
+      "thevaram_04_1912_4",
+      "thevaram_04_1912_5",
+      "thevaram_04_1912_6",
+      "thevaram_04_1912_7",
+      "thevaram_04_1912_8",
+      "thevaram_04_1912_9",
+      "thevaram_04_1913_11",
+      "thevaram_04_1913_12",
+      "thevaram_04_1913_13",
+      "thevaram_04_1913_14",
+      "thevaram_04_1913_15",
+      "thevaram_04_1913_16",
+      "thevaram_04_1913_17",
+      "thevaram_04_1913_18",
+      "thevaram_04_1913_19",
+      "thevaram_04_1913_20",
+      "thevaram_04_1914_21",
+      "thevaram_04_1914_22",
+      "thevaram_04_1914_23",
+      "thevaram_04_1914_24",
+      "thevaram_04_1914_25",
+      "thevaram_04_1914_26",
+      "thevaram_04_1914_27",
+      "thevaram_04_1914_28",
+      "thevaram_04_1914_29",
+      "thevaram_04_1914_30",
+      "thevaram_04_1914_31",
+      "thevaram_04_1915_32",
+      "thevaram_04_1915_33",
+      "thevaram_04_1915_34",
+      "thevaram_04_1915_35",
+      "thevaram_04_1915_36",
+      "thevaram_04_1915_37",
+      "thevaram_04_1915_38",
+      "thevaram_04_1915_39",
+      "thevaram_04_1915_40",
+      "thevaram_04_1915_41",
+      "thevaram_04_1916_42",
+      "thevaram_04_1916_43",
+      "thevaram_04_1916_44",
+      "thevaram_04_1916_45",
+      "thevaram_04_1916_46",
+      "thevaram_04_1916_47",
+      "thevaram_04_1916_48",
+      "thevaram_04_1916_49",
+      "thevaram_04_1916_50",
+      "thevaram_04_1916_51"
+    ],
+    "verse_only_supported": false
+  },
+  "scaling_risks": [
+    {
+      "detail": "The proven parser targets SLET Tevaram hymn/commentary pages; Thirumurai 8-12 may use different work and section structures.",
+      "risk": "parser_family_variation",
+      "severity": "high"
+    },
+    {
+      "detail": "Thirumurai 9 and 11 require record-level author attribution rather than one corpus-level author.",
+      "risk": "multi_author_attribution",
+      "severity": "high"
+    },
+    {
+      "detail": "Source song and hymn numbers must remain namespaced by corpus and work.",
+      "risk": "identifier_collision",
+      "severity": "medium"
+    },
+    {
+      "detail": "Pathigam, place, deity, and commentary assumptions cannot be forced onto structurally different works.",
+      "risk": "metadata_false_uniformity",
+      "severity": "high"
+    },
+    {
+      "detail": "Top-k retrieval cannot support claims such as all, most, or compare across the corpus.",
+      "risk": "analytical_claim_overreach",
+      "severity": "high"
+    },
+    {
+      "detail": "Synonyms, epithets, imagery, motifs, similes, and metaphors are not yet normalized.",
+      "risk": "annotation_absence",
+      "severity": "high"
+    }
+  ],
+  "scores": {
+    "analytical_readiness_score": 30,
+    "citation_readiness_score": 100,
+    "data_quality_score": 100,
+    "metadata_readiness_score": 90,
+    "overall_readiness_score": 71,
+    "parser_readiness_score": 99,
+    "retrieval_readiness_score": 0,
+    "scaling_readiness_score": 75
+  },
+  "summary": {
+    "available_corpora": [
+      "thirumurai_02",
+      "thirumurai_04"
+    ],
+    "chunk_count": 0,
+    "overall_status": "READY_FOR_CONTROLLED_PILOT_EXPANSION",
+    "record_count": 51,
+    "unique_hymns": 5
+  }
+}

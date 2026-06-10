@@ -1,0 +1,9 @@
+{
+  "corpus_id": "thirumurai_04",
+  "failures": [],
+  "hymns_discovered": 113,
+  "output": "data/processed/pilot/thirumurai_04.jsonl",
+  "pilot_hymns_selected": 5,
+  "records_ingested": 51,
+  "thirumurai_no": 4
+}

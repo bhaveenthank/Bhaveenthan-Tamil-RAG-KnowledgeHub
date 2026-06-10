@@ -115,7 +115,7 @@ def test_manifest_generation() -> None:
     manifest = build_manifest(registry(), records, {})
 
     assert manifest["total_corpora_registered"] == 12
-    assert manifest["available_corpora"] == ["thirumurai_02"]
+    assert manifest["available_corpora"] == ["thirumurai_02", "thirumurai_04"]
     assert manifest["normalized_corpora"] == ["thirumurai_02"]
     assert manifest["total_normalized_records"] == 1
     assert manifest["readiness_status"] == "READY_FOR_CONTROLLED_EXPANSION"
