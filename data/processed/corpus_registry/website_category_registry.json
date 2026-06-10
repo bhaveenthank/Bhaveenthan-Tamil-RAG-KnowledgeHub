@@ -1,0 +1,326 @@
+{
+  "registry_version": "website-category-registry-v1",
+  "source_site": "Tamil Virtual Academy / TamilVU",
+  "categories": [
+    {
+      "category_id": "word_index",
+      "category_tamil": "சொல்லடைவு",
+      "category_english": "Word Index",
+      "content_type": "dictionary",
+      "parser_family": "dictionary_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "Index-like entries need headword, occurrence, work, and citation relationships."
+    },
+    {
+      "category_id": "tamil_numeral_manuscript",
+      "category_tamil": "தமிழ் எண் சுவடி",
+      "category_english": "Tamil Numeral Manuscript",
+      "content_type": "manuscript",
+      "parser_family": "image_metadata_parser",
+      "priority": "low",
+      "status": "deferred",
+      "notes": "Likely requires manuscript/image inspection and possible OCR in a later approved phase."
+    },
+    {
+      "category_id": "grammar",
+      "category_tamil": "இலக்கணம்",
+      "category_english": "Grammar",
+      "content_type": "grammar",
+      "parser_family": "grammar_parser",
+      "priority": "pilot",
+      "status": "pilot_candidate",
+      "notes": "Early pilot candidate for sutra, rule, example, and commentary structure."
+    },
+    {
+      "category_id": "sangam_literature",
+      "category_tamil": "சங்க இலக்கியம்",
+      "category_english": "Sangam Literature",
+      "content_type": "poetry",
+      "parser_family": "verse_parser",
+      "priority": "pilot",
+      "status": "pilot_candidate",
+      "notes": "Early classical-poetry pilot for poem, poet, thinai, section, and commentary metadata."
+    },
+    {
+      "category_id": "eighteen_minor_works",
+      "category_tamil": "பதினெண் கீழ்க்கணக்கு",
+      "category_english": "Eighteen Minor Works",
+      "content_type": "poetry",
+      "parser_family": "verse_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Verse collections with work-specific numbering and commentary variation."
+    },
+    {
+      "category_id": "epics",
+      "category_tamil": "காப்பியங்கள்",
+      "category_english": "Tamil Epics",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Long works may combine verse, prose explanation, cantos, chapters, and commentary."
+    },
+    {
+      "category_id": "religious_literature",
+      "category_tamil": "சமய இலக்கியங்கள்",
+      "category_english": "Religious Literature",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Parent category spanning multiple traditions and heterogeneous works."
+    },
+    {
+      "category_id": "saivam",
+      "category_tamil": "சைவம்",
+      "category_english": "Saivism",
+      "content_type": "poetry",
+      "parser_family": "verse_parser",
+      "priority": "pilot",
+      "status": "pilot_candidate",
+      "notes": "Existing Thirumurai work proves a subset of this category; the category itself is not complete."
+    },
+    {
+      "category_id": "vaishnavam",
+      "category_tamil": "வைணவம்",
+      "category_english": "Vaishnavism",
+      "content_type": "poetry",
+      "parser_family": "verse_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Requires source inspection for pasuram, work, author, commentary, and numbering structures."
+    },
+    {
+      "category_id": "christian_literature",
+      "category_tamil": "கிறித்துவம்",
+      "category_english": "Christian Literature",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "May include poetry, prose, translation, and devotional works."
+    },
+    {
+      "category_id": "islamic_literature",
+      "category_tamil": "இசுலாம்",
+      "category_english": "Islamic Literature",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "May include poetry, prose, biography, and translated religious material."
+    },
+    {
+      "category_id": "minor_literary_forms",
+      "category_tamil": "சிற்றிலக்கியங்கள்",
+      "category_english": "Minor Literary Forms",
+      "content_type": "poetry",
+      "parser_family": "verse_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Requires work-level form, meter, section, and poem-unit metadata."
+    },
+    {
+      "category_id": "ethical_works",
+      "category_tamil": "நெறி நூல்கள்",
+      "category_english": "Ethical Works",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "May mix aphoristic verse, prose exposition, chapters, and commentary."
+    },
+    {
+      "category_id": "siddhar_literature",
+      "category_tamil": "சித்தர் இலக்கியம்",
+      "category_english": "Siddhar Literature",
+      "content_type": "poetry",
+      "parser_family": "verse_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "Needs author attribution, poem boundaries, variant vocabulary, and specialist terminology."
+    },
+    {
+      "category_id": "twentieth_century_poetry",
+      "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் கவிதைகள்",
+      "category_english": "Twentieth-Century Poetry",
+      "content_type": "poetry",
+      "parser_family": "verse_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Rights and public-domain status must be recorded per book before ingestion."
+    },
+    {
+      "category_id": "twentieth_century_prose",
+      "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
+      "category_english": "Twentieth-Century Prose",
+      "content_type": "prose",
+      "parser_family": "prose_parser",
+      "priority": "pilot",
+      "status": "pilot_candidate",
+      "notes": "Early prose pilot candidate for chapter, section, paragraph, page, and author metadata."
+    },
+    {
+      "category_id": "folk_literature",
+      "category_tamil": "நாட்டுப்புற இலக்கியங்கள்",
+      "category_english": "Folk Literature",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "Needs genre, region, performer/informant, variant, and oral-source metadata where available."
+    },
+    {
+      "category_id": "childrens_literature",
+      "category_tamil": "சிறுவர் இலக்கியங்கள்",
+      "category_english": "Children's Literature",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "May combine prose, poetry, illustrations, and age-oriented metadata."
+    },
+    {
+      "category_id": "romanized_literature",
+      "category_tamil": "ரோமன் வடிவம்",
+      "category_english": "Literature Roman",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "Must preserve romanized source text and link it to Tamil-script equivalents when known."
+    },
+    {
+      "category_id": "dictionaries",
+      "category_tamil": "அகராதிகள்",
+      "category_english": "Dictionaries",
+      "content_type": "dictionary",
+      "parser_family": "dictionary_parser",
+      "priority": "pilot",
+      "status": "pilot_candidate",
+      "notes": "Early lexical pilot for headword, sense, part of speech, examples, cross-references, and page provenance."
+    },
+    {
+      "category_id": "nigandus",
+      "category_tamil": "நிகண்டுகள்",
+      "category_english": "Nigandus / Lexicons",
+      "content_type": "dictionary",
+      "parser_family": "dictionary_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Important future source for literary synonym authority and semantic groupings."
+    },
+    {
+      "category_id": "tamil_books_in_other_languages",
+      "category_tamil": "பிற மொழியில் தமிழ் நூல்கள்",
+      "category_english": "Tamil Books in Other Languages",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "low",
+      "status": "deferred",
+      "notes": "Requires language, translation, edition, and source-alignment metadata."
+    },
+    {
+      "category_id": "encyclopedias",
+      "category_tamil": "கலைக்களஞ்சியங்கள்",
+      "category_english": "Encyclopedias",
+      "content_type": "encyclopedia",
+      "parser_family": "dictionary_parser",
+      "priority": "pilot",
+      "status": "pilot_candidate",
+      "notes": "Optional early knowledge-entry pilot for headword, article, author/editor, cross-reference, and media fields."
+    },
+    {
+      "category_id": "terminology_collections",
+      "category_tamil": "கலைச்சொல் தொகுப்புகள்",
+      "category_english": "Terminology Collections",
+      "content_type": "dictionary",
+      "parser_family": "table_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "Likely table-oriented bilingual or domain terminology requiring column-aware extraction."
+    },
+    {
+      "category_id": "manuscript_gallery",
+      "category_tamil": "சுவடிக்காட்சியகம்",
+      "category_english": "Manuscript Gallery",
+      "content_type": "manuscript",
+      "parser_family": "image_metadata_parser",
+      "priority": "low",
+      "status": "deferred",
+      "notes": "Metadata-first ingestion; OCR and image rights require separate approval."
+    },
+    {
+      "category_id": "cultural_gallery",
+      "category_tamil": "பண்பாட்டுக் காட்சியகம்",
+      "category_english": "Cultural Gallery",
+      "content_type": "mixed",
+      "parser_family": "image_metadata_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "Useful later media pilot for image, caption, place, period, object, and source metadata."
+    },
+    {
+      "category_id": "public_domain_books",
+      "category_tamil": "நாட்டுடைமை நூல்கள்",
+      "category_english": "Public-Domain Books",
+      "content_type": "mixed",
+      "parser_family": "mixed_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Parent category; rights notes and format-specific child registries are essential."
+    },
+    {
+      "category_id": "public_domain_scholars_image_books",
+      "category_tamil": "நாட்டுடைமையாக்கப்பட்ட தமிழறிஞர்களின் நூல்கள் உருப்பட வடிவில்",
+      "category_english": "Public-Domain Tamil Scholars' Books in Image Form",
+      "content_type": "manuscript",
+      "parser_family": "image_metadata_parser",
+      "priority": "low",
+      "status": "deferred",
+      "notes": "Metadata and image/PDF inventory first; OCR is a separate later phase."
+    },
+    {
+      "category_id": "public_domain_scholars_typed_books",
+      "category_tamil": "நாட்டுடைமையாக்கப்பட்ட தமிழறிஞர்களின் நூல்கள் தட்டச்சு வடிவில்",
+      "category_english": "Public-Domain Tamil Scholars' Books in Typed Form",
+      "content_type": "prose",
+      "parser_family": "prose_parser",
+      "priority": "high",
+      "status": "planned",
+      "notes": "Typed public-domain prose is a strong later expansion candidate after book-level inspection."
+    },
+    {
+      "category_id": "image_books",
+      "category_tamil": "உருப்பட நூல்கள்",
+      "category_english": "Image Books",
+      "content_type": "manuscript",
+      "parser_family": "image_metadata_parser",
+      "priority": "low",
+      "status": "deferred",
+      "notes": "Requires page image/PDF inventory, rights notes, and optional OCR strategy."
+    },
+    {
+      "category_id": "tamil_history_culture_literature_books",
+      "category_tamil": "தமிழக வரலாறு, கலைப் பண்பாடு, இலக்கியம் தொடர்பான நூல்கள்",
+      "category_english": "Books on Tamil Nadu History, Art, Culture, and Literature",
+      "content_type": "prose",
+      "parser_family": "prose_parser",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "Requires book, chapter, page, subject, period, place, image, and bibliography metadata."
+    },
+    {
+      "category_id": "external_library_websites",
+      "category_tamil": "பிற நூலக இணையத் தளங்கள்",
+      "category_english": "Other Library Websites",
+      "content_type": "external_links",
+      "parser_family": "external_link_registry",
+      "priority": "defer",
+      "status": "deferred",
+      "notes": "Registry-only references; external sites require separate policy, rights, robots, and ingestion approval."
+    }
+  ]
+}

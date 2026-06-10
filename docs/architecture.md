@@ -135,8 +135,7 @@ If high-resolution page images, PDFs, manuscript scans, or multiple embedding mo
 ## Open Decisions
 
 - Confirm legal/copyright terms and acceptable crawling policy before bulk scraping.
-- Decide whether to include all TamilVU library categories or start with poems/devotional works only.
+- Website-wide scope is accepted in ADR-001; expansion still proceeds through bounded book-level parser pilots.
 - Decide whether scanned/image-only works are in scope for OCR.
 - Pick first embedding model after testing Tamil retrieval quality.
 - Decide whether the production store should be DuckDB + local indexes, PostgreSQL + pgvector, or object storage + managed vector DB.
-

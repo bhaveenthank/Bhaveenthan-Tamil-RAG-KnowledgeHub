@@ -161,3 +161,9 @@ The multi-Thirumurai normalization framework registers all twelve Thirumurai, ma
 The corpus readiness audit measures data, parser, metadata, citation, retrieval, analytical, and scaling readiness before any additional Thirumurai scrape. It is read-only and produces deterministic JSON and Markdown evidence.
 
 The controlled Fourth Thirumurai pilot ingests only five Appar hymns, preserving raw snapshots and source URLs separately from existing corpora. It proves a source-specific adapter, unified normalization, validation, and readiness audit without authorizing full Fourth Thirumurai extraction.
+
+## Website-Wide Tamil Corpus Architecture
+
+Thirumurai is now treated as one proven pilot collection family inside a future website-wide Tamil Literary KnowledgeHub. The category registry and schema v2 cover poetry, prose, grammar, dictionaries, encyclopedias, terminology tables, manuscripts, image collections, public-domain books, and external-library references.
+
+Scraping remains controlled and book-specific. No full website crawl is authorized; each parser family must pass source inspection, a bounded pilot, validation, and audit first.

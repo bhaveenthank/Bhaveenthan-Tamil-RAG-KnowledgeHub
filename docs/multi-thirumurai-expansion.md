@@ -56,8 +56,9 @@ These enrichments should be versioned separately from source text. Automated lab
 
 ## Current Result
 
-- Twelve Thirumurai are registered.
-- Irandaam Thirumurai is the only `available` corpus.
-- Its retrieval-ready records are normalized into the shared schema.
+- Twelve Thirumurai are registered under the broader website-wide corpus architecture.
+- Irandaam Thirumurai remains fully `available`.
+- Fourth Thirumurai is `available` with `pilot_verified` status for a bounded five-hymn sample, not a complete corpus.
+- Both available artifacts are normalized into the shared schema.
 - Frozen v1 and retrieval-ready v1.1 remain unchanged.
 - Scraping, embedding generation, vector indexing, and answer generation remain outside this phase.

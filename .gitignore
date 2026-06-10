@@ -24,6 +24,7 @@ data/processed/eval/**
 !data/processed/corpus_registry/
 data/processed/corpus_registry/**
 !data/processed/corpus_registry/thirumurai_registry.json
+!data/processed/corpus_registry/website_category_registry.json
 !data/processed/normalized/
 data/processed/normalized/**
 !data/processed/normalized/thirumurai_02_normalized.jsonl

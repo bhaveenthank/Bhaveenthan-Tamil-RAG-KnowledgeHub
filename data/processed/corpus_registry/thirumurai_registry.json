@@ -2,6 +2,7 @@
   "corpora": [
     {
       "canonical_title": "Mudhalaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_01",
       "notes": "Tevaram hymns; requires source inspection and parser validation.",
       "primary_author": "Tirugnanasambandar",
@@ -11,6 +12,7 @@
     },
     {
       "canonical_title": "Irandaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_02",
       "notes": "Frozen v1 and retrieval-ready v1.1 are available locally; normalized by this framework.",
       "primary_author": "Tirugnanasambandar",
@@ -20,6 +22,7 @@
     },
     {
       "canonical_title": "Moondraam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_03",
       "notes": "Tevaram hymns; planned after a controlled inspection phase.",
       "primary_author": "Tirugnanasambandar",
@@ -29,6 +32,7 @@
     },
     {
       "canonical_title": "Naangaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_04",
       "notes": "Controlled five-hymn Appar pilot ingested, normalized, validated, and audited; this is not a complete Fourth Thirumurai corpus.",
       "primary_author": "Tirunavukkarasar (Appar)",
@@ -39,6 +43,7 @@
     },
     {
       "canonical_title": "Aindhaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_05",
       "notes": "Tevaram hymns; planned for a later approved phase.",
       "primary_author": "Tirunavukkarasar (Appar)",
@@ -48,6 +53,7 @@
     },
     {
       "canonical_title": "Aaraam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_06",
       "notes": "Tevaram hymns; planned for a later approved phase.",
       "primary_author": "Tirunavukkarasar (Appar)",
@@ -57,6 +63,7 @@
     },
     {
       "canonical_title": "Ezhaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_07",
       "notes": "Tevaram hymns; requires author and place metadata normalization.",
       "primary_author": "Sundarar",
@@ -66,6 +73,7 @@
     },
     {
       "canonical_title": "Ettaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_08",
       "notes": "Includes Tiruvacakam and Tirukkovaiyar; likely needs work-level subdivisions.",
       "primary_author": "Manikkavasagar",
@@ -75,6 +83,7 @@
     },
     {
       "canonical_title": "Onbadhaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_09",
       "notes": "Includes Tiruvisaippa and Tiruppallandu; requires multi-author attribution.",
       "primary_author": "Multiple authors",
@@ -84,6 +93,7 @@
     },
     {
       "canonical_title": "Patthaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_10",
       "notes": "Tirumantiram; structural units may differ from pathigam-oriented Tevaram records.",
       "primary_author": "Tirumular",
@@ -93,6 +103,7 @@
     },
     {
       "canonical_title": "Pathinoraam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_11",
       "notes": "Anthology with multiple authors and work types; requires work-level metadata.",
       "primary_author": "Multiple authors",
@@ -102,6 +113,7 @@
     },
     {
       "canonical_title": "Pannirandaam Thirumurai",
+      "collection_family": "thirumurai",
       "corpus_id": "thirumurai_12",
       "notes": "Periyapuranam; narrative structure requires a source-specific parser mapped to the shared schema.",
       "primary_author": "Sekkizhar",
