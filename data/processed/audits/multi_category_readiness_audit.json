@@ -1,0 +1,576 @@
+{
+  "analytics_readiness": {
+    "capabilities": [
+      {
+        "capability": "synonym_analysis",
+        "evidence": "Dictionary structure is proven, but only one entry and no nigandu semantic groups are verified.",
+        "score": 55,
+        "status": "partial"
+      },
+      {
+        "capability": "motif_analysis",
+        "evidence": "Two poetry traditions are represented, but motifs are not normalized annotations.",
+        "score": 72,
+        "status": "partial"
+      },
+      {
+        "capability": "entity_analysis",
+        "evidence": "Authors and selected literary metadata exist; generalized entity extraction and confidence are absent.",
+        "score": 40,
+        "status": "partial"
+      },
+      {
+        "capability": "deity_analysis",
+        "evidence": "Saivam supplies devotional evidence, but deity normalization is not proven across traditions.",
+        "score": 75,
+        "status": "partial"
+      },
+      {
+        "capability": "author_comparison",
+        "evidence": "Saivam and Sangam records preserve normalized author identity and source citations.",
+        "score": 90,
+        "status": "ready"
+      },
+      {
+        "capability": "cross_corpus_comparison",
+        "evidence": "The common envelope supports two verse traditions plus lexical evidence without flattening their identities.",
+        "score": 85,
+        "status": "ready"
+      }
+    ],
+    "score": 69.5
+  },
+  "architecture_strengths": [
+    "Stable source-scoped IDs and a shared provenance envelope work across verse and dictionary records.",
+    "Two poetry traditions retain distinct hierarchy without schema fragmentation.",
+    "All verified records retain exact source URLs and validation passes with zero errors.",
+    "Raw/processed/report separation and fixture-first testing support controlled expansion."
+  ],
+  "architecture_weaknesses": [
+    "Only two of eight parser families have bounded source evidence.",
+    "Standalone commentary, entity, motif, and normalized literary-concept contracts remain incomplete.",
+    "Mixed-content dispatch and encyclopedia article modeling are not proven.",
+    "Image/manuscript rights, asset metadata, transcription, and OCR provenance are not proven."
+  ],
+  "audit_version": "multi-category-readiness-v1",
+  "category_readiness_matrix": [
+    {
+      "architecture_status": "partial",
+      "category_english": "Word Index",
+      "category_id": "word_index",
+      "category_tamil": "சொல்லடைவு",
+      "content_type": "dictionary",
+      "expected_parser_family": "dictionary_parser",
+      "major_risk": "Sense order, examples, cross-references, and encyclopedia article structure are not generally proven.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Tamil Numeral Manuscript",
+      "category_id": "tamil_numeral_manuscript",
+      "category_tamil": "தமிழ் எண் சுவடி",
+      "content_type": "manuscript",
+      "expected_parser_family": "image_metadata_parser",
+      "major_risk": "Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Grammar",
+      "category_id": "grammar",
+      "category_tamil": "இலக்கணம்",
+      "content_type": "grammar",
+      "expected_parser_family": "grammar_parser",
+      "major_risk": "Sutra, explanation, example, exception, and commentator boundaries are unverified.",
+      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+    },
+    {
+      "architecture_status": "ready",
+      "category_english": "Sangam Literature",
+      "category_id": "sangam_literature",
+      "category_tamil": "சங்க இலக்கியம்",
+      "content_type": "poetry",
+      "expected_parser_family": "verse_parser",
+      "major_risk": "Bounded pilot evidence validates parser output, schema mapping, and provenance.",
+      "recommended_next_step": "Retain bounded expansion gates and sample structural variants before scale."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Eighteen Minor Works",
+      "category_id": "eighteen_minor_works",
+      "category_tamil": "பதினெண் கீழ்க்கணக்கு",
+      "content_type": "poetry",
+      "expected_parser_family": "verse_parser",
+      "major_risk": "Work-specific numbering, colophons, meter, commentary, and author labels still require fixtures.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Tamil Epics",
+      "category_id": "epics",
+      "category_tamil": "காப்பியங்கள்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Religious Literature",
+      "category_id": "religious_literature",
+      "category_tamil": "சமய இலக்கியங்கள்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "ready",
+      "category_english": "Saivism",
+      "category_id": "saivam",
+      "category_tamil": "சைவம்",
+      "content_type": "poetry",
+      "expected_parser_family": "verse_parser",
+      "major_risk": "Bounded pilot evidence validates parser output, schema mapping, and provenance.",
+      "recommended_next_step": "Retain bounded expansion gates and sample structural variants before scale."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Vaishnavism",
+      "category_id": "vaishnavam",
+      "category_tamil": "வைணவம்",
+      "content_type": "poetry",
+      "expected_parser_family": "verse_parser",
+      "major_risk": "Work-specific numbering, colophons, meter, commentary, and author labels still require fixtures.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Christian Literature",
+      "category_id": "christian_literature",
+      "category_tamil": "கிறித்துவம்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Islamic Literature",
+      "category_id": "islamic_literature",
+      "category_tamil": "இசுலாம்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Minor Literary Forms",
+      "category_id": "minor_literary_forms",
+      "category_tamil": "சிற்றிலக்கியங்கள்",
+      "content_type": "poetry",
+      "expected_parser_family": "verse_parser",
+      "major_risk": "Work-specific numbering, colophons, meter, commentary, and author labels still require fixtures.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Ethical Works",
+      "category_id": "ethical_works",
+      "category_tamil": "நெறி நூல்கள்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Siddhar Literature",
+      "category_id": "siddhar_literature",
+      "category_tamil": "சித்தர் இலக்கியம்",
+      "content_type": "poetry",
+      "expected_parser_family": "verse_parser",
+      "major_risk": "Work-specific numbering, colophons, meter, commentary, and author labels still require fixtures.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Twentieth-Century Poetry",
+      "category_id": "twentieth_century_poetry",
+      "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் கவிதைகள்",
+      "content_type": "poetry",
+      "expected_parser_family": "verse_parser",
+      "major_risk": "Work-specific numbering, colophons, meter, commentary, and author labels still require fixtures.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Twentieth-Century Prose",
+      "category_id": "twentieth_century_prose",
+      "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
+      "content_type": "prose",
+      "expected_parser_family": "prose_parser",
+      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
+      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Folk Literature",
+      "category_id": "folk_literature",
+      "category_tamil": "நாட்டுப்புற இலக்கியங்கள்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Children's Literature",
+      "category_id": "childrens_literature",
+      "category_tamil": "சிறுவர் இலக்கியங்கள்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Literature Roman",
+      "category_id": "romanized_literature",
+      "category_tamil": "ரோமன் வடிவம்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "ready",
+      "category_english": "Dictionaries",
+      "category_id": "dictionaries",
+      "category_tamil": "அகராதிகள்",
+      "content_type": "dictionary",
+      "expected_parser_family": "dictionary_parser",
+      "major_risk": "Bounded pilot evidence validates parser output, schema mapping, and provenance.",
+      "recommended_next_step": "Retain bounded expansion gates and sample structural variants before scale."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Nigandus / Lexicons",
+      "category_id": "nigandus",
+      "category_tamil": "நிகண்டுகள்",
+      "content_type": "dictionary",
+      "expected_parser_family": "dictionary_parser",
+      "major_risk": "Sense order, examples, cross-references, and encyclopedia article structure are not generally proven.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Tamil Books in Other Languages",
+      "category_id": "tamil_books_in_other_languages",
+      "category_tamil": "பிற மொழியில் தமிழ் நூல்கள்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Encyclopedias",
+      "category_id": "encyclopedias",
+      "category_tamil": "கலைக்களஞ்சியங்கள்",
+      "content_type": "encyclopedia",
+      "expected_parser_family": "dictionary_parser",
+      "major_risk": "The registry assigns dictionary_parser, but mixed article, reference, table, and media structure is unproven.",
+      "recommended_next_step": "Inspect three fixtures and decide whether a dedicated encyclopedia adapter is required."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Terminology Collections",
+      "category_id": "terminology_collections",
+      "category_tamil": "கலைச்சொல் தொகுப்புகள்",
+      "content_type": "dictionary",
+      "expected_parser_family": "table_parser",
+      "major_risk": "Column identity, multilingual cells, repeated headers, and domain labels are unverified.",
+      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Manuscript Gallery",
+      "category_id": "manuscript_gallery",
+      "category_tamil": "சுவடிக்காட்சியகம்",
+      "content_type": "manuscript",
+      "expected_parser_family": "image_metadata_parser",
+      "major_risk": "Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Cultural Gallery",
+      "category_id": "cultural_gallery",
+      "category_tamil": "பண்பாட்டுக் காட்சியகம்",
+      "content_type": "mixed",
+      "expected_parser_family": "image_metadata_parser",
+      "major_risk": "Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Public-Domain Books",
+      "category_id": "public_domain_books",
+      "category_tamil": "நாட்டுடைமை நூல்கள்",
+      "content_type": "mixed",
+      "expected_parser_family": "mixed_parser",
+      "major_risk": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Public-Domain Tamil Scholars' Books in Image Form",
+      "category_id": "public_domain_scholars_image_books",
+      "category_tamil": "நாட்டுடைமையாக்கப்பட்ட தமிழறிஞர்களின் நூல்கள் உருப்பட வடிவில்",
+      "content_type": "manuscript",
+      "expected_parser_family": "image_metadata_parser",
+      "major_risk": "Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Public-Domain Tamil Scholars' Books in Typed Form",
+      "category_id": "public_domain_scholars_typed_books",
+      "category_tamil": "நாட்டுடைமையாக்கப்பட்ட தமிழறிஞர்களின் நூல்கள் தட்டச்சு வடிவில்",
+      "content_type": "prose",
+      "expected_parser_family": "prose_parser",
+      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
+      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+    },
+    {
+      "architecture_status": "not_ready",
+      "category_english": "Image Books",
+      "category_id": "image_books",
+      "category_tamil": "உருப்பட நூல்கள்",
+      "content_type": "manuscript",
+      "expected_parser_family": "image_metadata_parser",
+      "major_risk": "Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified.",
+      "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Books on Tamil Nadu History, Art, Culture, and Literature",
+      "category_id": "tamil_history_culture_literature_books",
+      "category_tamil": "தமிழக வரலாறு, கலைப் பண்பாடு, இலக்கியம் தொடர்பான நூல்கள்",
+      "content_type": "prose",
+      "expected_parser_family": "prose_parser",
+      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
+      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+    },
+    {
+      "architecture_status": "partial",
+      "category_english": "Other Library Websites",
+      "category_id": "external_library_websites",
+      "category_tamil": "பிற நூலக இணையத் தளங்கள்",
+      "content_type": "external_links",
+      "expected_parser_family": "external_link_registry",
+      "major_risk": "Institution, robots, rights, scope, and approval metadata need a registry-only pilot.",
+      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+    }
+  ],
+  "citation_readiness": {
+    "citation_text_coverage": 66.7,
+    "identity_traceability": 100.0,
+    "score": 96.7,
+    "source_url_coverage": 100.0,
+    "status": "strong"
+  },
+  "corpus_mutations": 0,
+  "expansion_readiness": {
+    "answer": "The common architecture can represent all 32 categories at a registry and provenance level, but only three categories and two parser families have extraction evidence. Mixed, image, encyclopedia, and several structured-text families require pilots.",
+    "category_count": 32,
+    "score": 41.7,
+    "status_counts": {
+      "not_ready": 16,
+      "partial": 13,
+      "ready": 3
+    },
+    "website_wide_answer": "PARTIAL_NOT_SCALE_READY"
+  },
+  "future_category_readiness": [
+    {
+      "category": "grammar",
+      "evidence": "Schema v2 defines grammar_rule, but grammar_parser remains a fixture-free stub.",
+      "major_risk": "Rule, explanation, example, exception, and commentary boundaries.",
+      "status": "partial"
+    },
+    {
+      "category": "prose",
+      "evidence": "Schema v2 defines prose_section, but no prose fixture validates hierarchy or rights metadata.",
+      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights boundaries.",
+      "status": "partial"
+    },
+    {
+      "category": "encyclopedias",
+      "evidence": "The dictionary envelope is reusable, but the assigned parser has no article/media evidence.",
+      "major_risk": "Flattening sections, references, cross-links, tables, and media into a definition.",
+      "status": "not_ready"
+    },
+    {
+      "category": "mixed_content",
+      "evidence": "MixedParser is a conservative schema stub with no proven source dispatch.",
+      "major_risk": "Losing relationships between verse, prose, commentary, tables, and assets.",
+      "status": "not_ready"
+    }
+  ],
+  "llm_calls": 0,
+  "metadata_readiness": {
+    "author_coverage": 92.9,
+    "category_coverage": 100.0,
+    "note": "Dictionary author is legitimately absent in the sampled entry; coverage is descriptive, not fabricated.",
+    "score": 98.2,
+    "source_coverage": 100.0,
+    "title_coverage": 100.0
+  },
+  "network_requests": 0,
+  "parser_readiness": {
+    "matrix": [
+      {
+        "category_count": 4,
+        "compatible_with_schema_v2": true,
+        "major_gap": "Sense order, examples, cross-references, and encyclopedia article structure are not generally proven.",
+        "parser_family": "dictionary_parser",
+        "status": "pilot_verified"
+      },
+      {
+        "category_count": 1,
+        "compatible_with_schema_v2": true,
+        "major_gap": "Institution, robots, rights, scope, and approval metadata need a registry-only pilot.",
+        "parser_family": "external_link_registry",
+        "status": "stub_unverified"
+      },
+      {
+        "category_count": 1,
+        "compatible_with_schema_v2": true,
+        "major_gap": "Sutra, explanation, example, exception, and commentator boundaries are unverified.",
+        "parser_family": "grammar_parser",
+        "status": "stub_unverified"
+      },
+      {
+        "category_count": 5,
+        "compatible_with_schema_v2": true,
+        "major_gap": "Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified.",
+        "parser_family": "image_metadata_parser",
+        "status": "stub_unverified"
+      },
+      {
+        "category_count": 10,
+        "compatible_with_schema_v2": true,
+        "major_gap": "No dispatch contract has been proven for pages combining verse, prose, tables, or media.",
+        "parser_family": "mixed_parser",
+        "status": "stub_unverified"
+      },
+      {
+        "category_count": 3,
+        "compatible_with_schema_v2": true,
+        "major_gap": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
+        "parser_family": "prose_parser",
+        "status": "stub_unverified"
+      },
+      {
+        "category_count": 1,
+        "compatible_with_schema_v2": true,
+        "major_gap": "Column identity, multilingual cells, repeated headers, and domain labels are unverified.",
+        "parser_family": "table_parser",
+        "status": "stub_unverified"
+      },
+      {
+        "category_count": 7,
+        "compatible_with_schema_v2": true,
+        "major_gap": "Work-specific numbering, colophons, meter, commentary, and author labels still require fixtures.",
+        "parser_family": "verse_parser",
+        "status": "pilot_verified"
+      }
+    ],
+    "output_compatibility": 100.0,
+    "parser_family_coverage": 25.0,
+    "score": 62.5,
+    "total_parser_families": 8,
+    "validation_consistency": 100.0,
+    "verified_parser_families": [
+      "dictionary_parser",
+      "verse_parser"
+    ]
+  },
+  "readiness_scores": {
+    "analytics_readiness": 69.5,
+    "citation_readiness": 96.7,
+    "expansion_readiness": 41.7,
+    "metadata_readiness": 98.2,
+    "overall_readiness": 74.4,
+    "parser_readiness": 62.5,
+    "schema_readiness": 77.9
+  },
+  "scaling_risks": [
+    "Treating a shared schema envelope as proof that source-specific parsers are interchangeable.",
+    "Flattening work-specific hierarchy when expanding verse_parser to new traditions.",
+    "Using dictionary_parser for encyclopedias without proving article and media boundaries.",
+    "Scaling modern prose before rights, edition, page, and footnote metadata are explicit.",
+    "Introducing OCR or mixed-content ingestion without confidence and source-image traceability."
+  ],
+  "schema_readiness": {
+    "category_specific_gaps": [
+      "Standalone commentary identity and relationships are partial.",
+      "Grammar rule subfields are specified but unverified.",
+      "Prose hierarchy and page/footnote fields are unverified.",
+      "Encyclopedia references/media and manuscript/OCR contracts are unverified."
+    ],
+    "common_required_field_coverage": 100.0,
+    "field_reuse": {
+      "evidence": "All verified records reuse stable identity, category, work, content, language, source, and parser fields.",
+      "status": "strong"
+    },
+    "field_sparsity": {
+      "evidence": "Optional poetry and lexical fields are intentionally sparse across record types.",
+      "status": "expected_but_requires_contracts"
+    },
+    "observed_record_types": [
+      "dictionary_entry",
+      "verse"
+    ],
+    "record_type_evidence_coverage": 25.0,
+    "schema_stress_score": 83.3,
+    "score": 77.9,
+    "supported_record_type_count": 8
+  },
+  "schema_version": "website-corpus-v2",
+  "source_site": "Tamil Virtual Academy / TamilVU",
+  "strategic_recommendation": {
+    "category_id": "grammar",
+    "decision": "RECOMMENDED_NEXT_PILOT",
+    "next_action": "Collect exactly three allowlisted grammar fixtures in a separately approved phase.",
+    "parser_family": "grammar_parser",
+    "reason": "Grammar introduces a genuinely new structured-text record type while remaining typed HTML/text. It tests rule, explanation, example, exception, and commentary boundaries without the rights and edition complexity of modern prose or the mixed media/reference risk of encyclopedias.",
+    "why_not_encyclopedia": "The current dictionary_parser assignment may be structurally wrong for articles containing sections, references, tables, and media.",
+    "why_not_prose": "Prose is valuable but adds chapter/page/footnote and rights-review variables before the grammar contract is proven."
+  },
+  "verified_category_count": 3,
+  "verified_evidence": [
+    {
+      "category_id": "dictionaries",
+      "evidence_path": "tests/fixtures/dictionary/source_metadata.json",
+      "parser_family": "dictionary_parser",
+      "record_count": 1
+    },
+    {
+      "category_id": "saivam",
+      "evidence_path": "data/processed/normalized/thirumurai_04_normalized.jsonl",
+      "parser_family": "verse_parser",
+      "record_count": 10
+    },
+    {
+      "category_id": "sangam_literature",
+      "evidence_path": "tests/fixtures/sangam_literature/source_metadata.json",
+      "parser_family": "verse_parser",
+      "record_count": 3
+    }
+  ],
+  "verified_record_count": 14
+}

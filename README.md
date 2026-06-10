@@ -226,3 +226,13 @@ offline and read-only with respect to pilot corpora.
 ```bash
 python3 src/corpus/validate_pilot_categories.py
 ```
+
+## Multi-Category Readiness Audit
+
+The readiness audit uses only the three verified local pilots to score schema, parser,
+metadata, citation, analytics, and 32-category expansion readiness. It performs no network
+access, ingestion, embedding, indexing, or corpus mutation.
+
+```bash
+python3 src/corpus/audit_multi_category_readiness.py
+```
