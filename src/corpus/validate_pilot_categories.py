@@ -14,6 +14,7 @@ from corpus.normalize_category_corpus import normalize_record
 from corpus.validate_category_corpus import REQUIRED_FIELDS, validate_records
 from parsers.base_parser import ParseContext
 from parsers.dictionary_parser import DictionaryParser
+from parsers.verse_parser import VerseParser
 
 DEFAULT_PLAN = Path("data/processed/corpus_registry/pilot_category_plan.json")
 DEFAULT_OUTPUT = Path(
@@ -40,6 +41,16 @@ OPTIONAL_FIELDS = {
         "part_of_speech",
         "collection_id",
         "period",
+    ),
+    "sangam_literature": (
+        "author",
+        "poem_no",
+        "verse_no",
+        "song_no",
+        "thinai",
+        "thurai",
+        "colophon",
+        "commentary_url",
     ),
 }
 
@@ -69,11 +80,12 @@ def record_types(records: list[dict[str, Any]]) -> list[str]:
 
 def citation_readiness(category_id: str, records: list[dict[str, Any]]) -> dict[str, Any]:
     source_ready = coverage(records, ["source_url"])
-    identity_fields = (
-        ["book_id", "work_id", "hymn_id", "song_no"]
-        if category_id == "saivam"
-        else ["book_id", "work_id", "entry_headword"]
-    )
+    if category_id == "saivam":
+        identity_fields = ["book_id", "work_id", "hymn_id", "song_no"]
+    elif category_id == "sangam_literature":
+        identity_fields = ["book_id", "work_id", "poem_no"]
+    else:
+        identity_fields = ["book_id", "work_id", "entry_headword"]
     identity_ready = coverage(records, identity_fields)
     citation_text_coverage = (
         round(
@@ -109,6 +121,16 @@ def analytical_usefulness(category_id: str) -> dict[str, Any]:
                 "commentary comparison",
                 "deity and devotional motif analysis",
                 "poetic language study",
+            ],
+        }
+    if category_id == "sangam_literature":
+        return {
+            "score": 96,
+            "uses": [
+                "anthology and poem lookup",
+                "poet comparison",
+                "thinai and situation analysis",
+                "classical poetic language comparison",
             ],
         }
     return {
@@ -174,6 +196,31 @@ def load_verified_records(
         return parsed, [normalize_record(record) for record in parsed], str(
             metadata_path.relative_to(base_dir)
         )
+    if category_id == "sangam_literature":
+        metadata_path = base_dir / pilot["source_path"]
+        metadata = load_json(metadata_path)
+        poem_fixture = next(
+            item for item in metadata["fixtures"] if item["page_type"] == "poem_group"
+        )
+        context = ParseContext(
+            category_id=category_id,
+            category_tamil=pilot["category_tamil"],
+            parser_family=pilot["parser_family"],
+            book_id=pilot["book_id"],
+            work_id=pilot["work_id"],
+            pilot_id=pilot["pilot_id"],
+        )
+        source = {
+            **poem_fixture,
+            "source_work": metadata["source_work"],
+            "html_content": (base_dir / poem_fixture["fixture_path"]).read_text(
+                encoding="utf-8"
+            ),
+        }
+        parsed = VerseParser().parse(source, context)
+        return parsed, [normalize_record(record) for record in parsed], str(
+            metadata_path.relative_to(base_dir)
+        )
     raise ValueError(f"unsupported verified pilot category: {category_id}")
 
 
@@ -185,7 +232,7 @@ def compare_pilot(
     validation = validate_records(normalized, category_id)
     required_coverage = coverage(normalized, list(REQUIRED_FIELDS))
     optional_coverage = coverage(normalized, list(OPTIONAL_FIELDS.get(category_id, ())))
-    commentary_applicable = category_id == "saivam"
+    commentary_applicable = category_id in {"saivam", "sangam_literature"}
     commentary_url_coverage = (
         coverage(normalized, ["commentary_url"]) if commentary_applicable else None
     )
@@ -252,19 +299,28 @@ def compare_pilot(
 def schema_stress_test(comparisons: list[dict[str, Any]]) -> list[dict[str, str]]:
     by_category = {item["category_id"]: item for item in comparisons}
     verse = by_category.get("saivam")
+    sangam = by_category.get("sangam_literature")
     dictionary = by_category.get("dictionaries")
     return [
         {
             "schema_area": "verse_records",
-            "status": "supported" if verse and verse["validation_errors"] == 0 else "not_supported",
-            "evidence": (
-                f"{verse['records_normalized']} normalized verse records retain verse, hymn, "
-                "author, commentary, and source identity."
+            "status": (
+                "supported"
                 if verse
+                and verse["validation_errors"] == 0
+                and sangam
+                and sangam["validation_errors"] == 0
+                else "partial"
+            ),
+            "evidence": (
+                f"{verse['records_normalized']} devotional and "
+                f"{sangam['records_normalized']} Sangam verse records retain their distinct "
+                "hierarchies, authorship, literary metadata, and source identity."
+                if verse and sangam
                 else "No verified verse pilot was available."
             ),
             "recommended_change": (
-                "Promote frequently queried poetry metadata only after another verse family proves it."
+                "Keep hymn and anthology metadata optional and type-specific within the common envelope."
             ),
         },
         {
@@ -304,18 +360,6 @@ def next_pilot_recommendation(plan: dict[str, Any]) -> dict[str, Any]:
         for pilot in plan.get("pilots", [])
         if pilot.get("status") not in VERIFIED_STATUSES
     }
-    if "sangam_literature" in pending:
-        return {
-            "category_id": "sangam_literature",
-            "parser_family": "verse_parser",
-            "reason": (
-                "Grammar and Sangam both still require fixtures; Sangam is recommended because "
-                "it contributes poem, poet, thinai/thurai, colophon, and commentary evidence "
-                "directly to literary comparison. Collect fixtures before ingestion."
-            ),
-            "risk": "high",
-            "next_action": "collect exactly three allowlisted Sangam fixtures",
-        }
     return {
         "category_id": "grammar",
         "parser_family": "grammar_parser",
@@ -381,8 +425,9 @@ def render_report(summary: dict[str, Any]) -> str:
 - Network requests: `0`
 - LLM calls: `0`
 
-Both pilots validate the common schema envelope, deterministic IDs, Tamil text, and exact
-source URLs. The comparison also exposes an intentional schema gap: commentary is
+The verified pilots validate the common schema envelope, deterministic IDs, Tamil text,
+and exact source URLs across two verse traditions and one dictionary family. The
+comparison also exposes an intentional schema gap: commentary is
 preserved, but not yet modeled as an independent record.
 
 ## Cross-Parser Comparison
@@ -392,7 +437,8 @@ preserved, but not yet modeled as an independent record.
 {chr(10).join(rows)}
 
 Optional-field coverage is descriptive, not a validation failure. Dictionary part of speech
-is absent because the sampled source does not label it.
+is absent because the sampled source does not label it. Sangam `thurai` preserves source
+colophon prose and is not treated as a controlled taxonomy.
 
 ## Schema Stress Test
 
@@ -408,6 +454,7 @@ is absent because the sampled source does not label it.
 
 - Saivam evidence is a bounded Fourth Thirumurai seed, not all Saiva literature.
 - Dictionary evidence is one entry from three fixture pages, not a dictionary-wide sample.
+- Sangam evidence is three Natrinai poems from three fixture pages, not the anthology.
 - Optional fields differ legitimately across record types.
 - Standalone commentary identity and relationships remain undefined.
 - Dictionary sense segmentation and part-of-speech extraction need varied fixtures.

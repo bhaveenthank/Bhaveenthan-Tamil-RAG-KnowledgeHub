@@ -69,16 +69,51 @@
       "source_url_coverage": 1.0,
       "validation_errors": 0,
       "validation_status": "VALID"
+    },
+    {
+      "analytical_usefulness": {
+        "score": 96,
+        "uses": [
+          "anthology and poem lookup",
+          "poet comparison",
+          "thinai and situation analysis",
+          "classical poetic language comparison"
+        ]
+      },
+      "category_id": "sangam_literature",
+      "category_tamil": "சங்க இலக்கியம்",
+      "citation_readiness": {
+        "citation_text_coverage": 1.0,
+        "identity_coverage": 1.0,
+        "source_url_coverage": 1.0,
+        "status": "READY"
+      },
+      "commentary_url_coverage": 1.0,
+      "evidence_path": "tests/fixtures/sangam_literature/source_metadata.json",
+      "manifest_record_count": 3,
+      "metadata_completeness": 1.0,
+      "optional_field_coverage": 1.0,
+      "parser_family": "verse_parser",
+      "readiness_score": 99.6,
+      "record_types": [
+        "verse"
+      ],
+      "records_normalized": 3,
+      "records_parsed": 3,
+      "required_field_coverage": 1.0,
+      "source_url_coverage": 1.0,
+      "validation_errors": 0,
+      "validation_status": "VALID"
     }
   ],
   "llm_calls": 0,
   "network_requests": 0,
   "next_recommended_pilot": {
-    "category_id": "sangam_literature",
-    "next_action": "collect exactly three allowlisted Sangam fixtures",
-    "parser_family": "verse_parser",
-    "reason": "Grammar and Sangam both still require fixtures; Sangam is recommended because it contributes poem, poet, thinai/thurai, colophon, and commentary evidence directly to literary comparison. Collect fixtures before ingestion.",
-    "risk": "high"
+    "category_id": "grammar",
+    "next_action": "collect exactly three allowlisted grammar fixtures",
+    "parser_family": "grammar_parser",
+    "reason": "Grammar is the next simpler structured-text parser family.",
+    "risk": "medium"
   },
   "parser_families": [
     "dictionary_parser",
@@ -86,8 +121,8 @@
   ],
   "schema_coverage": [
     {
-      "evidence": "10 normalized verse records retain verse, hymn, author, commentary, and source identity.",
-      "recommended_change": "Promote frequently queried poetry metadata only after another verse family proves it.",
+      "evidence": "10 devotional and 3 Sangam verse records retain their distinct hierarchies, authorship, literary metadata, and source identity.",
+      "recommended_change": "Keep hymn and anthology metadata optional and type-specific within the common envelope.",
       "schema_area": "verse_records",
       "status": "supported"
     },
@@ -107,7 +142,8 @@
   "summary_version": "pilot-category-validation-v1",
   "verified_categories": [
     "dictionaries",
-    "saivam"
+    "saivam",
+    "sangam_literature"
   ],
-  "verified_category_count": 2
+  "verified_category_count": 3
 }

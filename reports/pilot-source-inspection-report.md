@@ -8,8 +8,8 @@ source content.
 
 ## Status
 
-- Already verified: `saivam, dictionaries`
-- Remaining pilot categories: `4`
+- Already verified: `sangam_literature, saivam, dictionaries`
+- Remaining pilot categories: `3`
 - Planned fixtures per category: `3`
 - Network requests: `0`
 - Source-specific structures: `unconfirmed until allowlisted fixture collection`
@@ -19,7 +19,6 @@ source content.
 | Order | Category | Parser Family | Fixture Type | Count | Risk | Expected Source Structure | Inspection Note |
 | ---: | --- | --- | --- | ---: | --- | --- | --- |
 | 2 | இலக்கணம் | `grammar_parser` | `html` | 3 | medium | Book/chapter headings with numbered sutra or rule text, explanation, examples, exceptions, and possible commentary. | Rule boundaries and explanation labels must be confirmed from source HTML. |
-| 3 | சங்க இலக்கியம் | `verse_parser` | `html` | 3 | high | Anthology/work hierarchy with poem number, poet, thinai/thurai metadata, verse lines, colophon, and optional commentary. | Poem boundaries and source-provided literary metadata must not be flattened. |
 | 4 | இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள் | `prose_parser` | `text` | 3 | high | Book, chapter, section, paragraph, page, footnote, and author or edition metadata in typed HTML or document-oriented pages. | Rights and public-domain status must be confirmed before any source capture. |
 | 5 | கலைக்களஞ்சியங்கள் | `dictionary_parser` | `mixed` | 3 | high | Headword article with sections, references, author/editor metadata, cross-links, tables, and possible images. | The current dictionary-parser assignment may need a dedicated encyclopedia adapter after fixtures expose mixed article and media structure. |
 

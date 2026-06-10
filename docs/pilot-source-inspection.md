@@ -23,17 +23,12 @@ website or full category. They:
 - make parser changes deterministic and regression-testable;
 - limit copyright and storage risk by excluding full books and bulk exports.
 
-This phase creates only fixture plans and placeholder directories. It does not collect live
-HTML or ingest the five remaining categories.
-
 ## Remaining Pilot Risks
 
 | Category Type | Main Parser Risk |
 | --- | --- |
 | Grammar | Confusing rule text with explanation, example, exception, or commentary |
-| Sangam poetry | Losing anthology, poem, poet, thinai/thurai, colophon, or commentary hierarchy |
 | Twentieth-century prose | Paragraph/page/footnote boundaries plus edition and rights questions |
-| Dictionary | Losing sense order, labels, examples, etymology, or cross-references |
 | Encyclopedia | Treating mixed article, reference, table, link, and media content as a simple dictionary entry |
 
 ## Fixture Contract
@@ -48,15 +43,26 @@ Fixtures must be small, allowlisted, source-attributed, and manually reviewed. F
 full category dumps, credentials, generated corpora, image archives, and unapproved
 copyrighted bulk text are prohibited.
 
+## Sangam Inspection Result
+
+The Natrinai pilot confirms why inspection is necessary. Its public work page is an iframe
+wrapper, the left frame contains ten-poem navigation ranges, and a legacy JSP endpoint
+contains multiple poems plus literary metadata.
+
+Exactly three allowlisted pages were inspected and represented locally: wrapper,
+navigation, and one bounded poem-group excerpt. Original response SHA-256 values and exact
+URLs are stored separately in fixture metadata.
+
+The fixtures prove poem number, thinai, verse lines, commentary URL, situation, and poet
+for the sample. They do not prove all Natrinai variants, commentary parsing, or other
+Sangam anthologies.
+
 ## Development Order
 
-Start with `dictionary_parser` for ordinary dictionary entries because bounded headword and
-sense structures are likely to be the simplest new structured-text unit. Continue with
-`grammar_parser`, the Sangam `verse_parser` variant, `prose_parser` after rights review, and
-encyclopedia adaptation last.
-
-The encyclopedia use of `dictionary_parser` is the highest-risk assignment: fixtures may
-prove that a dedicated adapter or `mixed_parser` delegation is necessary.
+With dictionary and Sangam pilots validated, continue with `grammar_parser`, then
+`prose_parser` after rights review, and encyclopedia adaptation last. Encyclopedia use of
+`dictionary_parser` remains the highest-risk assignment because fixtures may prove that a
+dedicated adapter or `mixed_parser` delegation is necessary.
 
 ## Readiness Gate
 

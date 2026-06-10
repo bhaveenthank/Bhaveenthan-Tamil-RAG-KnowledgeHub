@@ -1,0 +1,30 @@
+{
+  "fixture_set": "natrinai_pilot_v1",
+  "source_work": "நற்றிணை நானூறு",
+  "publisher": "Tamil Virtual Academy / TamilVU",
+  "retrieved_on": "2026-06-10",
+  "fixture_limit": 3,
+  "fixtures": [
+    {
+      "fixture_path": "tests/fixtures/sangam_literature/01_work_index.html",
+      "page_type": "work_index",
+      "source_url": "https://www.tamilvu.org/ta/library-l1210-html-l1210ind-122233",
+      "original_sha256": "80423a5afed1d3027c784a54566aceadef8dfcf6f8ad64012c1a2bd1e311ff9e",
+      "content_scope": "Relevant iframe endpoints only"
+    },
+    {
+      "fixture_path": "tests/fixtures/sangam_literature/02_navigation.html",
+      "page_type": "poem_navigation",
+      "source_url": "https://www.tamilvu.org/slet/l1210/l1210lft.jsp",
+      "original_sha256": "e53065c7c160dce1d6a4f807b262484b97350f0c44c8edc8fbb982c2d0b9060a",
+      "content_scope": "Representative ten-poem range links only"
+    },
+    {
+      "fixture_path": "tests/fixtures/sangam_literature/03_poems_1_3.html",
+      "page_type": "poem_group",
+      "source_url": "https://www.tamilvu.org/slet/l1210/l1210son.jsp?subid=3362",
+      "original_sha256": "ad2be26fd154fdc230fbac39eceb61f8c87f5f0167f77d30ac02743ed86667fe",
+      "content_scope": "Source-faithful excerpt containing poems 1-3"
+    }
+  ]
+}

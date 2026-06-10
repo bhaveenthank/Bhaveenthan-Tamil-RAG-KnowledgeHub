@@ -20,6 +20,7 @@ def test_verified_categories_are_detected() -> None:
     )
 
     assert [pilot["category_id"] for pilot in verified_pilots(plan)] == [
+        "sangam_literature",
         "saivam",
         "dictionaries",
     ]
@@ -32,6 +33,7 @@ def test_comparison_and_schema_stress_test_exist() -> None:
         "verse_parser",
         "dictionary_parser",
     }
+    assert summary["verified_category_count"] == 3
     assert {item["schema_area"] for item in summary["schema_coverage"]} == {
         "verse_records",
         "commentary_records",
@@ -48,9 +50,9 @@ def test_comparison_and_schema_stress_test_exist() -> None:
 def test_next_category_recommendation_exists() -> None:
     recommendation = build_summary(ROOT)["next_recommended_pilot"]
 
-    assert recommendation["category_id"] == "sangam_literature"
-    assert recommendation["parser_family"] == "verse_parser"
-    assert recommendation["next_action"] == "collect exactly three allowlisted Sangam fixtures"
+    assert recommendation["category_id"] == "grammar"
+    assert recommendation["parser_family"] == "grammar_parser"
+    assert recommendation["next_action"] == "collect exactly three allowlisted grammar fixtures"
 
 
 def test_outputs_are_generated(tmp_path) -> None:
@@ -60,7 +62,7 @@ def test_outputs_are_generated(tmp_path) -> None:
     write_outputs(summary, output_path=output, report_path=report)
 
     loaded = json.loads(output.read_text(encoding="utf-8"))
-    assert loaded["verified_category_count"] == 2
+    assert loaded["verified_category_count"] == 3
     assert report.exists()
     assert "Cross-Parser Comparison" in report.read_text(encoding="utf-8")
 

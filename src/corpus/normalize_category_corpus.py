@@ -36,6 +36,17 @@ def normalize_record(record: dict[str, Any]) -> dict[str, Any]:
             record.get("part_of_speech") or ""
         ).strip()
         normalized["content_text"] = normalized["definition"]
+    if normalized.get("category_id") == "sangam_literature":
+        for field in (
+            "poem_no",
+            "thinai",
+            "thurai",
+            "colophon",
+            "author",
+            "commentary_url",
+        ):
+            normalized[field] = str(record.get(field) or "").strip()
+        normalized["content_text"] = normalized["verse_text"]
     return normalized
 
 

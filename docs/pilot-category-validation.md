@@ -29,13 +29,21 @@ The dictionary pilot uses a headword and definition as its primary unit. It has 
 verse, or commentary hierarchy. Its strengths are lexical explanation, rare-word support,
 future synonym authority, and comparison between dictionary meaning and literary usage.
 
+### Sangam Literature
+
+The Natrinai pilot adds anthology poem identity, line-preserving verse text, explicit
+thinai, source colophon prose, poet attribution, and commentary URLs. It proves that
+`verse_parser` can support both devotional hymn records and Sangam poem records while
+keeping their distinct literary metadata optional and type-specific.
+
 ## Unified Schema v2 Findings
 
 The shared envelope successfully supports deterministic record IDs, category/book/work
-identity, Tamil content, parser-family metadata, and exact source URLs for both pilots.
+identity, Tamil content, parser-family metadata, and exact source URLs for all three
+verified pilots.
 
-Verse records are supported with preserved Thirumurai-specific fields. Dictionary entries
-are supported with headword and definition fields. Commentary is currently partial at
+Verse records are supported with preserved Thirumurai-specific and Sangam-specific
+fields. Dictionary entries are supported with headword and definition fields. Commentary is currently partial at
 schema level: `pozhppurai`, `kurippurai`, and commentary URLs are preserved on verse
 records, but commentary does not yet have an independent record identity or relationship
 contract.
@@ -55,10 +63,9 @@ to each source family.
 
 ## Next Pilot
 
-Sangam literature is recommended for the next fixture phase. Grammar is structurally
-simpler, but both categories currently need fixtures; Sangam adds greater direct value for
-literary comparison through poem, poet, anthology, thinai/thurai, colophon, and commentary
-metadata.
+Grammar is recommended next. It adds rule, explanation, example, exception, and commentary
+boundaries to the unified schema without taking on the mixed-media risks of encyclopedia
+content.
 
 This recommendation is only for collecting exactly three allowlisted fixtures. It does not
-authorize Sangam ingestion or category scraping.
+authorize grammar ingestion or category scraping.

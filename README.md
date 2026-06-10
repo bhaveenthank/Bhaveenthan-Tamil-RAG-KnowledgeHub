@@ -205,9 +205,21 @@ python3 src/corpus/normalize_category_corpus.py --category-id dictionaries
 python3 src/corpus/validate_category_corpus.py --category-id dictionaries
 ```
 
+## Sangam Literature Pilot
+
+The Sangam pilot uses exactly three allowlisted Natrinai pages. The committed source
+fixture contains a bounded excerpt of poems 1-3 and preserves poem number, thinai, verse
+lines, situation, poet, source URL, and commentary URL. It performs no live fetch.
+
+```bash
+python3 src/corpus/pilot_ingest_category.py --category-id sangam_literature
+python3 src/corpus/normalize_category_corpus.py --category-id sangam_literature
+python3 src/corpus/validate_category_corpus.py --category-id sangam_literature
+```
+
 ## Cross-Pilot Validation
 
-The cross-pilot validator compares only existing verified Saivam and dictionary artifacts,
+The cross-pilot validator compares the verified Saivam, Sangam, and dictionary artifacts,
 measures schema and citation coverage, and recommends the next fixture category. It is
 offline and read-only with respect to pilot corpora.
 

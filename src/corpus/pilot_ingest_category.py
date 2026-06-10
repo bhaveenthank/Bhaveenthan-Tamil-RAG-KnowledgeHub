@@ -35,7 +35,7 @@ def load_fixture_sources(base_dir: Path, metadata_path: Path, limit: int) -> lis
     metadata = load_json(metadata_path)
     fixtures = metadata.get("fixtures", [])
     if len(fixtures) > 3:
-        raise ValueError("dictionary pilot fixture manifest exceeds the three-page limit")
+        raise ValueError("pilot fixture manifest exceeds the three-page limit")
     sources: list[dict[str, Any]] = []
     for fixture in fixtures[:limit]:
         fixture_path = base_dir / fixture["fixture_path"]

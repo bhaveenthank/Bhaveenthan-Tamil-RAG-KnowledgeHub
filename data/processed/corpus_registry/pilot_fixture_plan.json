@@ -20,24 +20,6 @@
       "target_fixture_count": 3
     },
     {
-      "category_id": "sangam_literature",
-      "category_tamil": "சங்க இலக்கியம்",
-      "expected_source_structure": "Anthology/work hierarchy with poem number, poet, thinai/thurai metadata, verse lines, colophon, and optional commentary.",
-      "fixture_focus": [
-        "anthology or poem navigation",
-        "poem with literary metadata",
-        "poem with commentary or colophon"
-      ],
-      "fixture_needed": true,
-      "fixture_type": "html",
-      "notes": "Poem boundaries and source-provided literary metadata must not be flattened.",
-      "parser_family": "verse_parser",
-      "recommended_order": 3,
-      "risk_level": "high",
-      "source_inspection_status": "metadata_only_unconfirmed",
-      "target_fixture_count": 3
-    },
-    {
       "category_id": "twentieth_century_prose",
       "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
       "expected_source_structure": "Book, chapter, section, paragraph, page, footnote, and author or edition metadata in typed HTML or document-oriented pages.",
@@ -75,9 +57,10 @@
     }
   ],
   "network_access": false,
-  "remaining_category_count": 4,
+  "remaining_category_count": 3,
   "source_basis": "pilot registry metadata; no live source fetch",
   "verified_categories": [
+    "sangam_literature",
     "saivam",
     "dictionaries"
   ]

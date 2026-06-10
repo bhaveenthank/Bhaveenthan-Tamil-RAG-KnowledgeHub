@@ -40,6 +40,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
     category_mismatches = 0
     ids: Counter[str] = Counter()
     dictionary_missing: Counter[str] = Counter()
+    sangam_missing: Counter[str] = Counter()
     nondeterministic_ids = 0
 
     for record in records:
@@ -65,12 +66,26 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
                     dictionary_missing[field] += 1
             if record_id and not record_id.startswith("tvu_dictionaries_"):
                 nondeterministic_ids += 1
+        if category_id == "sangam_literature":
+            for field in (
+                "verse_text",
+                "verse_no",
+                "poem_no",
+                "thinai",
+                "author",
+                "source_url",
+            ):
+                if not str(record.get(field) or "").strip():
+                    sangam_missing[field] += 1
+            if record_id and not record_id.startswith("tvu_sangam_literature_"):
+                nondeterministic_ids += 1
 
     duplicates = sorted(record_id for record_id, count in ids.items() if count > 1)
     error_count = (
         sum(missing.values())
         + sum(invalid_types.values())
         + sum(dictionary_missing.values())
+        + sum(sangam_missing.values())
         + malformed_urls
         + category_mismatches
         + nondeterministic_ids
@@ -87,6 +102,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
         "category_mismatches": category_mismatches,
         "duplicate_record_ids": duplicates,
         "dictionary_missing_fields": dict(sorted(dictionary_missing.items())),
+        "sangam_missing_fields": dict(sorted(sangam_missing.items())),
         "nondeterministic_ids": nondeterministic_ids,
         "source_url_coverage": (
             sum(bool(record.get("source_url")) for record in records) / len(records)
@@ -157,6 +173,95 @@ def render_dictionary_readiness(result: dict[str, Any]) -> str:
 `{'PILOT_VERIFIED' if ready else 'REPAIR_REQUIRED'}` for the bounded
 M. Shanmugampillai Tamil-Tamil Agaramuthali fixture set. Before expansion, sample
 multi-row and structurally unusual entry pages under a separately approved phase.
+"""
+
+
+def render_sangam_report(result: dict[str, Any]) -> str:
+    missing_rows = "\n".join(
+        f"| `{field}` | {count} |"
+        for field, count in result["sangam_missing_fields"].items()
+    ) or "| None | 0 |"
+    return f"""# Sangam Literature Pilot Validation Report
+
+## Summary
+
+- Work: `நற்றிணை`
+- Fixture pages: `3`
+- Poems validated: `{result['record_count']}`
+- Status: `{result['status']}`
+- Validation errors: `{result['error_count']}`
+- Source URL coverage: `{result['source_url_coverage']:.1%}`
+- Duplicate record IDs: `{len(result['duplicate_record_ids'])}`
+- Non-deterministic IDs: `{result['nondeterministic_ids']}`
+
+## Required Sangam Fields
+
+| Missing Field | Count |
+| --- | ---: |
+{missing_rows}
+
+The source explicitly labels poem number and thinai. Poet and situation are split from the
+source colophon at its final separator. `thurai` stores the source situation text; it is
+not normalized to a controlled literary taxonomy in this pilot.
+
+## Decision
+
+The Natrinai pilot is `{'PILOT_VERIFIED' if result['status'] == 'VALID' else 'REPAIR_REQUIRED'}`.
+This decision covers three allowlisted fixture pages and three poems only. It does not
+authorize downloading the remaining poem groups or commentary pages.
+"""
+
+
+def render_sangam_readiness(result: dict[str, Any]) -> str:
+    ready = result["status"] == "VALID"
+    return f"""# Sangam Literature Pilot Readiness Report
+
+## Pilot Result
+
+- Fixtures collected: `3`
+- Records parsed: `{result['record_count']}`
+- Records normalized: `{result['record_count']}`
+- Validation errors: `{result['error_count']}`
+- Source URL coverage: `{result['source_url_coverage']:.1%}`
+- Missing required Sangam metadata: `{sum(result['sangam_missing_fields'].values())}`
+
+## Assessment
+
+| Dimension | Result | Evidence |
+| --- | --- | --- |
+| Parser quality | `{'READY' if ready else 'REPAIR'}` | Three poem boundaries parsed from one bounded Natrinai page excerpt |
+| Normalization quality | `{'READY' if ready else 'REPAIR'}` | Unified schema v2 preserves verse lines, poem identity, thinai, poet, and colophon |
+| Metadata quality | `{'READY' if ready else 'REPAIR'}` | Exact source URL, commentary URL, fixture checksum, work, and subid retained |
+| Citation readiness | `{'READY' if ready else 'REPAIR'}` | Work title and poem number provide stable source-unit citations |
+| Literary-analysis contribution | `HIGH` | Adds poet, thinai, situation, and anthology comparison beyond devotional verse |
+
+## Comparison With Saivam
+
+Both pilots preserve ordered Tamil verse, deterministic identity, exact source URLs, and
+commentary links through `verse_parser`. Saivam retains hymn, sacred-place, pann, and
+commentary fields; Sangam retains anthology poem number, thinai, source situation, poet,
+and colophon. The clean validation of both shapes shows that `verse_parser` generalizes
+beyond Thirumurai while keeping tradition-specific fields distinct.
+
+## Missing Metadata Findings
+
+No required field is missing in the three parsed poems. The source does not expose places
+or normalized themes as dedicated fields, and the pilot does not infer them. Commentary
+text is also absent because only the commentary URLs were retained; those pages were
+outside the three-request fixture scope.
+
+## Limits
+
+- Evidence covers exactly three source pages and poems 1-3 from Natrinai.
+- The original content endpoint groups ten poems; the committed fixture is a bounded excerpt.
+- Commentary URLs are preserved but commentary pages were not fetched.
+- `thurai` is source colophon prose, not a normalized scholarly classification.
+- The parser is not yet proven against missing-poet, variant-colophon, or damaged poem pages.
+
+## Recommendation
+
+`{'PILOT_VERIFIED' if ready else 'REPAIR_REQUIRED'}` for the bounded Natrinai fixture set.
+Before expansion, sample structurally unusual poems under a separately approved phase.
 """
 
 
@@ -287,19 +392,23 @@ def validate_category(
     report = report_path or base_dir / (
         "reports/dictionary-pilot-validation-report.md"
         if category_id == "dictionaries"
+        else "reports/sangam-pilot-validation-report.md"
+        if category_id == "sangam_literature"
         else "reports/multi-category-pilot-validation-report.md"
     )
     report.parent.mkdir(parents=True, exist_ok=True)
     report.write_text(
         render_dictionary_report(result)
         if category_id == "dictionaries"
+        else render_sangam_report(result)
+        if category_id == "sangam_literature"
         else render_validation_report(result),
         encoding="utf-8",
     )
     plan = load_json(base_dir / DEFAULT_PLAN)
-    if category_id == "dictionaries" and result["status"] == "VALID":
+    if category_id in {"dictionaries", "sangam_literature"} and result["status"] == "VALID":
         for pilot in plan.get("pilots", []):
-            if pilot.get("category_id") == "dictionaries":
+            if pilot.get("category_id") == category_id:
                 pilot["status"] = "pilot_verified"
                 pilot["validation_status"] = "VALID"
                 pilot["verified_record_count"] = result["record_count"]
@@ -307,8 +416,12 @@ def validate_category(
             json.dumps(plan, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
-        readiness = base_dir / "reports/dictionary-pilot-readiness-report.md"
-        readiness.write_text(render_dictionary_readiness(result), encoding="utf-8")
+        if category_id == "dictionaries":
+            readiness = base_dir / "reports/dictionary-pilot-readiness-report.md"
+            readiness.write_text(render_dictionary_readiness(result), encoding="utf-8")
+        else:
+            readiness = base_dir / "reports/sangam-pilot-readiness-report.md"
+            readiness.write_text(render_sangam_readiness(result), encoding="utf-8")
     comparison = base_dir / "reports/multi-category-pilot-comparison-report.md"
     comparison.write_text(render_comparison_report(plan, result), encoding="utf-8")
     return result

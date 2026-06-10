@@ -21,8 +21,14 @@
       "sample_scope": "small",
       "max_books": 1,
       "max_records": 10,
-      "status": "planned",
-      "source_mode": "pending_inspection"
+      "status": "pilot_verified",
+      "source_mode": "fixture_html",
+      "source_path": "tests/fixtures/sangam_literature/source_metadata.json",
+      "book_id": "ettuthokai",
+      "work_id": "natrinai",
+      "notes": "Exactly three allowlisted Natrinai fixture pages collected; the poem fixture contains a bounded excerpt of poems 1-3.",
+      "validation_status": "VALID",
+      "verified_record_count": 3
     },
     {
       "pilot_id": "pilot_003",
