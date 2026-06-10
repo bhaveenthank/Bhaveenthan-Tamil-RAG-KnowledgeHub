@@ -2,24 +2,6 @@
   "fixture_plan_version": "pilot-fixture-plan-v1",
   "fixtures": [
     {
-      "category_id": "dictionaries",
-      "category_tamil": "அகராதிகள்",
-      "expected_source_structure": "Headword navigation with one or more senses, grammatical labels, examples, etymology, and cross-references.",
-      "fixture_focus": [
-        "headword index or navigation",
-        "single-sense entry",
-        "multi-sense entry with cross-reference"
-      ],
-      "fixture_needed": true,
-      "fixture_type": "dictionary_entry",
-      "notes": "A bounded dictionary entry is the simplest new structured-text parser pilot.",
-      "parser_family": "dictionary_parser",
-      "recommended_order": 1,
-      "risk_level": "medium",
-      "source_inspection_status": "metadata_only_unconfirmed",
-      "target_fixture_count": 3
-    },
-    {
       "category_id": "grammar",
       "category_tamil": "இலக்கணம்",
       "expected_source_structure": "Book/chapter headings with numbered sutra or rule text, explanation, examples, exceptions, and possible commentary.",
@@ -93,9 +75,10 @@
     }
   ],
   "network_access": false,
-  "remaining_category_count": 5,
+  "remaining_category_count": 4,
   "source_basis": "pilot registry metadata; no live source fetch",
   "verified_categories": [
-    "saivam"
+    "saivam",
+    "dictionaries"
   ]
 }

@@ -31,6 +31,24 @@ def load_jsonl(path: Path, limit: int) -> list[dict[str, Any]]:
     return records
 
 
+def load_fixture_sources(base_dir: Path, metadata_path: Path, limit: int) -> list[dict[str, Any]]:
+    metadata = load_json(metadata_path)
+    fixtures = metadata.get("fixtures", [])
+    if len(fixtures) > 3:
+        raise ValueError("dictionary pilot fixture manifest exceeds the three-page limit")
+    sources: list[dict[str, Any]] = []
+    for fixture in fixtures[:limit]:
+        fixture_path = base_dir / fixture["fixture_path"]
+        sources.append(
+            {
+                **fixture,
+                "source_work": metadata.get("source_work", ""),
+                "html_content": fixture_path.read_text(encoding="utf-8"),
+            }
+        )
+    return sources
+
+
 def jsonl_text(records: Iterable[dict[str, Any]]) -> str:
     return "".join(
         json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n"
@@ -115,7 +133,10 @@ def ingest_category(
     if not source_path.is_file():
         raise FileNotFoundError(f"approved local source is missing: {source_path}")
 
-    source_records = load_jsonl(source_path, max_records)
+    if pilot.get("source_mode") == "fixture_html":
+        source_records = load_fixture_sources(base_dir, source_path, max_records)
+    else:
+        source_records = load_jsonl(source_path, max_records)
     if not source_records:
         raise ValueError(f"approved local source contains no records: {source_path}")
 
@@ -146,6 +167,7 @@ def ingest_category(
         "source_mode": pilot["source_mode"],
         "source_path": str(source_path_value),
         "book_count": 1,
+        "fixture_page_count": len(source_records),
         "record_count": len(parsed_records),
         "max_books": max_books,
         "max_records": max_records,

@@ -8,8 +8,8 @@ source content.
 
 ## Status
 
-- Already verified: `saivam`
-- Remaining pilot categories: `5`
+- Already verified: `saivam, dictionaries`
+- Remaining pilot categories: `4`
 - Planned fixtures per category: `3`
 - Network requests: `0`
 - Source-specific structures: `unconfirmed until allowlisted fixture collection`
@@ -18,7 +18,6 @@ source content.
 
 | Order | Category | Parser Family | Fixture Type | Count | Risk | Expected Source Structure | Inspection Note |
 | ---: | --- | --- | --- | ---: | --- | --- | --- |
-| 1 | அகராதிகள் | `dictionary_parser` | `dictionary_entry` | 3 | medium | Headword navigation with one or more senses, grammatical labels, examples, etymology, and cross-references. | A bounded dictionary entry is the simplest new structured-text parser pilot. |
 | 2 | இலக்கணம் | `grammar_parser` | `html` | 3 | medium | Book/chapter headings with numbered sutra or rule text, explanation, examples, exceptions, and possible commentary. | Rule boundaries and explanation labels must be confirmed from source HTML. |
 | 3 | சங்க இலக்கியம் | `verse_parser` | `html` | 3 | high | Anthology/work hierarchy with poem number, poet, thinai/thurai metadata, verse lines, colophon, and optional commentary. | Poem boundaries and source-provided literary metadata must not be flattened. |
 | 4 | இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள் | `prose_parser` | `text` | 3 | high | Book, chapter, section, paragraph, page, footnote, and author or edition metadata in typed HTML or document-oriented pages. | Rights and public-domain status must be confirmed before any source capture. |
@@ -26,9 +25,10 @@ source content.
 
 ## Parser Development Recommendation
 
-Develop `dictionary_parser` next using the `dictionaries` category. A small headword entry
-is likely to provide the clearest new structured-text boundary after the proven verse
-parser. Follow with `grammar_parser`, then the Sangam `verse_parser` variant.
+Develop `grammar_parser` next using a tiny grammar fixture set. Dictionary
+entry parsing is now pilot-verified, so grammar provides the simplest new hierarchy:
+rule, explanation, example, exception, and commentary. Follow with the Sangam
+`verse_parser` variant.
 
 The highest-risk parser application is `dictionary_parser` for encyclopedias because
 articles may contain sections, references, tables, cross-links, and media that exceed a
@@ -36,10 +36,9 @@ simple headword/sense model. Treat it as a separate adapter decision after fixtu
 
 ## Recommended Order
 
-1. Dictionaries: bounded headword and sense structures.
-2. Grammar: rule, explanation, and example boundaries.
-3. Sangam literature: poem hierarchy and literary metadata.
-4. Twentieth-century prose: chapter/paragraph extraction after rights review.
-5. Encyclopedias: mixed article/media structure after simpler dictionary evidence.
+1. Grammar: rule, explanation, and example boundaries.
+2. Sangam literature: poem hierarchy and literary metadata.
+3. Twentieth-century prose: chapter/paragraph extraction after rights review.
+4. Encyclopedias: mixed article/media structure after simpler dictionary evidence.
 
 Image, manuscript, OCR, PDF-heavy, mixed-site, and full-category work remains deferred.

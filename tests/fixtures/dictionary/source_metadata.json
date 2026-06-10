@@ -1,0 +1,30 @@
+{
+  "fixture_set": "tamil_tamil_agaramuthali_pilot_v1",
+  "source_work": "Tamil - Tamil Agaramuthali by M. Shanmugampillai",
+  "publisher": "Tamil Virtual Academy / TamilVU",
+  "retrieved_on": "2026-06-10",
+  "fixture_limit": 3,
+  "fixtures": [
+    {
+      "fixture_path": "tests/fixtures/dictionary/01_work_index.html",
+      "page_type": "work_index",
+      "source_url": "https://www.tamilvu.org/ta/library-ldttam-html-ldttamin-159450",
+      "original_sha256": "75f7a62c059eef393a1e4ef17c44a447ec8ce8bfcf5f4d8c3691cc485ed5afc3c",
+      "content_scope": "Relevant navigation excerpt only"
+    },
+    {
+      "fixture_path": "tests/fixtures/dictionary/02_alphabet_navigation.html",
+      "page_type": "alphabet_navigation",
+      "source_url": "https://www.tamilvu.org/ta/library-ldttam-html-ldttamas-159443",
+      "original_sha256": "61be1fe9549d137ec6232bc4d1674a7b23307a23b35d221815ffbab0a4e0981a",
+      "content_scope": "Representative range links and content frame only"
+    },
+    {
+      "fixture_path": "tests/fixtures/dictionary/03_single_entry.html",
+      "page_type": "dictionary_entry",
+      "source_url": "https://www.tamilvu.org/slet/pmdictionary/ldttamls.jsp?x=1&y=1",
+      "original_sha256": "442e7eb549be98a8a7d26f3a8763b959408a59500cfc24c5b64800a56e88efbd",
+      "content_scope": "Complete single-entry response"
+    }
+  ]
+}

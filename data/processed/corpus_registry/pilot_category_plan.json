@@ -58,8 +58,14 @@
       "sample_scope": "small",
       "max_books": 1,
       "max_records": 10,
-      "status": "planned",
-      "source_mode": "pending_inspection"
+      "status": "pilot_verified",
+      "source_mode": "fixture_html",
+      "source_path": "tests/fixtures/dictionary/source_metadata.json",
+      "book_id": "tamil_tamil_agaramuthali",
+      "work_id": "m_shanmugampillai_tamil_agaramuthali",
+      "notes": "Exactly three allowlisted fixture pages collected; one page contains a single dictionary entry.",
+      "validation_status": "VALID",
+      "verified_record_count": 1
     },
     {
       "pilot_id": "pilot_006",

@@ -27,6 +27,15 @@ def normalize_record(record: dict[str, Any]) -> dict[str, Any]:
         or ""
     ).strip()
     normalized["source_metadata"] = dict(record.get("source_metadata") or {})
+    if normalized.get("record_type") == "dictionary_entry":
+        normalized["entry_headword"] = str(record.get("entry_headword") or "").strip()
+        normalized["definition"] = str(
+            record.get("definition") or normalized["content_text"]
+        ).strip()
+        normalized["part_of_speech"] = str(
+            record.get("part_of_speech") or ""
+        ).strip()
+        normalized["content_text"] = normalized["definition"]
     return normalized
 
 

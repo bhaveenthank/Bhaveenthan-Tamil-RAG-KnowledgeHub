@@ -192,3 +192,15 @@ report. It does not fetch TamilVU pages or ingest category content.
 python3 src/corpus/inspect_pilot_sources.py --dry-run
 python3 src/corpus/inspect_pilot_sources.py
 ```
+
+## Dictionary Pilot
+
+The first non-Thirumurai pilot uses exactly three allowlisted pages from the Tamil–Tamil
+Agaramuthali by M. Shanmugampillai. Navigation fixtures are retained for provenance; only
+the exact single-entry fixture produces a corpus record.
+
+```bash
+python3 src/corpus/pilot_ingest_category.py --category-id dictionaries
+python3 src/corpus/normalize_category_corpus.py --category-id dictionaries
+python3 src/corpus/validate_category_corpus.py --category-id dictionaries
+```

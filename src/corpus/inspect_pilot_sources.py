@@ -196,6 +196,29 @@ def render_report(fixture_plan: dict[str, Any]) -> str:
             f"| {item['target_fixture_count']} | {item['risk_level']} "
             f"| {item['expected_source_structure']} | {item['notes']} |"
         )
+    dictionary_verified = "dictionaries" in fixture_plan["verified_categories"]
+    recommendation = (
+        """Develop `grammar_parser` next using a tiny grammar fixture set. Dictionary
+entry parsing is now pilot-verified, so grammar provides the simplest new hierarchy:
+rule, explanation, example, exception, and commentary. Follow with the Sangam
+`verse_parser` variant."""
+        if dictionary_verified
+        else """Develop `dictionary_parser` next using the `dictionaries` category. A small
+headword entry is likely to provide the clearest new structured-text boundary after the
+proven verse parser. Follow with `grammar_parser`, then the Sangam `verse_parser` variant."""
+    )
+    recommended_order = (
+        """1. Grammar: rule, explanation, and example boundaries.
+2. Sangam literature: poem hierarchy and literary metadata.
+3. Twentieth-century prose: chapter/paragraph extraction after rights review.
+4. Encyclopedias: mixed article/media structure after simpler dictionary evidence."""
+        if dictionary_verified
+        else """1. Dictionaries: bounded headword and sense structures.
+2. Grammar: rule, explanation, and example boundaries.
+3. Sangam literature: poem hierarchy and literary metadata.
+4. Twentieth-century prose: chapter/paragraph extraction after rights review.
+5. Encyclopedias: mixed article/media structure after simpler dictionary evidence."""
+    )
     return f"""# Pilot Source Inspection Report
 
 ## Scope
@@ -220,9 +243,7 @@ source content.
 
 ## Parser Development Recommendation
 
-Develop `dictionary_parser` next using the `dictionaries` category. A small headword entry
-is likely to provide the clearest new structured-text boundary after the proven verse
-parser. Follow with `grammar_parser`, then the Sangam `verse_parser` variant.
+{recommendation}
 
 The highest-risk parser application is `dictionary_parser` for encyclopedias because
 articles may contain sections, references, tables, cross-links, and media that exceed a
@@ -230,11 +251,7 @@ simple headword/sense model. Treat it as a separate adapter decision after fixtu
 
 ## Recommended Order
 
-1. Dictionaries: bounded headword and sense structures.
-2. Grammar: rule, explanation, and example boundaries.
-3. Sangam literature: poem hierarchy and literary metadata.
-4. Twentieth-century prose: chapter/paragraph extraction after rights review.
-5. Encyclopedias: mixed article/media structure after simpler dictionary evidence.
+{recommended_order}
 
 Image, manuscript, OCR, PDF-heavy, mixed-site, and full-category work remains deferred.
 """

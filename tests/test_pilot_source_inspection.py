@@ -19,13 +19,15 @@ def copy_plan(tmp_path: Path) -> None:
     target.write_text(PLAN.read_text(encoding="utf-8"), encoding="utf-8")
 
 
-def test_inspection_reads_plan_and_recognizes_verified_saivam() -> None:
+def test_inspection_recognizes_verified_pilots() -> None:
     plan = load_plan(PLAN)
     fixtures = build_fixture_plan(plan)
 
-    assert fixtures["verified_categories"] == ["saivam"]
-    assert fixtures["remaining_category_count"] == 5
-    assert "saivam" not in {item["category_id"] for item in fixtures["fixtures"]}
+    assert fixtures["verified_categories"] == ["saivam", "dictionaries"]
+    assert fixtures["remaining_category_count"] == 4
+    assert {"saivam", "dictionaries"}.isdisjoint(
+        {item["category_id"] for item in fixtures["fixtures"]}
+    )
 
 
 def test_remaining_categories_and_fixture_contract() -> None:
@@ -37,7 +39,6 @@ def test_remaining_categories_and_fixture_contract() -> None:
         "grammar",
         "sangam_literature",
         "twentieth_century_prose",
-        "dictionaries",
         "encyclopedias",
     }
     assert all(item["fixture_needed"] is True for item in fixtures)
@@ -66,8 +67,8 @@ def test_generation_creates_plan_directories_and_report(tmp_path) -> None:
     )
     fixture_plan = json.loads(fixture_plan_path.read_text(encoding="utf-8"))
 
-    assert summary["fixture_directories"] == 5
-    assert summary["target_fixture_count"] == 15
+    assert summary["fixture_directories"] == 4
+    assert summary["target_fixture_count"] == 12
     assert fixture_plan["network_access"] is False
     for item in fixture_plan["fixtures"]:
         readme = (
