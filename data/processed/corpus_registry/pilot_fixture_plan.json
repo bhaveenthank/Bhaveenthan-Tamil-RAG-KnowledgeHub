@@ -1,0 +1,101 @@
+{
+  "fixture_plan_version": "pilot-fixture-plan-v1",
+  "fixtures": [
+    {
+      "category_id": "dictionaries",
+      "category_tamil": "அகராதிகள்",
+      "expected_source_structure": "Headword navigation with one or more senses, grammatical labels, examples, etymology, and cross-references.",
+      "fixture_focus": [
+        "headword index or navigation",
+        "single-sense entry",
+        "multi-sense entry with cross-reference"
+      ],
+      "fixture_needed": true,
+      "fixture_type": "dictionary_entry",
+      "notes": "A bounded dictionary entry is the simplest new structured-text parser pilot.",
+      "parser_family": "dictionary_parser",
+      "recommended_order": 1,
+      "risk_level": "medium",
+      "source_inspection_status": "metadata_only_unconfirmed",
+      "target_fixture_count": 3
+    },
+    {
+      "category_id": "grammar",
+      "category_tamil": "இலக்கணம்",
+      "expected_source_structure": "Book/chapter headings with numbered sutra or rule text, explanation, examples, exceptions, and possible commentary.",
+      "fixture_focus": [
+        "navigation or contents page",
+        "single rule with explanation",
+        "rule with examples or commentary"
+      ],
+      "fixture_needed": true,
+      "fixture_type": "html",
+      "notes": "Rule boundaries and explanation labels must be confirmed from source HTML.",
+      "parser_family": "grammar_parser",
+      "recommended_order": 2,
+      "risk_level": "medium",
+      "source_inspection_status": "metadata_only_unconfirmed",
+      "target_fixture_count": 3
+    },
+    {
+      "category_id": "sangam_literature",
+      "category_tamil": "சங்க இலக்கியம்",
+      "expected_source_structure": "Anthology/work hierarchy with poem number, poet, thinai/thurai metadata, verse lines, colophon, and optional commentary.",
+      "fixture_focus": [
+        "anthology or poem navigation",
+        "poem with literary metadata",
+        "poem with commentary or colophon"
+      ],
+      "fixture_needed": true,
+      "fixture_type": "html",
+      "notes": "Poem boundaries and source-provided literary metadata must not be flattened.",
+      "parser_family": "verse_parser",
+      "recommended_order": 3,
+      "risk_level": "high",
+      "source_inspection_status": "metadata_only_unconfirmed",
+      "target_fixture_count": 3
+    },
+    {
+      "category_id": "twentieth_century_prose",
+      "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
+      "expected_source_structure": "Book, chapter, section, paragraph, page, footnote, and author or edition metadata in typed HTML or document-oriented pages.",
+      "fixture_focus": [
+        "book or chapter contents",
+        "prose section with paragraphs",
+        "section with page markers or footnotes"
+      ],
+      "fixture_needed": true,
+      "fixture_type": "text",
+      "notes": "Rights and public-domain status must be confirmed before any source capture.",
+      "parser_family": "prose_parser",
+      "recommended_order": 4,
+      "risk_level": "high",
+      "source_inspection_status": "metadata_only_unconfirmed",
+      "target_fixture_count": 3
+    },
+    {
+      "category_id": "encyclopedias",
+      "category_tamil": "கலைக்களஞ்சியங்கள்",
+      "expected_source_structure": "Headword article with sections, references, author/editor metadata, cross-links, tables, and possible images.",
+      "fixture_focus": [
+        "article index or navigation",
+        "plain text article",
+        "article with references, table, or media"
+      ],
+      "fixture_needed": true,
+      "fixture_type": "mixed",
+      "notes": "The current dictionary-parser assignment may need a dedicated encyclopedia adapter after fixtures expose mixed article and media structure.",
+      "parser_family": "dictionary_parser",
+      "recommended_order": 5,
+      "risk_level": "high",
+      "source_inspection_status": "metadata_only_unconfirmed",
+      "target_fixture_count": 3
+    }
+  ],
+  "network_access": false,
+  "remaining_category_count": 5,
+  "source_basis": "pilot registry metadata; no live source fetch",
+  "verified_categories": [
+    "saivam"
+  ]
+}

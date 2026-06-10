@@ -181,3 +181,14 @@ python3 src/corpus/pilot_ingest_category.py --category-id CATEGORY_ID --max-book
 python3 src/corpus/normalize_category_corpus.py --category-id CATEGORY_ID
 python3 src/corpus/validate_category_corpus.py --category-id CATEGORY_ID
 ```
+
+## Pilot Source Inspection And Fixtures
+
+The source inspection planner identifies unverified pilot categories from the registry and
+creates only small fixture requirements, placeholder directories, and a deterministic
+report. It does not fetch TamilVU pages or ingest category content.
+
+```bash
+python3 src/corpus/inspect_pilot_sources.py --dry-run
+python3 src/corpus/inspect_pilot_sources.py
+```
