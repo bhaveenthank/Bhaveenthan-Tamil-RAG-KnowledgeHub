@@ -27,6 +27,9 @@ data/processed/corpus_registry/**
 !data/processed/corpus_registry/website_category_registry.json
 !data/processed/corpus_registry/pilot_category_plan.json
 !data/processed/corpus_registry/pilot_fixture_plan.json
+!data/processed/pilot_categories/
+data/processed/pilot_categories/**
+!data/processed/pilot_categories/pilot_category_validation_summary.json
 !data/processed/normalized/
 data/processed/normalized/**
 !data/processed/normalized/thirumurai_02_normalized.jsonl

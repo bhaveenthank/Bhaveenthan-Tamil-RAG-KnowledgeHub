@@ -204,3 +204,13 @@ python3 src/corpus/pilot_ingest_category.py --category-id dictionaries
 python3 src/corpus/normalize_category_corpus.py --category-id dictionaries
 python3 src/corpus/validate_category_corpus.py --category-id dictionaries
 ```
+
+## Cross-Pilot Validation
+
+The cross-pilot validator compares only existing verified Saivam and dictionary artifacts,
+measures schema and citation coverage, and recommends the next fixture category. It is
+offline and read-only with respect to pilot corpora.
+
+```bash
+python3 src/corpus/validate_pilot_categories.py
+```
