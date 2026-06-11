@@ -23,6 +23,7 @@ def test_verified_categories_are_detected() -> None:
         "grammar",
         "sangam_literature",
         "saivam",
+        "twentieth_century_prose",
         "dictionaries",
     ]
 
@@ -34,13 +35,15 @@ def test_comparison_and_schema_stress_test_exist() -> None:
         "verse_parser",
         "dictionary_parser",
         "grammar_parser",
+        "prose_parser",
     }
-    assert summary["verified_category_count"] == 4
+    assert summary["verified_category_count"] == 5
     assert {item["schema_area"] for item in summary["schema_coverage"]} == {
         "verse_records",
         "commentary_records",
         "dictionary_entries",
         "grammar_rules",
+        "prose_sections",
     }
     commentary = next(
         item
@@ -53,9 +56,9 @@ def test_comparison_and_schema_stress_test_exist() -> None:
 def test_next_category_recommendation_exists() -> None:
     recommendation = build_summary(ROOT)["next_recommended_pilot"]
 
-    assert recommendation["category_id"] == "twentieth_century_prose"
-    assert recommendation["parser_family"] == "prose_parser"
-    assert recommendation["next_action"].startswith("complete rights review")
+    assert recommendation["category_id"] == "encyclopedias"
+    assert recommendation["parser_family"] == "dictionary_parser"
+    assert recommendation["next_action"].startswith("complete rights")
 
 
 def test_outputs_are_generated(tmp_path) -> None:
@@ -65,7 +68,7 @@ def test_outputs_are_generated(tmp_path) -> None:
     write_outputs(summary, output_path=output, report_path=report)
 
     loaded = json.loads(output.read_text(encoding="utf-8"))
-    assert loaded["verified_category_count"] == 4
+    assert loaded["verified_category_count"] == 5
     assert report.exists()
     assert "Cross-Parser Comparison" in report.read_text(encoding="utf-8")
 

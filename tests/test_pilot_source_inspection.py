@@ -27,10 +27,17 @@ def test_inspection_recognizes_verified_pilots() -> None:
         "grammar",
         "sangam_literature",
         "saivam",
+        "twentieth_century_prose",
         "dictionaries",
     ]
-    assert fixtures["remaining_category_count"] == 2
-    assert {"grammar", "saivam", "sangam_literature", "dictionaries"}.isdisjoint(
+    assert fixtures["remaining_category_count"] == 1
+    assert {
+        "grammar",
+        "saivam",
+        "sangam_literature",
+        "dictionaries",
+        "twentieth_century_prose",
+    }.isdisjoint(
         {item["category_id"] for item in fixtures["fixtures"]}
     )
 
@@ -41,7 +48,6 @@ def test_remaining_categories_and_fixture_contract() -> None:
     fixtures = build_fixture_plan(plan)["fixtures"]
 
     assert {pilot["category_id"] for pilot in remaining} == {
-        "twentieth_century_prose",
         "encyclopedias",
     }
     assert all(item["fixture_needed"] is True for item in fixtures)
@@ -70,8 +76,8 @@ def test_generation_creates_plan_directories_and_report(tmp_path) -> None:
     )
     fixture_plan = json.loads(fixture_plan_path.read_text(encoding="utf-8"))
 
-    assert summary["fixture_directories"] == 2
-    assert summary["target_fixture_count"] == 6
+    assert summary["fixture_directories"] == 1
+    assert summary["target_fixture_count"] == 3
     assert fixture_plan["network_access"] is False
     for item in fixture_plan["fixtures"]:
         readme = (

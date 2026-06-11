@@ -59,8 +59,14 @@
       "sample_scope": "small",
       "max_books": 1,
       "max_records": 10,
-      "status": "planned",
-      "source_mode": "pending_inspection"
+      "status": "pilot_verified",
+      "source_mode": "fixture_html",
+      "source_path": "tests/fixtures/prose/source_metadata.json",
+      "book_id": "bharathiyar_katturaigal",
+      "work_id": "bharathiyar_katturaigal_poompuhar",
+      "notes": "Exactly three allowlisted pages inspected. Committed fixtures preserve structure and hashes but use synthetic prose because TamilVU policy requires permission before source reproduction.",
+      "validation_status": "VALID",
+      "verified_record_count": 2
     },
     {
       "pilot_id": "pilot_005",

@@ -231,6 +231,22 @@ python3 src/corpus/validate_pilot_categories.py
 python3 src/corpus/audit_multi_category_readiness.py
 ```
 
+## Twentieth-Century Prose Pilot
+
+The prose pilot inspects exactly three allowlisted Bharathiyar Essays pages, then uses
+compact rights-safe structural fixtures because TamilVU's policy requires permission
+before reproducing site data. Two synthetic Tamil paragraphs validate deterministic
+paragraph segmentation, schema v2 normalization, source traceability, and rights metadata.
+This does not authorize source-text ingestion or category scraping.
+
+```bash
+python3 src/corpus/pilot_ingest_category.py --category-id twentieth_century_prose
+python3 src/corpus/normalize_category_corpus.py --category-id twentieth_century_prose
+python3 src/corpus/validate_category_corpus.py --category-id twentieth_century_prose
+python3 src/corpus/validate_pilot_categories.py
+python3 src/corpus/audit_multi_category_readiness.py
+```
+
 ## Cross-Pilot Validation
 
 The cross-pilot validator compares the verified Saivam, Sangam, and dictionary artifacts,

@@ -15,6 +15,7 @@ from corpus.validate_category_corpus import REQUIRED_FIELDS, validate_records
 from parsers.base_parser import ParseContext
 from parsers.dictionary_parser import DictionaryParser
 from parsers.grammar_parser import GrammarParser
+from parsers.prose_parser import ProseParser
 from parsers.verse_parser import VerseParser
 
 DEFAULT_PLAN = Path("data/processed/corpus_registry/pilot_category_plan.json")
@@ -62,6 +63,14 @@ OPTIONAL_FIELDS = {
         "chapter_id",
         "commentary_url",
     ),
+    "twentieth_century_prose": (
+        "author",
+        "title",
+        "chapter_id",
+        "section_id",
+        "period",
+        "genre",
+    ),
 }
 
 
@@ -96,6 +105,8 @@ def citation_readiness(category_id: str, records: list[dict[str, Any]]) -> dict[
         identity_fields = ["book_id", "work_id", "poem_no"]
     elif category_id == "grammar":
         identity_fields = ["book_id", "work_id", "rule_no"]
+    elif category_id == "twentieth_century_prose":
+        identity_fields = ["book_id", "work_id", "section_id"]
     else:
         identity_fields = ["book_id", "work_id", "entry_headword"]
     identity_ready = coverage(records, identity_fields)
@@ -153,6 +164,16 @@ def analytical_usefulness(category_id: str) -> dict[str, Any]:
                 "rule-to-literary-usage comparison",
                 "linguistic classification",
                 "future example and exception analysis",
+            ],
+        }
+    if category_id == "twentieth_century_prose":
+        return {
+            "score": 92,
+            "uses": [
+                "paragraph and section lookup",
+                "author style comparison",
+                "theme and motif analysis",
+                "cross-genre literary comparison",
             ],
         }
     return {
@@ -268,6 +289,31 @@ def load_verified_records(
         return parsed, [normalize_record(record) for record in parsed], str(
             metadata_path.relative_to(base_dir)
         )
+    if category_id == "twentieth_century_prose":
+        metadata_path = base_dir / pilot["source_path"]
+        metadata = load_json(metadata_path)
+        prose_fixture = next(
+            item for item in metadata["fixtures"] if item["page_type"] == "prose_section"
+        )
+        context = ParseContext(
+            category_id=category_id,
+            category_tamil=pilot["category_tamil"],
+            parser_family=pilot["parser_family"],
+            book_id=pilot["book_id"],
+            work_id=pilot["work_id"],
+            pilot_id=pilot["pilot_id"],
+        )
+        source = {
+            **prose_fixture,
+            "source_work": metadata["source_work"],
+            "html_content": (base_dir / prose_fixture["fixture_path"]).read_text(
+                encoding="utf-8"
+            ),
+        }
+        parsed = ProseParser().parse(source, context)
+        return parsed, [normalize_record(record) for record in parsed], str(
+            metadata_path.relative_to(base_dir)
+        )
     raise ValueError(f"unsupported verified pilot category: {category_id}")
 
 
@@ -353,6 +399,7 @@ def schema_stress_test(comparisons: list[dict[str, Any]]) -> list[dict[str, str]
     sangam = by_category.get("sangam_literature")
     dictionary = by_category.get("dictionaries")
     grammar = by_category.get("grammar")
+    prose = by_category.get("twentieth_century_prose")
     return [
         {
             "schema_area": "verse_records",
@@ -420,6 +467,23 @@ def schema_stress_test(comparisons: list[dict[str, Any]]) -> list[dict[str, str]
                 "Add structured examples, exceptions, commentator identity, and cross-rule links after varied fixtures."
             ),
         },
+        {
+            "schema_area": "prose_sections",
+            "status": (
+                "supported"
+                if prose and prose["validation_errors"] == 0
+                else "not_supported"
+            ),
+            "evidence": (
+                f"{prose['records_normalized']} normalized prose paragraphs retain "
+                "work, chapter, section, title, author, source URL, and rights metadata."
+                if prose
+                else "No verified prose pilot was available."
+            ),
+            "recommended_change": (
+                "Add page, footnote, quotation, and edition structures after permissioned source fixtures."
+            ),
+        },
     ]
 
 
@@ -445,7 +509,7 @@ def next_pilot_recommendation(plan: dict[str, Any]) -> dict[str, Any]:
         "parser_family": "dictionary_parser",
         "reason": "Inspect encyclopedia article structure before deciding its final parser family.",
         "risk": "high",
-        "next_action": "collect exactly three allowlisted encyclopedia fixtures",
+        "next_action": "complete rights and structure inspection before collecting exactly three allowlisted encyclopedia fixtures",
     }
 
 
@@ -506,8 +570,8 @@ def render_report(summary: dict[str, Any]) -> str:
 - LLM calls: `0`
 
 The verified pilots validate the common schema envelope, deterministic IDs, Tamil text,
-and exact source URLs across two verse traditions, one dictionary family, and structured
-grammar rules. The
+and exact source URLs across two verse traditions, one dictionary family, structured
+grammar rules, and paragraph-based prose. The
 comparison also exposes an intentional schema gap: commentary is
 preserved, but not yet modeled as an independent record.
 
@@ -538,6 +602,8 @@ is optional because commentary endpoints were outside its three-page fixture sco
 - Dictionary evidence is one entry from three fixture pages, not a dictionary-wide sample.
 - Sangam evidence is three Natrinai poems from three fixture pages, not the anthology.
 - Grammar evidence is two Nannul rules from three fixture pages, not the full work.
+- Prose evidence is two synthetic paragraphs shaped by three inspected pages; source-text
+  ingestion remains permission-gated.
 - Optional fields differ legitimately across record types.
 - Standalone commentary identity and relationships remain undefined.
 - Dictionary sense segmentation and part-of-speech extraction need varied fixtures.

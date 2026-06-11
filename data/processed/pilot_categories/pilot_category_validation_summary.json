@@ -139,20 +139,56 @@
       "source_url_coverage": 1.0,
       "validation_errors": 0,
       "validation_status": "VALID"
+    },
+    {
+      "analytical_usefulness": {
+        "score": 92,
+        "uses": [
+          "paragraph and section lookup",
+          "author style comparison",
+          "theme and motif analysis",
+          "cross-genre literary comparison"
+        ]
+      },
+      "category_id": "twentieth_century_prose",
+      "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
+      "citation_readiness": {
+        "citation_text_coverage": 1.0,
+        "identity_coverage": 1.0,
+        "source_url_coverage": 1.0,
+        "status": "READY"
+      },
+      "commentary_url_coverage": null,
+      "evidence_path": "tests/fixtures/prose/source_metadata.json",
+      "manifest_record_count": 2,
+      "metadata_completeness": 1.0,
+      "optional_field_coverage": 1.0,
+      "parser_family": "prose_parser",
+      "readiness_score": 99.2,
+      "record_types": [
+        "prose_section"
+      ],
+      "records_normalized": 2,
+      "records_parsed": 2,
+      "required_field_coverage": 1.0,
+      "source_url_coverage": 1.0,
+      "validation_errors": 0,
+      "validation_status": "VALID"
     }
   ],
   "llm_calls": 0,
   "network_requests": 0,
   "next_recommended_pilot": {
-    "category_id": "twentieth_century_prose",
-    "next_action": "complete rights review, then collect exactly three allowlisted prose fixtures",
-    "parser_family": "prose_parser",
-    "reason": "Prose is the next distinct typed-text hierarchy after grammar, while encyclopedia content remains a higher-risk mixed article/media shape.",
+    "category_id": "encyclopedias",
+    "next_action": "complete rights and structure inspection before collecting exactly three allowlisted encyclopedia fixtures",
+    "parser_family": "dictionary_parser",
+    "reason": "Inspect encyclopedia article structure before deciding its final parser family.",
     "risk": "high"
   },
   "parser_families": [
     "dictionary_parser",
     "grammar_parser",
+    "prose_parser",
     "verse_parser"
   ],
   "schema_coverage": [
@@ -179,6 +215,12 @@
       "recommended_change": "Add structured examples, exceptions, commentator identity, and cross-rule links after varied fixtures.",
       "schema_area": "grammar_rules",
       "status": "supported"
+    },
+    {
+      "evidence": "2 normalized prose paragraphs retain work, chapter, section, title, author, source URL, and rights metadata.",
+      "recommended_change": "Add page, footnote, quotation, and edition structures after permissioned source fixtures.",
+      "schema_area": "prose_sections",
+      "status": "supported"
     }
   ],
   "summary_version": "pilot-category-validation-v1",
@@ -186,7 +228,8 @@
     "dictionaries",
     "grammar",
     "saivam",
-    "sangam_literature"
+    "sangam_literature",
+    "twentieth_century_prose"
   ],
-  "verified_category_count": 4
+  "verified_category_count": 5
 }

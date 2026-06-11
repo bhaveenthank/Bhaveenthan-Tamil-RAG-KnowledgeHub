@@ -12,6 +12,15 @@ if __package__ in {None, ""}:
 from corpus.pilot_ingest_category import jsonl_text, load_jsonl, write_once
 
 
+def default_normalized_path(base_dir: Path, category_id: str) -> Path:
+    filename = (
+        "prose_normalized.jsonl"
+        if category_id == "twentieth_century_prose"
+        else f"{category_id}_normalized.jsonl"
+    )
+    return base_dir / "data/processed/normalized_categories" / filename
+
+
 def normalize_record(record: dict[str, Any]) -> dict[str, Any]:
     normalized = dict(record)
     normalized["schema_version"] = "website-corpus-v2"
@@ -58,6 +67,17 @@ def normalize_record(record: dict[str, Any]) -> dict[str, Any]:
         ):
             normalized[field] = str(record.get(field) or "").strip()
         normalized["content_text"] = normalized["rule_text"]
+    if normalized.get("category_id") == "twentieth_century_prose":
+        for field in (
+            "book_id",
+            "work_id",
+            "chapter_id",
+            "section_id",
+            "title",
+            "author",
+        ):
+            normalized[field] = str(record.get(field) or "").strip()
+        normalized["record_type"] = "prose_section"
     return normalized
 
 
@@ -71,11 +91,7 @@ def normalize_category(
     source = input_path or (
         base_dir / "data/processed/pilot_categories" / category_id / "records.jsonl"
     )
-    output = output_path or (
-        base_dir
-        / "data/processed/normalized_categories"
-        / f"{category_id}_normalized.jsonl"
-    )
+    output = output_path or default_normalized_path(base_dir, category_id)
     records = [normalize_record(record) for record in load_jsonl(source, 10)]
     status = write_once(output, jsonl_text(records))
     return records, output, status

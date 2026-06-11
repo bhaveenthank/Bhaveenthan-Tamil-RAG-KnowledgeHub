@@ -43,11 +43,13 @@ VERIFIED_CATEGORY_IDS = {
     "saivam",
     "sangam_literature",
     "dictionaries",
+    "twentieth_century_prose",
 }
 VERIFIED_PARSER_FAMILIES = {
     "grammar_parser",
     "verse_parser",
     "dictionary_parser",
+    "prose_parser",
 }
 NOT_READY_FAMILIES = {"mixed_parser", "image_metadata_parser"}
 
@@ -94,6 +96,12 @@ ANALYTICS_READINESS = [
         "status": "partial",
         "evidence": "Numbered Nannul rules are structured, but explanations, examples, exceptions, and cross-rule links remain unverified.",
     },
+    {
+        "capability": "prose_style_analysis",
+        "score": 62,
+        "status": "partial",
+        "evidence": "Paragraph records and author metadata are structured, but source-text and multi-section evidence remain rights-gated.",
+    },
 ]
 
 PARSER_RISKS = {
@@ -107,7 +115,7 @@ PARSER_RISKS = {
         "Sutra, explanation, example, exception, and commentator boundaries are unverified."
     ),
     "prose_parser": (
-        "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified."
+        "Paragraph structure is proven; chapter transitions, pages, footnotes, editions, and permissioned source text remain unverified."
     ),
     "mixed_parser": (
         "No dispatch contract has been proven for pages combining verse, prose, tables, or media."
@@ -263,7 +271,7 @@ def schema_assessment(
         "category_specific_gaps": [
             "Standalone commentary identity and relationships are partial.",
             "Grammar examples, exceptions, commentator identity, and cross-rule links are unverified.",
-            "Prose hierarchy and page/footnote fields are unverified.",
+            "Prose paragraphs are supported, but page, footnote, edition, and permissioned source-text fields remain partial.",
             "Encyclopedia references/media and manuscript/OCR contracts are unverified.",
         ],
     }
@@ -364,7 +372,7 @@ def expansion_assessment(matrix: list[dict[str, str]]) -> dict[str, Any]:
         "website_wide_answer": "PARTIAL_NOT_SCALE_READY",
         "answer": (
             "The common architecture can represent all 32 categories at a registry and provenance level, "
-            "but only four categories and three parser families have extraction evidence. Mixed, image, "
+            "but only five categories and four parser families have extraction evidence. Mixed, image, "
             "encyclopedia, and several structured-text families require pilots."
         ),
     }
@@ -372,21 +380,21 @@ def expansion_assessment(matrix: list[dict[str, str]]) -> dict[str, Any]:
 
 def recommendation() -> dict[str, str]:
     return {
-        "category_id": "twentieth_century_prose",
-        "parser_family": "prose_parser",
-        "decision": "RECOMMENDED_NEXT_PILOT",
+        "category_id": "encyclopedias",
+        "parser_family": "parser_family_review_required",
+        "decision": "RECOMMENDED_NEXT_SOURCE_INSPECTION",
         "reason": (
-            "With grammar now verified, prose is the next distinct typed-text hierarchy. It tests chapters, "
-            "sections, paragraphs, pages, and footnotes while remaining structurally clearer than encyclopedia "
-            "articles that may mix references, tables, cross-links, and media."
+            "Prose now validates the fourth parser family and the first paragraph-based hierarchy. "
+            "The remaining planned pilot is encyclopedia content, but inspection must decide whether "
+            "dictionary_parser is sufficient or a dedicated article adapter is needed."
         ),
         "precondition": (
-            "Complete book-level rights and public-domain review before collecting any prose fixture."
+            "Complete source rights and mixed-content structure review before collecting encyclopedia fixtures."
         ),
         "why_not_encyclopedia": (
-            "The current dictionary_parser assignment may be structurally wrong for articles containing sections, references, tables, and media."
+            "Encyclopedia is now the next inspection target, not yet an ingestion target."
         ),
-        "next_action": "After rights review, collect exactly three allowlisted prose fixtures in a separately approved phase.",
+        "next_action": "Inspect article, reference, table, cross-link, and media boundaries before selecting the parser family.",
     }
 
 
@@ -400,9 +408,9 @@ def future_category_readiness() -> list[dict[str, str]]:
         },
         {
             "category": "prose",
-            "status": "partial",
-            "evidence": "Schema v2 defines prose_section, but no prose fixture validates hierarchy or rights metadata.",
-            "major_risk": "Chapter, paragraph, page, footnote, edition, and rights boundaries.",
+            "status": "ready",
+            "evidence": "Three inspected pages and rights-safe fixtures validate paragraph-level prose_section records and rights metadata.",
+            "major_risk": "Permissioned source text, chapters, pages, footnotes, and edition boundaries remain unproven.",
         },
         {
             "category": "encyclopedias",
@@ -462,14 +470,15 @@ def build_audit(base_dir: Path = Path(".")) -> dict[str, Any]:
         "future_category_readiness": future_category_readiness(),
         "strategic_recommendation": recommendation(),
         "architecture_strengths": [
-            "Stable source-scoped IDs and a shared provenance envelope work across verse, dictionary, and grammar records.",
+            "Stable source-scoped IDs and a shared provenance envelope work across verse, dictionary, grammar, and prose records.",
             "Two poetry traditions retain distinct hierarchy without schema fragmentation.",
             "Numbered grammar rules retain chapter, section, rule text, and commentary traceability.",
+            "Prose paragraphs retain ordered section identity, authorship, rights status, and source traceability.",
             "All verified records retain exact source URLs and validation passes with zero errors.",
             "Raw/processed/report separation and fixture-first testing support controlled expansion.",
         ],
         "architecture_weaknesses": [
-            "Only three of eight parser families have bounded source evidence.",
+            "Only four of eight parser families have bounded source evidence.",
             "Standalone commentary, entity, motif, and normalized literary-concept contracts remain incomplete.",
             "Mixed-content dispatch and encyclopedia article modeling are not proven.",
             "Image/manuscript rights, asset metadata, transcription, and OCR provenance are not proven.",
@@ -478,7 +487,7 @@ def build_audit(base_dir: Path = Path(".")) -> dict[str, Any]:
             "Treating a shared schema envelope as proof that source-specific parsers are interchangeable.",
             "Flattening work-specific hierarchy when expanding verse_parser to new traditions.",
             "Using dictionary_parser for encyclopedias without proving article and media boundaries.",
-            "Scaling modern prose before rights, edition, page, and footnote metadata are explicit.",
+            "Scaling prose from structural fixtures before written permission, edition, page, and footnote metadata are explicit.",
             "Introducing OCR or mixed-content ingestion without confidence and source-image traceability.",
         ],
         "network_requests": 0,
@@ -529,9 +538,10 @@ def render_report(audit: dict[str, Any]) -> str:
 - LLM calls: `0`
 - Frozen corpus mutations: `0`
 
-Four pilots now exercise two distinct poetry hierarchies, one lexical hierarchy, and one
-grammar-rule hierarchy through the same identity, provenance, validation, and normalization
-envelope. They are not sufficient to declare the remaining parser families production-ready.
+Five pilots now exercise two distinct poetry hierarchies, one lexical hierarchy, one
+grammar-rule hierarchy, and paragraph-based prose through the same identity, provenance,
+validation, and normalization envelope. They are not sufficient to declare the remaining
+parser families production-ready.
 
 ## Readiness Scores
 
@@ -551,13 +561,14 @@ dimensions, preventing strong citations from hiding weak parser coverage.
 - **Sangam:** proves anthology poem identity, thinai, situation, poet, colophon, and line preservation.
 - **Dictionaries:** proves headword-definition records and lexical content without inventing absent part-of-speech metadata.
 - **Grammar:** proves numbered rule text, chapter/section hierarchy, and exact commentary traceability.
+- **Prose:** proves paragraph segmentation, section identity, authorship, rights status, and exact source traceability.
 
 ## Schema Readiness
 
 Common required-field coverage is `{audit['schema_readiness']['common_required_field_coverage']:.1f}%`.
 Observed record-type evidence covers `{audit['schema_readiness']['record_type_evidence_coverage']:.1f}%`
 of the eight schema v2 record types. The shared envelope is strong, but standalone
-commentary, prose, encyclopedia, and image contracts remain partly or wholly
+commentary, encyclopedia, and image contracts remain partly or wholly
 unverified.
 
 ## Parser Readiness Matrix
@@ -591,7 +602,7 @@ unverified.
 
 **Partially.** The registry, common schema, stable IDs, and provenance envelope can name
 and trace all 32 categories. The extraction architecture is not scale-ready because only
-three parser families have source evidence and mixed/image families remain unproven.
+four parser families have source evidence and mixed/image families remain unproven.
 
 Status counts: `{json.dumps(audit['expansion_readiness']['status_counts'], sort_keys=True)}`.
 
@@ -615,7 +626,7 @@ Status counts: `{json.dumps(audit['expansion_readiness']['status_counts'], sort_
 
 ## Strategic Recommendation
 
-Choose **twentieth-century prose** using `{recommendation['parser_family']}`.
+Choose **encyclopedia source inspection** with `{recommendation['parser_family']}`.
 
 {recommendation['reason']}
 

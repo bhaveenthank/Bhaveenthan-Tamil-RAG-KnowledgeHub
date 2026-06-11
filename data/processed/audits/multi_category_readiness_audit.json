@@ -42,19 +42,26 @@
         "evidence": "Numbered Nannul rules are structured, but explanations, examples, exceptions, and cross-rule links remain unverified.",
         "score": 65,
         "status": "partial"
+      },
+      {
+        "capability": "prose_style_analysis",
+        "evidence": "Paragraph records and author metadata are structured, but source-text and multi-section evidence remain rights-gated.",
+        "score": 62,
+        "status": "partial"
       }
     ],
-    "score": 68.9
+    "score": 68.0
   },
   "architecture_strengths": [
-    "Stable source-scoped IDs and a shared provenance envelope work across verse, dictionary, and grammar records.",
+    "Stable source-scoped IDs and a shared provenance envelope work across verse, dictionary, grammar, and prose records.",
     "Two poetry traditions retain distinct hierarchy without schema fragmentation.",
     "Numbered grammar rules retain chapter, section, rule text, and commentary traceability.",
+    "Prose paragraphs retain ordered section identity, authorship, rights status, and source traceability.",
     "All verified records retain exact source URLs and validation passes with zero errors.",
     "Raw/processed/report separation and fixture-first testing support controlled expansion."
   ],
   "architecture_weaknesses": [
-    "Only three of eight parser families have bounded source evidence.",
+    "Only four of eight parser families have bounded source evidence.",
     "Standalone commentary, entity, motif, and normalized literary-concept contracts remain incomplete.",
     "Mixed-content dispatch and encyclopedia article modeling are not proven.",
     "Image/manuscript rights, asset metadata, transcription, and OCR provenance are not proven."
@@ -212,14 +219,14 @@
       "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
     },
     {
-      "architecture_status": "partial",
+      "architecture_status": "ready",
       "category_english": "Twentieth-Century Prose",
       "category_id": "twentieth_century_prose",
       "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
       "content_type": "prose",
       "expected_parser_family": "prose_parser",
-      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
-      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+      "major_risk": "Bounded pilot evidence validates parser output, schema mapping, and provenance.",
+      "recommended_next_step": "Retain bounded expansion gates and sample structural variants before scale."
     },
     {
       "architecture_status": "not_ready",
@@ -348,8 +355,8 @@
       "category_tamil": "நாட்டுடைமையாக்கப்பட்ட தமிழறிஞர்களின் நூல்கள் தட்டச்சு வடிவில்",
       "content_type": "prose",
       "expected_parser_family": "prose_parser",
-      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
-      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+      "major_risk": "Paragraph structure is proven; chapter transitions, pages, footnotes, editions, and permissioned source text remain unverified.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
     },
     {
       "architecture_status": "not_ready",
@@ -368,8 +375,8 @@
       "category_tamil": "தமிழக வரலாறு, கலைப் பண்பாடு, இலக்கியம் தொடர்பான நூல்கள்",
       "content_type": "prose",
       "expected_parser_family": "prose_parser",
-      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
-      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+      "major_risk": "Paragraph structure is proven; chapter transitions, pages, footnotes, editions, and permissioned source text remain unverified.",
+      "recommended_next_step": "Collect three work-specific fixtures and validate hierarchy before ingestion."
     },
     {
       "architecture_status": "partial",
@@ -383,21 +390,21 @@
     }
   ],
   "citation_readiness": {
-    "citation_text_coverage": 75.0,
+    "citation_text_coverage": 80.0,
     "identity_traceability": 100.0,
-    "score": 97.5,
+    "score": 98.0,
     "source_url_coverage": 100.0,
     "status": "strong"
   },
   "corpus_mutations": 0,
   "expansion_readiness": {
-    "answer": "The common architecture can represent all 32 categories at a registry and provenance level, but only four categories and three parser families have extraction evidence. Mixed, image, encyclopedia, and several structured-text families require pilots.",
+    "answer": "The common architecture can represent all 32 categories at a registry and provenance level, but only five categories and four parser families have extraction evidence. Mixed, image, encyclopedia, and several structured-text families require pilots.",
     "category_count": 32,
-    "score": 43.1,
+    "score": 44.5,
     "status_counts": {
       "not_ready": 16,
-      "partial": 12,
-      "ready": 4
+      "partial": 11,
+      "ready": 5
     },
     "website_wide_answer": "PARTIAL_NOT_SCALE_READY"
   },
@@ -410,9 +417,9 @@
     },
     {
       "category": "prose",
-      "evidence": "Schema v2 defines prose_section, but no prose fixture validates hierarchy or rights metadata.",
-      "major_risk": "Chapter, paragraph, page, footnote, edition, and rights boundaries.",
-      "status": "partial"
+      "evidence": "Three inspected pages and rights-safe fixtures validate paragraph-level prose_section records and rights metadata.",
+      "major_risk": "Permissioned source text, chapters, pages, footnotes, and edition boundaries remain unproven.",
+      "status": "ready"
     },
     {
       "category": "encyclopedias",
@@ -429,10 +436,10 @@
   ],
   "llm_calls": 0,
   "metadata_readiness": {
-    "author_coverage": 93.8,
+    "author_coverage": 94.4,
     "category_coverage": 100.0,
     "note": "Dictionary author is legitimately absent in the sampled entry; coverage is descriptive, not fabricated.",
-    "score": 98.5,
+    "score": 98.6,
     "source_coverage": 100.0,
     "title_coverage": 100.0
   },
@@ -477,9 +484,9 @@
       {
         "category_count": 3,
         "compatible_with_schema_v2": true,
-        "major_gap": "Chapter, paragraph, page, footnote, edition, and rights metadata are unverified.",
+        "major_gap": "Paragraph structure is proven; chapter transitions, pages, footnotes, editions, and permissioned source text remain unverified.",
         "parser_family": "prose_parser",
-        "status": "stub_unverified"
+        "status": "pilot_verified"
       },
       {
         "category_count": 1,
@@ -497,37 +504,38 @@
       }
     ],
     "output_compatibility": 100.0,
-    "parser_family_coverage": 37.5,
-    "score": 68.8,
+    "parser_family_coverage": 50.0,
+    "score": 75.0,
     "total_parser_families": 8,
     "validation_consistency": 100.0,
     "verified_parser_families": [
       "dictionary_parser",
       "grammar_parser",
+      "prose_parser",
       "verse_parser"
     ]
   },
   "readiness_scores": {
-    "analytics_readiness": 68.9,
-    "citation_readiness": 97.5,
-    "expansion_readiness": 43.1,
-    "metadata_readiness": 98.5,
-    "overall_readiness": 76.5,
-    "parser_readiness": 68.8,
-    "schema_readiness": 81.9
+    "analytics_readiness": 68.0,
+    "citation_readiness": 98.0,
+    "expansion_readiness": 44.5,
+    "metadata_readiness": 98.6,
+    "overall_readiness": 78.3,
+    "parser_readiness": 75.0,
+    "schema_readiness": 85.5
   },
   "scaling_risks": [
     "Treating a shared schema envelope as proof that source-specific parsers are interchangeable.",
     "Flattening work-specific hierarchy when expanding verse_parser to new traditions.",
     "Using dictionary_parser for encyclopedias without proving article and media boundaries.",
-    "Scaling modern prose before rights, edition, page, and footnote metadata are explicit.",
+    "Scaling prose from structural fixtures before written permission, edition, page, and footnote metadata are explicit.",
     "Introducing OCR or mixed-content ingestion without confidence and source-image traceability."
   ],
   "schema_readiness": {
     "category_specific_gaps": [
       "Standalone commentary identity and relationships are partial.",
       "Grammar examples, exceptions, commentator identity, and cross-rule links are unverified.",
-      "Prose hierarchy and page/footnote fields are unverified.",
+      "Prose paragraphs are supported, but page, footnote, edition, and permissioned source-text fields remain partial.",
       "Encyclopedia references/media and manuscript/OCR contracts are unverified."
     ],
     "common_required_field_coverage": 100.0,
@@ -542,25 +550,26 @@
     "observed_record_types": [
       "dictionary_entry",
       "grammar_rule",
+      "prose_section",
       "verse"
     ],
-    "record_type_evidence_coverage": 37.5,
-    "schema_stress_score": 87.5,
-    "score": 81.9,
+    "record_type_evidence_coverage": 50.0,
+    "schema_stress_score": 90.0,
+    "score": 85.5,
     "supported_record_type_count": 8
   },
   "schema_version": "website-corpus-v2",
   "source_site": "Tamil Virtual Academy / TamilVU",
   "strategic_recommendation": {
-    "category_id": "twentieth_century_prose",
-    "decision": "RECOMMENDED_NEXT_PILOT",
-    "next_action": "After rights review, collect exactly three allowlisted prose fixtures in a separately approved phase.",
-    "parser_family": "prose_parser",
-    "precondition": "Complete book-level rights and public-domain review before collecting any prose fixture.",
-    "reason": "With grammar now verified, prose is the next distinct typed-text hierarchy. It tests chapters, sections, paragraphs, pages, and footnotes while remaining structurally clearer than encyclopedia articles that may mix references, tables, cross-links, and media.",
-    "why_not_encyclopedia": "The current dictionary_parser assignment may be structurally wrong for articles containing sections, references, tables, and media."
+    "category_id": "encyclopedias",
+    "decision": "RECOMMENDED_NEXT_SOURCE_INSPECTION",
+    "next_action": "Inspect article, reference, table, cross-link, and media boundaries before selecting the parser family.",
+    "parser_family": "parser_family_review_required",
+    "precondition": "Complete source rights and mixed-content structure review before collecting encyclopedia fixtures.",
+    "reason": "Prose now validates the fourth parser family and the first paragraph-based hierarchy. The remaining planned pilot is encyclopedia content, but inspection must decide whether dictionary_parser is sufficient or a dedicated article adapter is needed.",
+    "why_not_encyclopedia": "Encyclopedia is now the next inspection target, not yet an ingestion target."
   },
-  "verified_category_count": 4,
+  "verified_category_count": 5,
   "verified_evidence": [
     {
       "category_id": "dictionaries",
@@ -585,7 +594,13 @@
       "evidence_path": "tests/fixtures/sangam_literature/source_metadata.json",
       "parser_family": "verse_parser",
       "record_count": 3
+    },
+    {
+      "category_id": "twentieth_century_prose",
+      "evidence_path": "tests/fixtures/prose/source_metadata.json",
+      "parser_family": "prose_parser",
+      "record_count": 2
     }
   ],
-  "verified_record_count": 16
+  "verified_record_count": 18
 }

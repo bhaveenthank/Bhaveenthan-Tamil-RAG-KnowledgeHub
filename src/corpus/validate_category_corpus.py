@@ -12,6 +12,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from corpus.pilot_ingest_category import DEFAULT_PLAN, load_json, load_jsonl
+from corpus.normalize_category_corpus import default_normalized_path
 
 REQUIRED_FIELDS = {
     "schema_version": str,
@@ -42,6 +43,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
     dictionary_missing: Counter[str] = Counter()
     sangam_missing: Counter[str] = Counter()
     grammar_missing: Counter[str] = Counter()
+    prose_missing: Counter[str] = Counter()
     nondeterministic_ids = 0
 
     for record in records:
@@ -92,6 +94,24 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
                     grammar_missing[field] += 1
             if record_id and not record_id.startswith("tvu_grammar_"):
                 nondeterministic_ids += 1
+        if category_id == "twentieth_century_prose":
+            for field in (
+                "category_id",
+                "parser_family",
+                "record_type",
+                "content_text",
+                "source_url",
+            ):
+                if not str(record.get(field) or "").strip():
+                    prose_missing[field] += 1
+            if record.get("parser_family") != "prose_parser":
+                prose_missing["parser_family"] += 1
+            if record.get("record_type") != "prose_section":
+                prose_missing["record_type"] += 1
+            if record_id and not record_id.startswith(
+                "tvu_twentieth_century_prose_"
+            ):
+                nondeterministic_ids += 1
 
     duplicates = sorted(record_id for record_id, count in ids.items() if count > 1)
     error_count = (
@@ -100,6 +120,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
         + sum(dictionary_missing.values())
         + sum(sangam_missing.values())
         + sum(grammar_missing.values())
+        + sum(prose_missing.values())
         + malformed_urls
         + category_mismatches
         + nondeterministic_ids
@@ -118,6 +139,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
         "dictionary_missing_fields": dict(sorted(dictionary_missing.items())),
         "sangam_missing_fields": dict(sorted(sangam_missing.items())),
         "grammar_missing_fields": dict(sorted(grammar_missing.items())),
+        "prose_missing_fields": dict(sorted(prose_missing.items())),
         "nondeterministic_ids": nondeterministic_ids,
         "source_url_coverage": (
             sum(bool(record.get("source_url")) for record in records) / len(records)
@@ -368,6 +390,89 @@ endpoint under a new allowlisted phase.
 """
 
 
+def render_prose_report(result: dict[str, Any]) -> str:
+    missing_rows = "\n".join(
+        f"| `{field}` | {count} |"
+        for field, count in result["prose_missing_fields"].items()
+    ) or "| None | 0 |"
+    return f"""# Prose Pilot Validation Report
+
+## Summary
+
+- Work: `பாரதியார் கட்டுரைகள்`
+- Fixture pages: `3`
+- Paragraph sections validated: `{result['record_count']}`
+- Status: `{result['status']}`
+- Validation errors: `{result['error_count']}`
+- Source URL coverage: `{result['source_url_coverage']:.1%}`
+- Duplicate record IDs: `{len(result['duplicate_record_ids'])}`
+- Non-deterministic IDs: `{result['nondeterministic_ids']}`
+
+## Required Prose Fields
+
+| Missing Field | Count |
+| --- | ---: |
+{missing_rows}
+
+## Rights Boundary
+
+TamilVU policy requires permission before reproducing site data and excludes third-party
+copyright from that permission. Committed fixtures therefore preserve inspected structure,
+URLs, and hashes while using a compact rights-safe test passage rather than copied TamilVU
+essay text. This validates parser behavior, not permission for prose ingestion.
+
+## Decision
+
+The prose parser is `{'PILOT_VERIFIED' if result['status'] == 'VALID' else 'REPAIR_REQUIRED'}`
+for the bounded structural fixture. Full source ingestion remains rights-gated.
+"""
+
+
+def render_prose_readiness(result: dict[str, Any]) -> str:
+    ready = result["status"] == "VALID"
+    return f"""# Prose Pilot Readiness Report
+
+## Pilot Result
+
+- Fixtures collected: `3`
+- Paragraph sections parsed: `{result['record_count']}`
+- Records normalized: `{result['record_count']}`
+- Validation errors: `{result['error_count']}`
+- Source URL coverage: `{result['source_url_coverage']:.1%}`
+
+## Assessment
+
+| Dimension | Result | Evidence |
+| --- | --- | --- |
+| Parser quality | `{'READY' if ready else 'REPAIR'}` | Explicit prose-section and paragraph boundaries produce deterministic records |
+| Normalization quality | `{'READY' if ready else 'REPAIR'}` | Schema v2 preserves work, chapter, section, title, author, and paragraph text |
+| Metadata quality | `{'READY' if ready else 'REPAIR'}` | Source URL, link ID, inspection hash, fixture status, and rights status are retained |
+| Citation readiness | `{'READY' if ready else 'REPAIR'}` | Work, section title, paragraph index, and exact source page identify each record |
+| Literary-analysis contribution | `HIGH` | Adds narrative and explanatory prose for style, theme, author, and cross-genre comparison |
+
+## Comparison With Existing Pilots
+
+Verse records preserve line order and poetic hierarchy; dictionary records center on
+headword meaning; grammar records center on numbered rules. Prose records instead preserve
+ordered paragraphs within a titled section. The common envelope supports all four shapes
+without coercing prose into verse lines or dictionary definitions.
+
+## Limits
+
+- Three inspected pages exposed a wrapper, contents page, and another iframe wrapper.
+- The third wrapper referenced a legacy endpoint outside the approved request budget.
+- The committed content is structural and rights-safe, not a copy of TamilVU prose.
+- Page markers, footnotes, edition details, and multi-chapter transitions remain unproven.
+- Large-scale prose ingestion requires written permission and edition-level rights review.
+
+## Recommendation
+
+`{'PILOT_VERIFIED' if ready else 'REPAIR_REQUIRED'}` for parser and schema behavior.
+Keep corpus ingestion blocked until TamilVU and any third-party edition permissions are
+documented.
+"""
+
+
 def render_validation_report(result: dict[str, Any]) -> str:
     missing_rows = "\n".join(
         f"| `{field}` | {count} |"
@@ -419,6 +524,7 @@ def render_comparison_report(
             "grammar": "Validated grammar rules",
             "sangam_literature": "Validated Sangam verses",
             "saivam": "Validated verse/commentary seed",
+            "twentieth_century_prose": "Validated structural prose paragraphs",
         }
         verified_content = content_labels.get(
             pilot["category_id"], "Validated bounded pilot"
@@ -475,9 +581,9 @@ content has been fetched or approved.
 
 ## Finding
 
-The shared contract works for bounded Saivam, Sangam, dictionary, and grammar evidence.
-Prose and encyclopedia pilots still require source inspection and local fixtures before
-ingestion. This is the principal risk and the intended control point.
+The shared contract works for bounded Saivam, Sangam, dictionary, grammar, and structural
+prose evidence. Encyclopedia ingestion still requires source inspection and local fixtures.
+Permissioned source-text fixtures remain required before prose corpus expansion.
 """.format(rows="\n".join(rows))
 
 
@@ -488,11 +594,7 @@ def validate_category(
     input_path: Path | None = None,
     report_path: Path | None = None,
 ) -> dict[str, Any]:
-    source = input_path or (
-        base_dir
-        / "data/processed/normalized_categories"
-        / f"{category_id}_normalized.jsonl"
-    )
+    source = input_path or default_normalized_path(base_dir, category_id)
     records = load_jsonl(source, 10)
     result = validate_records(records, category_id)
     report = report_path or base_dir / (
@@ -502,6 +604,8 @@ def validate_category(
         if category_id == "sangam_literature"
         else "reports/grammar-pilot-validation-report.md"
         if category_id == "grammar"
+        else "reports/prose-pilot-validation-report.md"
+        if category_id == "twentieth_century_prose"
         else "reports/multi-category-pilot-validation-report.md"
     )
     report.parent.mkdir(parents=True, exist_ok=True)
@@ -512,11 +616,18 @@ def validate_category(
         if category_id == "sangam_literature"
         else render_grammar_report(result)
         if category_id == "grammar"
+        else render_prose_report(result)
+        if category_id == "twentieth_century_prose"
         else render_validation_report(result),
         encoding="utf-8",
     )
     plan = load_json(base_dir / DEFAULT_PLAN)
-    if category_id in {"dictionaries", "sangam_literature", "grammar"} and result["status"] == "VALID":
+    if category_id in {
+        "dictionaries",
+        "sangam_literature",
+        "grammar",
+        "twentieth_century_prose",
+    } and result["status"] == "VALID":
         for pilot in plan.get("pilots", []):
             if pilot.get("category_id") == category_id:
                 pilot["status"] = "pilot_verified"
@@ -532,9 +643,12 @@ def validate_category(
         elif category_id == "sangam_literature":
             readiness = base_dir / "reports/sangam-pilot-readiness-report.md"
             readiness.write_text(render_sangam_readiness(result), encoding="utf-8")
-        else:
+        elif category_id == "grammar":
             readiness = base_dir / "reports/grammar-pilot-readiness-report.md"
             readiness.write_text(render_grammar_readiness(result), encoding="utf-8")
+        else:
+            readiness = base_dir / "reports/prose-pilot-readiness-report.md"
+            readiness.write_text(render_prose_readiness(result), encoding="utf-8")
     comparison = base_dir / "reports/multi-category-pilot-comparison-report.md"
     comparison.write_text(render_comparison_report(plan, result), encoding="utf-8")
     return result

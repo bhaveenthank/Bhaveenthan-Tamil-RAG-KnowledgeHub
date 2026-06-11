@@ -1,0 +1,44 @@
+{
+  "fixture_set": "bharathiyar_prose_structural_pilot_v1",
+  "source_work": "பாரதியார் கட்டுரைகள்",
+  "author": "சுப்பிரமணிய பாரதி",
+  "publisher_observation": "TamilVU page identifies the work as a Poompuhar publication",
+  "retrieved_on": "2026-06-11",
+  "fixture_limit": 3,
+  "rights_review": "docs/prose-rights-review.md",
+  "fixtures": [
+    {
+      "fixture_path": "tests/fixtures/prose/01_work_index.html",
+      "page_type": "work_index",
+      "source_url": "https://www.tamilvu.org/ta/library-lA450-html-lA450ind-115101",
+      "original_sha256": "f8534de29c8aa309926f9d44876dba6a2f477f93a196fbbc675d5207da49498b",
+      "fixture_content_status": "rights_safe_structural_reconstruction",
+      "rights_status": "permission_required_before_source_reproduction",
+      "content_scope": "Work title and entry-link structure only"
+    },
+    {
+      "fixture_path": "tests/fixtures/prose/02_contents.html",
+      "page_type": "prose_contents",
+      "source_url": "https://www.tamilvu.org/ta/library-lA450-html-lA450cnt-115102",
+      "original_sha256": "fc0aa25e914817d078c66d8b43d45bcbc48513b02f2fb3d29e0685fcc2c03727",
+      "fixture_content_status": "rights_safe_structural_reconstruction",
+      "rights_status": "permission_required_before_source_reproduction",
+      "content_scope": "Three representative navigation links from a much larger contents page"
+    },
+    {
+      "fixture_path": "tests/fixtures/prose/03_section.html",
+      "page_type": "prose_section",
+      "source_url": "https://www.tamilvu.org/node/154572?linkid=118166",
+      "original_sha256": "d55a1f32a4e11241076e555badb0398277f6994b3e6ec4dc3eca3ccb8308e81e",
+      "fixture_content_status": "synthetic_tamil_text_with_inspected_html_shape",
+      "rights_status": "no_tamilvu_essay_text_reproduced",
+      "content_scope": "One section title and two synthetic Tamil paragraphs",
+      "title": "யாரைத் தொழுவது?",
+      "author": "சுப்பிரமணிய பாரதி",
+      "chapter_id": "bharathiyar_katturaigal_religion",
+      "section_id": "118166",
+      "genre": "கட்டுரை",
+      "period": "இருபதாம் நூற்றாண்டு"
+    }
+  ]
+}
