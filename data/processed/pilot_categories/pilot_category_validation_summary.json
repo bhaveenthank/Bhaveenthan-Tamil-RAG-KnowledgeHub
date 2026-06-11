@@ -37,6 +37,41 @@
     },
     {
       "analytical_usefulness": {
+        "score": 88,
+        "uses": [
+          "grammar rule lookup",
+          "rule-to-literary-usage comparison",
+          "linguistic classification",
+          "future example and exception analysis"
+        ]
+      },
+      "category_id": "grammar",
+      "category_tamil": "இலக்கணம்",
+      "citation_readiness": {
+        "citation_text_coverage": 1.0,
+        "identity_coverage": 1.0,
+        "source_url_coverage": 1.0,
+        "status": "READY"
+      },
+      "commentary_url_coverage": 1.0,
+      "evidence_path": "tests/fixtures/grammar/source_metadata.json",
+      "manifest_record_count": 2,
+      "metadata_completeness": 1.0,
+      "optional_field_coverage": 0.8571,
+      "parser_family": "grammar_parser",
+      "readiness_score": 98.8,
+      "record_types": [
+        "grammar_rule"
+      ],
+      "records_normalized": 2,
+      "records_parsed": 2,
+      "required_field_coverage": 1.0,
+      "source_url_coverage": 1.0,
+      "validation_errors": 0,
+      "validation_status": "VALID"
+    },
+    {
+      "analytical_usefulness": {
         "score": 95,
         "uses": [
           "verse lookup",
@@ -109,14 +144,15 @@
   "llm_calls": 0,
   "network_requests": 0,
   "next_recommended_pilot": {
-    "category_id": "grammar",
-    "next_action": "collect exactly three allowlisted grammar fixtures",
-    "parser_family": "grammar_parser",
-    "reason": "Grammar is the next simpler structured-text parser family.",
-    "risk": "medium"
+    "category_id": "twentieth_century_prose",
+    "next_action": "complete rights review, then collect exactly three allowlisted prose fixtures",
+    "parser_family": "prose_parser",
+    "reason": "Prose is the next distinct typed-text hierarchy after grammar, while encyclopedia content remains a higher-risk mixed article/media shape.",
+    "risk": "high"
   },
   "parser_families": [
     "dictionary_parser",
+    "grammar_parser",
     "verse_parser"
   ],
   "schema_coverage": [
@@ -137,13 +173,20 @@
       "recommended_change": "Add ordered sense, example, etymology, and cross-reference structures only after varied fixtures.",
       "schema_area": "dictionary_entries",
       "status": "supported"
+    },
+    {
+      "evidence": "2 normalized grammar rules retain rule number, rule text, chapter, section, commentary URL, and provenance.",
+      "recommended_change": "Add structured examples, exceptions, commentator identity, and cross-rule links after varied fixtures.",
+      "schema_area": "grammar_rules",
+      "status": "supported"
     }
   ],
   "summary_version": "pilot-category-validation-v1",
   "verified_categories": [
     "dictionaries",
+    "grammar",
     "saivam",
     "sangam_literature"
   ],
-  "verified_category_count": 3
+  "verified_category_count": 4
 }

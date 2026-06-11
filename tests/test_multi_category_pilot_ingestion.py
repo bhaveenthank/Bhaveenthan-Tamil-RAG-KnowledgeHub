@@ -72,7 +72,7 @@ def test_pending_category_cannot_ingest_without_inspection(tmp_path) -> None:
     seed_workspace(tmp_path)
 
     with pytest.raises(ValueError, match="no inspected local source"):
-        ingest_category("grammar", base_dir=tmp_path)
+        ingest_category("encyclopedias", base_dir=tmp_path)
 
 
 def test_bounded_ingestion_normalization_and_validation(tmp_path) -> None:

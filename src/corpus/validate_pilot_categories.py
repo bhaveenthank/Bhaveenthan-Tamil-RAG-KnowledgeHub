@@ -14,6 +14,7 @@ from corpus.normalize_category_corpus import normalize_record
 from corpus.validate_category_corpus import REQUIRED_FIELDS, validate_records
 from parsers.base_parser import ParseContext
 from parsers.dictionary_parser import DictionaryParser
+from parsers.grammar_parser import GrammarParser
 from parsers.verse_parser import VerseParser
 
 DEFAULT_PLAN = Path("data/processed/corpus_registry/pilot_category_plan.json")
@@ -52,6 +53,15 @@ OPTIONAL_FIELDS = {
         "colophon",
         "commentary_url",
     ),
+    "grammar": (
+        "author",
+        "rule_no",
+        "rule_text",
+        "explanation_text",
+        "section_id",
+        "chapter_id",
+        "commentary_url",
+    ),
 }
 
 
@@ -84,6 +94,8 @@ def citation_readiness(category_id: str, records: list[dict[str, Any]]) -> dict[
         identity_fields = ["book_id", "work_id", "hymn_id", "song_no"]
     elif category_id == "sangam_literature":
         identity_fields = ["book_id", "work_id", "poem_no"]
+    elif category_id == "grammar":
+        identity_fields = ["book_id", "work_id", "rule_no"]
     else:
         identity_fields = ["book_id", "work_id", "entry_headword"]
     identity_ready = coverage(records, identity_fields)
@@ -131,6 +143,16 @@ def analytical_usefulness(category_id: str) -> dict[str, Any]:
                 "poet comparison",
                 "thinai and situation analysis",
                 "classical poetic language comparison",
+            ],
+        }
+    if category_id == "grammar":
+        return {
+            "score": 88,
+            "uses": [
+                "grammar rule lookup",
+                "rule-to-literary-usage comparison",
+                "linguistic classification",
+                "future example and exception analysis",
             ],
         }
     return {
@@ -221,6 +243,31 @@ def load_verified_records(
         return parsed, [normalize_record(record) for record in parsed], str(
             metadata_path.relative_to(base_dir)
         )
+    if category_id == "grammar":
+        metadata_path = base_dir / pilot["source_path"]
+        metadata = load_json(metadata_path)
+        rule_fixture = next(
+            item for item in metadata["fixtures"] if item["page_type"] == "grammar_rules"
+        )
+        context = ParseContext(
+            category_id=category_id,
+            category_tamil=pilot["category_tamil"],
+            parser_family=pilot["parser_family"],
+            book_id=pilot["book_id"],
+            work_id=pilot["work_id"],
+            pilot_id=pilot["pilot_id"],
+        )
+        source = {
+            **rule_fixture,
+            "source_work": metadata["source_work"],
+            "html_content": (base_dir / rule_fixture["fixture_path"]).read_text(
+                encoding="utf-8"
+            ),
+        }
+        parsed = GrammarParser().parse(source, context)
+        return parsed, [normalize_record(record) for record in parsed], str(
+            metadata_path.relative_to(base_dir)
+        )
     raise ValueError(f"unsupported verified pilot category: {category_id}")
 
 
@@ -232,7 +279,11 @@ def compare_pilot(
     validation = validate_records(normalized, category_id)
     required_coverage = coverage(normalized, list(REQUIRED_FIELDS))
     optional_coverage = coverage(normalized, list(OPTIONAL_FIELDS.get(category_id, ())))
-    commentary_applicable = category_id in {"saivam", "sangam_literature"}
+    commentary_applicable = category_id in {
+        "saivam",
+        "sangam_literature",
+        "grammar",
+    }
     commentary_url_coverage = (
         coverage(normalized, ["commentary_url"]) if commentary_applicable else None
     )
@@ -301,6 +352,7 @@ def schema_stress_test(comparisons: list[dict[str, Any]]) -> list[dict[str, str]
     verse = by_category.get("saivam")
     sangam = by_category.get("sangam_literature")
     dictionary = by_category.get("dictionaries")
+    grammar = by_category.get("grammar")
     return [
         {
             "schema_area": "verse_records",
@@ -351,6 +403,23 @@ def schema_stress_test(comparisons: list[dict[str, Any]]) -> list[dict[str, str]
                 "Add ordered sense, example, etymology, and cross-reference structures only after varied fixtures."
             ),
         },
+        {
+            "schema_area": "grammar_rules",
+            "status": (
+                "supported"
+                if grammar and grammar["validation_errors"] == 0
+                else "not_supported"
+            ),
+            "evidence": (
+                f"{grammar['records_normalized']} normalized grammar rules retain rule "
+                "number, rule text, chapter, section, commentary URL, and provenance."
+                if grammar
+                else "No verified grammar pilot was available."
+            ),
+            "recommended_change": (
+                "Add structured examples, exceptions, commentator identity, and cross-rule links after varied fixtures."
+            ),
+        },
     ]
 
 
@@ -360,12 +429,23 @@ def next_pilot_recommendation(plan: dict[str, Any]) -> dict[str, Any]:
         for pilot in plan.get("pilots", [])
         if pilot.get("status") not in VERIFIED_STATUSES
     }
+    if "twentieth_century_prose" in pending:
+        return {
+            "category_id": "twentieth_century_prose",
+            "parser_family": "prose_parser",
+            "reason": (
+                "Prose is the next distinct typed-text hierarchy after grammar, while "
+                "encyclopedia content remains a higher-risk mixed article/media shape."
+            ),
+            "risk": "high",
+            "next_action": "complete rights review, then collect exactly three allowlisted prose fixtures",
+        }
     return {
-        "category_id": "grammar",
-        "parser_family": "grammar_parser",
-        "reason": "Grammar is the next simpler structured-text parser family.",
-        "risk": "medium",
-        "next_action": "collect exactly three allowlisted grammar fixtures",
+        "category_id": "encyclopedias",
+        "parser_family": "dictionary_parser",
+        "reason": "Inspect encyclopedia article structure before deciding its final parser family.",
+        "risk": "high",
+        "next_action": "collect exactly three allowlisted encyclopedia fixtures",
     }
 
 
@@ -426,7 +506,8 @@ def render_report(summary: dict[str, Any]) -> str:
 - LLM calls: `0`
 
 The verified pilots validate the common schema envelope, deterministic IDs, Tamil text,
-and exact source URLs across two verse traditions and one dictionary family. The
+and exact source URLs across two verse traditions, one dictionary family, and structured
+grammar rules. The
 comparison also exposes an intentional schema gap: commentary is
 preserved, but not yet modeled as an independent record.
 
@@ -438,7 +519,8 @@ preserved, but not yet modeled as an independent record.
 
 Optional-field coverage is descriptive, not a validation failure. Dictionary part of speech
 is absent because the sampled source does not label it. Sangam `thurai` preserves source
-colophon prose and is not treated as a controlled taxonomy.
+colophon prose and is not treated as a controlled taxonomy. Grammar explanation coverage
+is optional because commentary endpoints were outside its three-page fixture scope.
 
 ## Schema Stress Test
 
@@ -455,6 +537,7 @@ colophon prose and is not treated as a controlled taxonomy.
 - Saivam evidence is a bounded Fourth Thirumurai seed, not all Saiva literature.
 - Dictionary evidence is one entry from three fixture pages, not a dictionary-wide sample.
 - Sangam evidence is three Natrinai poems from three fixture pages, not the anthology.
+- Grammar evidence is two Nannul rules from three fixture pages, not the full work.
 - Optional fields differ legitimately across record types.
 - Standalone commentary identity and relationships remain undefined.
 - Dictionary sense segmentation and part-of-speech extraction need varied fixtures.

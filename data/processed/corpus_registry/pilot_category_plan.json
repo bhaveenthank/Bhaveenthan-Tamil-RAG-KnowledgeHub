@@ -10,8 +10,14 @@
       "sample_scope": "small",
       "max_books": 1,
       "max_records": 10,
-      "status": "planned",
-      "source_mode": "pending_inspection"
+      "status": "pilot_verified",
+      "source_mode": "fixture_html",
+      "source_path": "tests/fixtures/grammar/source_metadata.json",
+      "book_id": "nannul",
+      "work_id": "nannul_kaandigai_urai",
+      "notes": "Exactly three allowlisted Nannul fixture pages collected; the bounded rule page contains sutras 56 and 57.",
+      "validation_status": "VALID",
+      "verified_record_count": 2
     },
     {
       "pilot_id": "pilot_002",

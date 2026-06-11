@@ -2,24 +2,6 @@
   "fixture_plan_version": "pilot-fixture-plan-v1",
   "fixtures": [
     {
-      "category_id": "grammar",
-      "category_tamil": "இலக்கணம்",
-      "expected_source_structure": "Book/chapter headings with numbered sutra or rule text, explanation, examples, exceptions, and possible commentary.",
-      "fixture_focus": [
-        "navigation or contents page",
-        "single rule with explanation",
-        "rule with examples or commentary"
-      ],
-      "fixture_needed": true,
-      "fixture_type": "html",
-      "notes": "Rule boundaries and explanation labels must be confirmed from source HTML.",
-      "parser_family": "grammar_parser",
-      "recommended_order": 2,
-      "risk_level": "medium",
-      "source_inspection_status": "metadata_only_unconfirmed",
-      "target_fixture_count": 3
-    },
-    {
       "category_id": "twentieth_century_prose",
       "category_tamil": "இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள்",
       "expected_source_structure": "Book, chapter, section, paragraph, page, footnote, and author or edition metadata in typed HTML or document-oriented pages.",
@@ -57,9 +39,10 @@
     }
   ],
   "network_access": false,
-  "remaining_category_count": 3,
+  "remaining_category_count": 2,
   "source_basis": "pilot registry metadata; no live source fetch",
   "verified_categories": [
+    "grammar",
     "sangam_literature",
     "saivam",
     "dictionaries"

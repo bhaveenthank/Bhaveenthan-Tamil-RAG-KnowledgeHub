@@ -36,18 +36,25 @@
         "evidence": "The common envelope supports two verse traditions plus lexical evidence without flattening their identities.",
         "score": 85,
         "status": "ready"
+      },
+      {
+        "capability": "grammar_rule_analysis",
+        "evidence": "Numbered Nannul rules are structured, but explanations, examples, exceptions, and cross-rule links remain unverified.",
+        "score": 65,
+        "status": "partial"
       }
     ],
-    "score": 69.5
+    "score": 68.9
   },
   "architecture_strengths": [
-    "Stable source-scoped IDs and a shared provenance envelope work across verse and dictionary records.",
+    "Stable source-scoped IDs and a shared provenance envelope work across verse, dictionary, and grammar records.",
     "Two poetry traditions retain distinct hierarchy without schema fragmentation.",
+    "Numbered grammar rules retain chapter, section, rule text, and commentary traceability.",
     "All verified records retain exact source URLs and validation passes with zero errors.",
     "Raw/processed/report separation and fixture-first testing support controlled expansion."
   ],
   "architecture_weaknesses": [
-    "Only two of eight parser families have bounded source evidence.",
+    "Only three of eight parser families have bounded source evidence.",
     "Standalone commentary, entity, motif, and normalized literary-concept contracts remain incomplete.",
     "Mixed-content dispatch and encyclopedia article modeling are not proven.",
     "Image/manuscript rights, asset metadata, transcription, and OCR provenance are not proven."
@@ -75,14 +82,14 @@
       "recommended_next_step": "Run source inspection and a three-fixture parser-family pilot before ingestion."
     },
     {
-      "architecture_status": "partial",
+      "architecture_status": "ready",
       "category_english": "Grammar",
       "category_id": "grammar",
       "category_tamil": "இலக்கணம்",
       "content_type": "grammar",
       "expected_parser_family": "grammar_parser",
-      "major_risk": "Sutra, explanation, example, exception, and commentator boundaries are unverified.",
-      "recommended_next_step": "Validate this parser family with three allowlisted fixtures and schema-specific tests."
+      "major_risk": "Bounded pilot evidence validates parser output, schema mapping, and provenance.",
+      "recommended_next_step": "Retain bounded expansion gates and sample structural variants before scale."
     },
     {
       "architecture_status": "ready",
@@ -376,30 +383,30 @@
     }
   ],
   "citation_readiness": {
-    "citation_text_coverage": 66.7,
+    "citation_text_coverage": 75.0,
     "identity_traceability": 100.0,
-    "score": 96.7,
+    "score": 97.5,
     "source_url_coverage": 100.0,
     "status": "strong"
   },
   "corpus_mutations": 0,
   "expansion_readiness": {
-    "answer": "The common architecture can represent all 32 categories at a registry and provenance level, but only three categories and two parser families have extraction evidence. Mixed, image, encyclopedia, and several structured-text families require pilots.",
+    "answer": "The common architecture can represent all 32 categories at a registry and provenance level, but only four categories and three parser families have extraction evidence. Mixed, image, encyclopedia, and several structured-text families require pilots.",
     "category_count": 32,
-    "score": 41.7,
+    "score": 43.1,
     "status_counts": {
       "not_ready": 16,
-      "partial": 13,
-      "ready": 3
+      "partial": 12,
+      "ready": 4
     },
     "website_wide_answer": "PARTIAL_NOT_SCALE_READY"
   },
   "future_category_readiness": [
     {
       "category": "grammar",
-      "evidence": "Schema v2 defines grammar_rule, but grammar_parser remains a fixture-free stub.",
-      "major_risk": "Rule, explanation, example, exception, and commentary boundaries.",
-      "status": "partial"
+      "evidence": "Nannul fixtures validate numbered grammar_rule records, hierarchy, citations, and deterministic identity.",
+      "major_risk": "Examples, exceptions, commentator identity, and explanation parsing need broader fixtures.",
+      "status": "ready"
     },
     {
       "category": "prose",
@@ -422,10 +429,10 @@
   ],
   "llm_calls": 0,
   "metadata_readiness": {
-    "author_coverage": 92.9,
+    "author_coverage": 93.8,
     "category_coverage": 100.0,
     "note": "Dictionary author is legitimately absent in the sampled entry; coverage is descriptive, not fabricated.",
-    "score": 98.2,
+    "score": 98.5,
     "source_coverage": 100.0,
     "title_coverage": 100.0
   },
@@ -451,7 +458,7 @@
         "compatible_with_schema_v2": true,
         "major_gap": "Sutra, explanation, example, exception, and commentator boundaries are unverified.",
         "parser_family": "grammar_parser",
-        "status": "stub_unverified"
+        "status": "pilot_verified"
       },
       {
         "category_count": 5,
@@ -490,23 +497,24 @@
       }
     ],
     "output_compatibility": 100.0,
-    "parser_family_coverage": 25.0,
-    "score": 62.5,
+    "parser_family_coverage": 37.5,
+    "score": 68.8,
     "total_parser_families": 8,
     "validation_consistency": 100.0,
     "verified_parser_families": [
       "dictionary_parser",
+      "grammar_parser",
       "verse_parser"
     ]
   },
   "readiness_scores": {
-    "analytics_readiness": 69.5,
-    "citation_readiness": 96.7,
-    "expansion_readiness": 41.7,
-    "metadata_readiness": 98.2,
-    "overall_readiness": 74.4,
-    "parser_readiness": 62.5,
-    "schema_readiness": 77.9
+    "analytics_readiness": 68.9,
+    "citation_readiness": 97.5,
+    "expansion_readiness": 43.1,
+    "metadata_readiness": 98.5,
+    "overall_readiness": 76.5,
+    "parser_readiness": 68.8,
+    "schema_readiness": 81.9
   },
   "scaling_risks": [
     "Treating a shared schema envelope as proof that source-specific parsers are interchangeable.",
@@ -518,7 +526,7 @@
   "schema_readiness": {
     "category_specific_gaps": [
       "Standalone commentary identity and relationships are partial.",
-      "Grammar rule subfields are specified but unverified.",
+      "Grammar examples, exceptions, commentator identity, and cross-rule links are unverified.",
       "Prose hierarchy and page/footnote fields are unverified.",
       "Encyclopedia references/media and manuscript/OCR contracts are unverified."
     ],
@@ -533,31 +541,38 @@
     },
     "observed_record_types": [
       "dictionary_entry",
+      "grammar_rule",
       "verse"
     ],
-    "record_type_evidence_coverage": 25.0,
-    "schema_stress_score": 83.3,
-    "score": 77.9,
+    "record_type_evidence_coverage": 37.5,
+    "schema_stress_score": 87.5,
+    "score": 81.9,
     "supported_record_type_count": 8
   },
   "schema_version": "website-corpus-v2",
   "source_site": "Tamil Virtual Academy / TamilVU",
   "strategic_recommendation": {
-    "category_id": "grammar",
+    "category_id": "twentieth_century_prose",
     "decision": "RECOMMENDED_NEXT_PILOT",
-    "next_action": "Collect exactly three allowlisted grammar fixtures in a separately approved phase.",
-    "parser_family": "grammar_parser",
-    "reason": "Grammar introduces a genuinely new structured-text record type while remaining typed HTML/text. It tests rule, explanation, example, exception, and commentary boundaries without the rights and edition complexity of modern prose or the mixed media/reference risk of encyclopedias.",
-    "why_not_encyclopedia": "The current dictionary_parser assignment may be structurally wrong for articles containing sections, references, tables, and media.",
-    "why_not_prose": "Prose is valuable but adds chapter/page/footnote and rights-review variables before the grammar contract is proven."
+    "next_action": "After rights review, collect exactly three allowlisted prose fixtures in a separately approved phase.",
+    "parser_family": "prose_parser",
+    "precondition": "Complete book-level rights and public-domain review before collecting any prose fixture.",
+    "reason": "With grammar now verified, prose is the next distinct typed-text hierarchy. It tests chapters, sections, paragraphs, pages, and footnotes while remaining structurally clearer than encyclopedia articles that may mix references, tables, cross-links, and media.",
+    "why_not_encyclopedia": "The current dictionary_parser assignment may be structurally wrong for articles containing sections, references, tables, and media."
   },
-  "verified_category_count": 3,
+  "verified_category_count": 4,
   "verified_evidence": [
     {
       "category_id": "dictionaries",
       "evidence_path": "tests/fixtures/dictionary/source_metadata.json",
       "parser_family": "dictionary_parser",
       "record_count": 1
+    },
+    {
+      "category_id": "grammar",
+      "evidence_path": "tests/fixtures/grammar/source_metadata.json",
+      "parser_family": "grammar_parser",
+      "record_count": 2
     },
     {
       "category_id": "saivam",
@@ -572,5 +587,5 @@
       "record_count": 3
     }
   ],
-  "verified_record_count": 14
+  "verified_record_count": 16
 }

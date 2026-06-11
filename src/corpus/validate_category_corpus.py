@@ -41,6 +41,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
     ids: Counter[str] = Counter()
     dictionary_missing: Counter[str] = Counter()
     sangam_missing: Counter[str] = Counter()
+    grammar_missing: Counter[str] = Counter()
     nondeterministic_ids = 0
 
     for record in records:
@@ -79,6 +80,18 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
                     sangam_missing[field] += 1
             if record_id and not record_id.startswith("tvu_sangam_literature_"):
                 nondeterministic_ids += 1
+        if category_id == "grammar":
+            for field in (
+                "rule_no",
+                "rule_text",
+                "source_url",
+                "parser_family",
+                "record_type",
+            ):
+                if not str(record.get(field) or "").strip():
+                    grammar_missing[field] += 1
+            if record_id and not record_id.startswith("tvu_grammar_"):
+                nondeterministic_ids += 1
 
     duplicates = sorted(record_id for record_id, count in ids.items() if count > 1)
     error_count = (
@@ -86,6 +99,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
         + sum(invalid_types.values())
         + sum(dictionary_missing.values())
         + sum(sangam_missing.values())
+        + sum(grammar_missing.values())
         + malformed_urls
         + category_mismatches
         + nondeterministic_ids
@@ -103,6 +117,7 @@ def validate_records(records: list[dict[str, Any]], category_id: str) -> dict[st
         "duplicate_record_ids": duplicates,
         "dictionary_missing_fields": dict(sorted(dictionary_missing.items())),
         "sangam_missing_fields": dict(sorted(sangam_missing.items())),
+        "grammar_missing_fields": dict(sorted(grammar_missing.items())),
         "nondeterministic_ids": nondeterministic_ids,
         "source_url_coverage": (
             sum(bool(record.get("source_url")) for record in records) / len(records)
@@ -265,6 +280,94 @@ Before expansion, sample structurally unusual poems under a separately approved 
 """
 
 
+def render_grammar_report(result: dict[str, Any]) -> str:
+    missing_rows = "\n".join(
+        f"| `{field}` | {count} |"
+        for field, count in result["grammar_missing_fields"].items()
+    ) or "| None | 0 |"
+    return f"""# Grammar Pilot Validation Report
+
+## Summary
+
+- Work: `நன்னூல் - காண்டிகையுரை`
+- Fixture pages: `3`
+- Rules validated: `{result['record_count']}`
+- Status: `{result['status']}`
+- Validation errors: `{result['error_count']}`
+- Source URL coverage: `{result['source_url_coverage']:.1%}`
+- Duplicate record IDs: `{len(result['duplicate_record_ids'])}`
+- Non-deterministic IDs: `{result['nondeterministic_ids']}`
+
+## Required Grammar Fields
+
+| Missing Field | Count |
+| --- | ---: |
+{missing_rows}
+
+Rule number, rule text, chapter, section, source URL, and commentary URL are retained.
+`explanation_text` is optional in this pilot because commentary pages would have exceeded
+the approved three-page fixture limit.
+
+## Decision
+
+The Nannul grammar pilot is
+`{'PILOT_VERIFIED' if result['status'] == 'VALID' else 'REPAIR_REQUIRED'}`.
+This decision covers the wrapper, navigation, and one two-rule content page only. It does
+not authorize downloading other Nannul sections or commentary pages.
+"""
+
+
+def render_grammar_readiness(result: dict[str, Any]) -> str:
+    ready = result["status"] == "VALID"
+    return f"""# Grammar Pilot Readiness Report
+
+## Pilot Result
+
+- Fixtures collected: `3`
+- Records parsed: `{result['record_count']}`
+- Records normalized: `{result['record_count']}`
+- Validation errors: `{result['error_count']}`
+- Source URL coverage: `{result['source_url_coverage']:.1%}`
+- Missing required grammar metadata: `{sum(result['grammar_missing_fields'].values())}`
+
+## Assessment
+
+| Dimension | Result | Evidence |
+| --- | --- | --- |
+| Parser quality | `{'READY' if ready else 'REPAIR'}` | Two numbered Nannul rules parsed with preserved line breaks |
+| Normalization quality | `{'READY' if ready else 'REPAIR'}` | Unified schema v2 retains rule, chapter, section, and source identity |
+| Metadata quality | `{'READY' if ready else 'REPAIR'}` | Exact rule page, commentary URL, fixture checksum, work, and subid retained |
+| Citation readiness | `{'READY' if ready else 'REPAIR'}` | Work, subsection, and rule number form stable citations |
+| Linguistic-analysis contribution | `FOUNDATIONAL` | Adds explicit grammatical rules and classifications beyond literary and lexical records |
+
+## Comparison With Existing Pilots
+
+Verse records center on ordered poetic lines and literary hierarchy. Dictionary records
+center on headwords and definitions. Grammar records center on a numbered rule within a
+chapter and section, with explanation kept separate. The common envelope supports all
+three shapes without reusing verse or dictionary fields incorrectly.
+
+## Missing Metadata Findings
+
+No required grammar field is missing. `explanation_text` is empty because the source places
+commentary behind separate `உரை` endpoints and the approved fixture budget was exhausted.
+The exact commentary URLs are retained for a later, separately approved inspection.
+
+## Risks Before Expansion
+
+- Other Nannul sections may contain different rule or commentary layouts.
+- Examples, exceptions, commentator identity, and cross-rule references are not yet parsed.
+- Tolkappiyam and other grammar works may use deeper chapter/commentary hierarchy.
+- The parser must not treat metrical rule text as ordinary literary verse.
+
+## Recommendation
+
+`{'PILOT_VERIFIED' if ready else 'REPAIR_REQUIRED'}` for the bounded Nannul fixture set.
+Before broader grammar ingestion, inspect structurally different rules and one commentary
+endpoint under a new allowlisted phase.
+"""
+
+
 def render_validation_report(result: dict[str, Any]) -> str:
     missing_rows = "\n".join(
         f"| `{field}` | {count} |"
@@ -311,15 +414,19 @@ def render_comparison_report(
         prior_records = pilot.get("verified_record_count")
         if pilot["category_id"] == "saivam" and prior_records is None:
             prior_records = 10
-        verified_content = (
-            "Validated dictionary entry"
-            if is_verified and pilot["category_id"] == "dictionaries"
-            else "Validated verse/commentary seed"
+        content_labels = {
+            "dictionaries": "Validated dictionary entry",
+            "grammar": "Validated grammar rules",
+            "sangam_literature": "Validated Sangam verses",
+            "saivam": "Validated verse/commentary seed",
+        }
+        verified_content = content_labels.get(
+            pilot["category_id"], "Validated bounded pilot"
         )
         verified_risk = (
-            "Three-page fixture evidence only"
-            if is_verified and pilot["category_id"] == "dictionaries"
-            else "Existing source family only"
+            "Existing validated corpus seed"
+            if pilot["category_id"] == "saivam"
+            else "Three-page fixture evidence only"
         )
         rows.append(
             "| {category} | `{family}` | {records} | {missing} | {coverage} | {content} | {risk} | {suitability} |".format(
@@ -368,10 +475,9 @@ content has been fetched or approved.
 
 ## Finding
 
-The shared contract works for the existing Saivam verse/commentary seed and the bounded
-Tamil-Tamil dictionary entry. Grammar, Sangam, prose, and encyclopedia pilots still
-require source inspection and local fixtures before ingestion. This is the principal risk
-and the intended control point.
+The shared contract works for bounded Saivam, Sangam, dictionary, and grammar evidence.
+Prose and encyclopedia pilots still require source inspection and local fixtures before
+ingestion. This is the principal risk and the intended control point.
 """.format(rows="\n".join(rows))
 
 
@@ -394,6 +500,8 @@ def validate_category(
         if category_id == "dictionaries"
         else "reports/sangam-pilot-validation-report.md"
         if category_id == "sangam_literature"
+        else "reports/grammar-pilot-validation-report.md"
+        if category_id == "grammar"
         else "reports/multi-category-pilot-validation-report.md"
     )
     report.parent.mkdir(parents=True, exist_ok=True)
@@ -402,11 +510,13 @@ def validate_category(
         if category_id == "dictionaries"
         else render_sangam_report(result)
         if category_id == "sangam_literature"
+        else render_grammar_report(result)
+        if category_id == "grammar"
         else render_validation_report(result),
         encoding="utf-8",
     )
     plan = load_json(base_dir / DEFAULT_PLAN)
-    if category_id in {"dictionaries", "sangam_literature"} and result["status"] == "VALID":
+    if category_id in {"dictionaries", "sangam_literature", "grammar"} and result["status"] == "VALID":
         for pilot in plan.get("pilots", []):
             if pilot.get("category_id") == category_id:
                 pilot["status"] = "pilot_verified"
@@ -419,9 +529,12 @@ def validate_category(
         if category_id == "dictionaries":
             readiness = base_dir / "reports/dictionary-pilot-readiness-report.md"
             readiness.write_text(render_dictionary_readiness(result), encoding="utf-8")
-        else:
+        elif category_id == "sangam_literature":
             readiness = base_dir / "reports/sangam-pilot-readiness-report.md"
             readiness.write_text(render_sangam_readiness(result), encoding="utf-8")
+        else:
+            readiness = base_dir / "reports/grammar-pilot-readiness-report.md"
+            readiness.write_text(render_grammar_readiness(result), encoding="utf-8")
     comparison = base_dir / "reports/multi-category-pilot-comparison-report.md"
     comparison.write_text(render_comparison_report(plan, result), encoding="utf-8")
     return result

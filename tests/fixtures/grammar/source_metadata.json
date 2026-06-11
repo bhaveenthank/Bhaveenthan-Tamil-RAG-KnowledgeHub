@@ -1,0 +1,33 @@
+{
+  "fixture_set": "nannul_grammar_pilot_v1",
+  "source_work": "நன்னூல் - காண்டிகையுரை",
+  "publisher": "Tamil Virtual Academy / TamilVU",
+  "retrieved_on": "2026-06-10",
+  "fixture_limit": 3,
+  "fixtures": [
+    {
+      "fixture_path": "tests/fixtures/grammar/01_work_index.html",
+      "page_type": "work_index",
+      "source_url": "https://www.tamilvu.org/ta/library-l0900-html-l0900ind-118185",
+      "original_sha256": "0a03267304a49cbb18b985bc79f1421767cc811bba9a9954041aefd7e9a774f6",
+      "content_scope": "Relevant iframe endpoints only"
+    },
+    {
+      "fixture_path": "tests/fixtures/grammar/02_navigation.html",
+      "page_type": "grammar_navigation",
+      "source_url": "https://www.tamilvu.org/slet/l0900/l0900lft.jsp",
+      "original_sha256": "6fbad49b255a42d8f6bd221fffaa398015759269ed54c7d5595c6fbc8152aaaf",
+      "content_scope": "Relevant Nannul hierarchy and neighboring links only"
+    },
+    {
+      "fixture_path": "tests/fixtures/grammar/03_rules_56_57.html",
+      "page_type": "grammar_rules",
+      "source_url": "https://www.tamilvu.org/slet/l0900/l0900son.jsp?subid=212",
+      "original_sha256": "392b324a3be4ea924f12afffe5eded008191acd4400ac0e9d5e45b7ea4db31f5",
+      "content_scope": "Complete bounded content containing rules 56 and 57",
+      "chapter_title": "எழுத்ததிகாரம்",
+      "section_title": "எழுத்தியல்",
+      "subsection_title": "எழுத்து இயல்"
+    }
+  ]
+}

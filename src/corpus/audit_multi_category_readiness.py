@@ -38,8 +38,17 @@ SUPPORTED_RECORD_TYPES = {
     "manuscript_image",
     "external_reference",
 }
-VERIFIED_CATEGORY_IDS = {"saivam", "sangam_literature", "dictionaries"}
-VERIFIED_PARSER_FAMILIES = {"verse_parser", "dictionary_parser"}
+VERIFIED_CATEGORY_IDS = {
+    "grammar",
+    "saivam",
+    "sangam_literature",
+    "dictionaries",
+}
+VERIFIED_PARSER_FAMILIES = {
+    "grammar_parser",
+    "verse_parser",
+    "dictionary_parser",
+}
 NOT_READY_FAMILIES = {"mixed_parser", "image_metadata_parser"}
 
 ANALYTICS_READINESS = [
@@ -78,6 +87,12 @@ ANALYTICS_READINESS = [
         "score": 85,
         "status": "ready",
         "evidence": "The common envelope supports two verse traditions plus lexical evidence without flattening their identities.",
+    },
+    {
+        "capability": "grammar_rule_analysis",
+        "score": 65,
+        "status": "partial",
+        "evidence": "Numbered Nannul rules are structured, but explanations, examples, exceptions, and cross-rule links remain unverified.",
     },
 ]
 
@@ -247,7 +262,7 @@ def schema_assessment(
         },
         "category_specific_gaps": [
             "Standalone commentary identity and relationships are partial.",
-            "Grammar rule subfields are specified but unverified.",
+            "Grammar examples, exceptions, commentator identity, and cross-rule links are unverified.",
             "Prose hierarchy and page/footnote fields are unverified.",
             "Encyclopedia references/media and manuscript/OCR contracts are unverified.",
         ],
@@ -349,7 +364,7 @@ def expansion_assessment(matrix: list[dict[str, str]]) -> dict[str, Any]:
         "website_wide_answer": "PARTIAL_NOT_SCALE_READY",
         "answer": (
             "The common architecture can represent all 32 categories at a registry and provenance level, "
-            "but only three categories and two parser families have extraction evidence. Mixed, image, "
+            "but only four categories and three parser families have extraction evidence. Mixed, image, "
             "encyclopedia, and several structured-text families require pilots."
         ),
     }
@@ -357,21 +372,21 @@ def expansion_assessment(matrix: list[dict[str, str]]) -> dict[str, Any]:
 
 def recommendation() -> dict[str, str]:
     return {
-        "category_id": "grammar",
-        "parser_family": "grammar_parser",
+        "category_id": "twentieth_century_prose",
+        "parser_family": "prose_parser",
         "decision": "RECOMMENDED_NEXT_PILOT",
         "reason": (
-            "Grammar introduces a genuinely new structured-text record type while remaining typed HTML/text. "
-            "It tests rule, explanation, example, exception, and commentary boundaries without the rights "
-            "and edition complexity of modern prose or the mixed media/reference risk of encyclopedias."
+            "With grammar now verified, prose is the next distinct typed-text hierarchy. It tests chapters, "
+            "sections, paragraphs, pages, and footnotes while remaining structurally clearer than encyclopedia "
+            "articles that may mix references, tables, cross-links, and media."
         ),
-        "why_not_prose": (
-            "Prose is valuable but adds chapter/page/footnote and rights-review variables before the grammar contract is proven."
+        "precondition": (
+            "Complete book-level rights and public-domain review before collecting any prose fixture."
         ),
         "why_not_encyclopedia": (
             "The current dictionary_parser assignment may be structurally wrong for articles containing sections, references, tables, and media."
         ),
-        "next_action": "Collect exactly three allowlisted grammar fixtures in a separately approved phase.",
+        "next_action": "After rights review, collect exactly three allowlisted prose fixtures in a separately approved phase.",
     }
 
 
@@ -379,9 +394,9 @@ def future_category_readiness() -> list[dict[str, str]]:
     return [
         {
             "category": "grammar",
-            "status": "partial",
-            "evidence": "Schema v2 defines grammar_rule, but grammar_parser remains a fixture-free stub.",
-            "major_risk": "Rule, explanation, example, exception, and commentary boundaries.",
+            "status": "ready",
+            "evidence": "Nannul fixtures validate numbered grammar_rule records, hierarchy, citations, and deterministic identity.",
+            "major_risk": "Examples, exceptions, commentator identity, and explanation parsing need broader fixtures.",
         },
         {
             "category": "prose",
@@ -447,13 +462,14 @@ def build_audit(base_dir: Path = Path(".")) -> dict[str, Any]:
         "future_category_readiness": future_category_readiness(),
         "strategic_recommendation": recommendation(),
         "architecture_strengths": [
-            "Stable source-scoped IDs and a shared provenance envelope work across verse and dictionary records.",
+            "Stable source-scoped IDs and a shared provenance envelope work across verse, dictionary, and grammar records.",
             "Two poetry traditions retain distinct hierarchy without schema fragmentation.",
+            "Numbered grammar rules retain chapter, section, rule text, and commentary traceability.",
             "All verified records retain exact source URLs and validation passes with zero errors.",
             "Raw/processed/report separation and fixture-first testing support controlled expansion.",
         ],
         "architecture_weaknesses": [
-            "Only two of eight parser families have bounded source evidence.",
+            "Only three of eight parser families have bounded source evidence.",
             "Standalone commentary, entity, motif, and normalized literary-concept contracts remain incomplete.",
             "Mixed-content dispatch and encyclopedia article modeling are not proven.",
             "Image/manuscript rights, asset metadata, transcription, and OCR provenance are not proven.",
@@ -513,10 +529,9 @@ def render_report(audit: dict[str, Any]) -> str:
 - LLM calls: `0`
 - Frozen corpus mutations: `0`
 
-Three pilots are sufficient for an architectural audit because they exercise two distinct
-poetry hierarchies and one lexical hierarchy through the same identity, provenance,
-validation, and normalization envelope. They are not sufficient to declare untested parser
-families production-ready.
+Four pilots now exercise two distinct poetry hierarchies, one lexical hierarchy, and one
+grammar-rule hierarchy through the same identity, provenance, validation, and normalization
+envelope. They are not sufficient to declare the remaining parser families production-ready.
 
 ## Readiness Scores
 
@@ -535,13 +550,14 @@ dimensions, preventing strong citations from hiding weak parser coverage.
 - **Saivam:** proves hymn/verse/commentary identity, author, devotional metadata, and exact source traceability.
 - **Sangam:** proves anthology poem identity, thinai, situation, poet, colophon, and line preservation.
 - **Dictionaries:** proves headword-definition records and lexical content without inventing absent part-of-speech metadata.
+- **Grammar:** proves numbered rule text, chapter/section hierarchy, and exact commentary traceability.
 
 ## Schema Readiness
 
 Common required-field coverage is `{audit['schema_readiness']['common_required_field_coverage']:.1f}%`.
 Observed record-type evidence covers `{audit['schema_readiness']['record_type_evidence_coverage']:.1f}%`
 of the eight schema v2 record types. The shared envelope is strong, but standalone
-commentary, grammar, prose, encyclopedia, and image contracts remain partly or wholly
+commentary, prose, encyclopedia, and image contracts remain partly or wholly
 unverified.
 
 ## Parser Readiness Matrix
@@ -575,7 +591,7 @@ unverified.
 
 **Partially.** The registry, common schema, stable IDs, and provenance envelope can name
 and trace all 32 categories. The extraction architecture is not scale-ready because only
-two parser families have source evidence and mixed/image families remain unproven.
+three parser families have source evidence and mixed/image families remain unproven.
 
 Status counts: `{json.dumps(audit['expansion_readiness']['status_counts'], sort_keys=True)}`.
 
@@ -599,11 +615,11 @@ Status counts: `{json.dumps(audit['expansion_readiness']['status_counts'], sort_
 
 ## Strategic Recommendation
 
-Choose **grammar** using `{recommendation['parser_family']}`.
+Choose **twentieth-century prose** using `{recommendation['parser_family']}`.
 
 {recommendation['reason']}
 
-- **Why not prose yet:** {recommendation['why_not_prose']}
+- **Precondition:** {recommendation['precondition']}
 - **Why not encyclopedia yet:** {recommendation['why_not_encyclopedia']}
 - **Next action:** {recommendation['next_action']}
 """

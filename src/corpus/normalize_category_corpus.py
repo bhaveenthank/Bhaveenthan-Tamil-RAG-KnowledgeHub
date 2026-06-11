@@ -47,6 +47,17 @@ def normalize_record(record: dict[str, Any]) -> dict[str, Any]:
         ):
             normalized[field] = str(record.get(field) or "").strip()
         normalized["content_text"] = normalized["verse_text"]
+    if normalized.get("category_id") == "grammar":
+        for field in (
+            "rule_no",
+            "rule_text",
+            "explanation_text",
+            "section_id",
+            "chapter_id",
+            "commentary_url",
+        ):
+            normalized[field] = str(record.get(field) or "").strip()
+        normalized["content_text"] = normalized["rule_text"]
     return normalized
 
 

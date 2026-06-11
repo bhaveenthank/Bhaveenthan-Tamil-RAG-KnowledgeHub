@@ -5,8 +5,8 @@ content has been fetched or approved.
 
 | Category | Parser Family | Records | Missing Fields | URL Coverage | Content Type | Extraction Risks | Next Expansion |
 | --- | --- | ---: | --- | ---: | --- | --- | --- |
-| இலக்கணம் | `grammar_parser` | 0 | Not tested | Not tested | Pending inspected sample | HTML hierarchy unknown | Source inspection required |
-| சங்க இலக்கியம் | `verse_parser` | 3 | 0 | 100.0% | Validated verse/commentary seed | Existing source family only | Framework verified |
+| இலக்கணம் | `grammar_parser` | 2 | 0 | 100.0% | Validated grammar rules | Three-page fixture evidence only | Framework verified |
+| சங்க இலக்கியம் | `verse_parser` | 3 | 0 | 100.0% | Validated prior pilot | Bounded pilot evidence only | Framework verified |
 | சைவம் | `verse_parser` | 10 | 0 | 100.0% | Validated prior pilot | Bounded pilot evidence only | Framework verified |
 | இருபதாம் நூற்றாண்டு இலக்கியங்கள் உரைநடைகள் | `prose_parser` | 0 | Not tested | Not tested | Pending inspected sample | HTML hierarchy unknown | Source inspection required |
 | அகராதிகள் | `dictionary_parser` | 1 | 0 | 100.0% | Validated prior pilot | Bounded pilot evidence only | Framework verified |
@@ -14,7 +14,6 @@ content has been fetched or approved.
 
 ## Finding
 
-The shared contract works for the existing Saivam verse/commentary seed and the bounded
-Tamil-Tamil dictionary entry. Grammar, Sangam, prose, and encyclopedia pilots still
-require source inspection and local fixtures before ingestion. This is the principal risk
-and the intended control point.
+The shared contract works for bounded Saivam, Sangam, dictionary, and grammar evidence.
+Prose and encyclopedia pilots still require source inspection and local fixtures before
+ingestion. This is the principal risk and the intended control point.

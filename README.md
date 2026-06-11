@@ -217,6 +217,20 @@ python3 src/corpus/normalize_category_corpus.py --category-id sangam_literature
 python3 src/corpus/validate_category_corpus.py --category-id sangam_literature
 ```
 
+## Grammar Pilot
+
+The grammar pilot uses exactly three allowlisted Nannul pages and parses rules 56 and 57
+from `எழுத்து இயல்`. Rule text, hierarchy, source URL, and commentary URL are preserved;
+commentary text is not fetched within this pilot.
+
+```bash
+python3 src/corpus/pilot_ingest_category.py --category-id grammar
+python3 src/corpus/normalize_category_corpus.py --category-id grammar
+python3 src/corpus/validate_category_corpus.py --category-id grammar
+python3 src/corpus/validate_pilot_categories.py
+python3 src/corpus/audit_multi_category_readiness.py
+```
+
 ## Cross-Pilot Validation
 
 The cross-pilot validator compares the verified Saivam, Sangam, and dictionary artifacts,

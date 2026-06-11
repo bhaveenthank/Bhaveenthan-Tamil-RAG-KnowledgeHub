@@ -1,15 +1,17 @@
 # Multi-Category Readiness Audit
 
-## Why Audit After Three Pilots
+## Why Audit After Four Pilots
 
-Three verified categories provide the smallest useful architectural stress test. Saivam
+The first three verified categories provided the smallest useful architectural stress
+test. Saivam
 and Sangam both contain poetry, but their native hierarchies differ: hymns, sacred places,
 pann, and commentary versus anthology poems, thinai, situation, poet, and colophon.
-Dictionaries introduce a non-poetry record centered on a headword and definition.
+Dictionaries introduce a non-poetry record centered on a headword and definition. Grammar
+now adds numbered normative rules inside chapter and section hierarchy.
 
 Together they test whether unified schema v2 can reuse identity, content, provenance,
 language, validation, and citation fields without flattening category-specific evidence.
-They do not prove grammar, prose, mixed, table, image, or external-link parsing.
+They do not prove prose, mixed, table, image, or external-link parsing.
 
 ## Lessons From Verified Pilots
 
@@ -30,6 +32,12 @@ The dictionary pilot proves a distinct lexical record type. It also establishes 
 discipline: optional metadata such as part of speech remains empty when the source does not
 label it.
 
+### Grammar
+
+The Nannul pilot proves that `grammar_parser` can preserve rule number, rule text, chapter,
+section, source identity, and commentary traceability without treating metrical sutra text
+as literary verse.
+
 ## Architectural Strengths
 
 - deterministic source-scoped record IDs;
@@ -38,15 +46,16 @@ label it.
 - raw, processed, report, release, and index separation;
 - parser-family boundaries and bounded pilot gates;
 - UTF-8 Tamil preservation and offline fixture tests;
-- compatibility across devotional verse, classical anthology verse, and lexical entries.
+- compatibility across devotional verse, classical anthology verse, lexical entries, and
+  grammar rules.
 
 ## Architectural Weaknesses
 
-- only `verse_parser` and `dictionary_parser` have verified source evidence;
+- only `verse_parser`, `dictionary_parser`, and `grammar_parser` have verified source evidence;
 - standalone commentary records and relationships remain partial;
 - entities, motifs, themes, places, deity normalization, and synonym relationships are not
   general corpus contracts;
-- grammar and prose hierarchy are designed but unverified;
+- grammar explanation/example variants and prose hierarchy remain unverified;
 - `mixed_parser` has no proven dispatch strategy;
 - encyclopedia content may not fit `dictionary_parser`;
 - image/manuscript rights, asset metadata, transcription, and OCR provenance are unproven.
@@ -80,8 +89,8 @@ their future record type.
 
 ## Scientific Next Step
 
-Grammar is the recommended next pilot. It introduces a genuinely new structured record:
-rule or sutra, explanation, example, exception, chapter, and commentary. It has greater
-architectural information value than another verse or dictionary variant while avoiding
-the rights and edition complexity of modern prose and the mixed article/media uncertainty
-of encyclopedias.
+Twentieth-century prose is the next recommended parser-family pilot, but only after
+book-level rights and public-domain review. It introduces chapter, section, paragraph,
+page, and footnote hierarchy. Encyclopedia remains deferred because its article,
+reference, table, cross-link, and media structure may require a parser different from the
+current dictionary assignment.

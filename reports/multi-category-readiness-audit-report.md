@@ -2,31 +2,30 @@
 
 ## Executive Summary
 
-- Verified categories: `3`
-- Verified records inspected: `14`
+- Verified categories: `4`
+- Verified records inspected: `16`
 - TamilVU registry categories assessed: `32`
-- Overall readiness: `74.4/100`
+- Overall readiness: `76.5/100`
 - Website-wide decision: `PARTIAL_NOT_SCALE_READY`
 - Network requests: `0`
 - LLM calls: `0`
 - Frozen corpus mutations: `0`
 
-Three pilots are sufficient for an architectural audit because they exercise two distinct
-poetry hierarchies and one lexical hierarchy through the same identity, provenance,
-validation, and normalization envelope. They are not sufficient to declare untested parser
-families production-ready.
+Four pilots now exercise two distinct poetry hierarchies, one lexical hierarchy, and one
+grammar-rule hierarchy through the same identity, provenance, validation, and normalization
+envelope. They are not sufficient to declare the remaining parser families production-ready.
 
 ## Readiness Scores
 
 | Dimension | Score |
 | --- | ---: |
-| `schema_readiness` | 77.9 |
-| `parser_readiness` | 62.5 |
-| `metadata_readiness` | 98.2 |
-| `citation_readiness` | 96.7 |
-| `analytics_readiness` | 69.5 |
-| `expansion_readiness` | 41.7 |
-| `overall_readiness` | 74.4 |
+| `schema_readiness` | 81.9 |
+| `parser_readiness` | 68.8 |
+| `metadata_readiness` | 98.5 |
+| `citation_readiness` | 97.5 |
+| `analytics_readiness` | 68.9 |
+| `expansion_readiness` | 43.1 |
+| `overall_readiness` | 76.5 |
 
 Scores are deterministic weighted evidence summaries. Schema emphasizes common-field
 coverage while discounting unobserved record types. Parser readiness gives half its weight
@@ -39,13 +38,14 @@ dimensions, preventing strong citations from hiding weak parser coverage.
 - **Saivam:** proves hymn/verse/commentary identity, author, devotional metadata, and exact source traceability.
 - **Sangam:** proves anthology poem identity, thinai, situation, poet, colophon, and line preservation.
 - **Dictionaries:** proves headword-definition records and lexical content without inventing absent part-of-speech metadata.
+- **Grammar:** proves numbered rule text, chapter/section hierarchy, and exact commentary traceability.
 
 ## Schema Readiness
 
 Common required-field coverage is `100.0%`.
-Observed record-type evidence covers `25.0%`
+Observed record-type evidence covers `37.5%`
 of the eight schema v2 record types. The shared envelope is strong, but standalone
-commentary, grammar, prose, encyclopedia, and image contracts remain partly or wholly
+commentary, prose, encyclopedia, and image contracts remain partly or wholly
 unverified.
 
 ## Parser Readiness Matrix
@@ -54,7 +54,7 @@ unverified.
 | --- | ---: | --- | --- |
 | `dictionary_parser` | 4 | `pilot_verified` | Sense order, examples, cross-references, and encyclopedia article structure are not generally proven. |
 | `external_link_registry` | 1 | `stub_unverified` | Institution, robots, rights, scope, and approval metadata need a registry-only pilot. |
-| `grammar_parser` | 1 | `stub_unverified` | Sutra, explanation, example, exception, and commentator boundaries are unverified. |
+| `grammar_parser` | 1 | `pilot_verified` | Sutra, explanation, example, exception, and commentator boundaries are unverified. |
 | `image_metadata_parser` | 5 | `stub_unverified` | Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified. |
 | `mixed_parser` | 10 | `stub_unverified` | No dispatch contract has been proven for pages combining verse, prose, tables, or media. |
 | `prose_parser` | 3 | `stub_unverified` | Chapter, paragraph, page, footnote, edition, and rights metadata are unverified. |
@@ -63,7 +63,7 @@ unverified.
 
 ## Metadata And Citation
 
-- Author coverage: `92.9%`
+- Author coverage: `93.8%`
 - Title coverage: `100.0%`
 - Source coverage: `100.0%`
 - Category coverage: `100.0%`
@@ -80,12 +80,13 @@ unverified.
 | `deity_analysis` | 75 | `partial` | Saivam supplies devotional evidence, but deity normalization is not proven across traditions. |
 | `author_comparison` | 90 | `ready` | Saivam and Sangam records preserve normalized author identity and source citations. |
 | `cross_corpus_comparison` | 85 | `ready` | The common envelope supports two verse traditions plus lexical evidence without flattening their identities. |
+| `grammar_rule_analysis` | 65 | `partial` | Numbered Nannul rules are structured, but explanations, examples, exceptions, and cross-rule links remain unverified. |
 
 ## Future Category Readiness
 
 | Category Family | Status | Evidence | Major Risk |
 | --- | --- | --- | --- |
-| `grammar` | `partial` | Schema v2 defines grammar_rule, but grammar_parser remains a fixture-free stub. | Rule, explanation, example, exception, and commentary boundaries. |
+| `grammar` | `ready` | Nannul fixtures validate numbered grammar_rule records, hierarchy, citations, and deterministic identity. | Examples, exceptions, commentator identity, and explanation parsing need broader fixtures. |
 | `prose` | `partial` | Schema v2 defines prose_section, but no prose fixture validates hierarchy or rights metadata. | Chapter, paragraph, page, footnote, edition, and rights boundaries. |
 | `encyclopedias` | `not_ready` | The dictionary envelope is reusable, but the assigned parser has no article/media evidence. | Flattening sections, references, cross-links, tables, and media into a definition. |
 | `mixed_content` | `not_ready` | MixedParser is a conservative schema stub with no proven source dispatch. | Losing relationships between verse, prose, commentary, tables, and assets. |
@@ -94,9 +95,9 @@ unverified.
 
 **Partially.** The registry, common schema, stable IDs, and provenance envelope can name
 and trace all 32 categories. The extraction architecture is not scale-ready because only
-two parser families have source evidence and mixed/image families remain unproven.
+three parser families have source evidence and mixed/image families remain unproven.
 
-Status counts: `{"not_ready": 16, "partial": 13, "ready": 3}`.
+Status counts: `{"not_ready": 16, "partial": 12, "ready": 4}`.
 
 ## Category Readiness Matrix
 
@@ -104,7 +105,7 @@ Status counts: `{"not_ready": 16, "partial": 13, "ready": 3}`.
 | --- | --- | --- | --- | --- | --- |
 | `word_index` | சொல்லடைவு | `dictionary_parser` | `partial` | Sense order, examples, cross-references, and encyclopedia article structure are not generally proven. | Collect three work-specific fixtures and validate hierarchy before ingestion. |
 | `tamil_numeral_manuscript` | தமிழ் எண் சுவடி | `image_metadata_parser` | `not_ready` | Image rights, folio identity, asset inventory, transcription, and OCR provenance are unverified. | Run source inspection and a three-fixture parser-family pilot before ingestion. |
-| `grammar` | இலக்கணம் | `grammar_parser` | `partial` | Sutra, explanation, example, exception, and commentator boundaries are unverified. | Validate this parser family with three allowlisted fixtures and schema-specific tests. |
+| `grammar` | இலக்கணம் | `grammar_parser` | `ready` | Bounded pilot evidence validates parser output, schema mapping, and provenance. | Retain bounded expansion gates and sample structural variants before scale. |
 | `sangam_literature` | சங்க இலக்கியம் | `verse_parser` | `ready` | Bounded pilot evidence validates parser output, schema mapping, and provenance. | Retain bounded expansion gates and sample structural variants before scale. |
 | `eighteen_minor_works` | பதினெண் கீழ்க்கணக்கு | `verse_parser` | `partial` | Work-specific numbering, colophons, meter, commentary, and author labels still require fixtures. | Collect three work-specific fixtures and validate hierarchy before ingestion. |
 | `epics` | காப்பியங்கள் | `mixed_parser` | `not_ready` | No dispatch contract has been proven for pages combining verse, prose, tables, or media. | Run source inspection and a three-fixture parser-family pilot before ingestion. |
@@ -137,14 +138,15 @@ Status counts: `{"not_ready": 16, "partial": 13, "ready": 3}`.
 
 ## Architecture Strengths
 
-- Stable source-scoped IDs and a shared provenance envelope work across verse and dictionary records.
+- Stable source-scoped IDs and a shared provenance envelope work across verse, dictionary, and grammar records.
 - Two poetry traditions retain distinct hierarchy without schema fragmentation.
+- Numbered grammar rules retain chapter, section, rule text, and commentary traceability.
 - All verified records retain exact source URLs and validation passes with zero errors.
 - Raw/processed/report separation and fixture-first testing support controlled expansion.
 
 ## Architecture Weaknesses
 
-- Only two of eight parser families have bounded source evidence.
+- Only three of eight parser families have bounded source evidence.
 - Standalone commentary, entity, motif, and normalized literary-concept contracts remain incomplete.
 - Mixed-content dispatch and encyclopedia article modeling are not proven.
 - Image/manuscript rights, asset metadata, transcription, and OCR provenance are not proven.
@@ -159,10 +161,10 @@ Status counts: `{"not_ready": 16, "partial": 13, "ready": 3}`.
 
 ## Strategic Recommendation
 
-Choose **grammar** using `grammar_parser`.
+Choose **twentieth-century prose** using `prose_parser`.
 
-Grammar introduces a genuinely new structured-text record type while remaining typed HTML/text. It tests rule, explanation, example, exception, and commentary boundaries without the rights and edition complexity of modern prose or the mixed media/reference risk of encyclopedias.
+With grammar now verified, prose is the next distinct typed-text hierarchy. It tests chapters, sections, paragraphs, pages, and footnotes while remaining structurally clearer than encyclopedia articles that may mix references, tables, cross-links, and media.
 
-- **Why not prose yet:** Prose is valuable but adds chapter/page/footnote and rights-review variables before the grammar contract is proven.
+- **Precondition:** Complete book-level rights and public-domain review before collecting any prose fixture.
 - **Why not encyclopedia yet:** The current dictionary_parser assignment may be structurally wrong for articles containing sections, references, tables, and media.
-- **Next action:** Collect exactly three allowlisted grammar fixtures in a separately approved phase.
+- **Next action:** After rights review, collect exactly three allowlisted prose fixtures in a separately approved phase.

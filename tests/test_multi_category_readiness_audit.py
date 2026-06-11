@@ -14,8 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_audit_generation_and_scores() -> None:
     audit = build_audit(ROOT)
 
-    assert audit["verified_category_count"] == 3
-    assert audit["verified_record_count"] == 14
+    assert audit["verified_category_count"] == 4
+    assert audit["verified_record_count"] == 16
     assert audit["expansion_readiness"]["category_count"] == 32
     assert set(audit["readiness_scores"]) == {
         "schema_readiness",
@@ -44,7 +44,7 @@ def test_category_matrix_covers_registry() -> None:
     assert status["saivam"] == "ready"
     assert status["sangam_literature"] == "ready"
     assert status["dictionaries"] == "ready"
-    assert status["grammar"] == "partial"
+    assert status["grammar"] == "ready"
     assert status["encyclopedias"] == "not_ready"
 
 
@@ -56,14 +56,14 @@ def test_parser_and_strategic_recommendation() -> None:
 
     assert parsers["verse_parser"]["status"] == "pilot_verified"
     assert parsers["dictionary_parser"]["status"] == "pilot_verified"
-    assert parsers["grammar_parser"]["status"] == "stub_unverified"
-    assert audit["strategic_recommendation"]["category_id"] == "grammar"
+    assert parsers["grammar_parser"]["status"] == "pilot_verified"
+    assert audit["strategic_recommendation"]["category_id"] == "twentieth_century_prose"
     future = {
         item["category"]: item["status"]
         for item in audit["future_category_readiness"]
     }
     assert future == {
-        "grammar": "partial",
+        "grammar": "ready",
         "prose": "partial",
         "encyclopedias": "not_ready",
         "mixed_content": "not_ready",
@@ -80,7 +80,7 @@ def test_json_and_report_generation(tmp_path: Path) -> None:
     text = report.read_text(encoding="utf-8")
     assert loaded == audit
     assert "Can The Current Architecture Support All 32 TamilVU Categories?" in text
-    assert "Choose **grammar**" in text
+    assert "Choose **twentieth-century prose**" in text
 
 
 def test_outputs_are_deterministic() -> None:

@@ -27,7 +27,6 @@ website or full category. They:
 
 | Category Type | Main Parser Risk |
 | --- | --- |
-| Grammar | Confusing rule text with explanation, example, exception, or commentary |
 | Twentieth-century prose | Paragraph/page/footnote boundaries plus edition and rights questions |
 | Encyclopedia | Treating mixed article, reference, table, link, and media content as a simple dictionary entry |
 
@@ -57,10 +56,17 @@ The fixtures prove poem number, thinai, verse lines, commentary URL, situation, 
 for the sample. They do not prove all Natrinai variants, commentary parsing, or other
 Sangam anthologies.
 
+## Grammar Inspection Result
+
+The Nannul wrapper uses the same frame family, but its content units are numbered grammar
+rules rather than poems. Three allowlisted pages prove the hierarchy
+`எழுத்ததிகாரம் → எழுத்தியல் → எழுத்து இயல்`, two rule boundaries, line-preserving rule
+text, and exact commentary URLs. Commentary text was not fetched within the fixture limit.
+
 ## Development Order
 
-With dictionary and Sangam pilots validated, continue with `grammar_parser`, then
-`prose_parser` after rights review, and encyclopedia adaptation last. Encyclopedia use of
+With dictionary, Sangam, and grammar pilots validated, continue with `prose_parser` only
+after rights review, and encyclopedia adaptation last. Encyclopedia use of
 `dictionary_parser` remains the highest-risk assignment because fixtures may prove that a
 dedicated adapter or `mixed_parser` delegation is necessary.
 
