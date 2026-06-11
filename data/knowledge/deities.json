@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "aliases": ["சிவபெருமான்"],
+      "canonical_name": "சிவன்",
+      "deity_id": "deity_siva",
+      "description": "Illustrative deity authority seed; epithets require separate reviewed evidence.",
+      "tradition": "சைவம்"
+    }
+  ],
+  "registry_name": "deities",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}

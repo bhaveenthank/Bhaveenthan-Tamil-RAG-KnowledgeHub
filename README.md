@@ -259,10 +259,32 @@ python3 src/corpus/validate_pilot_categories.py
 
 ## Multi-Category Readiness Audit
 
-The readiness audit uses only the three verified local pilots to score schema, parser,
+The readiness audit uses the five verified local pilots to score schema, parser,
 metadata, citation, analytics, and 32-category expansion readiness. It performs no network
 access, ingestion, embedding, indexing, or corpus mutation.
 
 ```bash
 python3 src/corpus/audit_multi_category_readiness.py
 ```
+
+## Tamil Literary Knowledge Layer
+
+The knowledge-layer foundation defines deterministic registries for entities, synonyms,
+motifs, authors, deities, places, works, themes, and literary devices. Current entries are
+small illustrative seeds only: they are not extracted corpus annotations and are not
+evidence for analytical claims.
+
+The readiness analyzer validates registry schemas and reports foundation readiness
+separately from analytical readiness. Future phases will populate reviewed authorities,
+link exact corpus evidence, extract literary devices, build exhaustive aggregation, and
+add analytical retrieval. This layer will resolve query concepts before retrieval and
+provide evidence-backed groupings to future RAG, while citation grounding remains tied to
+the original corpus records and TamilVU source URLs.
+
+```bash
+python3 src/knowledge/analyze_knowledge_readiness.py
+```
+
+Planned sequence: entity population, synonym population, motif population, literary-device
+extraction, aggregation engine, then analytical retrieval. No answer generation is part of
+the current phase.

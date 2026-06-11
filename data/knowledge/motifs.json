@@ -1,0 +1,13 @@
+{
+  "records": [
+    {
+      "description": "Illustrative motif for references to the crescent or moon in divine description.",
+      "example_patterns": ["பிறை", "மதி", "திங்கள்"],
+      "motif_id": "motif_lunar_imagery",
+      "motif_name": "சந்திரக் காட்சி"
+    }
+  ],
+  "registry_name": "motifs",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}

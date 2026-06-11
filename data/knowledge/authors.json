@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "aliases": ["திருஞானசம்பந்தர்", "சம்பந்தர்"],
+      "author_id": "author_sambandar",
+      "canonical_name": "திருஞானசம்பந்தர்",
+      "period": "பக்தி இலக்கியக் காலம்",
+      "works": ["work_thevaram_thirumurai_02"]
+    }
+  ],
+  "registry_name": "authors",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}

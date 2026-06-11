@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "aliases": ["திருப்பூந்தராய்"],
+      "canonical_name": "திருப்பூந்தராய்",
+      "description": "Illustrative sacred-place authority seed.",
+      "place_id": "place_tiruppoontharaai",
+      "place_type": "sacred_place"
+    }
+  ],
+  "registry_name": "places",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}

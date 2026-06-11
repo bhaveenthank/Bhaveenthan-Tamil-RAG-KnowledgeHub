@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "aliases": ["மதி", "திங்கள்", "நிலவு"],
+      "canonical_name": "சந்திரன்",
+      "description": "Illustrative natural-object entity for lunar vocabulary design.",
+      "entity_id": "entity_moon",
+      "entity_type": "natural_object"
+    }
+  ],
+  "registry_name": "entities",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}

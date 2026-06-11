@@ -1,0 +1,168 @@
+{
+  "analysis_version": "knowledge-readiness-v1",
+  "analytical_readiness_score": 35.0,
+  "capabilities": [
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "synonym_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "synonyms",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "entity_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "entities",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "motif_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "motifs",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "author_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "authors",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "deity_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "deities",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "place_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "places",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "theme_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "themes",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "literary_device_readiness",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "literary_devices",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    },
+    {
+      "analytical_readiness_score": 35.0,
+      "capability": "work_registry_support",
+      "corpus_annotation_count": 0,
+      "evidence_link_count": 0,
+      "foundation_score": 70,
+      "limitations": [
+        "seed examples are illustrative and unreviewed",
+        "no corpus evidence spans are linked",
+        "no extraction coverage has been measured"
+      ],
+      "record_count": 1,
+      "registry": "works",
+      "reviewed_record_count": 0,
+      "schema_errors": [],
+      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+    }
+  ],
+  "decision": "FOUNDATION_READY_EXTRACTION_NOT_STARTED",
+  "extraction_performed": false,
+  "foundation_readiness_score": 70.0,
+  "knowledge_schema_version": "knowledge-registry-v1",
+  "llm_calls": 0,
+  "phase": "foundation_only",
+  "primary_capability_count": 8,
+  "registry_count": 9,
+  "scraping_performed": false
+}

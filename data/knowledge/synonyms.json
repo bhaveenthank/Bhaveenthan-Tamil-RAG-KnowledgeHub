@@ -1,0 +1,13 @@
+{
+  "records": [
+    {
+      "canonical_term": "சந்திரன்",
+      "concept_id": "concept_moon",
+      "synonyms": ["மதி", "திங்கள்", "நிலவு"],
+      "variant_forms": []
+    }
+  ],
+  "registry_name": "synonyms",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}

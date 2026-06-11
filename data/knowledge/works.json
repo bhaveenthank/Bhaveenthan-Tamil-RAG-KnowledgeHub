@@ -1,0 +1,15 @@
+{
+  "records": [
+    {
+      "aliases": ["இரண்டாம் திருமுறை"],
+      "authors": ["author_sambandar"],
+      "canonical_title": "தேவாரம் - இரண்டாம் திருமுறை",
+      "genre": "பக்தி இலக்கியம்",
+      "period": "பக்தி இலக்கியக் காலம்",
+      "work_id": "work_thevaram_thirumurai_02"
+    }
+  ],
+  "registry_name": "works",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}

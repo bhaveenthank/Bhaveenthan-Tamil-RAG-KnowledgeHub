@@ -1,0 +1,13 @@
+{
+  "records": [
+    {
+      "description": "Illustrative broad theme for devotional expression.",
+      "related_concepts": ["deity_siva"],
+      "theme_id": "theme_devotion",
+      "theme_name": "பக்தி"
+    }
+  ],
+  "registry_name": "themes",
+  "schema_version": "knowledge-registry-v1",
+  "status": "foundation_seed_only"
+}
