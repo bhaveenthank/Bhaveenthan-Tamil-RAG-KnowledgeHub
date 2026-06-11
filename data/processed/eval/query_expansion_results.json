@@ -1,0 +1,556 @@
+{
+  "assessment_method": "Compare ranks and counts of top-k records containing curated expansion terms; this is a deterministic evidence proxy, not human relevance judgment.",
+  "evaluation_version": "query-expansion-evaluation-v1",
+  "query_results": [
+    {
+      "assessment": "neutral",
+      "baseline_evidence": {
+        "first_rank": null,
+        "top_k_hits": 0
+      },
+      "baseline_results": [
+        {
+          "chunk_id": "thevaram_02_1732_2221_metadata_context",
+          "hybrid_score": 0.77173913,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1732_2221",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1728_2177_verse_plus_commentary",
+          "hybrid_score": 0.68080941,
+          "matched_modes": [
+            "both"
+          ],
+          "parent_record_id": "thevaram_02_1728_2177",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1723_2114_verse_only",
+          "hybrid_score": 0.52391304,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1723_2114",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1731_2205_verse_only",
+          "hybrid_score": 0.52391304,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1731_2205",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1666_1501_verse_plus_commentary",
+          "hybrid_score": 0.36086957,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1666_1501",
+          "rank": 5
+        }
+      ],
+      "expanded_evidence": {
+        "first_rank": null,
+        "top_k_hits": 0
+      },
+      "expanded_results": [
+        {
+          "chunk_id": "thevaram_02_1732_2221_metadata_context",
+          "hybrid_score": 0.77173913,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1732_2221",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1723_2114_verse_only",
+          "hybrid_score": 0.52391304,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1723_2114",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1731_2205_verse_only",
+          "hybrid_score": 0.52391304,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1731_2205",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1666_1501_verse_plus_commentary",
+          "hybrid_score": 0.36086957,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1666_1501",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1672_1568_pozhppurai_only",
+          "hybrid_score": 0.36086957,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1672_1568",
+          "rank": 5
+        }
+      ],
+      "expansion": {
+        "expanded_query_text": "அப்பர் திருநாவுக்கரசர் நாவுக்கரசர் பாடல்கள்",
+        "expanded_terms": [
+          "அப்பர்",
+          "திருநாவுக்கரசர்",
+          "நாவுக்கரசர்"
+        ],
+        "expansion_applied": true,
+        "expansion_rules": [
+          {
+            "added_terms": [
+              "திருநாவுக்கரசர்",
+              "நாவுக்கரசர்"
+            ],
+            "canonical_term": "திருநாவுக்கரசர்",
+            "matched_term": "அப்பர்",
+            "record_id": "author_appar",
+            "registry": "authors"
+          }
+        ],
+        "matched_registries": [
+          "authors"
+        ],
+        "original_query": "அப்பர் பாடல்கள்"
+      },
+      "query": "அப்பர் பாடல்கள்",
+      "query_id": "author_appar",
+      "retrieved_contexts_changed": true
+    },
+    {
+      "assessment": "improved",
+      "baseline_evidence": {
+        "first_rank": 3,
+        "top_k_hits": 1
+      },
+      "baseline_results": [
+        {
+          "chunk_id": "thevaram_02_1732_2221_metadata_context",
+          "hybrid_score": 0.77173913,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1732_2221",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1749_2405_metadata_context",
+          "hybrid_score": 0.77173913,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1749_2405",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1714_2025_verse_only",
+          "hybrid_score": 0.63695652,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1714_2025",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1670_1544_metadata_context",
+          "hybrid_score": 0.58043478,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1670_1544",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1746_2370_metadata_context",
+          "hybrid_score": 0.58043478,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1746_2370",
+          "rank": 5
+        }
+      ],
+      "expanded_evidence": {
+        "first_rank": 1,
+        "top_k_hits": 5
+      },
+      "expanded_results": [
+        {
+          "chunk_id": "thevaram_02_1755_2465_metadata_context",
+          "hybrid_score": 0.7796875,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1755_2465",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1711_1984_metadata_context",
+          "hybrid_score": 0.66875,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1711_1984",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1745_2356_pozhppurai_only",
+          "hybrid_score": 0.6484375,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1745_2356",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1754_2453_metadata_context",
+          "hybrid_score": 0.6484375,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1754_2453",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1666_1493_pozhppurai_only",
+          "hybrid_score": 0.6078125,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1666_1493",
+          "rank": 5
+        }
+      ],
+      "expansion": {
+        "expanded_query_text": "சந்திரன் நிலா மதி திங்கள் நிலவு வரும் பாடல்கள்",
+        "expanded_terms": [
+          "சந்திரன்",
+          "நிலா",
+          "மதி",
+          "திங்கள்",
+          "நிலவு"
+        ],
+        "expansion_applied": true,
+        "expansion_rules": [
+          {
+            "added_terms": [
+              "நிலா",
+              "மதி",
+              "திங்கள்",
+              "நிலவு"
+            ],
+            "canonical_term": "சந்திரன்",
+            "matched_term": "சந்திரன்",
+            "record_id": "concept_moon",
+            "registry": "synonyms"
+          }
+        ],
+        "matched_registries": [
+          "synonyms"
+        ],
+        "original_query": "சந்திரன் வரும் பாடல்கள்"
+      },
+      "query": "சந்திரன் வரும் பாடல்கள்",
+      "query_id": "concept_moon",
+      "retrieved_contexts_changed": true
+    },
+    {
+      "assessment": "improved",
+      "baseline_evidence": {
+        "first_rank": 2,
+        "top_k_hits": 3
+      },
+      "baseline_results": [
+        {
+          "chunk_id": "thevaram_02_1732_2221_metadata_context",
+          "hybrid_score": 0.77173913,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1732_2221",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1779_2731_metadata_context",
+          "hybrid_score": 0.77173913,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1779_2731",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1729_2188_metadata_context",
+          "hybrid_score": 0.69347826,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1729_2188",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1692_1777_verse_only",
+          "hybrid_score": 0.63695652,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1692_1777",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1778_2721_verse_plus_commentary",
+          "hybrid_score": 0.60869565,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1778_2721",
+          "rank": 5
+        }
+      ],
+      "expanded_evidence": {
+        "first_rank": 1,
+        "top_k_hits": 5
+      },
+      "expanded_results": [
+        {
+          "chunk_id": "thevaram_02_1699_1856_metadata_context",
+          "hybrid_score": 0.75357143,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1699_1856",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1749_2405_metadata_context",
+          "hybrid_score": 0.75357143,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1749_2405",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1749_2406_metadata_context",
+          "hybrid_score": 0.75357143,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1749_2406",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1759_2511_metadata_context",
+          "hybrid_score": 0.75357143,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1759_2511",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1702_1894_metadata_context",
+          "hybrid_score": 0.72678571,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1702_1894",
+          "rank": 5
+        }
+      ],
+      "expansion": {
+        "expanded_query_text": "சிவன் சிவபெருமான் ஈசன் மகாதேவன் பற்றிய பாடல்கள்",
+        "expanded_terms": [
+          "சிவன்",
+          "சிவபெருமான்",
+          "ஈசன்",
+          "மகாதேவன்"
+        ],
+        "expansion_applied": true,
+        "expansion_rules": [
+          {
+            "added_terms": [
+              "சிவபெருமான்",
+              "ஈசன்",
+              "மகாதேவன்"
+            ],
+            "canonical_term": "சிவன்",
+            "matched_term": "சிவன்",
+            "record_id": "deity_siva",
+            "registry": "deities"
+          }
+        ],
+        "matched_registries": [
+          "deities"
+        ],
+        "original_query": "சிவன் பற்றிய பாடல்கள்"
+      },
+      "query": "சிவன் பற்றிய பாடல்கள்",
+      "query_id": "deity_siva",
+      "retrieved_contexts_changed": true
+    },
+    {
+      "assessment": "improved",
+      "baseline_evidence": {
+        "first_rank": 2,
+        "top_k_hits": 3
+      },
+      "baseline_results": [
+        {
+          "chunk_id": "thevaram_02_1732_2221_metadata_context",
+          "hybrid_score": 0.77173913,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1732_2221",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1714_2025_verse_only",
+          "hybrid_score": 0.63695652,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1714_2025",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1667_1507_verse_only",
+          "hybrid_score": 0.55869565,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1667_1507",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1742_2329_verse_only",
+          "hybrid_score": 0.55869565,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1742_2329",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1710_1971_verse_only",
+          "hybrid_score": 0.52391304,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1710_1971",
+          "rank": 5
+        }
+      ],
+      "expanded_evidence": {
+        "first_rank": 1,
+        "top_k_hits": 4
+      },
+      "expanded_results": [
+        {
+          "chunk_id": "thevaram_02_1714_2025_verse_only",
+          "hybrid_score": 0.73375,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1714_2025",
+          "rank": 1
+        },
+        {
+          "chunk_id": "thevaram_02_1667_1507_verse_only",
+          "hybrid_score": 0.555,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1667_1507",
+          "rank": 2
+        },
+        {
+          "chunk_id": "thevaram_02_1732_2221_metadata_context",
+          "hybrid_score": 0.5075,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1732_2221",
+          "rank": 3
+        },
+        {
+          "chunk_id": "thevaram_02_1730_2190_verse_only",
+          "hybrid_score": 0.49,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1730_2190",
+          "rank": 4
+        },
+        {
+          "chunk_id": "thevaram_02_1742_2329_verse_only",
+          "hybrid_score": 0.48875,
+          "matched_modes": [
+            "lexical"
+          ],
+          "parent_record_id": "thevaram_02_1742_2329",
+          "rank": 5
+        }
+      ],
+      "expansion": {
+        "expanded_query_text": "உவமை போல் போன்ற ஒத்த உள்ள பாடல்கள்",
+        "expanded_terms": [
+          "உவமை",
+          "போல்",
+          "போன்ற",
+          "ஒத்த"
+        ],
+        "expansion_applied": true,
+        "expansion_rules": [
+          {
+            "added_terms": [
+              "போல்",
+              "போன்ற",
+              "ஒத்த"
+            ],
+            "canonical_term": "உவமை",
+            "matched_term": "உவமை",
+            "record_id": "device_simile",
+            "registry": "literary_devices"
+          }
+        ],
+        "matched_registries": [
+          "literary_devices"
+        ],
+        "original_query": "உவமை உள்ள பாடல்கள்"
+      },
+      "query": "உவமை உள்ள பாடல்கள்",
+      "query_id": "device_simile",
+      "retrieved_contexts_changed": true
+    }
+  ],
+  "retrieval_mode": "hybrid",
+  "summary": {
+    "degraded": 0,
+    "improved": 3,
+    "neutral": 1,
+    "queries_expanded": 4,
+    "queries_tested": 4,
+    "retrieval_results_changed": 4
+  },
+  "top_k": 5
+}

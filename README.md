@@ -306,7 +306,30 @@ automatic extractions, aggregation results, or query-expansion behavior.
 ```bash
 python3 src/knowledge/validate_registries.py
 python3 src/knowledge/analyze_knowledge_readiness.py
+python3 src/retrieval/expand_query.py --query "அப்பர் பாடல்கள்"
+python3 src/retrieval/expand_query.py --query "சந்திரன் வரும் பாடல்கள்"
+python3 src/rag/build_context.py --query "அப்பர் பாடல்கள்" --top-k 5 --expand-query
+python3 src/evaluation/evaluate_query_expansion.py
 ```
 
 The next phase depends on cited lexical authorities, Tamil researcher review, and a small
 manually annotated corpus sample with positive, negative, and ambiguous examples.
+
+## Registry-Driven Query Expansion
+
+The curated synonym, author, deity, motif, and literary-device registries can now expand
+queries before hybrid retrieval. Expansion is opt-in, deterministic, and records every
+matched registry and added term. Ordinary context building remains unchanged unless
+`--expand-query` is supplied.
+
+```bash
+python3 src/retrieval/expand_query.py --query "அப்பர் பாடல்கள்"
+python3 src/retrieval/expand_query.py --query "சந்திரன் வரும் பாடல்கள்"
+python3 src/rag/build_context.py --query "அப்பர் பாடல்கள்" --top-k 5 --expand-query
+python3 src/evaluation/evaluate_query_expansion.py
+```
+
+The evaluation compares baseline and expanded hybrid retrieval for four curated queries.
+Its improved/degraded/neutral label is based on a transparent local corpus-evidence proxy,
+not on human relevance judgment. No scraping, LLM call, embedding generation, or vector
+index rebuild is performed.

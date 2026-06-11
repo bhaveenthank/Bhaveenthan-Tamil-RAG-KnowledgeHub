@@ -17,6 +17,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K)
     parser.add_argument("--max-context-chars", type=int, default=DEFAULT_MAX_CONTEXT_CHARS)
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--expand-query",
+        action="store_true",
+        help="Expand curated aliases and literary concepts before hybrid retrieval",
+    )
     return parser.parse_args(argv)
 
 
@@ -26,6 +31,7 @@ def main(argv: list[str] | None = None, builder: ContextBuilder | None = None) -
         query=args.query,
         top_k=args.top_k,
         max_context_chars=args.max_context_chars,
+        expand_query=args.expand_query,
     )
     rendered = json.dumps(package, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     if args.output:
@@ -42,4 +48,3 @@ def main(argv: list[str] | None = None, builder: ContextBuilder | None = None) -
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

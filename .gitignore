@@ -23,6 +23,7 @@ data/indexes/**
 !data/processed/eval/
 data/processed/eval/**
 !data/processed/eval/literary_analysis_questions.jsonl
+!data/processed/eval/query_expansion_results.json
 !data/processed/corpus_registry/
 data/processed/corpus_registry/**
 !data/processed/corpus_registry/thirumurai_registry.json

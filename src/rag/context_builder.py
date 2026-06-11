@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from retrieval.hybrid_retriever import HybridRetriever
+from retrieval.query_expander import QueryExpander
 
 DEFAULT_ENRICHED = Path("data/processed/enriched/irandaam_thirumurai_enriched.jsonl")
 DEFAULT_TOP_K = 5
@@ -153,8 +154,10 @@ class ContextBuilder:
         self,
         retriever: HybridRetriever | None = None,
         enriched_path: Path = DEFAULT_ENRICHED,
+        query_expander: QueryExpander | None = None,
     ) -> None:
         self.retriever = retriever or HybridRetriever()
+        self.query_expander = query_expander
         records = load_jsonl(enriched_path)
         self.records_by_id = {record["record_id"]: record for record in records}
 
@@ -164,8 +167,18 @@ class ContextBuilder:
         top_k: int = DEFAULT_TOP_K,
         filters: dict[str, Any] | None = None,
         max_context_chars: int = DEFAULT_MAX_CONTEXT_CHARS,
+        expand_query: bool = False,
     ) -> dict[str, Any]:
-        results = self.retriever.search(query, filters=filters or {}, top_k=max(top_k * 3, top_k))
+        expansion = None
+        retrieval_query = query
+        if expand_query:
+            expansion = (self.query_expander or QueryExpander()).expand(query)
+            retrieval_query = expansion["expanded_query_text"]
+        results = self.retriever.search(
+            retrieval_query,
+            filters=filters or {},
+            top_k=max(top_k * 3, top_k),
+        )
         contexts: list[dict[str, Any]] = []
         seen_records: set[str] = set()
         seen_chunks: set[str] = set()
@@ -214,6 +227,9 @@ class ContextBuilder:
                 "errors": [],
             },
         }
+        if expansion is not None:
+            package["query_expansion"] = expansion
+            package["retrieval_query"] = retrieval_query
         errors = validate_context_package(package, retrieval_succeeded=bool(results))
         package["validation"] = {
             "status": "valid" if not errors else "invalid",
