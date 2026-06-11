@@ -22,8 +22,8 @@ def test_all_registry_files_exist_and_have_seed_records() -> None:
         registry = json.loads(path.read_text(encoding="utf-8"))
         assert registry["registry_name"] == name
         assert registry["schema_version"] == "knowledge-registry-v1"
-        assert registry["status"] == "foundation_seed_only"
-        assert len(registry["records"]) == 1
+        assert registry["status"] in {"foundation_seed_only", "curated_seed_v1"}
+        assert len(registry["records"]) >= 1
 
 
 def test_registry_seed_schemas_validate() -> None:
@@ -60,9 +60,9 @@ def test_readiness_analysis_is_deterministic_and_foundation_only() -> None:
     assert first == second
     assert first["registry_count"] == 9
     assert first["primary_capability_count"] == 8
-    assert first["foundation_readiness_score"] == 70.0
-    assert first["analytical_readiness_score"] == 35.0
-    assert first["decision"] == "FOUNDATION_READY_EXTRACTION_NOT_STARTED"
+    assert first["foundation_readiness_score"] == 79.4
+    assert first["analytical_readiness_score"] == 47.5
+    assert first["decision"] == "CURATED_SEED_READY_EXTRACTION_NOT_STARTED"
     assert first["extraction_performed"] is False
     assert first["scraping_performed"] is False
     assert first["llm_calls"] == 0
@@ -79,7 +79,7 @@ def test_readiness_outputs_are_generated(tmp_path: Path) -> None:
     assert json.loads(output.read_text(encoding="utf-8")) == analysis
     text = report.read_text(encoding="utf-8")
     assert "Knowledge Readiness Report" in text
-    assert "35.0/100" in text
+    assert "47.5/100" in text
     assert render_report(analysis) == text
 
 

@@ -6,13 +6,15 @@ All registry files use this envelope:
 {
   "registry_name": "entities",
   "schema_version": "knowledge-registry-v1",
-  "status": "foundation_seed_only",
+  "status": "foundation_seed_only|curated_seed_v1",
   "records": []
 }
 ```
 
-Seed records are illustrative and unreviewed. Population phases must add source,
-reviewer, version, and evidence metadata before analytical use.
+Foundation seed records are illustrative and unreviewed. Curated registries use
+`status=curated_seed_v1`, and every curated record uses `status=curated_seed`.
+Population phases must add source, reviewer, version, and evidence metadata before
+analytical use.
 
 ## Entity Registry
 

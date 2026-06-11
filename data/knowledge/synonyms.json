@@ -3,11 +3,26 @@
     {
       "canonical_term": "சந்திரன்",
       "concept_id": "concept_moon",
-      "synonyms": ["மதி", "திங்கள்", "நிலவு"],
+      "status": "curated_seed",
+      "synonyms": ["நிலா", "மதி", "திங்கள்"],
+      "variant_forms": ["நிலவு"]
+    },
+    {
+      "canonical_term": "கடல்",
+      "concept_id": "concept_ocean",
+      "status": "curated_seed",
+      "synonyms": ["சமுத்திரம்"],
+      "variant_forms": []
+    },
+    {
+      "canonical_term": "சூரியன்",
+      "concept_id": "concept_sun",
+      "status": "curated_seed",
+      "synonyms": ["கதிரவன்"],
       "variant_forms": []
     }
   ],
   "registry_name": "synonyms",
   "schema_version": "knowledge-registry-v1",
-  "status": "foundation_seed_only"
+  "status": "curated_seed_v1"
 }

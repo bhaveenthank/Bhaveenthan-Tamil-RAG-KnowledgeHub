@@ -5,136 +5,15 @@ import json
 from pathlib import Path
 from typing import Any
 
+from knowledge.registry_contracts import (
+    REGISTRY_SPECS,
+    load_registry,
+    validate_registry,
+)
+
 DEFAULT_KNOWLEDGE_DIR = Path("data/knowledge")
 DEFAULT_OUTPUT = DEFAULT_KNOWLEDGE_DIR / "knowledge_readiness.json"
 DEFAULT_REPORT = Path("reports/knowledge-readiness-report.md")
-
-REGISTRY_SPECS: dict[str, dict[str, Any]] = {
-    "synonyms": {
-        "capability": "synonym_readiness",
-        "id_field": "concept_id",
-        "required": {"concept_id", "canonical_term", "synonyms", "variant_forms"},
-    },
-    "entities": {
-        "capability": "entity_readiness",
-        "id_field": "entity_id",
-        "required": {
-            "entity_id",
-            "entity_type",
-            "canonical_name",
-            "aliases",
-            "description",
-        },
-    },
-    "motifs": {
-        "capability": "motif_readiness",
-        "id_field": "motif_id",
-        "required": {"motif_id", "motif_name", "description", "example_patterns"},
-    },
-    "authors": {
-        "capability": "author_readiness",
-        "id_field": "author_id",
-        "required": {"author_id", "canonical_name", "aliases", "period", "works"},
-    },
-    "deities": {
-        "capability": "deity_readiness",
-        "id_field": "deity_id",
-        "required": {
-            "deity_id",
-            "canonical_name",
-            "aliases",
-            "tradition",
-            "description",
-        },
-    },
-    "places": {
-        "capability": "place_readiness",
-        "id_field": "place_id",
-        "required": {
-            "place_id",
-            "canonical_name",
-            "aliases",
-            "place_type",
-            "description",
-        },
-    },
-    "themes": {
-        "capability": "theme_readiness",
-        "id_field": "theme_id",
-        "required": {"theme_id", "theme_name", "description", "related_concepts"},
-    },
-    "literary_devices": {
-        "capability": "literary_device_readiness",
-        "id_field": "device_id",
-        "required": {
-            "device_id",
-            "device_name",
-            "description",
-            "recognition_cues",
-        },
-    },
-    "works": {
-        "capability": "work_registry_support",
-        "id_field": "work_id",
-        "required": {
-            "work_id",
-            "canonical_title",
-            "aliases",
-            "authors",
-            "period",
-            "genre",
-        },
-    },
-}
-
-LIST_FIELDS = {
-    "aliases",
-    "synonyms",
-    "variant_forms",
-    "example_patterns",
-    "works",
-    "authors",
-    "related_concepts",
-    "recognition_cues",
-}
-
-
-def load_registry(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def validate_registry(name: str, registry: dict[str, Any]) -> list[str]:
-    spec = REGISTRY_SPECS[name]
-    errors: list[str] = []
-    if registry.get("registry_name") != name:
-        errors.append("registry_name mismatch")
-    if registry.get("schema_version") != "knowledge-registry-v1":
-        errors.append("invalid schema_version")
-    if registry.get("status") != "foundation_seed_only":
-        errors.append("invalid foundation status")
-    records = registry.get("records")
-    if not isinstance(records, list):
-        return errors + ["records must be a list"]
-    identifiers: list[str] = []
-    for index, record in enumerate(records):
-        if not isinstance(record, dict):
-            errors.append(f"record {index} must be an object")
-            continue
-        missing = spec["required"] - record.keys()
-        if missing:
-            errors.append(f"record {index} missing {sorted(missing)}")
-        identifier = record.get(spec["id_field"])
-        if not isinstance(identifier, str) or not identifier.strip():
-            errors.append(f"record {index} has invalid {spec['id_field']}")
-        else:
-            identifiers.append(identifier)
-        for field in spec["required"] & LIST_FIELDS:
-            if field in record and not isinstance(record[field], list):
-                errors.append(f"record {index} field {field} must be a list")
-    if len(identifiers) != len(set(identifiers)):
-        errors.append("duplicate registry IDs")
-    return errors
-
 
 def registry_readiness(name: str, registry: dict[str, Any]) -> dict[str, Any]:
     errors = validate_registry(name, registry)
@@ -142,7 +21,7 @@ def registry_readiness(name: str, registry: dict[str, Any]) -> dict[str, Any]:
     envelope_valid = (
         registry.get("registry_name") == name
         and registry.get("schema_version") == "knowledge-registry-v1"
-        and registry.get("status") == "foundation_seed_only"
+        and registry.get("status") in {"foundation_seed_only", "curated_seed_v1"}
     )
     identifiers = [
         record.get(REGISTRY_SPECS[name]["id_field"])
@@ -156,14 +35,20 @@ def registry_readiness(name: str, registry: dict[str, Any]) -> dict[str, Any]:
         and " " not in value
         for value in identifiers
     )
-    foundation_score = (
+    base_foundation_score = (
         20
         + (15 if envelope_valid else 0)
         + (20 if not errors else 0)
         + (10 if deterministic_ids else 0)
         + (5 if records else 0)
     )
-    analytical_score = round(foundation_score * 0.5, 1)
+    curated = (
+        registry.get("status") == "curated_seed_v1"
+        and len(records) >= 3
+        and all(record.get("status") == "curated_seed" for record in records)
+    )
+    foundation_score = base_foundation_score + (15 if curated and not errors else 0)
+    analytical_score = 55.0 if curated and not errors else round(base_foundation_score * 0.5, 1)
     return {
         "registry": name,
         "capability": REGISTRY_SPECS[name]["capability"],
@@ -171,16 +56,27 @@ def registry_readiness(name: str, registry: dict[str, Any]) -> dict[str, Any]:
         "foundation_score": foundation_score,
         "analytical_readiness_score": analytical_score,
         "status": (
-            "FOUNDATION_READY_ANALYTICS_NOT_READY"
+            "CURATED_SEED_READY_EXTRACTION_NOT_STARTED"
+            if foundation_score == 85
+            else "FOUNDATION_READY_ANALYTICS_NOT_READY"
             if foundation_score == 70
             else "FOUNDATION_REPAIR_REQUIRED"
         ),
         "schema_errors": errors,
+        "curated_record_count": (
+            sum(record.get("status") == "curated_seed" for record in records)
+            if curated
+            else 0
+        ),
         "reviewed_record_count": 0,
         "evidence_link_count": 0,
         "corpus_annotation_count": 0,
         "limitations": [
-            "seed examples are illustrative and unreviewed",
+            (
+                "curated seeds have no external lexical citations or reviewer sign-off"
+                if curated
+                else "seed examples are illustrative and unreviewed"
+            ),
             "no corpus evidence spans are linked",
             "no extraction coverage has been measured",
         ],
@@ -213,9 +109,9 @@ def analyze_knowledge_readiness(
         results.append(registry_readiness(name, load_registry(path)))
     primary = [item for item in results if item["registry"] != "works"]
     return {
-        "analysis_version": "knowledge-readiness-v1",
+        "analysis_version": "knowledge-readiness-v2",
         "knowledge_schema_version": "knowledge-registry-v1",
-        "phase": "foundation_only",
+        "phase": "curated_seed_population",
         "registry_count": len(results),
         "primary_capability_count": len(primary),
         "foundation_readiness_score": round(
@@ -229,7 +125,12 @@ def analyze_knowledge_readiness(
         "extraction_performed": False,
         "scraping_performed": False,
         "llm_calls": 0,
-        "decision": "FOUNDATION_READY_EXTRACTION_NOT_STARTED",
+        "baseline": {
+            "phase": "phase_21",
+            "foundation_readiness_score": 70.0,
+            "analytical_readiness_score": 35.0,
+        },
+        "decision": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED",
     }
 
 
@@ -248,6 +149,8 @@ def render_report(analysis: dict[str, Any]) -> str:
 - Primary analytical capabilities: `{analysis['primary_capability_count']}`
 - Foundation readiness: `{analysis['foundation_readiness_score']:.1f}/100`
 - Analytical readiness: `{analysis['analytical_readiness_score']:.1f}/100`
+- Phase 21 baseline: `{analysis['baseline']['foundation_readiness_score']:.1f}` foundation,
+  `{analysis['baseline']['analytical_readiness_score']:.1f}` analytical
 - Decision: `{analysis['decision']}`
 - Extraction performed: `{str(analysis['extraction_performed']).lower()}`
 - Scraping performed: `{str(analysis['scraping_performed']).lower()}`
@@ -261,10 +164,11 @@ def render_report(analysis: dict[str, Any]) -> str:
 
 ## Interpretation
 
-The structural foundation is ready: files exist, schemas validate, IDs are deterministic,
-and each registry has one small illustrative seed. Analytical readiness remains low because
-there are no reviewed authority releases, corpus evidence spans, annotations, extraction
-coverage measurements, or aggregation results.
+The structural foundation remains valid, and five registries now contain three manually
+curated seed records each. Analytical readiness improves for normalization and evaluation
+design, but remains limited because there are no cited scholarly authority releases,
+reviewer sign-offs, corpus evidence spans, annotations, extraction coverage measurements,
+or aggregation results.
 
 No seed record should be used as proof that a term occurs in the corpus. Future population
 phases must link every accepted assertion to exact corpus records and source URLs.

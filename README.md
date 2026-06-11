@@ -288,3 +288,25 @@ python3 src/knowledge/analyze_knowledge_readiness.py
 Planned sequence: entity population, synonym population, motif population, literary-device
 extraction, aggregation engine, then analytical retrieval. No answer generation is part of
 the current phase.
+
+### Curated Knowledge Layer Status
+
+Five registries now contain manually curated gold-standard seeds:
+
+- 3 synonym concepts with 9 canonical, synonym, and variant forms
+- 3 deities with normalized aliases
+- 3 Tevaram authors with known-work identifiers
+- 3 imagery motifs
+- 3 literary devices
+
+Foundation readiness is `79.4/100`, up from `70.0`; analytical readiness is `47.5/100`,
+up from `35.0`. The remaining gap is intentional: there are still no corpus evidence spans,
+automatic extractions, aggregation results, or query-expansion behavior.
+
+```bash
+python3 src/knowledge/validate_registries.py
+python3 src/knowledge/analyze_knowledge_readiness.py
+```
+
+The next phase depends on cited lexical authorities, Tamil researcher review, and a small
+manually annotated corpus sample with positive, negative, and ambiguous examples.

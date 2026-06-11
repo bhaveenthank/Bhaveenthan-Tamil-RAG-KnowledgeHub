@@ -1,28 +1,35 @@
 {
-  "analysis_version": "knowledge-readiness-v1",
-  "analytical_readiness_score": 35.0,
+  "analysis_version": "knowledge-readiness-v2",
+  "analytical_readiness_score": 47.5,
+  "baseline": {
+    "analytical_readiness_score": 35.0,
+    "foundation_readiness_score": 70.0,
+    "phase": "phase_21"
+  },
   "capabilities": [
     {
-      "analytical_readiness_score": 35.0,
+      "analytical_readiness_score": 55.0,
       "capability": "synonym_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 3,
       "evidence_link_count": 0,
-      "foundation_score": 70,
+      "foundation_score": 85,
       "limitations": [
-        "seed examples are illustrative and unreviewed",
+        "curated seeds have no external lexical citations or reviewer sign-off",
         "no corpus evidence spans are linked",
         "no extraction coverage has been measured"
       ],
-      "record_count": 1,
+      "record_count": 3,
       "registry": "synonyms",
       "reviewed_record_count": 0,
       "schema_errors": [],
-      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+      "status": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED"
     },
     {
       "analytical_readiness_score": 35.0,
       "capability": "entity_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 0,
       "evidence_link_count": 0,
       "foundation_score": 70,
       "limitations": [
@@ -37,60 +44,64 @@
       "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
     },
     {
-      "analytical_readiness_score": 35.0,
+      "analytical_readiness_score": 55.0,
       "capability": "motif_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 3,
       "evidence_link_count": 0,
-      "foundation_score": 70,
+      "foundation_score": 85,
       "limitations": [
-        "seed examples are illustrative and unreviewed",
+        "curated seeds have no external lexical citations or reviewer sign-off",
         "no corpus evidence spans are linked",
         "no extraction coverage has been measured"
       ],
-      "record_count": 1,
+      "record_count": 3,
       "registry": "motifs",
       "reviewed_record_count": 0,
       "schema_errors": [],
-      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+      "status": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED"
     },
     {
-      "analytical_readiness_score": 35.0,
+      "analytical_readiness_score": 55.0,
       "capability": "author_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 3,
       "evidence_link_count": 0,
-      "foundation_score": 70,
+      "foundation_score": 85,
       "limitations": [
-        "seed examples are illustrative and unreviewed",
+        "curated seeds have no external lexical citations or reviewer sign-off",
         "no corpus evidence spans are linked",
         "no extraction coverage has been measured"
       ],
-      "record_count": 1,
+      "record_count": 3,
       "registry": "authors",
       "reviewed_record_count": 0,
       "schema_errors": [],
-      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+      "status": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED"
     },
     {
-      "analytical_readiness_score": 35.0,
+      "analytical_readiness_score": 55.0,
       "capability": "deity_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 3,
       "evidence_link_count": 0,
-      "foundation_score": 70,
+      "foundation_score": 85,
       "limitations": [
-        "seed examples are illustrative and unreviewed",
+        "curated seeds have no external lexical citations or reviewer sign-off",
         "no corpus evidence spans are linked",
         "no extraction coverage has been measured"
       ],
-      "record_count": 1,
+      "record_count": 3,
       "registry": "deities",
       "reviewed_record_count": 0,
       "schema_errors": [],
-      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+      "status": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED"
     },
     {
       "analytical_readiness_score": 35.0,
       "capability": "place_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 0,
       "evidence_link_count": 0,
       "foundation_score": 70,
       "limitations": [
@@ -108,6 +119,7 @@
       "analytical_readiness_score": 35.0,
       "capability": "theme_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 0,
       "evidence_link_count": 0,
       "foundation_score": 70,
       "limitations": [
@@ -122,26 +134,28 @@
       "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
     },
     {
-      "analytical_readiness_score": 35.0,
+      "analytical_readiness_score": 55.0,
       "capability": "literary_device_readiness",
       "corpus_annotation_count": 0,
+      "curated_record_count": 3,
       "evidence_link_count": 0,
-      "foundation_score": 70,
+      "foundation_score": 85,
       "limitations": [
-        "seed examples are illustrative and unreviewed",
+        "curated seeds have no external lexical citations or reviewer sign-off",
         "no corpus evidence spans are linked",
         "no extraction coverage has been measured"
       ],
-      "record_count": 1,
+      "record_count": 3,
       "registry": "literary_devices",
       "reviewed_record_count": 0,
       "schema_errors": [],
-      "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
+      "status": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED"
     },
     {
       "analytical_readiness_score": 35.0,
       "capability": "work_registry_support",
       "corpus_annotation_count": 0,
+      "curated_record_count": 0,
       "evidence_link_count": 0,
       "foundation_score": 70,
       "limitations": [
@@ -156,12 +170,12 @@
       "status": "FOUNDATION_READY_ANALYTICS_NOT_READY"
     }
   ],
-  "decision": "FOUNDATION_READY_EXTRACTION_NOT_STARTED",
+  "decision": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED",
   "extraction_performed": false,
-  "foundation_readiness_score": 70.0,
+  "foundation_readiness_score": 79.4,
   "knowledge_schema_version": "knowledge-registry-v1",
   "llm_calls": 0,
-  "phase": "foundation_only",
+  "phase": "curated_seed_population",
   "primary_capability_count": 8,
   "registry_count": 9,
   "scraping_performed": false

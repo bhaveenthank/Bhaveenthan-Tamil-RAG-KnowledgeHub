@@ -1,13 +1,28 @@
 {
   "records": [
     {
+      "description": "A descriptive name or phrase attached to a person, deity, place, or object.",
+      "device_id": "device_epithet",
+      "device_name": "அடைமொழி",
+      "recognition_cues": [],
+      "status": "curated_seed"
+    },
+    {
+      "description": "A literary identification or transfer of meaning that presents one thing through another.",
+      "device_id": "device_metaphor",
+      "device_name": "உருவகம்",
+      "recognition_cues": [],
+      "status": "curated_seed"
+    },
+    {
       "description": "A comparison that explicitly or conventionally relates one thing to another.",
       "device_id": "device_simile",
       "device_name": "உவமை",
-      "recognition_cues": ["போல்", "போன்ற", "ஒத்த"]
+      "recognition_cues": ["போல்", "போன்ற", "ஒத்த"],
+      "status": "curated_seed"
     }
   ],
   "registry_name": "literary_devices",
   "schema_version": "knowledge-registry-v1",
-  "status": "foundation_seed_only"
+  "status": "curated_seed_v1"
 }

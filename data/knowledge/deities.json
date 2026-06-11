@@ -1,14 +1,31 @@
 {
   "records": [
     {
-      "aliases": ["சிவபெருமான்"],
+      "aliases": ["கந்தன்", "குமரன்", "செந்தில்நாதன்"],
+      "canonical_name": "முருகன்",
+      "deity_id": "deity_murugan",
+      "description": "Curated seed identity for Murugan in Tamil devotional literature.",
+      "status": "curated_seed",
+      "tradition": "சைவம்"
+    },
+    {
+      "aliases": ["சிவபெருமான்", "ஈசன்", "மகாதேவன்"],
       "canonical_name": "சிவன்",
       "deity_id": "deity_siva",
-      "description": "Illustrative deity authority seed; epithets require separate reviewed evidence.",
+      "description": "Curated seed identity for Siva; contextual epithets still require evidence annotations.",
+      "status": "curated_seed",
       "tradition": "சைவம்"
+    },
+    {
+      "aliases": ["திருமால்", "மாயோன்", "நாராயணன்"],
+      "canonical_name": "விஷ்ணு",
+      "deity_id": "deity_vishnu",
+      "description": "Curated seed identity for Vishnu in Tamil literary traditions.",
+      "status": "curated_seed",
+      "tradition": "வைணவம்"
     }
   ],
   "registry_name": "deities",
   "schema_version": "knowledge-registry-v1",
-  "status": "foundation_seed_only"
+  "status": "curated_seed_v1"
 }

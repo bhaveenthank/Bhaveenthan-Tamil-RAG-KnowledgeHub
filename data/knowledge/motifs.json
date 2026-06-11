@@ -1,13 +1,28 @@
 {
   "records": [
     {
+      "description": "Recurring fire, flame, heat, or burning imagery in description and narrative.",
+      "example_patterns": ["தீ", "நெருப்பு", "அனல்", "சுடர்"],
+      "motif_id": "motif_fire_imagery",
+      "motif_name": "தீக் காட்சி",
+      "status": "curated_seed"
+    },
+    {
       "description": "Illustrative motif for references to the crescent or moon in divine description.",
       "example_patterns": ["பிறை", "மதி", "திங்கள்"],
       "motif_id": "motif_lunar_imagery",
-      "motif_name": "சந்திரக் காட்சி"
+      "motif_name": "சந்திரக் காட்சி",
+      "status": "curated_seed"
+    },
+    {
+      "description": "Recurring river or flowing-water imagery, including sacred-river references.",
+      "example_patterns": ["ஆறு", "நதி", "கங்கை", "புனல்"],
+      "motif_id": "motif_river_imagery",
+      "motif_name": "ஆற்றுக் காட்சி",
+      "status": "curated_seed"
     }
   ],
   "registry_name": "motifs",
   "schema_version": "knowledge-registry-v1",
-  "status": "foundation_seed_only"
+  "status": "curated_seed_v1"
 }

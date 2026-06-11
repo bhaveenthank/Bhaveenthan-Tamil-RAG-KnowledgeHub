@@ -1,0 +1,58 @@
+{
+  "curated_entries": {
+    "authors": 3,
+    "deities": 3,
+    "entities": 0,
+    "literary_devices": 3,
+    "motifs": 3,
+    "places": 0,
+    "synonyms": 3,
+    "themes": 0,
+    "works": 0
+  },
+  "extraction_performed": false,
+  "lexical_form_counts": {
+    "authors": 8,
+    "deities": 12,
+    "entities": 4,
+    "literary_devices": 3,
+    "motifs": 3,
+    "places": 1,
+    "synonyms": 9,
+    "themes": 1,
+    "works": 2
+  },
+  "llm_calls": 0,
+  "readiness_scores": {
+    "analytical": 47.5,
+    "baseline_analytical": 35.0,
+    "baseline_foundation": 70.0,
+    "foundation": 79.4
+  },
+  "registry_counts": {
+    "authors": 3,
+    "deities": 3,
+    "entities": 1,
+    "literary_devices": 3,
+    "motifs": 3,
+    "places": 1,
+    "synonyms": 3,
+    "themes": 1,
+    "works": 1
+  },
+  "registry_digests": {
+    "authors": "422bc49d74d75794a3701a0ea80f711290dd469062f697d2dd39361279c4a66a",
+    "deities": "dbccee13e3e6ca5ac93bc5c07e7df9465d2478e2b1f420298b2f9be63b2f7418",
+    "entities": "c5653ce98eca0bf60f7e9ff0650d31cf5e941026296dc900f5fc003736193ade",
+    "literary_devices": "39fad21e763b4ec8c6211a8c422e66041494ceb4ead9b04674458cf0b2f65f0d",
+    "motifs": "bf58cc8c6fffef4254c43c80689395b47c8ba8ede6a732352870410b8bcb2337",
+    "places": "65ba07fdb802078c243146fe9cfafaf3e51ed292e8db2523461bef44cefbe2eb",
+    "synonyms": "1af298deb56039bb830f7010d633ba1ab0b1977600e44e3322480750cd937815",
+    "themes": "0b24048a748208487bdd5fb5648c275a2020355af43f7c8490ab60553058f5c4",
+    "works": "16499344bf3e83a33978b7d038c7a1c1a011cb6f1328b425b71c0b9350a869d9"
+  },
+  "scraping_performed": false,
+  "status": "VALID",
+  "summary_version": "knowledge-seed-summary-v1",
+  "validation_errors": {}
+}
