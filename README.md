@@ -313,6 +313,9 @@ python3 src/evaluation/evaluate_query_expansion.py
 python3 src/analytics/build_occurrence_index.py
 python3 src/analytics/search_occurrences.py --term "சந்திரன்"
 python3 src/analytics/search_occurrences.py --term "சந்திரன்" --expand-query
+python3 src/analytics/analyze_term.py --term "சந்திரன்"
+python3 src/analytics/analyze_term.py --term "சந்திரன்" --expand-query
+python3 src/analytics/analyze_term.py --term "சிவன்" --group-by author
 ```
 
 The next phase depends on cited lexical authorities, Tamil researcher review, and a small
@@ -354,3 +357,16 @@ The `--expand-query` option uses the curated registries to search concept terms 
 `சந்திரன்`, `நிலா`, `மதி`, and `திங்கள்` together. This phase does not aggregate counts
 into literary claims, build analytical retrieval, call an LLM, scrape, or modify frozen
 corpus artifacts.
+
+## Aggregation And Statistics
+
+The aggregation engine groups occurrence evidence by author, category, work, record type,
+or source and reports counts, top-N rankings, unique record/work/author counts, and
+percentage distributions. It consumes the occurrence index only; it does not scrape,
+generate answers, call an LLM, or perform analytical retrieval.
+
+```bash
+python3 src/analytics/analyze_term.py --term "சந்திரன்"
+python3 src/analytics/analyze_term.py --term "சந்திரன்" --expand-query
+python3 src/analytics/analyze_term.py --term "சிவன்" --group-by author
+```

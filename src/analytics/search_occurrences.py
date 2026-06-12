@@ -79,6 +79,8 @@ def search_occurrences(
                             "record_id": row["record_id"],
                             "record_type": row["record_type"],
                             "author": row["author"],
+                            "work": row.get("work", ""),
+                            "source": row.get("source", ""),
                             "title": row["title"],
                             "source_url": row["source_url"],
                             "commentary_url": row["commentary_url"],

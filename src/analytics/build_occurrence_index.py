@@ -61,6 +61,31 @@ def infer_corpus_id(path: Path, record: dict[str, Any]) -> str:
     return path.stem.replace("_normalized", "")
 
 
+def work_label(record: dict[str, Any]) -> str:
+    metadata = record.get("metadata", {}) if isinstance(record.get("metadata"), dict) else {}
+    source_metadata = record.get("source_metadata", {}) if isinstance(record.get("source_metadata"), dict) else {}
+    return str(
+        record.get("work_id")
+        or metadata.get("work")
+        or source_metadata.get("source_work")
+        or record.get("collection")
+        or record.get("canonical_title")
+        or record.get("title")
+        or ""
+    )
+
+
+def source_label(record: dict[str, Any]) -> str:
+    metadata = record.get("metadata", {}) if isinstance(record.get("metadata"), dict) else {}
+    source_metadata = record.get("source_metadata", {}) if isinstance(record.get("source_metadata"), dict) else {}
+    return str(
+        metadata.get("source")
+        or source_metadata.get("source")
+        or source_metadata.get("source_work")
+        or "TamilVU"
+    )
+
+
 def build_index_rows(paths: list[Path]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     record_ids: set[str] = set()
@@ -99,6 +124,8 @@ def build_index_rows(paths: list[Path]) -> tuple[list[dict[str, Any]], dict[str,
                         "text": text,
                         "text_length": len(text),
                         "author": str(record.get("author") or ""),
+                        "work": work_label(record),
+                        "source": source_label(record),
                         "title": str(record.get("title") or record.get("canonical_title") or ""),
                         "source_url": source_url,
                         "commentary_url": commentary_url,

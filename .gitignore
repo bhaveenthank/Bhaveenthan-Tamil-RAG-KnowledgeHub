@@ -29,6 +29,7 @@ data/processed/analytics/**
 !data/processed/analytics/occurrence_index.jsonl
 !data/processed/analytics/occurrence_index_manifest.json
 !data/processed/analytics/occurrence_search_examples.json
+!data/processed/analytics/aggregation_examples.json
 !data/processed/corpus_registry/
 data/processed/corpus_registry/**
 !data/processed/corpus_registry/thirumurai_registry.json

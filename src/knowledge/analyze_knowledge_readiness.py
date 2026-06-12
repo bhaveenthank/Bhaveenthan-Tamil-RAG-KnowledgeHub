@@ -15,6 +15,7 @@ DEFAULT_KNOWLEDGE_DIR = Path("data/knowledge")
 DEFAULT_OUTPUT = DEFAULT_KNOWLEDGE_DIR / "knowledge_readiness.json"
 DEFAULT_REPORT = Path("reports/knowledge-readiness-report.md")
 DEFAULT_OCCURRENCE_MANIFEST = Path("data/processed/analytics/occurrence_index_manifest.json")
+DEFAULT_AGGREGATION_EXAMPLES = Path("data/processed/analytics/aggregation_examples.json")
 
 def registry_readiness(name: str, registry: dict[str, Any]) -> dict[str, Any]:
     errors = validate_registry(name, registry)
@@ -87,6 +88,7 @@ def registry_readiness(name: str, registry: dict[str, Any]) -> dict[str, Any]:
 def analyze_knowledge_readiness(
     knowledge_dir: Path = DEFAULT_KNOWLEDGE_DIR,
     occurrence_manifest_path: Path = DEFAULT_OCCURRENCE_MANIFEST,
+    aggregation_examples_path: Path = DEFAULT_AGGREGATION_EXAMPLES,
 ) -> dict[str, Any]:
     results = []
     for name in REGISTRY_SPECS:
@@ -121,6 +123,16 @@ def analyze_knowledge_readiness(
         record_count = int(occurrence_manifest.get("indexed_records", 0))
         occurrence_coverage_score = min(100.0, round(field_count * 8 + min(record_count, 1400) / 20, 1))
     evidence_readiness_score = 62.5 if occurrence_manifest else 0.0
+    aggregation_examples = (
+        json.loads(aggregation_examples_path.read_text(encoding="utf-8"))
+        if aggregation_examples_path.exists()
+        else {}
+    )
+    aggregation_readiness_score = 66.0 if aggregation_examples else 0.0
+    analytics_infrastructure_score = round(
+        (evidence_readiness_score + aggregation_readiness_score) / 2,
+        1,
+    )
     return {
         "analysis_version": "knowledge-readiness-v3",
         "knowledge_schema_version": "knowledge-registry-v1",
@@ -136,6 +148,8 @@ def analyze_knowledge_readiness(
         ),
         "capabilities": results,
         "evidence_readiness_score": evidence_readiness_score,
+        "aggregation_readiness_score": aggregation_readiness_score,
+        "analytics_infrastructure_readiness_score": analytics_infrastructure_score,
         "occurrence_coverage": {
             "occurrence_index_available": bool(occurrence_manifest),
             "indexed_records": int(occurrence_manifest.get("indexed_records", 0)),
@@ -143,6 +157,13 @@ def analyze_knowledge_readiness(
             "indexed_fields": occurrence_manifest.get("indexed_fields", []),
             "coverage_score": occurrence_coverage_score,
             "aggregation_performed": False,
+        },
+        "aggregation_coverage": {
+            "aggregation_examples_available": bool(aggregation_examples),
+            "example_count": len(aggregation_examples.get("examples", [])),
+            "supported_groupings": ["author", "category", "work", "record_type", "source"],
+            "answer_generation_performed": False,
+            "llm_calls": 0,
         },
         "extraction_performed": False,
         "scraping_performed": False,
@@ -172,8 +193,11 @@ def render_report(analysis: dict[str, Any]) -> str:
 - Foundation readiness: `{analysis['foundation_readiness_score']:.1f}/100`
 - Analytical readiness: `{analysis['analytical_readiness_score']:.1f}/100`
 - Evidence readiness: `{analysis['evidence_readiness_score']:.1f}/100`
+- Aggregation readiness: `{analysis['aggregation_readiness_score']:.1f}/100`
+- Analytics infrastructure readiness: `{analysis['analytics_infrastructure_readiness_score']:.1f}/100`
 - Occurrence coverage score: `{analysis['occurrence_coverage']['coverage_score']:.1f}/100`
 - Occurrence index available: `{str(analysis['occurrence_coverage']['occurrence_index_available']).lower()}`
+- Aggregation examples available: `{str(analysis['aggregation_coverage']['aggregation_examples_available']).lower()}`
 - Phase 21 baseline: `{analysis['baseline']['foundation_readiness_score']:.1f}` foundation,
   `{analysis['baseline']['analytical_readiness_score']:.1f}` analytical
 - Decision: `{analysis['decision']}`
@@ -190,10 +214,11 @@ def render_report(analysis: dict[str, Any]) -> str:
 ## Interpretation
 
 The structural foundation remains valid, and five registries now contain three manually
-curated seed records each. The local occurrence index now provides literal corpus evidence
-rows for future analysis, but analytical readiness remains limited because there are no
-cited scholarly authority releases, reviewer sign-offs, registry-to-corpus annotations,
-extraction coverage measurements, or aggregation results.
+curated seed records each. The local occurrence index and aggregation examples now provide
+literal corpus evidence rows and grouped statistics for future analysis, but analytical
+readiness remains limited because there are no cited scholarly authority releases,
+reviewer sign-offs, registry-to-corpus annotations, extraction coverage measurements, or
+answer-generation behavior.
 
 No seed record should be used as proof that a term occurs in the corpus. Future population
 phases must link every accepted assertion to exact corpus records and source URLs.
@@ -223,8 +248,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--occurrence-manifest", type=Path, default=DEFAULT_OCCURRENCE_MANIFEST)
+    parser.add_argument("--aggregation-examples", type=Path, default=DEFAULT_AGGREGATION_EXAMPLES)
     args = parser.parse_args(argv)
-    analysis = analyze_knowledge_readiness(args.knowledge_dir, args.occurrence_manifest)
+    analysis = analyze_knowledge_readiness(
+        args.knowledge_dir,
+        args.occurrence_manifest,
+        args.aggregation_examples,
+    )
     write_outputs(analysis, output_path=args.output, report_path=args.report)
     print(json.dumps(analysis, ensure_ascii=False, indent=2, sort_keys=True))
     return 0 if all(not item["schema_errors"] for item in analysis["capabilities"]) else 1

@@ -1,6 +1,21 @@
 {
+  "aggregation_coverage": {
+    "aggregation_examples_available": true,
+    "answer_generation_performed": false,
+    "example_count": 4,
+    "llm_calls": 0,
+    "supported_groupings": [
+      "author",
+      "category",
+      "work",
+      "record_type",
+      "source"
+    ]
+  },
+  "aggregation_readiness_score": 66.0,
   "analysis_version": "knowledge-readiness-v3",
   "analytical_readiness_score": 47.5,
+  "analytics_infrastructure_readiness_score": 64.2,
   "baseline": {
     "analytical_readiness_score": 35.0,
     "foundation_readiness_score": 70.0,
