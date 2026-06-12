@@ -1,0 +1,580 @@
+{
+  "examples": [
+    {
+      "classification": {
+        "classification_rules": {
+          "llm_calls": 0,
+          "matched_group_keywords": [
+            "ஆசிரியர்"
+          ],
+          "rule_based": true
+        },
+        "expanded": true,
+        "group_by": "author",
+        "intent": "group_by_author",
+        "query": "எந்த ஆசிரியர் சந்திரன் தொடர்பான சொற்களை அதிகம் பயன்படுத்துகிறார்?",
+        "term": "சந்திரன்"
+      },
+      "evidence_samples": [
+        {
+          "group_key": "Tirugnanasambandar",
+          "matched_field": "kurippurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1470",
+          "snippet": "...ான்’ (திருவாசகம் 139) என்ற கருத்தினது. “தூமதி சடைமிசைச் சூடுதல் தூநெறியா மதியான் என அமை...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664"
+        },
+        {
+          "group_key": "Tirugnanasambandar",
+          "matched_field": "kurippurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1470",
+          "snippet": "...்தினது. “தூமதி சடைமிசைச் சூடுதல் தூநெறியா மதியான் என அமைத்தவாறே” (பட்டினத்தார் ஒருபா ஒர...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664"
+        },
+        {
+          "group_key": "Tirugnanasambandar",
+          "matched_field": "pozhppurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1473",
+          "snippet": "பாதுகாவலாக அமைந்த வலிய மதில்களும் பொன்னால் அழகுறுத்தப்பெற்ற அழகிய மா...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664"
+        },
+        {
+          "group_key": "Tirunavukkarasar",
+          "matched_field": "kurippurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_04_1912_2",
+          "snippet": "...கோயில் புறம் வலம் கொண்டு பணிந்தெழுந்து’ ‘மதிற்புறத்தின் ஆராத பெருங்காதல்... வளர்ந்தோங்...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        },
+        {
+          "group_key": "Tirunavukkarasar",
+          "matched_field": "kurippurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_04_1912_2",
+          "snippet": "...... திருவெல்லை வலங்கொண்டு செல்கின்றார்’. “மதிற்புறத்துப் பிறை யுரிஞ்சுந் நோய் போல்வதொரு...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        }
+      ],
+      "expanded": true,
+      "group_by": "author",
+      "intent": "group_by_author",
+      "limitations": [
+        "Rule-based analytical retrieval only; no LLM answer generation is performed.",
+        "Counts are literal occurrence counts from the local evidence index."
+      ],
+      "matched_terms": [
+        "சந்திரன்",
+        "நிலா",
+        "மதி",
+        "திங்கள்",
+        "நிலவு"
+      ],
+      "query": "எந்த ஆசிரியர் சந்திரன் தொடர்பான சொற்களை அதிகம் பயன்படுத்துகிறார்?",
+      "statistics": {
+        "field_distribution": [
+          {
+            "count": 280,
+            "key": "verse_text",
+            "percentage": 40.8163
+          },
+          {
+            "count": 227,
+            "key": "kurippurai",
+            "percentage": 33.0904
+          },
+          {
+            "count": 177,
+            "key": "pozhppurai",
+            "percentage": 25.8017
+          },
+          {
+            "count": 2,
+            "key": "commentary_text",
+            "percentage": 0.2915
+          }
+        ],
+        "term_distribution": [
+          {
+            "count": 508,
+            "key": "மதி",
+            "percentage": 74.0525
+          },
+          {
+            "count": 79,
+            "key": "நிலா",
+            "percentage": 11.516
+          },
+          {
+            "count": 64,
+            "key": "திங்கள்",
+            "percentage": 9.3294
+          },
+          {
+            "count": 24,
+            "key": "நிலவு",
+            "percentage": 3.4985
+          },
+          {
+            "count": 11,
+            "key": "சந்திரன்",
+            "percentage": 1.6035
+          }
+        ]
+      },
+      "term": "சந்திரன்",
+      "top_results": [
+        {
+          "group_key": "Tirugnanasambandar",
+          "occurrence_count": 635,
+          "percentage": 92.5656,
+          "rank": 1,
+          "unique_authors": 1,
+          "unique_records": 277,
+          "unique_works": 1
+        },
+        {
+          "group_key": "Tirunavukkarasar",
+          "occurrence_count": 51,
+          "percentage": 7.4344,
+          "rank": 2,
+          "unique_authors": 1,
+          "unique_records": 21,
+          "unique_works": 2
+        }
+      ],
+      "total_occurrences": 686
+    },
+    {
+      "classification": {
+        "classification_rules": {
+          "llm_calls": 0,
+          "matched_group_keywords": [
+            "corpus"
+          ],
+          "rule_based": true
+        },
+        "expanded": true,
+        "group_by": "category",
+        "intent": "group_by_category",
+        "query": "எந்த corpus-இல் சிவன் அதிகமாக குறிப்பிடப்படுகிறார்?",
+        "term": "சிவன்"
+      },
+      "evidence_samples": [
+        {
+          "group_key": "thirumurai_02",
+          "matched_field": "kurippurai",
+          "matched_term": "சிவபெருமான்",
+          "record_id": "thevaram_02_1664_1477",
+          "snippet": "...ன் செழுமையும் குறிக்கப்பட்டன. வேதாகமங்கள் சிவபெருமான் திருவாக்காதலின் சுருதிபாடிய பாண் இயல் தூம...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664"
+        },
+        {
+          "group_key": "thirumurai_02",
+          "matched_field": "kurippurai",
+          "matched_term": "ஈசன்",
+          "record_id": "thevaram_02_1665_1485",
+          "snippet": "...்சத்திரம் “பூசம் புகுந்தாடிப் பொலிந்தழகாய ஈசன் உறைகின்ற இடைமருது ஈதோ” (தி.1ப.32பா.5.) என...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1665"
+        },
+        {
+          "group_key": "thirumurai_02",
+          "matched_field": "kurippurai",
+          "matched_term": "சிவன்",
+          "record_id": "thevaram_02_1666_1498",
+          "snippet": "...் எனலாம். சித்திரம்-அழகுமாம். வித்தகப்படை-சிவன் தந்தவாள். அரக்கன்- இராவணன், விறல்-வலிமை,...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1666"
+        },
+        {
+          "group_key": "saivam",
+          "matched_field": "commentary_text",
+          "matched_term": "சிவன்",
+          "record_id": "tvu_saivam_26f2f8323d031746cf26",
+          "snippet": "...செட்டியார் அவர்கள் பதிப்பு. பக்கம்.64). “சிவன்முதலே அன்றி முதல் இல்லை என்றும் சிவனுடையது...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        },
+        {
+          "group_key": "saivam",
+          "matched_field": "commentary_text",
+          "matched_term": "சிவன்",
+          "record_id": "tvu_saivam_26f2f8323d031746cf26",
+          "snippet": "...் சிவனது கிரியை என ஆறனுருபிற் கூறியதால், ‘சிவன் முதல்’ என்றதும் ஆறன்றொகையாகும். எழுவாய்த்...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        }
+      ],
+      "expanded": true,
+      "group_by": "category",
+      "intent": "group_by_category",
+      "limitations": [
+        "Rule-based analytical retrieval only; no LLM answer generation is performed.",
+        "Counts are literal occurrence counts from the local evidence index."
+      ],
+      "matched_terms": [
+        "சிவன்",
+        "சிவபெருமான்",
+        "ஈசன்",
+        "மகாதேவன்"
+      ],
+      "query": "எந்த corpus-இல் சிவன் அதிகமாக குறிப்பிடப்படுகிறார்?",
+      "statistics": {
+        "field_distribution": [
+          {
+            "count": 96,
+            "key": "kurippurai",
+            "percentage": 45.933
+          },
+          {
+            "count": 66,
+            "key": "pozhppurai",
+            "percentage": 31.5789
+          },
+          {
+            "count": 42,
+            "key": "verse_text",
+            "percentage": 20.0957
+          },
+          {
+            "count": 3,
+            "key": "commentary_text",
+            "percentage": 1.4354
+          },
+          {
+            "count": 1,
+            "key": "content_text",
+            "percentage": 0.4785
+          },
+          {
+            "count": 1,
+            "key": "definition",
+            "percentage": 0.4785
+          }
+        ],
+        "term_distribution": [
+          {
+            "count": 83,
+            "key": "சிவன்",
+            "percentage": 39.7129
+          },
+          {
+            "count": 82,
+            "key": "சிவபெருமான்",
+            "percentage": 39.2344
+          },
+          {
+            "count": 44,
+            "key": "ஈசன்",
+            "percentage": 21.0526
+          }
+        ]
+      },
+      "term": "சிவன்",
+      "top_results": [
+        {
+          "group_key": "thirumurai_02",
+          "occurrence_count": 196,
+          "percentage": 93.7799,
+          "rank": 1,
+          "unique_authors": 1,
+          "unique_records": 149,
+          "unique_works": 1
+        },
+        {
+          "group_key": "saivam",
+          "occurrence_count": 6,
+          "percentage": 2.8708,
+          "rank": 2,
+          "unique_authors": 1,
+          "unique_records": 2,
+          "unique_works": 1
+        },
+        {
+          "group_key": "thirumurai_04",
+          "occurrence_count": 5,
+          "percentage": 2.3923,
+          "rank": 3,
+          "unique_authors": 1,
+          "unique_records": 4,
+          "unique_works": 1
+        },
+        {
+          "group_key": "dictionaries",
+          "occurrence_count": 2,
+          "percentage": 0.9569,
+          "rank": 4,
+          "unique_authors": 0,
+          "unique_records": 1,
+          "unique_works": 1
+        }
+      ],
+      "total_occurrences": 209
+    },
+    {
+      "classification": {
+        "classification_rules": {
+          "llm_calls": 0,
+          "matched_group_keywords": [
+            "work",
+            "works"
+          ],
+          "rule_based": true
+        },
+        "expanded": true,
+        "group_by": "work",
+        "intent": "group_by_work",
+        "query": "உவமை எந்த works-இல் அதிகம் வருகிறது?",
+        "term": "உவமை"
+      },
+      "evidence_samples": [
+        {
+          "group_key": "Panniru Thirumurai",
+          "matched_field": "kurippurai",
+          "matched_term": "ஒத்த",
+          "record_id": "thevaram_02_1664_1470",
+          "snippet": "...ழி(துணியும் றுவையும்) காரணப்பெயர். புரை - ஒத்த, துன்னி -நெருங்கி, துன்னித்தோய்கழல் என்க....",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664"
+        },
+        {
+          "group_key": "Panniru Thirumurai",
+          "matched_field": "kurippurai",
+          "matched_term": "ஒத்த",
+          "record_id": "thevaram_02_1664_1470",
+          "snippet": "...ெள்ளைத் துணியில் பவளம் கிடக்கும் காட்சியை ஒத்திருந்தது என்க. ‘புன்னை பொன்தாது உதிர்மல்கு...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664"
+        },
+        {
+          "group_key": "Panniru Thirumurai",
+          "matched_field": "kurippurai",
+          "matched_term": "போல்",
+          "record_id": "thevaram_02_1664_1470",
+          "snippet": "...ப.7 பா.9) என்றதால் அதன் பூக்கள் செம்பவளம் போல்வன ஆதல் அறியப்படும். பாண்பு என்பது பாம்பு...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664"
+        },
+        {
+          "group_key": "thevaram_thirumurai_04",
+          "matched_field": "commentary_text",
+          "matched_term": "போல்",
+          "record_id": "tvu_saivam_1f1969e2a3d79269439b",
+          "snippet": "...ள்ளும் ஒரு வழித்துறையை அறியேனானேன். இதைப் போல்வதொரு வார்த்தை கேட்டறிந்திலேன். காத்தல் -...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        },
+        {
+          "group_key": "thevaram_thirumurai_04",
+          "matched_field": "kurippurai",
+          "matched_term": "போல்",
+          "record_id": "tvu_saivam_1f1969e2a3d79269439b",
+          "snippet": "...ள்ளும் ஒரு வழித்துறையை அறியேனானேன். இதைப் போல்வதொரு வார்த்தை கேட்டறிந்திலேன். காத்தல் -...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        }
+      ],
+      "expanded": true,
+      "group_by": "work",
+      "intent": "group_by_work",
+      "limitations": [
+        "Rule-based analytical retrieval only; no LLM answer generation is performed.",
+        "Counts are literal occurrence counts from the local evidence index."
+      ],
+      "matched_terms": [
+        "உவமை",
+        "போல்",
+        "போன்ற",
+        "ஒத்த"
+      ],
+      "query": "உவமை எந்த works-இல் அதிகம் வருகிறது?",
+      "statistics": {
+        "field_distribution": [
+          {
+            "count": 246,
+            "key": "pozhppurai",
+            "percentage": 54.185
+          },
+          {
+            "count": 164,
+            "key": "kurippurai",
+            "percentage": 36.1233
+          },
+          {
+            "count": 29,
+            "key": "verse_text",
+            "percentage": 6.3877
+          },
+          {
+            "count": 15,
+            "key": "commentary_text",
+            "percentage": 3.304
+          }
+        ],
+        "term_distribution": [
+          {
+            "count": 261,
+            "key": "போன்ற",
+            "percentage": 57.489
+          },
+          {
+            "count": 133,
+            "key": "போல்",
+            "percentage": 29.2952
+          },
+          {
+            "count": 38,
+            "key": "ஒத்த",
+            "percentage": 8.37
+          },
+          {
+            "count": 22,
+            "key": "உவமை",
+            "percentage": 4.8458
+          }
+        ]
+      },
+      "term": "உவமை",
+      "top_results": [
+        {
+          "group_key": "Panniru Thirumurai",
+          "occurrence_count": 424,
+          "percentage": 93.3921,
+          "rank": 1,
+          "unique_authors": 2,
+          "unique_records": 268,
+          "unique_works": 1
+        },
+        {
+          "group_key": "thevaram_thirumurai_04",
+          "occurrence_count": 30,
+          "percentage": 6.6079,
+          "rank": 2,
+          "unique_authors": 1,
+          "unique_records": 5,
+          "unique_works": 1
+        }
+      ],
+      "total_occurrences": 454
+    },
+    {
+      "classification": {
+        "classification_rules": {
+          "llm_calls": 0,
+          "matched_group_keywords": [
+            "record type",
+            "record types"
+          ],
+          "rule_based": true
+        },
+        "expanded": true,
+        "group_by": "record_type",
+        "intent": "group_by_record_type",
+        "query": "அப்பர் தொடர்பான குறிப்புகள் எந்த record types-இல் வருகின்றன?",
+        "term": "அப்பர்"
+      },
+      "evidence_samples": [
+        {
+          "group_key": "unified-thirumurai-v1",
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1669_1524",
+          "snippet": "...ிளங்கும். ஆடல் அமர்ந்துறைகின்ற ஐயாறு என்ற அப்பர் அருண்மொழியும் அறிக. பாடல்-இசைப்பாட்டு. மு...",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1669"
+        },
+        {
+          "group_key": "unified-thirumurai-v1",
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1669_1524",
+          "snippet": "...ிளங்கும். ஆடல் அமர்ந்துறைகின்ற ஐயாறு என்ற அப்பர் அருண்மொழியும் அறிக. பாடல் - இசைப்பாட்டு....",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1669"
+        },
+        {
+          "group_key": "unified-thirumurai-v1",
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1670_1543",
+          "snippet": "...தலின் வருபவக் கடலில்வீழ் மாக்கள்” (பெரிய. அப்பர். 129) என்புழியறிக.",
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1670"
+        },
+        {
+          "group_key": "verse",
+          "matched_field": "commentary_text",
+          "matched_term": "அப்பர்",
+          "record_id": "tvu_saivam_26f2f8323d031746cf26",
+          "snippet": "...இலன் எந்தை பிரானிரே’ (தி.5 ப.96 பா.9)என்ற அப்பர்க்கு மனை வாழ்க்கைப்பற்று இருந்ததாகக் கோடல்...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        },
+        {
+          "group_key": "verse",
+          "matched_field": "commentary_text",
+          "matched_term": "அப்பர்",
+          "record_id": "tvu_saivam_26f2f8323d031746cf26",
+          "snippet": "...கே?நாம் எங்கே? அத்தகைய சிற்றளவு பற்றுக்கே அப்பர் வருந்துகின்றார் எனக் கொண்டுரைத்தல் தக்கது...",
+          "source_url": "https://www.tamilvu.org/slet/l4140/l4130son.jsp?subid=1912"
+        }
+      ],
+      "expanded": true,
+      "group_by": "record_type",
+      "intent": "group_by_record_type",
+      "limitations": [
+        "Rule-based analytical retrieval only; no LLM answer generation is performed.",
+        "Counts are literal occurrence counts from the local evidence index."
+      ],
+      "matched_terms": [
+        "அப்பர்",
+        "திருநாவுக்கரசர்",
+        "நாவுக்கரசர்"
+      ],
+      "query": "அப்பர் தொடர்பான குறிப்புகள் எந்த record types-இல் வருகின்றன?",
+      "statistics": {
+        "field_distribution": [
+          {
+            "count": 32,
+            "key": "kurippurai",
+            "percentage": 84.2105
+          },
+          {
+            "count": 6,
+            "key": "commentary_text",
+            "percentage": 15.7895
+          }
+        ],
+        "term_distribution": [
+          {
+            "count": 32,
+            "key": "அப்பர்",
+            "percentage": 84.2105
+          },
+          {
+            "count": 3,
+            "key": "திருநாவுக்கரசர்",
+            "percentage": 7.8947
+          },
+          {
+            "count": 3,
+            "key": "நாவுக்கரசர்",
+            "percentage": 7.8947
+          }
+        ]
+      },
+      "term": "அப்பர்",
+      "top_results": [
+        {
+          "group_key": "unified-thirumurai-v1",
+          "occurrence_count": 26,
+          "percentage": 68.4211,
+          "rank": 1,
+          "unique_authors": 2,
+          "unique_records": 20,
+          "unique_works": 1
+        },
+        {
+          "group_key": "verse",
+          "occurrence_count": 12,
+          "percentage": 31.5789,
+          "rank": 2,
+          "unique_authors": 1,
+          "unique_records": 2,
+          "unique_works": 1
+        }
+      ],
+      "total_occurrences": 38
+    }
+  ],
+  "examples_version": "analytical-retrieval-examples-v1"
+}

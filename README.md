@@ -316,6 +316,9 @@ python3 src/analytics/search_occurrences.py --term "சந்திரன்" --
 python3 src/analytics/analyze_term.py --term "சந்திரன்"
 python3 src/analytics/analyze_term.py --term "சந்திரன்" --expand-query
 python3 src/analytics/analyze_term.py --term "சிவன்" --group-by author
+python3 src/analytics/ask_analytics.py --query "எந்த ஆசிரியர் சந்திரன் தொடர்பான சொற்களை அதிகம் பயன்படுத்துகிறார்?"
+python3 src/analytics/ask_analytics.py --query "எந்த corpus-இல் சிவன் அதிகமாக குறிப்பிடப்படுகிறார்?"
+python3 src/analytics/ask_analytics.py --query "உவமை எந்த works-இல் அதிகம் வருகிறது?"
 ```
 
 The next phase depends on cited lexical authorities, Tamil researcher review, and a small
@@ -369,4 +372,17 @@ generate answers, call an LLM, or perform analytical retrieval.
 python3 src/analytics/analyze_term.py --term "சந்திரன்"
 python3 src/analytics/analyze_term.py --term "சந்திரன்" --expand-query
 python3 src/analytics/analyze_term.py --term "சிவன்" --group-by author
+```
+
+## Analytical Retrieval
+
+The analytical retriever maps simple Tamil or English analytical questions to structured
+occurrence, expansion, aggregation, and statistics operations. It returns JSON with the
+intent, term, grouping dimension, ranked groups, and evidence samples. It is rule-based
+and does not generate fluent answers.
+
+```bash
+python3 src/analytics/ask_analytics.py --query "எந்த ஆசிரியர் சந்திரன் தொடர்பான சொற்களை அதிகம் பயன்படுத்துகிறார்?"
+python3 src/analytics/ask_analytics.py --query "எந்த corpus-இல் சிவன் அதிகமாக குறிப்பிடப்படுகிறார்?"
+python3 src/analytics/ask_analytics.py --query "உவமை எந்த works-இல் அதிகம் வருகிறது?"
 ```
