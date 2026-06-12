@@ -1,0 +1,20 @@
+{
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "candidate_id": "theme_candidate_example_001",
+      "candidate_type": "theme",
+      "canonical_form": "grace",
+      "confidence": 0.0,
+      "evidence_text": "",
+      "review_notes": "Example shape only; not extracted from corpus.",
+      "source_record_id": "placeholder_only",
+      "source_url": "",
+      "status": "placeholder_seed",
+      "surface_form": "அருள்"
+    }
+  ],
+  "registry_name": "theme_candidates",
+  "schema_version": "extraction-candidate-v1",
+  "status": "framework_placeholder_only"
+}

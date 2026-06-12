@@ -1,0 +1,198 @@
+{
+  "analysis_version": "literary-knowledge-extraction-framework-v1",
+  "automatic_extraction_performed": false,
+  "candidate_store_validation": {
+    "entities_candidates.json": {
+      "automatic_extraction_performed": false,
+      "errors": [],
+      "exists": true,
+      "path": "data/knowledge/extraction/entities_candidates.json",
+      "record_count": 1
+    },
+    "epithet_candidates.json": {
+      "automatic_extraction_performed": false,
+      "errors": [],
+      "exists": true,
+      "path": "data/knowledge/extraction/epithet_candidates.json",
+      "record_count": 1
+    },
+    "metaphor_candidates.json": {
+      "automatic_extraction_performed": false,
+      "errors": [],
+      "exists": true,
+      "path": "data/knowledge/extraction/metaphor_candidates.json",
+      "record_count": 1
+    },
+    "motif_candidates.json": {
+      "automatic_extraction_performed": false,
+      "errors": [],
+      "exists": true,
+      "path": "data/knowledge/extraction/motif_candidates.json",
+      "record_count": 1
+    },
+    "relationship_candidates.json": {
+      "automatic_extraction_performed": false,
+      "errors": [],
+      "exists": true,
+      "path": "data/knowledge/extraction/relationship_candidates.json",
+      "record_count": 1
+    },
+    "simile_candidates.json": {
+      "automatic_extraction_performed": false,
+      "errors": [],
+      "exists": true,
+      "path": "data/knowledge/extraction/simile_candidates.json",
+      "record_count": 1
+    },
+    "theme_candidates.json": {
+      "automatic_extraction_performed": false,
+      "errors": [],
+      "exists": true,
+      "path": "data/knowledge/extraction/theme_candidates.json",
+      "record_count": 1
+    }
+  },
+  "framework_status": "FRAMEWORK_READY_POPULATION_NOT_STARTED",
+  "llm_calls": 0,
+  "next_recommended_phase": "controlled annotated fixture design",
+  "overall_readiness_score": 44.0,
+  "phase": "phase_29",
+  "registry_population_performed": false,
+  "required_docs": {
+    "docs/extraction-schemas.md": true,
+    "docs/knowledge-target-catalog.md": true,
+    "docs/literary-knowledge-extraction-framework.md": true
+  },
+  "scraping_performed": false,
+  "target_count": 8,
+  "targets": [
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "needs reviewed entity examples",
+        "needs ambiguity rules"
+      ],
+      "candidate_file": "entities_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 55.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "FRAMEWORK_READY_REQUIRES_ANNOTATED_FIXTURES",
+      "target": "entity_extraction"
+    },
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "needs deity epithet mapping",
+        "needs false-positive examples"
+      ],
+      "candidate_file": "entities_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 52.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "FRAMEWORK_READY_REQUIRES_ALIAS_REVIEW",
+      "target": "deity_extraction"
+    },
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "needs author authority review",
+        "needs work-attribution checks"
+      ],
+      "candidate_file": "entities_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 52.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "FRAMEWORK_READY_REQUIRES_METADATA_ALIGNMENT",
+      "target": "author_extraction"
+    },
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "needs motif annotation guidelines",
+        "needs negative examples"
+      ],
+      "candidate_file": "motif_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 45.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "SCHEMA_READY_EXTRACTION_RULES_NOT_STARTED",
+      "target": "motif_extraction"
+    },
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "needs entity linking",
+        "needs reviewed epithet inventory"
+      ],
+      "candidate_file": "epithet_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 40.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "SCHEMA_READY_ENTITY_LINKING_REQUIRED",
+      "target": "epithet_extraction"
+    },
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "needs marker list",
+        "needs subject-object parsing"
+      ],
+      "candidate_file": "simile_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 38.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "SCHEMA_READY_MARKER_RULES_REQUIRED",
+      "target": "simile_extraction"
+    },
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "needs interpretation guidelines",
+        "needs human review workflow"
+      ],
+      "candidate_file": "metaphor_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 36.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "SCHEMA_READY_HIGH_REVIEW_REQUIRED",
+      "target": "metaphor_extraction"
+    },
+    {
+      "automatic_extraction_performed": false,
+      "blockers": [
+        "depends on accepted candidates",
+        "needs relationship ontology"
+      ],
+      "candidate_file": "relationship_candidates.json",
+      "candidate_store_errors": [],
+      "candidate_store_exists": true,
+      "llm_calls": 0,
+      "readiness_score": 34.0,
+      "schema_defined": true,
+      "scraping_performed": false,
+      "status": "SCHEMA_READY_DEPENDS_ON_OTHER_TARGETS",
+      "target": "relationship_extraction"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "aliases": [
+        "சிவபெருமான்"
+      ],
+      "candidate_id": "entity_candidate_example_001",
+      "candidate_type": "entity",
+      "canonical_form": "சிவன்",
+      "confidence": 0.0,
+      "entity_type": "deity",
+      "review_notes": "Example shape only; not extracted from corpus.",
+      "source_record_id": "placeholder_only",
+      "source_url": "",
+      "status": "placeholder_seed",
+      "surface_form": "சிவன்"
+    }
+  ],
+  "registry_name": "entities_candidates",
+  "schema_version": "extraction-candidate-v1",
+  "status": "framework_placeholder_only"
+}

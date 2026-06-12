@@ -420,3 +420,20 @@ The benchmark is a capability baseline, not fluent answer grading. Current bound
 retrieval, query expansion, occurrence search, aggregation, and analytical retrieval are
 available; motif extraction, epithet extraction, metaphor/simile extraction, full website
 coverage, and answer generation are not yet supported.
+
+## Literary Knowledge Extraction Framework
+
+The extraction framework defines the next knowledge targets needed for deeper literary
+analytics: entities, deities, authors, motifs, themes, epithets, similes, metaphors, and
+relationships. It also creates placeholder candidate stores that document schema shape
+only. These files are not extracted facts and must not be promoted into registries without
+evidence spans and review.
+
+```bash
+python3 src/knowledge/analyze_extraction_readiness.py
+```
+
+This phase performs no scraping, no automatic extraction, no registry population, no LLM
+calls, no embedding regeneration, and no vector-index rebuild. Its purpose is to map
+benchmark gaps to future extraction targets and prepare a safe roadmap for controlled
+knowledge population.

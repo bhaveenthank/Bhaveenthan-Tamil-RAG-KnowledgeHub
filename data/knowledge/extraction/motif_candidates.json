@@ -1,0 +1,20 @@
+{
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "candidate_id": "motif_candidate_example_001",
+      "candidate_type": "motif",
+      "canonical_form": "moon_imagery",
+      "confidence": 0.0,
+      "evidence_text": "",
+      "review_notes": "Example shape only; not extracted from corpus.",
+      "source_record_id": "placeholder_only",
+      "source_url": "",
+      "status": "placeholder_seed",
+      "surface_form": "நிலா"
+    }
+  ],
+  "registry_name": "motif_candidates",
+  "schema_version": "extraction-candidate-v1",
+  "status": "framework_placeholder_only"
+}
