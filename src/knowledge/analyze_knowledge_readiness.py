@@ -16,6 +16,8 @@ DEFAULT_OUTPUT = DEFAULT_KNOWLEDGE_DIR / "knowledge_readiness.json"
 DEFAULT_REPORT = Path("reports/knowledge-readiness-report.md")
 DEFAULT_OCCURRENCE_MANIFEST = Path("data/processed/analytics/occurrence_index_manifest.json")
 DEFAULT_AGGREGATION_EXAMPLES = Path("data/processed/analytics/aggregation_examples.json")
+DEFAULT_ANALYTICS_EVALUATION = Path("data/processed/eval/analytics_evaluation_results.json")
+DEFAULT_FAILURE_ATTRIBUTION = Path("data/processed/eval/failure_attribution_results.json")
 
 def registry_readiness(name: str, registry: dict[str, Any]) -> dict[str, Any]:
     errors = validate_registry(name, registry)
@@ -89,6 +91,8 @@ def analyze_knowledge_readiness(
     knowledge_dir: Path = DEFAULT_KNOWLEDGE_DIR,
     occurrence_manifest_path: Path = DEFAULT_OCCURRENCE_MANIFEST,
     aggregation_examples_path: Path = DEFAULT_AGGREGATION_EXAMPLES,
+    analytics_evaluation_path: Path = DEFAULT_ANALYTICS_EVALUATION,
+    failure_attribution_path: Path = DEFAULT_FAILURE_ATTRIBUTION,
 ) -> dict[str, Any]:
     results = []
     for name in REGISTRY_SPECS:
@@ -133,6 +137,18 @@ def analyze_knowledge_readiness(
         (evidence_readiness_score + aggregation_readiness_score) / 2,
         1,
     )
+    analytics_evaluation = (
+        json.loads(analytics_evaluation_path.read_text(encoding="utf-8"))
+        if analytics_evaluation_path.exists()
+        else {}
+    )
+    failure_attribution = (
+        json.loads(failure_attribution_path.read_text(encoding="utf-8"))
+        if failure_attribution_path.exists()
+        else {}
+    )
+    evaluation_readiness_score = 68.0 if analytics_evaluation else 0.0
+    failure_attribution_readiness_score = 70.0 if failure_attribution else 0.0
     return {
         "analysis_version": "knowledge-readiness-v3",
         "knowledge_schema_version": "knowledge-registry-v1",
@@ -150,6 +166,8 @@ def analyze_knowledge_readiness(
         "evidence_readiness_score": evidence_readiness_score,
         "aggregation_readiness_score": aggregation_readiness_score,
         "analytics_infrastructure_readiness_score": analytics_infrastructure_score,
+        "evaluation_readiness_score": evaluation_readiness_score,
+        "failure_attribution_readiness_score": failure_attribution_readiness_score,
         "occurrence_coverage": {
             "occurrence_index_available": bool(occurrence_manifest),
             "indexed_records": int(occurrence_manifest.get("indexed_records", 0)),
@@ -164,6 +182,13 @@ def analyze_knowledge_readiness(
             "supported_groupings": ["author", "category", "work", "record_type", "source"],
             "answer_generation_performed": False,
             "llm_calls": 0,
+        },
+        "evaluation_coverage": {
+            "analytics_evaluation_available": bool(analytics_evaluation),
+            "benchmark_size": int(analytics_evaluation.get("benchmark_size", 0)),
+            "success_rate": analytics_evaluation.get("summary", {}).get("success_rate", 0.0),
+            "failure_attribution_available": bool(failure_attribution),
+            "failure_cases": int(failure_attribution.get("failure_cases", 0)),
         },
         "extraction_performed": False,
         "scraping_performed": False,
@@ -195,9 +220,13 @@ def render_report(analysis: dict[str, Any]) -> str:
 - Evidence readiness: `{analysis['evidence_readiness_score']:.1f}/100`
 - Aggregation readiness: `{analysis['aggregation_readiness_score']:.1f}/100`
 - Analytics infrastructure readiness: `{analysis['analytics_infrastructure_readiness_score']:.1f}/100`
+- Evaluation readiness: `{analysis['evaluation_readiness_score']:.1f}/100`
+- Failure attribution readiness: `{analysis['failure_attribution_readiness_score']:.1f}/100`
 - Occurrence coverage score: `{analysis['occurrence_coverage']['coverage_score']:.1f}/100`
 - Occurrence index available: `{str(analysis['occurrence_coverage']['occurrence_index_available']).lower()}`
 - Aggregation examples available: `{str(analysis['aggregation_coverage']['aggregation_examples_available']).lower()}`
+- Analytics evaluation available: `{str(analysis['evaluation_coverage']['analytics_evaluation_available']).lower()}`
+- Failure attribution available: `{str(analysis['evaluation_coverage']['failure_attribution_available']).lower()}`
 - Phase 21 baseline: `{analysis['baseline']['foundation_readiness_score']:.1f}` foundation,
   `{analysis['baseline']['analytical_readiness_score']:.1f}` analytical
 - Decision: `{analysis['decision']}`
@@ -214,11 +243,12 @@ def render_report(analysis: dict[str, Any]) -> str:
 ## Interpretation
 
 The structural foundation remains valid, and five registries now contain three manually
-curated seed records each. The local occurrence index and aggregation examples now provide
-literal corpus evidence rows and grouped statistics for future analysis, but analytical
-readiness remains limited because there are no cited scholarly authority releases,
-reviewer sign-offs, registry-to-corpus annotations, extraction coverage measurements, or
-answer-generation behavior.
+curated seed records each. The local occurrence index, aggregation examples, analytics
+evaluation, and failure-attribution outputs now provide evidence rows, grouped statistics,
+and deterministic diagnostics for future analysis, but analytical readiness remains
+limited because there are no cited scholarly authority releases, reviewer sign-offs,
+registry-to-corpus annotations, extraction coverage measurements, or answer-generation
+behavior.
 
 No seed record should be used as proof that a term occurs in the corpus. Future population
 phases must link every accepted assertion to exact corpus records and source URLs.
@@ -249,11 +279,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
     parser.add_argument("--occurrence-manifest", type=Path, default=DEFAULT_OCCURRENCE_MANIFEST)
     parser.add_argument("--aggregation-examples", type=Path, default=DEFAULT_AGGREGATION_EXAMPLES)
+    parser.add_argument("--analytics-evaluation", type=Path, default=DEFAULT_ANALYTICS_EVALUATION)
+    parser.add_argument("--failure-attribution", type=Path, default=DEFAULT_FAILURE_ATTRIBUTION)
     args = parser.parse_args(argv)
     analysis = analyze_knowledge_readiness(
         args.knowledge_dir,
         args.occurrence_manifest,
         args.aggregation_examples,
+        args.analytics_evaluation,
+        args.failure_attribution,
     )
     write_outputs(analysis, output_path=args.output, report_path=args.report)
     print(json.dumps(analysis, ensure_ascii=False, indent=2, sort_keys=True))

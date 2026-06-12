@@ -319,6 +319,8 @@ python3 src/analytics/analyze_term.py --term "சிவன்" --group-by author
 python3 src/analytics/ask_analytics.py --query "எந்த ஆசிரியர் சந்திரன் தொடர்பான சொற்களை அதிகம் பயன்படுத்துகிறார்?"
 python3 src/analytics/ask_analytics.py --query "எந்த corpus-இல் சிவன் அதிகமாக குறிப்பிடப்படுகிறார்?"
 python3 src/analytics/ask_analytics.py --query "உவமை எந்த works-இல் அதிகம் வருகிறது?"
+python3 src/evaluation/evaluate_analytics.py
+python3 src/evaluation/failure_attribution.py
 ```
 
 The next phase depends on cited lexical authorities, Tamil researcher review, and a small
@@ -386,3 +388,19 @@ python3 src/analytics/ask_analytics.py --query "எந்த ஆசிரிய�
 python3 src/analytics/ask_analytics.py --query "எந்த corpus-இல் சிவன் அதிகமாக குறிப்பிடப்படுகிறார்?"
 python3 src/analytics/ask_analytics.py --query "உவமை எந்த works-இல் அதிகம் வருகிறது?"
 ```
+
+## Evaluation And Failure Attribution
+
+The analytics evaluation framework runs a deterministic benchmark over analytical
+retrieval, query expansion, occurrence search, aggregation, and statistics. Failure
+attribution classifies non-successful cases into explainable categories such as
+`analytics_gap`, `synonym_gap`, `occurrence_gap`, and `aggregation_gap`.
+
+```bash
+python3 src/evaluation/evaluate_analytics.py
+python3 src/evaluation/failure_attribution.py
+```
+
+The workflow produces machine-readable evaluation results, failure-attribution results,
+and Markdown reports. It performs no scraping, extraction, answer generation, LLM call,
+GCP work, embedding regeneration, or vector-index rebuild.

@@ -1,0 +1,124 @@
+{
+  "benchmark_version": "analytics-benchmark-v1",
+  "scope": "current_local_corpus_only",
+  "cases": [
+    {
+      "case_id": "analytics_author_moon",
+      "category": "author-analysis",
+      "query": "எந்த ஆசிரியர் சந்திரன் தொடர்பான சொற்களை அதிகம் பயன்படுத்துகிறார்?",
+      "expected": {
+        "intent": "group_by_author",
+        "term": "சந்திரன்",
+        "expanded": true,
+        "group_by": "author",
+        "min_total_occurrences": 686,
+        "top_group_key": "Tirugnanasambandar",
+        "required_matched_terms": ["சந்திரன்", "நிலா", "மதி", "திங்கள்", "நிலவு"],
+        "requires_evidence_samples": true
+      }
+    },
+    {
+      "case_id": "analytics_category_siva",
+      "category": "corpus-analysis",
+      "query": "எந்த corpus-இல் சிவன் அதிகமாக குறிப்பிடப்படுகிறார்?",
+      "expected": {
+        "intent": "group_by_category",
+        "term": "சிவன்",
+        "expanded": true,
+        "group_by": "category",
+        "min_total_occurrences": 209,
+        "top_group_key": "thirumurai_02",
+        "required_matched_terms": ["சிவன்", "சிவபெருமான்", "ஈசன்", "மகாதேவன்"],
+        "requires_evidence_samples": true
+      }
+    },
+    {
+      "case_id": "analytics_work_simile",
+      "category": "work-analysis",
+      "query": "உவமை எந்த works-இல் அதிகம் வருகிறது?",
+      "expected": {
+        "intent": "group_by_work",
+        "term": "உவமை",
+        "expanded": true,
+        "group_by": "work",
+        "min_total_occurrences": 454,
+        "top_group_key": "Panniru Thirumurai",
+        "required_matched_terms": ["உவமை", "போல்", "போன்ற", "ஒத்த"],
+        "requires_evidence_samples": true
+      }
+    },
+    {
+      "case_id": "analytics_record_type_appar",
+      "category": "record-type-analysis",
+      "query": "அப்பர் தொடர்பான குறிப்புகள் எந்த record types-இல் வருகின்றன?",
+      "expected": {
+        "intent": "group_by_record_type",
+        "term": "அப்பர்",
+        "expanded": true,
+        "group_by": "record_type",
+        "min_total_occurrences": 38,
+        "top_group_key": "unified-thirumurai-v1",
+        "required_matched_terms": ["அப்பர்", "திருநாவுக்கரசர்", "நாவுக்கரசர்"],
+        "requires_evidence_samples": true
+      }
+    },
+    {
+      "case_id": "analytics_source_siva",
+      "category": "source-analysis",
+      "query": "சிவன் எந்த source-இல் அதிகம் வருகிறது?",
+      "expected": {
+        "intent": "compare_sources",
+        "term": "சிவன்",
+        "expanded": true,
+        "group_by": "source",
+        "min_total_occurrences": 209,
+        "top_group_key": "TamilVU",
+        "required_matched_terms": ["சிவன்", "சிவபெருமான்", "ஈசன்", "மகாதேவன்"],
+        "requires_evidence_samples": true
+      }
+    },
+    {
+      "case_id": "analytics_occurrence_moon",
+      "category": "occurrence-analysis",
+      "query": "சந்திரன் எங்கு வருகிறது?",
+      "expected": {
+        "intent": "term_occurrence",
+        "term": "சந்திரன்",
+        "expanded": true,
+        "group_by": "category",
+        "min_total_occurrences": 686,
+        "top_group_key": "thirumurai_02",
+        "required_matched_terms": ["சந்திரன்", "நிலா", "மதி", "திங்கள்", "நிலவு"],
+        "requires_evidence_samples": true
+      }
+    },
+    {
+      "case_id": "analytics_synonym_moon",
+      "category": "synonym-analysis",
+      "query": "சந்திரன் ஒத்த சொற்கள் எந்த corpus-இல் வருகின்றன?",
+      "expected": {
+        "intent": "group_by_category",
+        "term": "சந்திரன்",
+        "expanded": true,
+        "group_by": "category",
+        "min_total_occurrences": 686,
+        "top_group_key": "thirumurai_02",
+        "required_matched_terms": ["சந்திரன்", "நிலா", "மதி", "திங்கள்", "நிலவு"],
+        "requires_evidence_samples": true
+      }
+    },
+    {
+      "case_id": "analytics_unsupported",
+      "category": "unsupported",
+      "query": "hello please summarize everything",
+      "expected": {
+        "intent": "unsupported",
+        "term": "",
+        "expanded": false,
+        "group_by": null,
+        "min_total_occurrences": 0,
+        "requires_evidence_samples": false
+      }
+    }
+  ]
+}

@@ -9,9 +9,13 @@
 - Evidence readiness: `62.5/100`
 - Aggregation readiness: `66.0/100`
 - Analytics infrastructure readiness: `64.2/100`
+- Evaluation readiness: `68.0/100`
+- Failure attribution readiness: `70.0/100`
 - Occurrence coverage score: `100.0/100`
 - Occurrence index available: `true`
 - Aggregation examples available: `true`
+- Analytics evaluation available: `true`
+- Failure attribution available: `true`
 - Phase 21 baseline: `70.0` foundation,
   `35.0` analytical
 - Decision: `CURATED_SEED_READY_EXTRACTION_NOT_STARTED`
@@ -36,11 +40,12 @@
 ## Interpretation
 
 The structural foundation remains valid, and five registries now contain three manually
-curated seed records each. The local occurrence index and aggregation examples now provide
-literal corpus evidence rows and grouped statistics for future analysis, but analytical
-readiness remains limited because there are no cited scholarly authority releases,
-reviewer sign-offs, registry-to-corpus annotations, extraction coverage measurements, or
-answer-generation behavior.
+curated seed records each. The local occurrence index, aggregation examples, analytics
+evaluation, and failure-attribution outputs now provide evidence rows, grouped statistics,
+and deterministic diagnostics for future analysis, but analytical readiness remains
+limited because there are no cited scholarly authority releases, reviewer sign-offs,
+registry-to-corpus annotations, extraction coverage measurements, or answer-generation
+behavior.
 
 No seed record should be used as proof that a term occurs in the corpus. Future population
 phases must link every accepted assertion to exact corpus records and source URLs.

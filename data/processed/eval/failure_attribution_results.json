@@ -1,0 +1,24 @@
+{
+  "dominant_failure_categories": [],
+  "failure_attribution_version": "failure-attribution-v1",
+  "failure_cases": 0,
+  "failure_counts": {},
+  "failure_rate": 0.0,
+  "failures": [],
+  "taxonomy": {
+    "aggregation_gap": "Evidence existed, but grouping/ranking/counting was wrong.",
+    "analytics_gap": "Natural-language analytical routing, intent, or term extraction failed.",
+    "architecture_gap": "The pipeline could not execute the required component path.",
+    "data_gap": "Expected evidence is not present in the currently available corpus.",
+    "evaluation_gap": "The test expectation is underspecified, inconsistent, or stale.",
+    "metadata_gap": "Required metadata is missing or inconsistent.",
+    "occurrence_gap": "Occurrence search did not find expected evidence rows.",
+    "parser_gap": "Source evidence may exist, but parser output is not exposing it.",
+    "query_expansion_gap": "Expansion was expected but not applied correctly.",
+    "registry_gap": "Curated registry coverage is insufficient or wrong.",
+    "retrieval_gap": "Ranked retrieval missed expected evidence.",
+    "synonym_gap": "Expected equivalent terms were missing from expansion or matching.",
+    "unknown": "The available evidence is insufficient for a stronger attribution."
+  },
+  "total_cases": 8
+}

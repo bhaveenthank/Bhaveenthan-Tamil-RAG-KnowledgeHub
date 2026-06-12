@@ -186,8 +186,17 @@
     }
   ],
   "decision": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED",
+  "evaluation_coverage": {
+    "analytics_evaluation_available": true,
+    "benchmark_size": 8,
+    "failure_attribution_available": true,
+    "failure_cases": 0,
+    "success_rate": 1.0
+  },
+  "evaluation_readiness_score": 68.0,
   "evidence_readiness_score": 62.5,
   "extraction_performed": false,
+  "failure_attribution_readiness_score": 70.0,
   "foundation_readiness_score": 79.4,
   "knowledge_schema_version": "knowledge-registry-v1",
   "llm_calls": 0,

@@ -24,6 +24,9 @@ data/indexes/**
 data/processed/eval/**
 !data/processed/eval/literary_analysis_questions.jsonl
 !data/processed/eval/query_expansion_results.json
+!data/processed/eval/analytics_benchmark.json
+!data/processed/eval/analytics_evaluation_results.json
+!data/processed/eval/failure_attribution_results.json
 !data/processed/analytics/
 data/processed/analytics/**
 !data/processed/analytics/occurrence_index.jsonl
