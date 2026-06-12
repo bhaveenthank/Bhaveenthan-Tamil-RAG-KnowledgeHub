@@ -5,18 +5,20 @@
 - Phase: `phase_29`
 - Framework status: `FRAMEWORK_READY_POPULATION_NOT_STARTED`
 - Extraction targets: `8`
-- Overall readiness: `44.0/100`
+- Overall readiness: `46.9/100`
 - Automatic extraction performed: `false`
 - Scraping performed: `false`
 - Registry population performed: `false`
 - LLM calls: `0`
-- Next recommended phase: `controlled annotated fixture design`
+- Next recommended phase: `deity and author extraction pilot`
+- Entity extraction pilot available: `true`
+- Entity extraction pilot F1: `0.9231`
 
 ## Target Readiness
 
 | Target | Candidate Store | Score | Status | Main Blockers |
 | --- | --- | ---: | --- | --- |
-| `entity_extraction` | `entities_candidates.json` | 55.0 | `FRAMEWORK_READY_REQUIRES_ANNOTATED_FIXTURES` | needs reviewed entity examples, needs ambiguity rules |
+| `entity_extraction` | `entities_candidates.json` | 78.1 | `PILOT_EVALUATED_DETERMINISTIC_MATCHER` | needs broader negative and ambiguous fixtures, needs missing authority review before registry expansion |
 | `deity_extraction` | `entities_candidates.json` | 52.0 | `FRAMEWORK_READY_REQUIRES_ALIAS_REVIEW` | needs deity epithet mapping, needs false-positive examples |
 | `author_extraction` | `entities_candidates.json` | 52.0 | `FRAMEWORK_READY_REQUIRES_METADATA_ALIGNMENT` | needs author authority review, needs work-attribution checks |
 | `motif_extraction` | `motif_candidates.json` | 45.0 | `SCHEMA_READY_EXTRACTION_RULES_NOT_STARTED` | needs motif annotation guidelines, needs negative examples |

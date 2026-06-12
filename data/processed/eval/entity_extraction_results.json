@@ -1,0 +1,276 @@
+{
+  "corpus_wide_extraction_performed": false,
+  "entity_extraction_pilot_performed": true,
+  "errors": {
+    "false_negatives": [
+      {
+        "end": 25,
+        "label": "deity",
+        "record_id": "gold_entities_001",
+        "start": 19,
+        "text": "பிரமன்"
+      }
+    ],
+    "false_positives": []
+  },
+  "evaluation_version": "entity-extraction-pilot-v1",
+  "exact_match": 0.8571,
+  "expected_count": 7,
+  "expected_entities": [
+    {
+      "end": 5,
+      "label": "deity",
+      "record_id": "gold_entities_001",
+      "start": 0,
+      "text": "சிவன்"
+    },
+    {
+      "end": 16,
+      "label": "deity",
+      "record_id": "gold_entities_001",
+      "start": 8,
+      "text": "திருமால்"
+    },
+    {
+      "end": 25,
+      "label": "deity",
+      "record_id": "gold_entities_001",
+      "start": 19,
+      "text": "பிரமன்"
+    },
+    {
+      "end": 16,
+      "label": "author",
+      "record_id": "gold_entities_002",
+      "start": 0,
+      "text": "திருஞானசம்பந்தர்"
+    },
+    {
+      "end": 38,
+      "label": "place",
+      "record_id": "gold_entities_002",
+      "start": 23,
+      "text": "திருப்பூந்தராய்"
+    },
+    {
+      "end": 17,
+      "label": "author",
+      "record_id": "gold_entities_003",
+      "start": 0,
+      "text": "சுப்பிரமணிய பாரதி"
+    },
+    {
+      "end": 39,
+      "label": "work",
+      "record_id": "gold_entities_003",
+      "start": 25,
+      "text": "யாரைத் தொழுவது"
+    }
+  ],
+  "extracted_count": 6,
+  "extracted_entities": [
+    {
+      "canonical_id": "deity_siva",
+      "canonical_name": "சிவன்",
+      "end": 5,
+      "label": "deity",
+      "match_source": "registry:deities.json",
+      "record_id": "gold_entities_001",
+      "start": 0,
+      "text": "சிவன்"
+    },
+    {
+      "canonical_id": "deity_vishnu",
+      "canonical_name": "விஷ்ணு",
+      "end": 16,
+      "label": "deity",
+      "match_source": "registry:deities.json",
+      "record_id": "gold_entities_001",
+      "start": 8,
+      "text": "திருமால்"
+    },
+    {
+      "canonical_id": "author_sambandar",
+      "canonical_name": "திருஞானசம்பந்தர்",
+      "end": 16,
+      "label": "author",
+      "match_source": "registry:authors.json",
+      "record_id": "gold_entities_002",
+      "start": 0,
+      "text": "திருஞானசம்பந்தர்"
+    },
+    {
+      "canonical_id": "place_tiruppoontharaai",
+      "canonical_name": "திருப்பூந்தராய்",
+      "end": 38,
+      "label": "place",
+      "match_source": "registry:places.json",
+      "record_id": "gold_entities_002",
+      "start": 23,
+      "text": "திருப்பூந்தராய்"
+    },
+    {
+      "canonical_id": "local_author:சுப்பிரமணிய பாரதி",
+      "canonical_name": "சுப்பிரமணிய பாரதி",
+      "end": 17,
+      "label": "author",
+      "match_source": "metadata:prose_normalized.jsonl:tvu_twentieth_century_prose_a07a9fc9371817d6b478",
+      "record_id": "gold_entities_003",
+      "start": 0,
+      "text": "சுப்பிரமணிய பாரதி"
+    },
+    {
+      "canonical_id": "local_work:யாரைத் தொழுவது?",
+      "canonical_name": "யாரைத் தொழுவது?",
+      "end": 39,
+      "label": "work",
+      "match_source": "metadata:prose_normalized.jsonl:tvu_twentieth_century_prose_a07a9fc9371817d6b478",
+      "record_id": "gold_entities_003",
+      "start": 25,
+      "text": "யாரைத் தொழுவது"
+    }
+  ],
+  "f1": 0.9231,
+  "false_negative_count": 1,
+  "false_positive_count": 0,
+  "gold_path": "data/knowledge/annotations/entities_gold.json",
+  "llm_calls": 0,
+  "precision": 1.0,
+  "recall": 0.8571,
+  "records": [
+    {
+      "expected": [
+        {
+          "end": 5,
+          "label": "deity",
+          "start": 0,
+          "text": "சிவன்"
+        },
+        {
+          "end": 16,
+          "label": "deity",
+          "start": 8,
+          "text": "திருமால்"
+        },
+        {
+          "end": 25,
+          "label": "deity",
+          "start": 19,
+          "text": "பிரமன்"
+        }
+      ],
+      "extracted": [
+        {
+          "canonical_id": "deity_siva",
+          "canonical_name": "சிவன்",
+          "end": 5,
+          "label": "deity",
+          "match_source": "registry:deities.json",
+          "record_id": "gold_entities_001",
+          "start": 0,
+          "text": "சிவன்"
+        },
+        {
+          "canonical_id": "deity_vishnu",
+          "canonical_name": "விஷ்ணு",
+          "end": 16,
+          "label": "deity",
+          "match_source": "registry:deities.json",
+          "record_id": "gold_entities_001",
+          "start": 8,
+          "text": "திருமால்"
+        }
+      ],
+      "record_id": "gold_entities_001",
+      "text": "சிவன் , திருமால் , பிரமன்"
+    },
+    {
+      "expected": [
+        {
+          "end": 16,
+          "label": "author",
+          "start": 0,
+          "text": "திருஞானசம்பந்தர்"
+        },
+        {
+          "end": 38,
+          "label": "place",
+          "start": 23,
+          "text": "திருப்பூந்தராய்"
+        }
+      ],
+      "extracted": [
+        {
+          "canonical_id": "author_sambandar",
+          "canonical_name": "திருஞானசம்பந்தர்",
+          "end": 16,
+          "label": "author",
+          "match_source": "registry:authors.json",
+          "record_id": "gold_entities_002",
+          "start": 0,
+          "text": "திருஞானசம்பந்தர்"
+        },
+        {
+          "canonical_id": "place_tiruppoontharaai",
+          "canonical_name": "திருப்பூந்தராய்",
+          "end": 38,
+          "label": "place",
+          "match_source": "registry:places.json",
+          "record_id": "gold_entities_002",
+          "start": 23,
+          "text": "திருப்பூந்தராய்"
+        }
+      ],
+      "record_id": "gold_entities_002",
+      "text": "திருஞானசம்பந்தர் பாடிய திருப்பூந்தராய் பதிகம்"
+    },
+    {
+      "expected": [
+        {
+          "end": 17,
+          "label": "author",
+          "start": 0,
+          "text": "சுப்பிரமணிய பாரதி"
+        },
+        {
+          "end": 39,
+          "label": "work",
+          "start": 25,
+          "text": "யாரைத் தொழுவது"
+        }
+      ],
+      "extracted": [
+        {
+          "canonical_id": "local_author:சுப்பிரமணிய பாரதி",
+          "canonical_name": "சுப்பிரமணிய பாரதி",
+          "end": 17,
+          "label": "author",
+          "match_source": "metadata:prose_normalized.jsonl:tvu_twentieth_century_prose_a07a9fc9371817d6b478",
+          "record_id": "gold_entities_003",
+          "start": 0,
+          "text": "சுப்பிரமணிய பாரதி"
+        },
+        {
+          "canonical_id": "local_work:யாரைத் தொழுவது?",
+          "canonical_name": "யாரைத் தொழுவது?",
+          "end": 39,
+          "label": "work",
+          "match_source": "metadata:prose_normalized.jsonl:tvu_twentieth_century_prose_a07a9fc9371817d6b478",
+          "record_id": "gold_entities_003",
+          "start": 25,
+          "text": "யாரைத் தொழுவது"
+        }
+      ],
+      "record_id": "gold_entities_003",
+      "text": "சுப்பிரமணிய பாரதி எழுதிய யாரைத் தொழுவது?"
+    }
+  ],
+  "scraping_performed": false,
+  "supported_entity_types": [
+    "deity",
+    "author",
+    "place",
+    "work"
+  ],
+  "true_positive_count": 6
+}

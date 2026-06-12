@@ -454,3 +454,15 @@ python3 src/knowledge/analyze_annotation_readiness.py
 Future extraction phases should use these fixtures to measure precision, recall, span
 accuracy, normalized-label accuracy, and relationship endpoint accuracy before promoting
 any candidates into the curated knowledge layer.
+
+## Entity Extraction Pilot
+
+The entity extraction pilot evaluates a deterministic registry and local-metadata matcher
+against the manual entity gold fixtures. It supports deity, author, place, and work spans
+only. It does not perform corpus-wide extraction, scrape, call an LLM, use GCP, regenerate
+embeddings, or rebuild vector indexes.
+
+```bash
+python3 src/knowledge/evaluate_entity_extraction.py
+python3 src/knowledge/analyze_extraction_readiness.py
+```
