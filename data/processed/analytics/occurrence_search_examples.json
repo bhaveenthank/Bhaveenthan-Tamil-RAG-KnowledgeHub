@@ -1,0 +1,477 @@
+{
+  "examples": [
+    {
+      "example_records": [
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1470&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1470:kurippurai:மதி:1865",
+          "match_end": 1868,
+          "match_start": 1865,
+          "matched_field": "kurippurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1470",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ான்’ (திருவாசகம் 139) என்ற கருத்தினது. “தூமதி சடைமிசைச் சூடுதல் தூநெறியா மதியான் என அமை...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1470, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1470"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1470&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1470:kurippurai:மதி:1896",
+          "match_end": 1899,
+          "match_start": 1896,
+          "matched_field": "kurippurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1470",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...்தினது. “தூமதி சடைமிசைச் சூடுதல் தூநெறியா மதியான் என அமைத்தவாறே” (பட்டினத்தார் ஒருபா ஒர...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1470, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1470"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1473&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1473:pozhppurai:மதி:23",
+          "match_end": 26,
+          "match_start": 23,
+          "matched_field": "pozhppurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1473",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "பாதுகாவலாக அமைந்த வலிய மதில்களும் பொன்னால் அழகுறுத்தப்பெற்ற அழகிய மா...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1473, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1473"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1473&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1473:verse_text:மதி:8",
+          "match_end": 11,
+          "match_start": 8,
+          "matched_field": "verse_text",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1473",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "சேம வல் மதில் பொன் அணி மாளிகை சேண் உயர் பூ மணம் கமழும...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1473, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1473"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1477&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1477:pozhppurai:மதி:81",
+          "match_end": 84,
+          "match_start": 81,
+          "matched_field": "pozhppurai",
+          "matched_term": "மதி",
+          "record_id": "thevaram_02_1664_1477",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...கயல்மீன்கள் பாயும் நீர் நிலை சூழ்ந்ததும், மதில்கள் சூழ்ந்து நீண்டு உயர்ந்த மாடமாளிகைகள்...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1477, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1477"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        }
+      ],
+      "expand_query": true,
+      "matched_terms": [
+        "சந்திரன்",
+        "நிலா",
+        "மதி",
+        "திங்கள்",
+        "நிலவு"
+      ],
+      "occurrence_count": 686,
+      "term": "சந்திரன்"
+    },
+    {
+      "example_records": [
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1477&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1477:kurippurai:சிவபெருமான்:139",
+          "match_end": 150,
+          "match_start": 139,
+          "matched_field": "kurippurai",
+          "matched_term": "சிவபெருமான்",
+          "record_id": "thevaram_02_1664_1477",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ன் செழுமையும் குறிக்கப்பட்டன. வேதாகமங்கள் சிவபெருமான் திருவாக்காதலின் சுருதிபாடிய பாண் இயல் தூம...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1477, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1477"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1485&book_id=110&head_id=60&sub_id=1665",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1665_1485:kurippurai:ஈசன்:98",
+          "match_end": 102,
+          "match_start": 98,
+          "matched_field": "kurippurai",
+          "matched_term": "ஈசன்",
+          "record_id": "thevaram_02_1665_1485",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...்சத்திரம் “பூசம் புகுந்தாடிப் பொலிந்தழகாய ஈசன் உறைகின்ற இடைமருது ஈதோ” (தி.1ப.32பா.5.) என...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.2 திருவலஞ்சுழி - வினாஉரை - இந்தளம், பாடல் 1485, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1665:1485"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1665",
+          "title": "2.2 திருவலஞ்சுழி - வினாஉரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1498&book_id=110&head_id=60&sub_id=1666",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1666_1498:kurippurai:சிவன்:200",
+          "match_end": 205,
+          "match_start": 200,
+          "matched_field": "kurippurai",
+          "matched_term": "சிவன்",
+          "record_id": "thevaram_02_1666_1498",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...் எனலாம். சித்திரம்-அழகுமாம். வித்தகப்படை-சிவன் தந்தவாள். அரக்கன்- இராவணன், விறல்-வலிமை,...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.3 திருத் தெளிச்சேரி - வினாஉரை - இந்தளம், பாடல் 1498, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1666:1498"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1666",
+          "title": "2.3 திருத் தெளிச்சேரி - வினாஉரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1517&book_id=110&head_id=60&sub_id=1668",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1668_1517:verse_text:ஈசன்:150",
+          "match_end": 154,
+          "match_start": 150,
+          "matched_field": "verse_text",
+          "matched_term": "ஈசன்",
+          "record_id": "thevaram_02_1668_1517",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ும் ஓசை பறை போலும் அனேகதங்காவதம் இறை, எம் ஈசன், எம்மான், இடம் ஆக உகந்ததே.",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.5 திருஅனேகதங்காவதம் - இந்தளம், பாடல் 1517, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1668:1517"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1668",
+          "title": "2.5 திருஅனேகதங்காவதம் - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1521&book_id=110&head_id=60&sub_id=1668",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1668_1521:pozhppurai:சிவபெருமான்:140",
+          "match_end": 151,
+          "match_start": 140,
+          "matched_field": "pozhppurai",
+          "matched_term": "சிவபெருமான்",
+          "record_id": "thevaram_02_1668_1521",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...அவர்கட்கு இடையே எழுந்ததோர் அழற்பிழம்பாகிய சிவபெருமான் எழுந்தருளிய அழகிய சாரலை உடைய அனேகதங்காவதத...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.5 திருஅனேகதங்காவதம் - இந்தளம், பாடல் 1521, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1668:1521"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1668",
+          "title": "2.5 திருஅனேகதங்காவதம் - இந்தளம்"
+        }
+      ],
+      "expand_query": true,
+      "matched_terms": [
+        "சிவன்",
+        "சிவபெருமான்",
+        "ஈசன்",
+        "மகாதேவன்"
+      ],
+      "occurrence_count": 209,
+      "term": "சிவன்"
+    },
+    {
+      "example_records": [
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1524&book_id=110&head_id=60&sub_id=1669",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1669_1524:kurippurai:அப்பர்:350",
+          "match_end": 356,
+          "match_start": 350,
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1669_1524",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ிளங்கும். ஆடல் அமர்ந்துறைகின்ற ஐயாறு என்ற அப்பர் அருண்மொழியும் அறிக. பாடல்-இசைப்பாட்டு. மு...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.6 திருஐயாறு - இந்தளம், பாடல் 1524, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1669:1524"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1669",
+          "title": "2.6 திருஐயாறு - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1524&book_id=110&head_id=60&sub_id=1669",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1669_1524:kurippurai:அப்பர்:743",
+          "match_end": 749,
+          "match_start": 743,
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1669_1524",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ிளங்கும். ஆடல் அமர்ந்துறைகின்ற ஐயாறு என்ற அப்பர் அருண்மொழியும் அறிக. பாடல் - இசைப்பாட்டு....",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.6 திருஐயாறு - இந்தளம், பாடல் 1524, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1669:1524"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1669",
+          "title": "2.6 திருஐயாறு - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1543&book_id=110&head_id=60&sub_id=1670",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1670_1543:kurippurai:அப்பர்:261",
+          "match_end": 267,
+          "match_start": 261,
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1670_1543",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...தலின் வருபவக் கடலில்வீழ் மாக்கள்” (பெரிய. அப்பர். 129) என்புழியறிக.",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.7 திருவாஞ்சியம் - இந்தளம், பாடல் 1543, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1670:1543"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1670",
+          "title": "2.7 திருவாஞ்சியம் - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1583&book_id=110&head_id=60&sub_id=1674",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1674_1583:kurippurai:அப்பர்:1214",
+          "match_end": 1220,
+          "match_start": 1214,
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1674_1583",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...் வினையான எலாம் அற அற்றவர் ஆரூர் அரனெறி’ (அப்பர்.5) ‘அற்றவர்க்கு அன்பர்’ ‘அற்றுப் பற்றின்ற...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.11 சீகாழி - இந்தளம், பாடல் 1583, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1674:1583"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1674",
+          "title": "2.11 சீகாழி - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1756&book_id=110&head_id=60&sub_id=1690",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1690_1756:kurippurai:அப்பர்:217",
+          "match_end": 223,
+          "match_start": 217,
+          "matched_field": "kurippurai",
+          "matched_term": "அப்பர்",
+          "record_id": "thevaram_02_1690_1756",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ார் நெஞ்சுதஞ்சே குடிகொண்ட குழகன்காண்’ என்றஅப்பர் திருவாக்கில் வந்த கூசுதல் வேறு. இது வேறு....",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.27 திருஇந்திரநீலப்பருப்பதம் - இந்தளம், பாடல் 1756, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1690:1756"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1690",
+          "title": "2.27 திருஇந்திரநீலப்பருப்பதம் - இந்தளம்"
+        }
+      ],
+      "expand_query": true,
+      "matched_terms": [
+        "அப்பர்",
+        "திருநாவுக்கரசர்",
+        "நாவுக்கரசர்"
+      ],
+      "occurrence_count": 38,
+      "term": "அப்பர்"
+    },
+    {
+      "example_records": [
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1470&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1470:kurippurai:ஒத்த:2099",
+          "match_end": 2103,
+          "match_start": 2099,
+          "matched_field": "kurippurai",
+          "matched_term": "ஒத்த",
+          "record_id": "thevaram_02_1664_1470",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ழி(துணியும் றுவையும்) காரணப்பெயர். புரை - ஒத்த, துன்னி -நெருங்கி, துன்னித்தோய்கழல் என்க....",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1470, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1470"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1470&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1470:kurippurai:ஒத்த:2255",
+          "match_end": 2259,
+          "match_start": 2255,
+          "matched_field": "kurippurai",
+          "matched_term": "ஒத்த",
+          "record_id": "thevaram_02_1664_1470",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ெள்ளைத் துணியில் பவளம் கிடக்கும் காட்சியை ஒத்திருந்தது என்க. ‘புன்னை பொன்தாது உதிர்மல்கு...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1470, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1470"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1470&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1470:kurippurai:போல்:2365",
+          "match_end": 2369,
+          "match_start": 2365,
+          "matched_field": "kurippurai",
+          "matched_term": "போல்",
+          "record_id": "thevaram_02_1664_1470",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ப.7 பா.9) என்றதால் அதன் பூக்கள் செம்பவளம் போல்வன ஆதல் அறியப்படும். பாண்பு என்பது பாம்பு...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1470, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1470"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1471&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1471:kurippurai:போல்:510",
+          "match_end": 514,
+          "match_start": 510,
+          "matched_field": "kurippurai",
+          "matched_term": "போல்",
+          "record_id": "thevaram_02_1664_1471",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...ை, சீகாழிக்கழனியிற் சங்கும் இப்பியும் பொன்போல் விளங்கும் தாமரைகளும் மிக்குள்ளன; பெற்றமேற...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1471, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1471"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        },
+        {
+          "author": "Tirugnanasambandar",
+          "category_id": "thirumurai_02",
+          "commentary_url": "https://www.tamilvu.org/slet/l4120/l4120uri.jsp?song_no=1471&book_id=110&head_id=60&sub_id=1664",
+          "corpus_id": "thirumurai_02",
+          "deterministic_key": "thevaram_02_1664_1471:pozhppurai:போல்:65",
+          "match_end": 69,
+          "match_start": 65,
+          "matched_field": "pozhppurai",
+          "matched_term": "போல்",
+          "record_id": "thevaram_02_1664_1471",
+          "record_type": "unified-thirumurai-v1",
+          "snippet": "...லைகளில் ஏறிவந்த சங்குகளும் இப்பிகளும் பொன்போல் விளங்கும் தாமரைகள் மலர்ந்த வயல்களில் வந்த...",
+          "source_metadata": {
+            "citation_text": "திருஞானசம்பந்தர், இரண்டாம் திருமுறை, 2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம், பாடல் 1471, TamilVU.",
+            "source_file": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+            "source_record_id": "tvu:1664:1471"
+          },
+          "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+          "title": "2.1 திருப்பூந்தராய் - வினா உரை - இந்தளம்"
+        }
+      ],
+      "expand_query": true,
+      "matched_terms": [
+        "உவமை",
+        "போல்",
+        "போன்ற",
+        "ஒத்த"
+      ],
+      "occurrence_count": 454,
+      "term": "உவமை"
+    }
+  ],
+  "examples_version": "occurrence-search-examples-v1"
+}

@@ -1,0 +1,114 @@
+{
+  "corpus_entry_counts": {
+    "dictionaries": 3,
+    "grammar": 8,
+    "sangam_literature": 12,
+    "thirumurai_02": 6648,
+    "thirumurai_04": 323,
+    "twentieth_century_prose": 6
+  },
+  "example_searches": [
+    {
+      "expand_query": true,
+      "matched_terms": [
+        "சந்திரன்",
+        "நிலா",
+        "மதி",
+        "திங்கள்",
+        "நிலவு"
+      ],
+      "occurrence_count": 686,
+      "term": "சந்திரன்"
+    },
+    {
+      "expand_query": true,
+      "matched_terms": [
+        "சிவன்",
+        "சிவபெருமான்",
+        "ஈசன்",
+        "மகாதேவன்"
+      ],
+      "occurrence_count": 209,
+      "term": "சிவன்"
+    },
+    {
+      "expand_query": true,
+      "matched_terms": [
+        "அப்பர்",
+        "திருநாவுக்கரசர்",
+        "நாவுக்கரசர்"
+      ],
+      "occurrence_count": 38,
+      "term": "அப்பர்"
+    },
+    {
+      "expand_query": true,
+      "matched_terms": [
+        "உவமை",
+        "போல்",
+        "போன்ற",
+        "ஒத்த"
+      ],
+      "occurrence_count": 454,
+      "term": "உவமை"
+    }
+  ],
+  "field_entry_counts": {
+    "author": 1399,
+    "commentary_text": 10,
+    "content_text": 18,
+    "definition": 1,
+    "kurippurai": 1388,
+    "pozhppurai": 1387,
+    "rule_text": 2,
+    "title": 1400,
+    "verse_text": 1395
+  },
+  "indexed_field_entries": 7000,
+  "indexed_fields": [
+    "author",
+    "commentary_text",
+    "content_text",
+    "definition",
+    "kurippurai",
+    "pozhppurai",
+    "rule_text",
+    "title",
+    "verse_text"
+  ],
+  "indexed_records": 1400,
+  "llm_calls": 0,
+  "manifest_version": "occurrence-index-v1",
+  "scraping_performed": false,
+  "source": "local_normalized_corpora",
+  "source_files": [
+    {
+      "path": "data/processed/normalized/thirumurai_02_normalized.jsonl",
+      "record_count": 1331
+    },
+    {
+      "path": "data/processed/normalized/thirumurai_04_normalized.jsonl",
+      "record_count": 51
+    },
+    {
+      "path": "data/processed/normalized_categories/dictionaries_normalized.jsonl",
+      "record_count": 1
+    },
+    {
+      "path": "data/processed/normalized_categories/grammar_normalized.jsonl",
+      "record_count": 2
+    },
+    {
+      "path": "data/processed/normalized_categories/prose_normalized.jsonl",
+      "record_count": 2
+    },
+    {
+      "path": "data/processed/normalized_categories/saivam_normalized.jsonl",
+      "record_count": 10
+    },
+    {
+      "path": "data/processed/normalized_categories/sangam_literature_normalized.jsonl",
+      "record_count": 3
+    }
+  ]
+}

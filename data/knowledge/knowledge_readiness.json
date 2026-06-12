@@ -1,5 +1,5 @@
 {
-  "analysis_version": "knowledge-readiness-v2",
+  "analysis_version": "knowledge-readiness-v3",
   "analytical_readiness_score": 47.5,
   "baseline": {
     "analytical_readiness_score": 35.0,
@@ -171,10 +171,29 @@
     }
   ],
   "decision": "CURATED_SEED_READY_EXTRACTION_NOT_STARTED",
+  "evidence_readiness_score": 62.5,
   "extraction_performed": false,
   "foundation_readiness_score": 79.4,
   "knowledge_schema_version": "knowledge-registry-v1",
   "llm_calls": 0,
+  "occurrence_coverage": {
+    "aggregation_performed": false,
+    "coverage_score": 100.0,
+    "indexed_field_entries": 7000,
+    "indexed_fields": [
+      "author",
+      "commentary_text",
+      "content_text",
+      "definition",
+      "kurippurai",
+      "pozhppurai",
+      "rule_text",
+      "title",
+      "verse_text"
+    ],
+    "indexed_records": 1400,
+    "occurrence_index_available": true
+  },
   "phase": "curated_seed_population",
   "primary_capability_count": 8,
   "registry_count": 9,

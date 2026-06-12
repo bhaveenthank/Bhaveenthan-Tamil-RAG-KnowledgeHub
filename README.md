@@ -310,6 +310,9 @@ python3 src/retrieval/expand_query.py --query "அப்பர் பாடல�
 python3 src/retrieval/expand_query.py --query "சந்திரன் வரும் பாடல்கள்"
 python3 src/rag/build_context.py --query "அப்பர் பாடல்கள்" --top-k 5 --expand-query
 python3 src/evaluation/evaluate_query_expansion.py
+python3 src/analytics/build_occurrence_index.py
+python3 src/analytics/search_occurrences.py --term "சந்திரன்"
+python3 src/analytics/search_occurrences.py --term "சந்திரன்" --expand-query
 ```
 
 The next phase depends on cited lexical authorities, Tamil researcher review, and a small
@@ -333,3 +336,21 @@ The evaluation compares baseline and expanded hybrid retrieval for four curated 
 Its improved/degraded/neutral label is based on a transparent local corpus-evidence proxy,
 not on human relevance judgment. No scraping, LLM call, embedding generation, or vector
 index rebuild is performed.
+
+## Corpus-Wide Occurrence Search
+
+The occurrence index searches all currently normalized local corpora and returns exact
+evidence occurrences with field names, snippets, record IDs, authors, and source URLs.
+It is different from top-k retrieval: occurrence search is exhaustive evidence collection
+for future aggregation and statistics.
+
+```bash
+python3 src/analytics/build_occurrence_index.py
+python3 src/analytics/search_occurrences.py --term "சந்திரன்"
+python3 src/analytics/search_occurrences.py --term "சந்திரன்" --expand-query
+```
+
+The `--expand-query` option uses the curated registries to search concept terms such as
+`சந்திரன்`, `நிலா`, `மதி`, and `திங்கள்` together. This phase does not aggregate counts
+into literary claims, build analytical retrieval, call an LLM, scrape, or modify frozen
+corpus artifacts.

@@ -6,6 +6,9 @@
 - Primary analytical capabilities: `8`
 - Foundation readiness: `79.4/100`
 - Analytical readiness: `47.5/100`
+- Evidence readiness: `62.5/100`
+- Occurrence coverage score: `100.0/100`
+- Occurrence index available: `true`
 - Phase 21 baseline: `70.0` foundation,
   `35.0` analytical
 - Decision: `CURATED_SEED_READY_EXTRACTION_NOT_STARTED`
@@ -30,10 +33,10 @@
 ## Interpretation
 
 The structural foundation remains valid, and five registries now contain three manually
-curated seed records each. Analytical readiness improves for normalization and evaluation
-design, but remains limited because there are no cited scholarly authority releases,
-reviewer sign-offs, corpus evidence spans, annotations, extraction coverage measurements,
-or aggregation results.
+curated seed records each. The local occurrence index now provides literal corpus evidence
+rows for future analysis, but analytical readiness remains limited because there are no
+cited scholarly authority releases, reviewer sign-offs, registry-to-corpus annotations,
+extraction coverage measurements, or aggregation results.
 
 No seed record should be used as proof that a term occurs in the corpus. Future population
 phases must link every accepted assertion to exact corpus records and source URLs.
