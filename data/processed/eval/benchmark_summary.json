@@ -1,0 +1,131 @@
+{
+  "category_counts": {
+    "aggregation questions": 2,
+    "author questions": 2,
+    "cross-corpus questions": 21,
+    "deity questions": 5,
+    "occurrence questions": 12,
+    "ordinary retrieval": 21,
+    "synonym questions": 5,
+    "unsupported questions": 32
+  },
+  "category_metrics": {
+    "aggregation questions": {
+      "failure": 0,
+      "failure_rate": 0.0,
+      "partial": 0,
+      "partial_success_rate": 0.0,
+      "success": 2,
+      "success_rate": 1.0,
+      "total_questions": 2
+    },
+    "author questions": {
+      "failure": 1,
+      "failure_rate": 0.5,
+      "partial": 0,
+      "partial_success_rate": 0.0,
+      "success": 1,
+      "success_rate": 0.5,
+      "total_questions": 2
+    },
+    "cross-corpus questions": {
+      "failure": 20,
+      "failure_rate": 0.9524,
+      "partial": 1,
+      "partial_success_rate": 0.0476,
+      "success": 0,
+      "success_rate": 0.0,
+      "total_questions": 21
+    },
+    "deity questions": {
+      "failure": 1,
+      "failure_rate": 0.2,
+      "partial": 0,
+      "partial_success_rate": 0.0,
+      "success": 4,
+      "success_rate": 0.8,
+      "total_questions": 5
+    },
+    "occurrence questions": {
+      "failure": 0,
+      "failure_rate": 0.0,
+      "partial": 2,
+      "partial_success_rate": 0.1667,
+      "success": 10,
+      "success_rate": 0.8333,
+      "total_questions": 12
+    },
+    "ordinary retrieval": {
+      "failure": 0,
+      "failure_rate": 0.0,
+      "partial": 0,
+      "partial_success_rate": 0.0,
+      "success": 21,
+      "success_rate": 1.0,
+      "total_questions": 21
+    },
+    "synonym questions": {
+      "failure": 0,
+      "failure_rate": 0.0,
+      "partial": 0,
+      "partial_success_rate": 0.0,
+      "success": 5,
+      "success_rate": 1.0,
+      "total_questions": 5
+    },
+    "unsupported questions": {
+      "failure": 22,
+      "failure_rate": 0.6875,
+      "partial": 10,
+      "partial_success_rate": 0.3125,
+      "success": 0,
+      "success_rate": 0.0,
+      "total_questions": 32
+    }
+  },
+  "dominant_failure_causes": [
+    {
+      "count": 27,
+      "failure_type": "architecture_gap"
+    },
+    {
+      "count": 10,
+      "failure_type": "evaluation_gap"
+    },
+    {
+      "count": 9,
+      "failure_type": "data_gap"
+    },
+    {
+      "count": 8,
+      "failure_type": "registry_gap"
+    },
+    {
+      "count": 3,
+      "failure_type": "aggregation_gap"
+    }
+  ],
+  "failure_counts": {
+    "aggregation_gap": 3,
+    "architecture_gap": 27,
+    "data_gap": 9,
+    "evaluation_gap": 10,
+    "registry_gap": 8
+  },
+  "overall": {
+    "failure": 44,
+    "failure_rate": 0.44,
+    "partial": 13,
+    "partial_success_rate": 0.13,
+    "success": 43,
+    "success_rate": 0.43,
+    "total_questions": 100
+  },
+  "readiness_scores": {
+    "analytical_research": 64.0,
+    "full_rag": 38.0,
+    "literary_analytics": 58.0,
+    "publication_readiness": 52.0
+  },
+  "summary_version": "comprehensive-benchmark-summary-v1"
+}

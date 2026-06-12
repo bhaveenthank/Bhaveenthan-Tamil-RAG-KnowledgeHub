@@ -321,6 +321,7 @@ python3 src/analytics/ask_analytics.py --query "எந்த corpus-இல் �
 python3 src/analytics/ask_analytics.py --query "உவமை எந்த works-இல் அதிகம் வருகிறது?"
 python3 src/evaluation/evaluate_analytics.py
 python3 src/evaluation/failure_attribution.py
+python3 src/evaluation/run_comprehensive_benchmark.py
 ```
 
 The next phase depends on cited lexical authorities, Tamil researcher review, and a small
@@ -404,3 +405,18 @@ python3 src/evaluation/failure_attribution.py
 The workflow produces machine-readable evaluation results, failure-attribution results,
 and Markdown reports. It performs no scraping, extraction, answer generation, LLM call,
 GCP work, embedding regeneration, or vector-index rebuild.
+
+## Comprehensive Benchmark
+
+The comprehensive benchmark evaluates the 100-question Tamil literary taxonomy against
+the current deterministic system. It records success, partial success, failure type,
+supported components, and future unlock paths for currently unsupported questions.
+
+```bash
+python3 src/evaluation/run_comprehensive_benchmark.py
+```
+
+The benchmark is a capability baseline, not fluent answer grading. Current boundaries:
+retrieval, query expansion, occurrence search, aggregation, and analytical retrieval are
+available; motif extraction, epithet extraction, metaphor/simile extraction, full website
+coverage, and answer generation are not yet supported.

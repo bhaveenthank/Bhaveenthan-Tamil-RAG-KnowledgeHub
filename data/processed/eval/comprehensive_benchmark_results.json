@@ -1,0 +1,3786 @@
+{
+  "benchmark_version": "comprehensive-benchmark-v1",
+  "question_count": 100,
+  "results": [
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Who composed the Tiruppoontharaai hymn?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "திருப்பூந்தராய் பதிகத்தைப் பாடியவர் யார்?",
+      "question_id": "q_001",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Which Thirumurai contains the Tiruppoontharaai hymn?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "திருப்பூந்தராய் பதிகம் எந்தத் திருமுறையில் உள்ளது?",
+      "question_id": "q_002",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "What is the hymn ID of Tiruppoontharaai?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "திருப்பூந்தராய் பதிகத்தின் hymn ID என்ன?",
+      "question_id": "q_003",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Which hymn contains song number 1470?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "1470 என்ற song number எந்தப் பதிகத்தைச் சேர்ந்தது?",
+      "question_id": "q_004",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Who is the author of the Second Thirumurai?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "இரண்டாம் திருமுறையின் ஆசிரியர் யார்?",
+      "question_id": "q_005",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "What is the pann of the Tiruppoontharaai hymn?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "திருப்பூந்தராய் பதிகத்தின் பண் என்ன?",
+      "question_id": "q_006",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "What is the place name of the Tiruvalanchuzhi hymn?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "திருவலஞ்சுழி பதிகத்தின் தலப்பெயர் என்ன?",
+      "question_id": "q_007",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Is a prose explanation available for this verse?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒரு பாடலுக்கான பொழிப்புரை கிடைக்கிறதா?",
+      "question_id": "q_008",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Is an explanatory note available for this verse?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒரு பாடலுக்கான குறிப்புரை கிடைக்கிறதா?",
+      "question_id": "q_009",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "aggregation questions",
+      "difficulty": "medium",
+      "english_gloss": "How many verses are in the Tiruppoontharaai hymn?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "திருப்பூந்தராய் பதிகத்தில் எத்தனை பாடல்கள் உள்ளன?",
+      "question_id": "q_010",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "What is the source URL for song number 1479?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "1479 என்ற song number-இன் source URL என்ன?",
+      "question_id": "q_011",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "What is the full title of the Tiruppoontharaai hymn?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "திருப்பூந்தராய் பதிகத்தின் முழுத் தலைப்பு என்ன?",
+      "question_id": "q_012",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "A. Basic lookup"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Which hymn contains the line or phrase 'Poontharaai'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "இந்தப் பாடல் வரி எந்தப் பதிகத்தில் வருகிறது: 'பூந்தராய்'?",
+      "question_id": "q_013",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Identify the hymn whose title contains 'vina urai'.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'வினா உரை' என்று தலைப்பில் வரும் பதிகத்தை அடையாளம் காண்க.",
+      "question_id": "q_014",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "aggregation questions",
+      "difficulty": "medium",
+      "english_gloss": "Find hymns set in the Indhalam pann.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'இந்தளம்' பண் கொண்ட பதிகங்களை கண்டறிக.",
+      "question_id": "q_015",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "medium",
+      "english_gloss": "Identify the song number from a supplied Thevaram line.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "கொடுக்கப்பட்ட ஒரு தேவார வரியிலிருந்து song number-ஐ கண்டறிக.",
+      "question_id": "q_016",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "medium",
+      "english_gloss": "Identify the hymn title from a supplied verse line.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "கொடுக்கப்பட்ட பாடல் வரியிலிருந்து பதிகத் தலைப்பைக் கண்டறிக.",
+      "question_id": "q_017",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "medium",
+      "english_gloss": "Identify Sambandar as the poet of a supplied verse.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "கொடுக்கப்பட்ட பாடல் வரியைப் பாடிய சம்பந்தரை அடையாளம் காண்க.",
+      "question_id": "q_018",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "easy",
+      "english_gloss": "Which hymn title contains 'Tirut Telichcheri'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'திருத் தெளிச்சேரி' எனும் சொற்றொடர் எந்தப் பதிகத் தலைப்பில் உள்ளது?",
+      "question_id": "q_019",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "hard",
+      "english_gloss": "Find the verse associated with a prose-commentary excerpt.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒரு பொழிப்புரைத் துணுக்கிலிருந்து அதற்குரிய பாடலை கண்டறிக.",
+      "question_id": "q_020",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "hard",
+      "english_gloss": "Find the hymn ID from an explanatory-note excerpt.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒரு குறிப்புரைத் துணுக்கிலிருந்து hymn ID-ஐ கண்டறிக.",
+      "question_id": "q_021",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Disambiguate the correct source verse between two similar lines.",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "இரண்டு ஒத்த பாடல் வரிகளில் சரியான மூலப் பாடலை வேறுபடுத்துக.",
+      "question_id": "q_022",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "medium",
+      "english_gloss": "Retrieve a full verse from its first line.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒரு பாடலின் முதல் வரியைக் கொண்டு அதன் முழுப் பாடலை மீட்டெடுக்குக.",
+      "question_id": "q_023",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "ordinary retrieval",
+      "difficulty": "hard",
+      "english_gloss": "Identify a hymn from the final line of a verse.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒரு பாடலின் இறுதி வரியைக் கொண்டு அதன் பதிகத்தை அடையாளம் காண்க.",
+      "question_id": "q_024",
+      "reason": "Supported by deterministic retrieval/citation infrastructure.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "B. Verse identification"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "medium",
+      "english_gloss": "Which verses mention 'chandran'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "எந்த எந்த பாடல்களில் 'சந்திரன்' குறிப்பிடப்பட்டுள்ளது?",
+      "question_id": "q_025",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 11
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சந்திரன்"
+          ],
+          "occurrence_count": 11
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "medium",
+      "english_gloss": "Which verses contain the word 'nilavu'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "எந்த பாடல்களில் 'நிலவு' என்ற சொல் வருகிறது?",
+      "question_id": "q_026",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 24
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "நிலவு"
+          ],
+          "occurrence_count": 24
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "medium",
+      "english_gloss": "Which verses contain the word 'madhi'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "எந்த பாடல்களில் 'மதி' என்ற சொல் வருகிறது?",
+      "question_id": "q_027",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 508
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "மதி"
+          ],
+          "occurrence_count": 508
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "medium",
+      "english_gloss": "Which verses contain the word 'thingal'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "எந்த பாடல்களில் 'திங்கள்' என்ற சொல் வருகிறது?",
+      "question_id": "q_028",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 64
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "திங்கள்"
+          ],
+          "occurrence_count": 64
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "hard",
+      "english_gloss": "Which hymns use the word 'arul' most often?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'அருள்' என்ற சொல் அதிகம் வரும் பதிகங்கள் எவை?",
+      "question_id": "q_029",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 295
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "அருள்"
+          ],
+          "occurrence_count": 295
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "hard",
+      "english_gloss": "List verses containing 'sadai' and give the count.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'சடை' என்ற சொல் வரும் பாடல்களையும் எண்ணிக்கையையும் தருக.",
+      "question_id": "q_030",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 624
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சடை"
+          ],
+          "occurrence_count": 624
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "hard",
+      "english_gloss": "Where does 'Gangai' occur in prose commentary?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'கங்கை' என்ற சொல் பொழிப்புரையில் வரும் இடங்கள் எவை?",
+      "question_id": "q_031",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 267
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "கங்கை"
+          ],
+          "occurrence_count": 267
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "hard",
+      "english_gloss": "Where does 'Umai' occur in explanatory notes?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'உமை' என்ற சொல் குறிப்புரையில் வரும் இடங்கள் எவை?",
+      "question_id": "q_032",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 240
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உமை"
+          ],
+          "occurrence_count": 240
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses contain both 'madhi' and 'sadai'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒரே பாடலில் 'மதி' மற்றும் 'சடை' இரண்டும் வரும் இடங்கள் எவை?",
+      "question_id": "q_033",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 624
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சடை"
+          ],
+          "occurrence_count": 624
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "medium",
+      "english_gloss": "How many place names begin with 'Tiru'?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Basic aggregation exists, but this question requires field-specific or boolean/intersection aggregation.",
+        "failure_type": "aggregation_gap",
+        "recommended_action": "Advanced aggregation/statistics phase"
+      },
+      "failure_type": "aggregation_gap",
+      "question": "'திரு' என்று தொடங்கும் தலப்பெயர்கள் எத்தனை?",
+      "question_id": "q_034",
+      "reason": "Basic aggregation exists, but this question requires field-specific or boolean/intersection aggregation.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "hard",
+      "english_gloss": "Give the count of 'Sivan' occurrences in each hymn.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒவ்வொரு பதிகத்திலும் 'சிவன்' வரும் எண்ணிக்கையைத் தருக.",
+      "question_id": "q_035",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 83
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சிவன்"
+          ],
+          "occurrence_count": 83
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "occurrence questions",
+      "difficulty": "hard",
+      "english_gloss": "Find records where the same target word appears in verse and prose commentary.",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Basic aggregation exists, but this question requires field-specific or boolean/intersection aggregation.",
+        "failure_type": "aggregation_gap",
+        "recommended_action": "Advanced aggregation/statistics phase"
+      },
+      "failure_type": "aggregation_gap",
+      "question": "பாடல் உரையிலும் பொழிப்புரையிலும் ஒரே சொல் வரும் பதிவுகளை கண்டறிக.",
+      "question_id": "q_036",
+      "reason": "Basic aggregation exists, but this question requires field-specific or boolean/intersection aggregation.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "C. Word occurrence"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "medium",
+      "english_gloss": "What are the Tamil literary synonyms for the moon?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "சந்திரனுக்கான தமிழ் இலக்கிய ஒத்த சொற்கள் எவை?",
+      "question_id": "q_037",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "synonym questions",
+      "difficulty": "hard",
+      "english_gloss": "List together verses containing nilavu, madhi, or thingal.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "நிலவு, மதி, திங்கள் ஆகிய சொற்கள் வரும் பாடல்களை ஒன்றாகத் தருக.",
+      "question_id": "q_038",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 1059
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "திங்கள்",
+            "சந்திரன்",
+            "நிலா",
+            "மதி",
+            "நிலவு",
+            "சந்திரக் காட்சி",
+            "பிறை"
+          ],
+          "occurrence_count": 1059
+        },
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "திங்கள்",
+            "சந்திரன்",
+            "நிலா",
+            "மதி",
+            "நிலவு",
+            "சந்திரக் காட்சி",
+            "பிறை"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "synonym questions",
+      "difficulty": "hard",
+      "english_gloss": "Search verses using synonymous names for Siva.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "சிவனை குறிக்கும் ஒத்த பெயர்களை வைத்து பாடல்களைத் தேடுக.",
+      "question_id": "q_039",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 454
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ],
+          "occurrence_count": 454
+        },
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "synonym questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses contain alternative names for Uma?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "உமைக்கான மாற்றுப் பெயர்கள் வரும் பாடல்கள் எவை?",
+      "question_id": "q_040",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 240
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உமை"
+          ],
+          "occurrence_count": 240
+        },
+        "query_expansion": {
+          "expanded": false,
+          "matched_terms": []
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "medium",
+      "english_gloss": "What are literary alternatives for the word sea?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "கடல் என்பதற்கான இலக்கிய மாற்றுச் சொற்கள் என்ன?",
+      "question_id": "q_041",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "கடல்",
+            "சமுத்திரம்"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "synonym questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses contain synonyms expressing the concept of flower?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "மலர் என்ற கருத்தைக் குறிக்கும் ஒத்த சொற்கள் வரும் பாடல்கள் எவை?",
+      "question_id": "q_042",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 454
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ],
+          "occurrence_count": 454
+        },
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "synonym questions",
+      "difficulty": "hard",
+      "english_gloss": "Expand synonyms for light and find matching verses.",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "ஒளி என்பதற்கான ஒத்த சொற்களை விரிவாக்கி பாடல்களை கண்டறிக.",
+      "question_id": "q_043",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 454
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ],
+          "occurrence_count": 454
+        },
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which epithets are equivalent to 'iraivan'?",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires a curated synonym/semantic-field registry entry that does not exist yet.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "இறைவன் என்ற சொல்லுக்கு இணையான அடைமொழிகள் எவை?",
+      "question_id": "q_044",
+      "reason": "Requires a curated synonym/semantic-field registry entry that does not exist yet.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Collect verses containing terms related to love and affection.",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires a curated synonym/semantic-field registry entry that does not exist yet.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "அன்பு, காதல், நேசம் சார்ந்த சொற்கள் வரும் பாடல்களைத் தொகுக்குக.",
+      "question_id": "q_045",
+      "reason": "Requires a curated synonym/semantic-field registry entry that does not exist yet.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare verses that express the moon using different words.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "ஒரே சந்திரக் கருத்து வெவ்வேறு சொற்களால் வரும் பாடல்களை ஒப்பிடுக.",
+      "question_id": "q_046",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "D. Synonym expansion"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "What epithets refer to Siva?",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires deity/epithet extraction and reviewed entity annotations.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "சிவனை குறிக்கும் அடைமொழிகள் எவை?",
+      "question_id": "q_047",
+      "reason": "Requires deity/epithet extraction and reviewed entity annotations.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "deity questions",
+      "difficulty": "medium",
+      "english_gloss": "Which verses call Siva 'Sadaiyan'?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "'சடையன்' என சிவன் அழைக்கப்படும் பாடல்கள் எவை?",
+      "question_id": "q_048",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 83
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சிவன்"
+          ],
+          "occurrence_count": 83
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses describe Siva as wearing the Ganges?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "கங்கை அணிந்தவனாக சிவன் வர்ணிக்கப்படும் பாடல்கள் எவை?",
+      "question_id": "q_049",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 267
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "கங்கை"
+          ],
+          "occurrence_count": 267
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "deity questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses portray Siva as wearing the crescent moon?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "பிறை அணிந்தவனாக சிவன் வரும் பாடல்கள் எவை?",
+      "question_id": "q_050",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 83
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சிவன்"
+          ],
+          "occurrence_count": 83
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "deity questions",
+      "difficulty": "medium",
+      "english_gloss": "Which verses mention Siva together with Uma?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "உமையுடன் சிவன் குறிப்பிடப்படும் பாடல்கள் எவை?",
+      "question_id": "q_051",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 83
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சிவன்"
+          ],
+          "occurrence_count": 83
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "What physical attributes of Siva are described?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "சிவனின் உருவ அடையாளங்கள் என்னென்ன?",
+      "question_id": "q_052",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "deity questions",
+      "difficulty": "hard",
+      "english_gloss": "Which epithet occurs in the most verses?",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires deity/epithet extraction and reviewed entity annotations.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "எந்த அடைமொழி அதிகமான பாடல்களில் வருகிறது?",
+      "question_id": "q_053",
+      "reason": "Requires deity/epithet extraction and reviewed entity annotations.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses use multiple epithets for Siva?",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires deity/epithet extraction and reviewed entity annotations.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "ஒரே பாடலில் சிவனுக்குப் பல அடைமொழிகள் வரும் இடங்கள் எவை?",
+      "question_id": "q_054",
+      "reason": "Requires deity/epithet extraction and reviewed entity annotations.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which Siva epithets are explained in the prose commentary?",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires deity/epithet extraction and reviewed entity annotations.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "பொழிப்புரையில் விளக்கப்படும் சிவன் அடைமொழிகள் எவை?",
+      "question_id": "q_055",
+      "reason": "Requires deity/epithet extraction and reviewed entity annotations.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 83
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சிவன்"
+          ],
+          "occurrence_count": 83
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which divine attributes are linked to mythology in the notes?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "குறிப்புரையில் புராணச் செய்தியுடன் இணைக்கப்படும் இறை அடையாளங்கள் எவை?",
+      "question_id": "q_056",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which divine epithets are associated with a place?",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires deity/epithet extraction and reviewed entity annotations.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "தலத்தோடு தொடர்புடைய இறை அடைமொழிகள் எவை?",
+      "question_id": "q_057",
+      "reason": "Requires deity/epithet extraction and reviewed entity annotations.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "deity questions",
+      "difficulty": "hard",
+      "english_gloss": "Which deities other than Siva are mentioned?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "சிவன் தவிர குறிப்பிடப்படும் பிற தெய்வங்கள் எவை?",
+      "question_id": "q_058",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 83
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சிவன்"
+          ],
+          "occurrence_count": 83
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "E. Deity and epithet"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Where is the moon used as a simile?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "சந்திரன் எந்த இடங்களில் உவமையாக பயன்படுத்தப்பட்டுள்ளது?",
+      "question_id": "q_059",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 11
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சந்திரன்"
+          ],
+          "occurrence_count": 11
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses use flower imagery as a simile?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "மலர் உவமை வரும் பாடல்கள் எவை?",
+      "question_id": "q_060",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 22
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உவமை"
+          ],
+          "occurrence_count": 22
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which verses use the sea metaphorically?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "கடல் உருவகமாக வரும் பாடல்கள் எவை?",
+      "question_id": "q_061",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 247
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "கடல்"
+          ],
+          "occurrence_count": 247
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Where is light used as a metaphor for Siva?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "ஒளி சிவனுக்கான உருவகமாக பயன்படுத்தப்படும் இடங்கள் எவை?",
+      "question_id": "q_062",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which natural elements are used to describe the deity?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "எந்த இயற்கைக் கூறுகள் இறைவனை வர்ணிக்கப் பயன்படுத்தப்படுகின்றன?",
+      "question_id": "q_063",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which similes recur within the same hymn?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "ஒரே பதிகத்தில் மீண்டும் வரும் உவமைகள் எவை?",
+      "question_id": "q_064",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 22
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உவமை"
+          ],
+          "occurrence_count": 22
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which similes are explicitly explained by the prose commentary?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "பொழிப்புரை எந்த உவமைகளை வெளிப்படையாக விளக்குகிறது?",
+      "question_id": "q_065",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 22
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உவமை"
+          ],
+          "occurrence_count": 22
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Does the note provide mythic background for a metaphor?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "குறிப்புரை உருவகத்திற்கான புராணப் பின்னணியைத் தருகிறதா?",
+      "question_id": "q_066",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Distinguish whether the moon is a simile or an attribute of Siva.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "சந்திரன் உவமையா அல்லது சிவனின் அடையாளமா என்பதை வேறுபடுத்துக.",
+      "question_id": "q_067",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Which metaphor recurs across the most hymns?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "எந்த உருவகம் அதிகமான பதிகங்களில் மீள்கிறது?",
+      "question_id": "q_068",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare different similes used for the same concept.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "ஒரே கருத்துக்கு பயன்படுத்தப்பட்ட வேறுபட்ட உவமைகளை ஒப்பிடுக.",
+      "question_id": "q_069",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 22
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உவமை"
+          ],
+          "occurrence_count": 22
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Identify verses that use direct description rather than simile.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "உவமை இல்லாமல் நேரடி வர்ணனை வரும் பாடல்களை அடையாளம் காண்க.",
+      "question_id": "q_070",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 22
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உவமை"
+          ],
+          "occurrence_count": 22
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "F. Simile and metaphor"
+    },
+    {
+      "category": "author questions",
+      "difficulty": "hard",
+      "english_gloss": "Which epithets does Sambandar use most?",
+      "failure_attribution": null,
+      "failure_type": "",
+      "question": "சம்பந்தர் எந்த அடைமொழிகளை அதிகம் பயன்படுத்துகிறார்?",
+      "question_id": "q_071",
+      "reason": "Supported by occurrence search and aggregation over the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "success",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "author questions",
+      "difficulty": "hard",
+      "english_gloss": "How often does lunar imagery occur in Sambandar's hymns?",
+      "failure_attribution": {
+        "confidence": 0.84,
+        "explanation": "Requires a curated synonym/semantic-field registry entry that does not exist yet.",
+        "failure_type": "registry_gap",
+        "recommended_action": "Knowledge extraction and reviewed registry population phases"
+      },
+      "failure_type": "registry_gap",
+      "question": "சம்பந்தரின் பதிகங்களில் சந்திரக் காட்சிகள் எவ்வளவு வருகின்றன?",
+      "question_id": "q_072",
+      "reason": "Requires a curated synonym/semantic-field registry entry that does not exist yet.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 0
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare how Sambandar and Appar describe Siva.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "சம்பந்தரும் அப்பரும் சிவனை வர்ணிக்கும் முறையை ஒப்பிடுக.",
+      "question_id": "q_073",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Which Nayanmar uses the moon most often as a simile?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "எந்த நாயன்மார் சந்திரனை அதிகமாக உவமையாக பயன்படுத்துகிறார்?",
+      "question_id": "q_074",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 454
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "உவமை",
+            "போல்",
+            "போன்ற",
+            "ஒத்த"
+          ],
+          "occurrence_count": 454
+        },
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "உவமை",
+            "போல்",
+            "போன்ற",
+            "ஒத்த"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Which poet uses the greatest variety of epithets for Siva?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "எந்த பாடகர் சிவனை அதிகமான அடைமொழிகளால் பாடுகிறார்?",
+      "question_id": "q_075",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare place descriptions used by Sambandar and Sundarar.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "சம்பந்தர் மற்றும் சுந்தரர் பயன்படுத்தும் தல வர்ணனைகளை ஒப்பிடுக.",
+      "question_id": "q_076",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "What conceptual differences appear in commentary for Appar and Sambandar?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "அப்பர் மற்றும் சம்பந்தர் பொழிப்புரைகளில் விளக்கப்படும் கருத்து வேறுபாடுகள் எவை?",
+      "question_id": "q_077",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 32
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "அப்பர்"
+          ],
+          "occurrence_count": 32
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Which divine attribute is most frequent for each Nayanmar?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "ஒவ்வொரு நாயன்மாரின் பாடல்களில் அதிகம் வரும் தெய்வ அடையாளம் எது?",
+      "question_id": "q_078",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "How does pann usage differ between Nayanmars?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "பண் பயன்பாட்டில் நாயன்மார்களுக்கிடையிலான வேறுபாடு என்ன?",
+      "question_id": "q_079",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare descriptions by Nayanmars who sang about the same place.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "ஒரே தலத்தைப் பாடிய நாயன்மார்களின் வர்ணனைகளை ஒப்பிடுக.",
+      "question_id": "q_080",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "G. Poet/Nayanmar comparison"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Which hymns repeat the same imagery?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "எந்த பதிகங்களில் ஒரே imagery மீண்டும் வருகிறது?",
+      "question_id": "q_081",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "How is the same deity described differently across hymns?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "ஒரே தெய்வம் பல பதிகங்களில் எவ்வாறு வேறுபட்டு வர்ணிக்கப்படுகிறது?",
+      "question_id": "q_082",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Which Second Thirumurai hymns concern the same place?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Basic aggregation exists, but this question requires field-specific or boolean/intersection aggregation.",
+        "failure_type": "aggregation_gap",
+        "recommended_action": "Advanced aggregation/statistics phase"
+      },
+      "failure_type": "aggregation_gap",
+      "question": "இரண்டாம் திருமுறையில் ஒரே தலத்தைச் சேர்ந்த பதிகங்கள் எவை?",
+      "question_id": "q_083",
+      "reason": "Basic aggregation exists, but this question requires field-specific or boolean/intersection aggregation.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "How is one theme expressed in different pann settings?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "வேறுபட்ட பண்களில் ஒரே கருத்து எவ்வாறு பாடப்படுகிறது?",
+      "question_id": "q_084",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare lunar imagery in Thevaram and Tiruppugazh.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "தேவாரத்திலும் திருப்புகழிலும் சந்திர imagery-ஐ ஒப்பிடுக.",
+      "question_id": "q_085",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare Siva epithets in the Second and Third Thirumurai.",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "இரண்டாம் மற்றும் மூன்றாம் திருமுறைகளில் சிவன் அடைமொழிகளை ஒப்பிடுக.",
+      "question_id": "q_086",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 83
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "சிவன்"
+          ],
+          "occurrence_count": 83
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Which phrases recur across multiple Thirumurai?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "பல திருமுறைகளில் மீண்டும் வரும் பாடல் சொற்றொடர்கள் எவை?",
+      "question_id": "q_087",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "How is one mythic event narrated across hymns?",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "ஒரே புராண நிகழ்வு பல பதிகங்களில் எவ்வாறு சொல்லப்படுகிறது?",
+      "question_id": "q_088",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare prose-commentary styles across Thirumurai.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "வேறு திருமுறைகளின் பொழிப்புரை பாணியை ஒப்பிடுக.",
+      "question_id": "q_089",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Does the same song number collide across collections?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "ஒரே song number வேறு தொகுப்புகளில் மோதுகிறதா?",
+      "question_id": "q_090",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "Compare sea metaphors in Thevaram and Sangam literature.",
+      "failure_attribution": {
+        "confidence": 0.88,
+        "explanation": "Requires interpretation or answer generation that is intentionally not built.",
+        "failure_type": "architecture_gap",
+        "recommended_action": "Phase 29+ answer formatting or Phase 31+ extraction capability"
+      },
+      "failure_type": "architecture_gap",
+      "question": "தேவாரம் மற்றும் சங்க இலக்கியத்தில் கடல் உருவகத்தை ஒப்பிடுக.",
+      "question_id": "q_091",
+      "reason": "Requires interpretation or answer generation that is intentionally not built.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": true,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "aggregation": {
+          "top_group": "thirumurai_02",
+          "total_occurrences": 247
+        },
+        "occurrence_search": {
+          "matched_terms": [
+            "கடல்"
+          ],
+          "occurrence_count": 247
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "How is the same place name linked across corpora?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "பல corpus-களில் ஒரே தலப்பெயர் எவ்வாறு இணைக்கப்படுகிறது?",
+      "question_id": "q_092",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "H. Cross-hymn and cross-corpus"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "medium",
+      "english_gloss": "A verse was not found; check whether source data is missing.",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "எதிர்பார்த்த பாடல் கிடைக்கவில்லை; மூலத் தரவு இல்லையா என்பதைச் சரிபார்க்கவும்.",
+      "question_id": "q_093",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "medium",
+      "english_gloss": "The verse exists but pozhppurai is absent; is this source missing?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "பாடல் உள்ளது ஆனால் பொழிப்புரை இல்லை; இது source missing பிரச்சினையா?",
+      "question_id": "q_094",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Commentary exists in source HTML but not the record; is it a parser issue?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "மூல HTML-ல் உரை உள்ளது ஆனால் record-ல் இல்லை; காரணம் parser issue-ஆ?",
+      "question_id": "q_095",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Why did semantic retrieval miss a record found lexically?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "lexical retrieval கண்டுபிடித்த பதிவை semantic retrieval ஏன் தவறவிட்டது?",
+      "question_id": "q_096",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "The correct record is in top ten but not rank one; is this a ranking issue?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "சரியான பதிவு top-10-ல் உள்ளது ஆனால் rank 1-ல் இல்லை; இது ranking issue-ஆ?",
+      "question_id": "q_097",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Why is the context builder insufficient for a corpus-wide count?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "கேள்விக்கு corpus-wide count தேவை; context builder மட்டும் ஏன் போதாது?",
+      "question_id": "q_098",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    },
+    {
+      "category": "unsupported questions",
+      "difficulty": "hard",
+      "english_gloss": "Did a synonym query fail because no synonym lexicon exists?",
+      "failure_attribution": {
+        "confidence": 0.68,
+        "explanation": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+        "failure_type": "evaluation_gap",
+        "recommended_action": "Benchmark review and human gold-label phase"
+      },
+      "failure_type": "evaluation_gap",
+      "question": "ஒத்த சொல் கேள்வி தோல்வியடைந்தது; synonym lexicon இல்லாமையே காரணமா?",
+      "question_id": "q_099",
+      "reason": "Structured evidence may exist, but this benchmark item requires human review or interpretation.",
+      "requires": {
+        "aggregation": false,
+        "citation": true,
+        "cross_corpus": false,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": true
+      },
+      "routes": {
+        "query_expansion": {
+          "expanded": true,
+          "matched_terms": [
+            "ஒத்த",
+            "உவமை",
+            "போல்",
+            "போன்ற"
+          ]
+        },
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "partial",
+      "supported_by": [
+        "query_expansion",
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    },
+    {
+      "category": "cross-corpus questions",
+      "difficulty": "hard",
+      "english_gloss": "A Nayanmar comparison failed; is the cause missing corpus or metadata normalization?",
+      "failure_attribution": {
+        "confidence": 0.86,
+        "explanation": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+        "failure_type": "data_gap",
+        "recommended_action": "Phase 31+ controlled corpus expansion and source coverage"
+      },
+      "failure_type": "data_gap",
+      "question": "வேறு நாயன்மாரை ஒப்பிட முடியவில்லை; இது missing corpus அல்லது metadata normalization பிரச்சினையா?",
+      "question_id": "q_100",
+      "reason": "Requires complete cross-corpus coverage that is not available in the current local corpus.",
+      "requires": {
+        "aggregation": true,
+        "citation": true,
+        "cross_corpus": true,
+        "llm_generation": false,
+        "retrieval": true,
+        "synonym_expansion": false
+      },
+      "routes": {
+        "retrieval": {
+          "result_count": 3
+        }
+      },
+      "status": "failure",
+      "supported_by": [
+        "aggregation",
+        "occurrence_search",
+        "retrieval"
+      ],
+      "taxonomy_category": "I. Failure diagnosis"
+    }
+  ],
+  "source_taxonomy": "data/processed/eval/literary_analysis_questions.jsonl",
+  "summary": {
+    "category_counts": {
+      "aggregation questions": 2,
+      "author questions": 2,
+      "cross-corpus questions": 21,
+      "deity questions": 5,
+      "occurrence questions": 12,
+      "ordinary retrieval": 21,
+      "synonym questions": 5,
+      "unsupported questions": 32
+    },
+    "category_metrics": {
+      "aggregation questions": {
+        "failure": 0,
+        "failure_rate": 0.0,
+        "partial": 0,
+        "partial_success_rate": 0.0,
+        "success": 2,
+        "success_rate": 1.0,
+        "total_questions": 2
+      },
+      "author questions": {
+        "failure": 1,
+        "failure_rate": 0.5,
+        "partial": 0,
+        "partial_success_rate": 0.0,
+        "success": 1,
+        "success_rate": 0.5,
+        "total_questions": 2
+      },
+      "cross-corpus questions": {
+        "failure": 20,
+        "failure_rate": 0.9524,
+        "partial": 1,
+        "partial_success_rate": 0.0476,
+        "success": 0,
+        "success_rate": 0.0,
+        "total_questions": 21
+      },
+      "deity questions": {
+        "failure": 1,
+        "failure_rate": 0.2,
+        "partial": 0,
+        "partial_success_rate": 0.0,
+        "success": 4,
+        "success_rate": 0.8,
+        "total_questions": 5
+      },
+      "occurrence questions": {
+        "failure": 0,
+        "failure_rate": 0.0,
+        "partial": 2,
+        "partial_success_rate": 0.1667,
+        "success": 10,
+        "success_rate": 0.8333,
+        "total_questions": 12
+      },
+      "ordinary retrieval": {
+        "failure": 0,
+        "failure_rate": 0.0,
+        "partial": 0,
+        "partial_success_rate": 0.0,
+        "success": 21,
+        "success_rate": 1.0,
+        "total_questions": 21
+      },
+      "synonym questions": {
+        "failure": 0,
+        "failure_rate": 0.0,
+        "partial": 0,
+        "partial_success_rate": 0.0,
+        "success": 5,
+        "success_rate": 1.0,
+        "total_questions": 5
+      },
+      "unsupported questions": {
+        "failure": 22,
+        "failure_rate": 0.6875,
+        "partial": 10,
+        "partial_success_rate": 0.3125,
+        "success": 0,
+        "success_rate": 0.0,
+        "total_questions": 32
+      }
+    },
+    "dominant_failure_causes": [
+      {
+        "count": 27,
+        "failure_type": "architecture_gap"
+      },
+      {
+        "count": 10,
+        "failure_type": "evaluation_gap"
+      },
+      {
+        "count": 9,
+        "failure_type": "data_gap"
+      },
+      {
+        "count": 8,
+        "failure_type": "registry_gap"
+      },
+      {
+        "count": 3,
+        "failure_type": "aggregation_gap"
+      }
+    ],
+    "failure_counts": {
+      "aggregation_gap": 3,
+      "architecture_gap": 27,
+      "data_gap": 9,
+      "evaluation_gap": 10,
+      "registry_gap": 8
+    },
+    "overall": {
+      "failure": 44,
+      "failure_rate": 0.44,
+      "partial": 13,
+      "partial_success_rate": 0.13,
+      "success": 43,
+      "success_rate": 0.43,
+      "total_questions": 100
+    },
+    "readiness_scores": {
+      "analytical_research": 64.0,
+      "full_rag": 38.0,
+      "literary_analytics": 58.0,
+      "publication_readiness": 52.0
+    },
+    "summary_version": "comprehensive-benchmark-summary-v1"
+  }
+}

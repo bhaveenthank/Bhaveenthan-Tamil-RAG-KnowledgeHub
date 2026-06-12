@@ -27,6 +27,8 @@ data/processed/eval/**
 !data/processed/eval/analytics_benchmark.json
 !data/processed/eval/analytics_evaluation_results.json
 !data/processed/eval/failure_attribution_results.json
+!data/processed/eval/comprehensive_benchmark_results.json
+!data/processed/eval/benchmark_summary.json
 !data/processed/analytics/
 data/processed/analytics/**
 !data/processed/analytics/occurrence_index.jsonl
