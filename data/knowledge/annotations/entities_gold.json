@@ -1,0 +1,98 @@
+{
+  "annotation_set": "entities_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "ent_001_a",
+          "end": 5,
+          "label": "deity",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "சிவன்",
+          "type": "entity"
+        },
+        {
+          "annotation_id": "ent_001_b",
+          "end": 16,
+          "label": "deity",
+          "review_status": "manual_gold_seed",
+          "start": 8,
+          "text": "திருமால்",
+          "type": "entity"
+        },
+        {
+          "annotation_id": "ent_001_c",
+          "end": 25,
+          "label": "deity",
+          "review_status": "manual_gold_seed",
+          "start": 19,
+          "text": "பிரமன்",
+          "type": "entity"
+        }
+      ],
+      "record_id": "gold_entities_001",
+      "source_file": "data/processed/normalized_categories/dictionaries_normalized.jsonl",
+      "source_record_id": "tvu_dictionaries_04a5ad4bbad7eb74e591",
+      "source_url": "https://www.tamilvu.org/slet/pmdictionary/ldttamls.jsp?x=1&y=1",
+      "text": "சிவன் , திருமால் , பிரமன்"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "ent_002_a",
+          "end": 16,
+          "label": "author",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "திருஞானசம்பந்தர்",
+          "type": "entity"
+        },
+        {
+          "annotation_id": "ent_002_b",
+          "end": 38,
+          "label": "place",
+          "review_status": "manual_gold_seed",
+          "start": 23,
+          "text": "திருப்பூந்தராய்",
+          "type": "entity"
+        }
+      ],
+      "record_id": "gold_entities_002",
+      "source_file": "data/processed/corpus/irandaam_thirumurai.jsonl",
+      "source_record_id": "song_no_1470",
+      "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+      "text": "திருஞானசம்பந்தர் பாடிய திருப்பூந்தராய் பதிகம்"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "ent_003_a",
+          "end": 17,
+          "label": "author",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "சுப்பிரமணிய பாரதி",
+          "type": "entity"
+        },
+        {
+          "annotation_id": "ent_003_b",
+          "end": 39,
+          "label": "work",
+          "review_status": "manual_gold_seed",
+          "start": 25,
+          "text": "யாரைத் தொழுவது",
+          "type": "entity"
+        }
+      ],
+      "record_id": "gold_entities_003",
+      "source_file": "data/processed/normalized_categories/prose_normalized.jsonl",
+      "source_record_id": "tvu_twentieth_century_prose_a07a9fc9371817d6b478",
+      "source_url": "https://www.tamilvu.org/node/154572?linkid=118166",
+      "text": "சுப்பிரமணிய பாரதி எழுதிய யாரைத் தொழுவது?"
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

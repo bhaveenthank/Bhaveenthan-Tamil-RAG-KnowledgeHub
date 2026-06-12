@@ -1,0 +1,115 @@
+{
+  "analysis_version": "annotation-readiness-v1",
+  "annotation_count": 39,
+  "annotation_file_count": 8,
+  "automatic_extraction_performed": false,
+  "decision": "ANNOTATION_SEED_READY_EXTRACTION_NOT_STARTED",
+  "llm_calls": 0,
+  "overall_readiness_score": 59.8,
+  "phase": "phase_30",
+  "record_count": 24,
+  "registry_population_performed": false,
+  "scraping_performed": false,
+  "targets": [
+    {
+      "fixture_counts": {
+        "entity": 10
+      },
+      "readiness_score": 72.0,
+      "required_types": [
+        "entity"
+      ],
+      "status": "GOLD_SEED_READY_NEEDS_MORE_NEGATIVES",
+      "target": "entity_annotation_readiness"
+    },
+    {
+      "fixture_counts": {
+        "deity": 5
+      },
+      "readiness_score": 68.0,
+      "required_types": [
+        "deity"
+      ],
+      "status": "GOLD_SEED_READY_NEEDS_EPITHET_VARIANTS",
+      "target": "deity_annotation_readiness"
+    },
+    {
+      "fixture_counts": {
+        "author": 4
+      },
+      "readiness_score": 66.0,
+      "required_types": [
+        "author"
+      ],
+      "status": "GOLD_SEED_READY_NEEDS_METADATA_VARIANTS",
+      "target": "author_annotation_readiness"
+    },
+    {
+      "fixture_counts": {
+        "motif": 7
+      },
+      "readiness_score": 62.0,
+      "required_types": [
+        "motif"
+      ],
+      "status": "GOLD_SEED_READY_NEEDS_AMBIGUOUS_CASES",
+      "target": "motif_annotation_readiness"
+    },
+    {
+      "fixture_counts": {
+        "epithet": 4
+      },
+      "readiness_score": 58.0,
+      "required_types": [
+        "epithet"
+      ],
+      "status": "GOLD_SEED_READY_ENTITY_LINKING_REQUIRED",
+      "target": "epithet_annotation_readiness"
+    },
+    {
+      "fixture_counts": {
+        "simile": 3
+      },
+      "readiness_score": 56.0,
+      "required_types": [
+        "simile"
+      ],
+      "status": "GOLD_SEED_READY_NEEDS_FALSE_POSITIVES",
+      "target": "simile_annotation_readiness"
+    },
+    {
+      "fixture_counts": {
+        "metaphor": 3
+      },
+      "readiness_score": 50.0,
+      "required_types": [
+        "metaphor"
+      ],
+      "status": "GOLD_SEED_READY_HIGH_REVIEW_REQUIRED",
+      "target": "metaphor_annotation_readiness"
+    },
+    {
+      "fixture_counts": {
+        "relationship": 3
+      },
+      "readiness_score": 46.0,
+      "required_types": [
+        "relationship"
+      ],
+      "status": "GOLD_SEED_READY_DEPENDS_ON_ACCEPTED_CANDIDATES",
+      "target": "relationship_annotation_readiness"
+    }
+  ],
+  "type_counts": {
+    "author": 4,
+    "deity": 5,
+    "entity": 10,
+    "epithet": 4,
+    "metaphor": 3,
+    "motif": 7,
+    "relationship": 3,
+    "simile": 3
+  },
+  "validation_errors": [],
+  "validation_valid": true
+}

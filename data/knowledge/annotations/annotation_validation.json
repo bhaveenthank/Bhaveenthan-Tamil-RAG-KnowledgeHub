@@ -1,0 +1,107 @@
+{
+  "annotation_count": 39,
+  "annotation_file_count": 8,
+  "automatic_extraction_performed": false,
+  "errors": [],
+  "files": [
+    {
+      "annotation_count": 7,
+      "annotation_set": "entities_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/entities_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "entity": 7
+      }
+    },
+    {
+      "annotation_count": 5,
+      "annotation_set": "deities_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/deities_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "deity": 5
+      }
+    },
+    {
+      "annotation_count": 3,
+      "annotation_set": "authors_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/authors_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "author": 3
+      }
+    },
+    {
+      "annotation_count": 6,
+      "annotation_set": "motifs_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/motifs_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "motif": 6
+      }
+    },
+    {
+      "annotation_count": 3,
+      "annotation_set": "epithets_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/epithets_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "epithet": 3
+      }
+    },
+    {
+      "annotation_count": 3,
+      "annotation_set": "similes_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/similes_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "simile": 3
+      }
+    },
+    {
+      "annotation_count": 3,
+      "annotation_set": "metaphors_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/metaphors_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "metaphor": 3
+      }
+    },
+    {
+      "annotation_count": 9,
+      "annotation_set": "relationships_gold",
+      "errors": [],
+      "file": "data/knowledge/annotations/relationships_gold.json",
+      "record_count": 3,
+      "type_counts": {
+        "author": 1,
+        "entity": 3,
+        "epithet": 1,
+        "motif": 1,
+        "relationship": 3
+      }
+    }
+  ],
+  "llm_calls": 0,
+  "record_count": 24,
+  "schema_version": "annotation-validation-v1",
+  "scraping_performed": false,
+  "type_counts": {
+    "author": 4,
+    "deity": 5,
+    "entity": 10,
+    "epithet": 4,
+    "metaphor": 3,
+    "motif": 7,
+    "relationship": 3,
+    "simile": 3
+  },
+  "valid": true
+}

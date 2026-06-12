@@ -1,0 +1,71 @@
+{
+  "annotation_set": "similes_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "simile_001_a",
+          "comparison_marker": "போல",
+          "end": 30,
+          "label": "explicit_simile",
+          "object": "தீம் தேன்",
+          "review_status": "manual_gold_seed",
+          "start": 17,
+          "subject": "கேண்மை",
+          "text": "தீம் தேன் போல",
+          "type": "simile"
+        }
+      ],
+      "record_id": "gold_similes_001",
+      "source_file": "data/processed/normalized_categories/sangam_literature_normalized.jsonl",
+      "source_record_id": "tvu_sangam_literature_3fd37b8731d31eb60606",
+      "source_url": "https://www.tamilvu.org/slet/l1210/l1210son.jsp?subid=3362",
+      "text": "சாந்தில் தொடுத்த தீம் தேன் போல, புரையோர் கேண்மை"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "simile_002_a",
+          "comparison_marker": "போலத்",
+          "end": 28,
+          "label": "explicit_simile",
+          "object": "உலகம்",
+          "review_status": "manual_gold_seed",
+          "start": 17,
+          "subject": "தம் இன்று அமையா",
+          "text": "உலகம் போலத்",
+          "type": "simile"
+        }
+      ],
+      "record_id": "gold_similes_002",
+      "source_file": "data/processed/normalized_categories/sangam_literature_normalized.jsonl",
+      "source_record_id": "tvu_sangam_literature_3fd37b8731d31eb60606",
+      "source_url": "https://www.tamilvu.org/slet/l1210/l1210son.jsp?subid=3362",
+      "text": "நீர் இன்று அமையா உலகம் போலத் தம் இன்று அமையா"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "simile_003_a",
+          "comparison_marker": "உருமினும்",
+          "end": 48,
+          "label": "comparative_intensity",
+          "object": "உருமு",
+          "review_status": "manual_gold_seed",
+          "start": 39,
+          "subject": "உள்ளம்",
+          "text": "உருமினும்",
+          "type": "simile"
+        }
+      ],
+      "record_id": "gold_similes_003",
+      "source_file": "data/processed/normalized_categories/sangam_literature_normalized.jsonl",
+      "source_record_id": "tvu_sangam_literature_01868d07d849352a60a8",
+      "source_url": "https://www.tamilvu.org/slet/l1210/l1210son.jsp?subid=3362",
+      "text": "காலொடு பட்ட மாரி மால் வரை மிளிர்க்கும் உருமினும் கொடிதே"
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

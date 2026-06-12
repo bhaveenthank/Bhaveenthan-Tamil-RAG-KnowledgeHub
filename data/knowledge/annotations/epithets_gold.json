@@ -1,0 +1,65 @@
+{
+  "annotation_set": "epithets_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "epithet_001_a",
+          "end": 13,
+          "label": "siva_epithet",
+          "review_status": "manual_gold_seed",
+          "start": 6,
+          "target_entity": "deity_siva",
+          "text": "செஞ்சடை",
+          "type": "epithet"
+        }
+      ],
+      "record_id": "gold_epithets_001",
+      "source_file": "data/processed/corpus/irandaam_thirumurai.jsonl",
+      "source_record_id": "song_no_1470",
+      "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+      "text": "பின்னுசெஞ்சடையில் பிறை பாம்புஉடன் வைத்ததே?"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "epithet_002_a",
+          "end": 23,
+          "label": "siva_epithet",
+          "review_status": "manual_gold_seed",
+          "start": 6,
+          "target_entity": "deity_siva",
+          "text": "மால்களிற்றின் உரி",
+          "type": "epithet"
+        }
+      ],
+      "record_id": "gold_epithets_002",
+      "source_file": "data/processed/corpus/irandaam_thirumurai.jsonl",
+      "source_record_id": "song_no_1472",
+      "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+      "text": "துங்க மால்களிற்றின் உரி போர்த்து உகந்தீர்!"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "epithet_003_a",
+          "end": 7,
+          "label": "sun_epithet",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "target_entity": "sun_concept",
+          "text": "கதிரவன்",
+          "type": "epithet"
+        }
+      ],
+      "record_id": "gold_epithets_003",
+      "source_file": "data/knowledge/synonyms.json",
+      "source_record_id": "curated_seed_reference",
+      "source_url": "",
+      "text": "கதிரவன் ஒளி போல விளங்கும் உருவகம்"
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

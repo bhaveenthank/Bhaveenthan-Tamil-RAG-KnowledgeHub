@@ -1,0 +1,65 @@
+{
+  "annotation_set": "authors_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "author_001_a",
+          "end": 16,
+          "label": "author",
+          "normalized_id": "author_thirugnanasambandar",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "திருஞானசம்பந்தர்",
+          "type": "author"
+        }
+      ],
+      "record_id": "gold_authors_001",
+      "source_file": "data/knowledge/authors.json",
+      "source_record_id": "curated_seed_reference",
+      "source_url": "",
+      "text": "திருஞானசம்பந்தர் பாடிய தேவாரம்"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "author_002_a",
+          "end": 15,
+          "label": "author",
+          "normalized_id": "author_pavanandi_munivar",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "பவணந்தி முனிவர்",
+          "type": "author"
+        }
+      ],
+      "record_id": "gold_authors_002",
+      "source_file": "data/processed/normalized_categories/grammar_normalized.jsonl",
+      "source_record_id": "tvu_grammar_5504dcb711c54f5d54db",
+      "source_url": "https://www.tamilvu.org/slet/l0900/l0900son.jsp?subid=212",
+      "text": "பவணந்தி முனிவர் இயற்றிய நன்னூல்"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "author_003_a",
+          "end": 17,
+          "label": "author",
+          "normalized_id": "author_subramania_bharati",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "சுப்பிரமணிய பாரதி",
+          "type": "author"
+        }
+      ],
+      "record_id": "gold_authors_003",
+      "source_file": "data/processed/normalized_categories/prose_normalized.jsonl",
+      "source_record_id": "tvu_twentieth_century_prose_a07a9fc9371817d6b478",
+      "source_url": "https://www.tamilvu.org/node/154572?linkid=118166",
+      "text": "சுப்பிரமணிய பாரதி எழுதிய உரைநடை"
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

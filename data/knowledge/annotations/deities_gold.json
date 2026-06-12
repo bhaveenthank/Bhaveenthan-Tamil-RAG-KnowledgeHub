@@ -1,0 +1,85 @@
+{
+  "annotation_set": "deities_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "deity_001_a",
+          "end": 36,
+          "label": "deity_honorific",
+          "normalized_id": "deity_siva",
+          "review_status": "manual_gold_seed",
+          "start": 30,
+          "text": "கழலீர்",
+          "type": "deity"
+        }
+      ],
+      "record_id": "gold_deities_001",
+      "source_file": "data/processed/corpus/irandaam_thirumurai.jsonl",
+      "source_record_id": "song_no_1470",
+      "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+      "text": "துன்னி, நல் இமையோர் முடி தோய் கழலீர்! சொலீர்"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "deity_002_a",
+          "end": 14,
+          "label": "siva",
+          "normalized_id": "deity_siva",
+          "review_status": "manual_gold_seed",
+          "start": 9,
+          "text": "சிவன்",
+          "type": "deity"
+        },
+        {
+          "annotation_id": "deity_002_b",
+          "end": 25,
+          "label": "vishnu",
+          "normalized_id": "deity_vishnu",
+          "review_status": "manual_gold_seed",
+          "start": 17,
+          "text": "திருமால்",
+          "type": "deity"
+        },
+        {
+          "annotation_id": "deity_002_c",
+          "end": 34,
+          "label": "brahma",
+          "normalized_id": "deity_brahma",
+          "review_status": "manual_gold_seed",
+          "start": 28,
+          "text": "பிரமன்",
+          "type": "deity"
+        }
+      ],
+      "record_id": "gold_deities_002",
+      "source_file": "data/processed/normalized_categories/dictionaries_normalized.jsonl",
+      "source_record_id": "tvu_dictionaries_04a5ad4bbad7eb74e591",
+      "source_url": "https://www.tamilvu.org/slet/pmdictionary/ldttamls.jsp?x=1&y=1",
+      "text": "கடவுள் ( சிவன் , திருமால் , பிரமன் )"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "deity_003_a",
+          "end": 7,
+          "label": "murugan",
+          "normalized_id": "deity_murugan",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "முருகன்",
+          "type": "deity"
+        }
+      ],
+      "record_id": "gold_deities_003",
+      "source_file": "data/knowledge/deities.json",
+      "source_record_id": "curated_seed_reference",
+      "source_url": "",
+      "text": "முருகன் திருப்புகழ் மரபில் முக்கியமான கடவுள்."
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

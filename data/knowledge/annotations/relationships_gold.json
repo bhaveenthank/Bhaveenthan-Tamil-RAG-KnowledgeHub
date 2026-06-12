@@ -1,0 +1,113 @@
+{
+  "annotation_set": "relationships_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "rel_001_entity",
+          "end": 5,
+          "label": "deity",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "சிவன்",
+          "type": "entity"
+        },
+        {
+          "annotation_id": "rel_001_epithet",
+          "end": 12,
+          "label": "siva_epithet",
+          "review_status": "manual_gold_seed",
+          "start": 6,
+          "text": "சடையன்",
+          "type": "epithet"
+        },
+        {
+          "annotation_id": "rel_001_relation",
+          "relationship_type": "deity_has_epithet",
+          "review_status": "manual_gold_seed",
+          "source": "rel_001_entity",
+          "target": "rel_001_epithet",
+          "type": "relationship"
+        }
+      ],
+      "record_id": "gold_relationships_001",
+      "source_file": "data/knowledge/deities.json",
+      "source_record_id": "manual_gold_example",
+      "source_url": "",
+      "text": "சிவன் சடையன் எனப் போற்றப்படுகிறார்"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "rel_002_author",
+          "end": 16,
+          "label": "author",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "திருஞானசம்பந்தர்",
+          "type": "author"
+        },
+        {
+          "annotation_id": "rel_002_work",
+          "end": 24,
+          "label": "work",
+          "review_status": "manual_gold_seed",
+          "start": 17,
+          "text": "தேவாரம்",
+          "type": "entity"
+        },
+        {
+          "annotation_id": "rel_002_relation",
+          "relationship_type": "author_composed_work",
+          "review_status": "manual_gold_seed",
+          "source": "rel_002_author",
+          "target": "rel_002_work",
+          "type": "relationship"
+        }
+      ],
+      "record_id": "gold_relationships_002",
+      "source_file": "data/knowledge/authors.json",
+      "source_record_id": "manual_gold_example",
+      "source_url": "",
+      "text": "திருஞானசம்பந்தர் தேவாரம் பாடினார்"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "rel_003_motif",
+          "end": 10,
+          "label": "moon_imagery",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "நிலா motif",
+          "type": "motif"
+        },
+        {
+          "annotation_id": "rel_003_surface",
+          "end": 15,
+          "label": "surface_form",
+          "review_status": "manual_gold_seed",
+          "start": 11,
+          "text": "பிறை",
+          "type": "entity"
+        },
+        {
+          "annotation_id": "rel_003_relation",
+          "relationship_type": "motif_expressed_by_surface_form",
+          "review_status": "manual_gold_seed",
+          "source": "rel_003_motif",
+          "target": "rel_003_surface",
+          "type": "relationship"
+        }
+      ],
+      "record_id": "gold_relationships_003",
+      "source_file": "data/knowledge/synonyms.json",
+      "source_record_id": "manual_gold_example",
+      "source_url": "",
+      "text": "நிலா motif பிறை என்ற சொல்லால் வெளிப்படுகிறது"
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

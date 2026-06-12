@@ -1,0 +1,68 @@
+{
+  "annotation_set": "metaphors_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "metaphor_001_a",
+          "end": 9,
+          "label": "conceptual_metaphor",
+          "review_status": "manual_gold_seed",
+          "source_domain": "light",
+          "start": 0,
+          "target_domain": "grace",
+          "text": "அருள் ஒளி",
+          "type": "metaphor"
+        }
+      ],
+      "record_id": "gold_metaphors_001",
+      "source_file": "data/knowledge/motifs.json",
+      "source_record_id": "manual_gold_example",
+      "source_url": "",
+      "text": "அருள் ஒளி மனத்தை விளக்குகிறது"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "metaphor_002_a",
+          "end": 10,
+          "label": "conceptual_metaphor",
+          "review_status": "manual_gold_seed",
+          "source_domain": "ocean",
+          "start": 0,
+          "target_domain": "devotion",
+          "text": "பக்தி கடல்",
+          "type": "metaphor"
+        }
+      ],
+      "record_id": "gold_metaphors_002",
+      "source_file": "data/knowledge/themes.json",
+      "source_record_id": "manual_gold_example",
+      "source_url": "",
+      "text": "பக்தி கடல் எல்லையற்றது"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "metaphor_003_a",
+          "end": 12,
+          "label": "conceptual_metaphor",
+          "review_status": "manual_gold_seed",
+          "source_domain": "fire",
+          "start": 0,
+          "target_domain": "knowledge",
+          "text": "ஞானம் தீயாய்",
+          "type": "metaphor"
+        }
+      ],
+      "record_id": "gold_metaphors_003",
+      "source_file": "data/knowledge/themes.json",
+      "source_record_id": "manual_gold_example",
+      "source_url": "",
+      "text": "ஞானம் தீயாய் அறியாமையை நீக்கும்"
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

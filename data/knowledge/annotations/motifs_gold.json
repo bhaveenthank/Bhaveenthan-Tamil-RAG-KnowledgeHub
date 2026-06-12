@@ -1,0 +1,89 @@
+{
+  "annotation_set": "motifs_gold",
+  "automatic_extraction_performed": false,
+  "records": [
+    {
+      "annotations": [
+        {
+          "annotation_id": "motif_001_a",
+          "end": 22,
+          "label": "moon_imagery",
+          "review_status": "manual_gold_seed",
+          "start": 18,
+          "text": "பிறை",
+          "type": "motif"
+        },
+        {
+          "annotation_id": "motif_001_b",
+          "end": 29,
+          "label": "snake_imagery",
+          "review_status": "manual_gold_seed",
+          "start": 23,
+          "text": "பாம்பு",
+          "type": "motif"
+        }
+      ],
+      "record_id": "gold_motifs_001",
+      "source_file": "data/processed/corpus/irandaam_thirumurai.jsonl",
+      "source_record_id": "song_no_1470",
+      "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+      "text": "பின்னுசெஞ்சடையில் பிறை பாம்புஉடன் வைத்ததே?"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "motif_002_a",
+          "end": 5,
+          "label": "conch_imagery",
+          "review_status": "manual_gold_seed",
+          "start": 0,
+          "text": "சங்கு",
+          "type": "motif"
+        },
+        {
+          "annotation_id": "motif_002_b",
+          "end": 27,
+          "label": "pearl_imagery",
+          "review_status": "manual_gold_seed",
+          "start": 21,
+          "text": "முத்து",
+          "type": "motif"
+        }
+      ],
+      "record_id": "gold_motifs_002",
+      "source_file": "data/processed/corpus/irandaam_thirumurai.jsonl",
+      "source_record_id": "song_no_1472",
+      "source_url": "https://www.tamilvu.org/slet/l4120/l4120son.jsp?subid=1664",
+      "text": "சங்கு செம்பவளத்திரள் முத்துஅவைதாம்கொடு"
+    },
+    {
+      "annotations": [
+        {
+          "annotation_id": "motif_003_a",
+          "end": 16,
+          "label": "rain_imagery",
+          "review_status": "manual_gold_seed",
+          "start": 12,
+          "text": "மாரி",
+          "type": "motif"
+        },
+        {
+          "annotation_id": "motif_003_b",
+          "end": 48,
+          "label": "thunder_imagery",
+          "review_status": "manual_gold_seed",
+          "start": 39,
+          "text": "உருமினும்",
+          "type": "motif"
+        }
+      ],
+      "record_id": "gold_motifs_003",
+      "source_file": "data/processed/normalized_categories/sangam_literature_normalized.jsonl",
+      "source_record_id": "tvu_sangam_literature_01868d07d849352a60a8",
+      "source_url": "https://www.tamilvu.org/slet/l1210/l1210son.jsp?subid=3362",
+      "text": "காலொடு பட்ட மாரி மால் வரை மிளிர்க்கும் உருமினும் கொடிதே"
+    }
+  ],
+  "schema_version": "annotation-gold-v1",
+  "status": "manual_gold_seed"
+}

@@ -437,3 +437,20 @@ This phase performs no scraping, no automatic extraction, no registry population
 calls, no embedding regeneration, and no vector-index rebuild. Its purpose is to map
 benchmark gaps to future extraction targets and prepare a safe roadmap for controlled
 knowledge population.
+
+## Annotated Fixture Framework
+
+The annotated fixture framework adds a tiny manually curated gold layer for future
+extractor evaluation. It covers entity, deity, author, motif, epithet, simile, metaphor,
+and relationship examples with deterministic spans and source pointers. These fixtures are
+evaluation targets only: they are not automatic extraction output and do not populate
+registries.
+
+```bash
+python3 src/knowledge/validate_annotations.py
+python3 src/knowledge/analyze_annotation_readiness.py
+```
+
+Future extraction phases should use these fixtures to measure precision, recall, span
+accuracy, normalized-label accuracy, and relationship endpoint accuracy before promoting
+any candidates into the curated knowledge layer.
