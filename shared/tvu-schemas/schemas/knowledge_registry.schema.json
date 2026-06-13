@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/knowledge_registry.schema.json",
+  "title": "TamilVU Knowledge Registry",
+  "type": "object",
+  "required": ["registry_name", "schema_version", "status", "records"],
+  "properties": {
+    "registry_name": { "type": "string" },
+    "schema_version": { "const": "knowledge-registry-v1" },
+    "status": { "type": "string" },
+    "records": {
+      "type": "array",
+      "items": { "type": "object" }
+    }
+  },
+  "additionalProperties": true
+}

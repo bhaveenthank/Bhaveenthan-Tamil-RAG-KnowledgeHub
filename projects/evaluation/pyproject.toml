@@ -1,0 +1,23 @@
+[project]
+name = "tvu-evaluation"
+version = "0.1.0"
+description = "TamilVU retrieval and analytics evaluation tooling"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+tvu-build-question-taxonomy = "evaluation.build_question_taxonomy:main"
+tvu-evaluate-retrieval = "evaluation.evaluate_retrieval:main"
+tvu-evaluate-query-expansion = "evaluation.evaluate_query_expansion:main"
+tvu-evaluate-analytics = "evaluation.evaluate_analytics:main"
+tvu-analyze-retrieval-failures = "evaluation.analyze_retrieval_failures:main"
+tvu-run-comprehensive-benchmark = "evaluation.run_comprehensive_benchmark:main"
+tvu-validate-pilot-categories = "evaluation.validate_pilot_categories:main"
+tvu-failure-attribution = "evaluation.failure_attribution:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/evaluation"]

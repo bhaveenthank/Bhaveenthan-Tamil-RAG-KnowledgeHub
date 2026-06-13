@@ -1,0 +1,13 @@
+[project]
+name = "tvu-schemas"
+version = "0.1.0"
+description = "Schema registry for TamilVU corpus artifacts"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tvu_schemas"]

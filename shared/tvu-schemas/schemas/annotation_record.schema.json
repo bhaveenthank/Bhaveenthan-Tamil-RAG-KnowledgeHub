@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/annotation_record.schema.json",
+  "title": "TamilVU Annotation Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "source_record_id",
+    "source_url",
+    "text",
+    "annotations"
+  ],
+  "properties": {
+    "record_id": { "type": "string" },
+    "source_record_id": { "type": "string" },
+    "source_file": { "type": "string" },
+    "source_url": { "type": "string" },
+    "text": { "type": "string" },
+    "annotations": {
+      "type": "array",
+      "items": { "type": "object" }
+    }
+  },
+  "additionalProperties": true
+}

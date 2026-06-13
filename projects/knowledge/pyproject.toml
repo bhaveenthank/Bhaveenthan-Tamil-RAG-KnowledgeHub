@@ -1,0 +1,21 @@
+[project]
+name = "tvu-knowledge"
+version = "0.1.0"
+description = "TamilVU annotation and knowledge extraction tooling"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+tvu-validate-registries = "knowledge.validate_registries:main"
+tvu-analyze-knowledge-readiness = "knowledge.analyze_knowledge_readiness:main"
+tvu-validate-annotations = "knowledge.validate_annotations:main"
+tvu-analyze-annotation-readiness = "knowledge.analyze_annotation_readiness:main"
+tvu-evaluate-entity-extraction = "knowledge.evaluate_entity_extraction:main"
+tvu-analyze-extraction-readiness = "knowledge.analyze_extraction_readiness:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/knowledge"]

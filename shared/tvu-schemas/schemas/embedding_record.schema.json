@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/embedding_record.schema.json",
+  "title": "TamilVU Embedding Record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "embedding_model",
+    "embedding_dimension",
+    "chunk_id",
+    "parent_record_id",
+    "chunk_type",
+    "chunk_text_sha256",
+    "embedding"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "embedding_model": { "type": "string" },
+    "embedding_dimension": { "type": "integer" },
+    "chunk_id": { "type": "string" },
+    "parent_record_id": { "type": "string" },
+    "chunk_type": { "type": "string" },
+    "chunk_text_sha256": { "type": "string" },
+    "embedding": {
+      "type": "array",
+      "items": { "type": "number" }
+    }
+  },
+  "additionalProperties": true
+}

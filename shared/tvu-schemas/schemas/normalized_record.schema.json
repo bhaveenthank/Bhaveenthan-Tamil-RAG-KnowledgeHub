@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/normalized_record.schema.json",
+  "title": "TamilVU Normalized Corpus Record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "record_type",
+    "category_id",
+    "collection_id",
+    "book_id",
+    "work_id",
+    "language",
+    "source_url",
+    "source_metadata"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "record_id": { "type": "string" },
+    "record_type": { "type": "string" },
+    "category_id": { "type": "string" },
+    "collection_id": { "type": "string" },
+    "book_id": { "type": "string" },
+    "work_id": { "type": "string" },
+    "corpus_id": { "type": "string" },
+    "title": { "type": "string" },
+    "author": { "type": "string" },
+    "language": { "type": "string" },
+    "genre": { "type": "string" },
+    "period": { "type": "string" },
+    "content_text": { "type": "string" },
+    "commentary_text": { "type": "string" },
+    "source_url": { "type": "string" },
+    "commentary_url": { "type": "string" },
+    "source_metadata": { "type": "object" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/analytics_observations.schema.json",
+  "title": "AnalyticsObservations",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "producer",
+    "observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "analytics-observations-v1"
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "observed"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query": {
+            "type": "string"
+          },
+          "observed": {
+            "type": "object",
+            "required": [
+              "intent",
+              "term"
+            ],
+            "properties": {
+              "intent": {
+                "type": "string"
+              },
+              "term": {
+                "type": "string"
+              },
+              "expanded": {
+                "type": "boolean"
+              },
+              "group_by": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "total_occurrences": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "top_results": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "matched_terms": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "evidence_samples": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/raw_snapshot.schema.json",
+  "title": "TamilVU Raw Snapshot",
+  "type": "object",
+  "required": [
+    "url",
+    "final_url",
+    "status_code",
+    "headers",
+    "content_sha256",
+    "fetched_at"
+  ],
+  "properties": {
+    "url": { "type": "string" },
+    "final_url": { "type": "string" },
+    "status_code": { "type": "integer" },
+    "headers": { "type": "object" },
+    "content_sha256": { "type": "string" },
+    "fetched_at": { "type": "string" },
+    "detected_encoding": { "type": ["string", "null"] },
+    "parent_url": { "type": ["string", "null"] },
+    "crawl_reason": { "type": ["string", "null"] },
+    "snapshot_path": { "type": "string" }
+  },
+  "additionalProperties": true
+}

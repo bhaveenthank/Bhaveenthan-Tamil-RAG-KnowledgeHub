@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/extracted_record.schema.json",
+  "title": "TamilVU Extracted Record",
+  "type": "object",
+  "required": [
+    "record_type",
+    "source",
+    "language",
+    "source_url",
+    "extraction_metadata"
+  ],
+  "properties": {
+    "record_type": { "type": "string" },
+    "source": { "type": "string" },
+    "source_site": { "type": "string" },
+    "language": { "type": "string" },
+    "source_url": { "type": "string" },
+    "content_text": { "type": "string" },
+    "verse_text": { "type": "string" },
+    "pozhppurai": { "type": "string" },
+    "kurippurai": { "type": "string" },
+    "commentary_url": { "type": "string" },
+    "source_parameters": { "type": "object" },
+    "text_statistics": { "type": "object" },
+    "extraction_metadata": { "type": "object" }
+  },
+  "additionalProperties": true
+}

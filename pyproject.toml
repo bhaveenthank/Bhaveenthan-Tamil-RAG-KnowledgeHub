@@ -1,7 +1,7 @@
 [project]
-name = "tvu-scraper"
+name = "tvu-workspace"
 version = "0.1.0"
-description = "Tamil Virtual Academy literary corpus scraper and RAG index builder"
+description = "Tamil Virtual Academy literary corpus workspace"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -31,18 +31,94 @@ embeddings = [
 
 [project.scripts]
 tvu-scraper = "tvu_scraper.cli:main"
+tvu-inspect-site = "inspector.site_inspector:main"
+tvu-discover-dynamic-content = "inspector.discover_dynamic_content:main"
+tvu-inspect-iframes = "inspector.inspect_iframe_endpoints:main"
+tvu-inspect-hymn = "inspector.inspect_hymn_endpoint:main"
+tvu-inspect-commentary = "inspector.inspect_commentary_endpoint:main"
+tvu-scrape-pilot-hymn = "scraper.pilot_hymn_scraper:main"
+tvu-build-irandaam-thirumurai = "scraper.irandaam_thirumurai_builder:main"
+tvu-pilot-ingest-thirumurai = "scraper.pilot_ingest_thirumurai:main"
+tvu-pilot-ingest-category = "scraper.pilot_ingest_category:main"
+tvu-validate-sample-hymn = "validation.sample_hymn_validator:main"
+tvu-normalize-corpus = "corpus.normalize_corpus:main"
+tvu-normalize-category = "corpus.normalize_category_corpus:main"
+tvu-validate-corpus = "corpus.validate_corpus:main"
+tvu-validate-category = "corpus.validate_category_corpus:main"
+tvu-audit-corpus-readiness = "corpus.audit_corpus_readiness:main"
+tvu-audit-multi-category-readiness = "corpus.audit_multi_category_readiness:main"
+tvu-inspect-pilot-sources = "corpus.inspect_pilot_sources:main"
+tvu-build-retrieval-corpus = "enrichment.build_retrieval_ready_corpus:main"
+tvu-build-embeddings = "embeddings.build_embeddings:main"
+tvu-build-vector-index = "vector_index.build_faiss_index:main"
+tvu-expand-query = "retrieval.expand_query:main"
+tvu-build-context = "rag.build_context:main"
+tvu-export-citations = "rag.export_citations:main"
+tvu-build-occurrence-index = "analytics.build_occurrence_index:main"
+tvu-search-occurrences = "analytics.search_occurrences:main"
+tvu-analyze-term = "analytics.analyze_term:main"
+tvu-ask-analytics = "analytics.ask_analytics:main"
+tvu-build-question-taxonomy = "evaluation.build_question_taxonomy:main"
+tvu-evaluate-retrieval = "evaluation.evaluate_retrieval:main"
+tvu-evaluate-query-expansion = "evaluation.evaluate_query_expansion:main"
+tvu-evaluate-analytics = "evaluation.evaluate_analytics:main"
+tvu-analyze-retrieval-failures = "evaluation.analyze_retrieval_failures:main"
+tvu-run-comprehensive-benchmark = "evaluation.run_comprehensive_benchmark:main"
+tvu-validate-pilot-categories = "evaluation.validate_pilot_categories:main"
+tvu-failure-attribution = "evaluation.failure_attribution:main"
+tvu-validate-registries = "knowledge.validate_registries:main"
+tvu-analyze-knowledge-readiness = "knowledge.analyze_knowledge_readiness:main"
+tvu-validate-annotations = "knowledge.validate_annotations:main"
+tvu-analyze-annotation-readiness = "knowledge.analyze_annotation_readiness:main"
+tvu-evaluate-entity-extraction = "knowledge.evaluate_entity_extraction:main"
+tvu-analyze-extraction-readiness = "knowledge.analyze_extraction_readiness:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/tvu_scraper"]
+packages = [
+  "src/analytics",
+  "src/corpus",
+  "src/embeddings",
+  "src/enrichment",
+  "src/evaluation",
+  "src/inspector",
+  "src/knowledge",
+  "src/parsers",
+  "src/rag",
+  "src/retrieval",
+  "src/scraper",
+  "src/tvu_common",
+  "src/tvu_scraper",
+  "src/validation",
+  "src/vector_index",
+]
 
 [tool.ruff]
 line-length = 100
 target-version = "py311"
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src"]
+testpaths = [
+  "projects/crawler/tests",
+  "projects/parser/tests",
+  "projects/normalizer/tests",
+  "projects/knowledge/tests",
+  "projects/retrieval/tests",
+  "projects/evaluation/tests",
+  "shared/tvu-common/tests",
+  "tests",
+]
+pythonpath = [
+  "src",
+  "shared/tvu-common/src",
+  "shared/tvu-schemas/src",
+  "projects/crawler/src",
+  "projects/parser/src",
+  "projects/normalizer/src",
+  "projects/knowledge/src",
+  "projects/retrieval/src",
+  "projects/evaluation/src",
+]

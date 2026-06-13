@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/retrieval_chunk.schema.json",
+  "title": "TamilVU Retrieval Chunk",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "parent_record_id",
+    "chunk_type",
+    "chunk_text",
+    "language",
+    "citation",
+    "source_urls"
+  ],
+  "properties": {
+    "chunk_id": { "type": "string" },
+    "parent_record_id": { "type": "string" },
+    "chunk_type": { "type": "string" },
+    "chunk_text": { "type": "string" },
+    "chunk_text_normalized": { "type": "string" },
+    "language": { "type": "string" },
+    "citation": { "type": "object" },
+    "filter_metadata": { "type": "object" },
+    "source_urls": { "type": "object" }
+  },
+  "additionalProperties": true
+}

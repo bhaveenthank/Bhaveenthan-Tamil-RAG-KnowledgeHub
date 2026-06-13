@@ -1,0 +1,20 @@
+[project]
+name = "tvu-parser"
+version = "0.1.0"
+description = "TamilVU parser and source-specific extraction tooling"
+requires-python = ">=3.11"
+dependencies = ["beautifulsoup4>=4.12.3", "lxml>=5.2.0", "requests>=2.32.0"]
+
+[project.scripts]
+tvu-scrape-pilot-hymn = "scraper.pilot_hymn_scraper:main"
+tvu-build-irandaam-thirumurai = "scraper.irandaam_thirumurai_builder:main"
+tvu-pilot-ingest-thirumurai = "scraper.pilot_ingest_thirumurai:main"
+tvu-pilot-ingest-category = "scraper.pilot_ingest_category:main"
+tvu-validate-sample-hymn = "validation.sample_hymn_validator:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/parsers", "src/scraper", "src/validation"]

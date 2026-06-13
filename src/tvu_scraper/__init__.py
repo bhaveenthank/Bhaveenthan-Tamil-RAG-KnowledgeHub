@@ -1,6 +1,3 @@
-"""TamilVU literary corpus scraper package."""
+from _project_namespace import extend_project_path
 
-__all__ = ["__version__"]
-
-__version__ = "0.1.0"
-
+__path__ = extend_project_path(__file__, __name__, "crawler")

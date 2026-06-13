@@ -1,6 +1,8 @@
-# TamilVU Literary Corpus Scraper
+# TamilVU Literary Corpus Workspace
 
-Phase-one project scaffold for building a Tamil literary knowledge store from Tamil Virtual Academy library pages.
+Workspace for building a Tamil literary knowledge store from Tamil Virtual Academy
+library pages. The repository is being migrated from a single package into a
+contract-first monorepo with independent project packages.
 
 The first target catalog is:
 
@@ -19,6 +21,17 @@ This repository is intentionally set up in phases. It does not scrape the full s
 ## Project Layout
 
 ```text
+shared/
+  tvu-common/            Stable shared utilities
+  tvu-schemas/           JSON Schema contracts and schema helpers
+projects/
+  crawler/               URL inspection, classification, fetch, raw snapshots
+  parser/                DOM/source extraction and bounded pilot ingestion
+  normalizer/            Normalized corpus records, validation, audits
+  knowledge/             Registries, annotations, knowledge extraction
+  retrieval/             Chunks, lexical/vector indexes, RAG context
+  evaluation/            Benchmarks and failure analysis
+  app/                   Future app placeholder
 configs/                 Crawl scope and runtime configuration
 data/
   raw/                   Immutable HTTP snapshots, excluded from git
@@ -26,10 +39,34 @@ data/
   indexes/               Search/vector indexes, excluded from git
 docs/                    Architecture and phase plans
 reports/                 Generated inspection/QA reports
-src/inspector/           Allowlist-only inspection tools
-src/scraper/             Controlled pilot scraping tools
-src/tvu_scraper/         Scraper, extraction, and indexing package
-tests/                   Parser and contract tests
+src/                     Legacy compatibility shims for historical commands
+tests/                   Workspace integration and contract tests
+```
+
+See `docs/migration/reorg-package-map.md`, `docs/migration/reorg-progress-log.md`,
+`docs/migration/project-native-commands.md`, and `docs/contracts/artifact-flow.md` for
+the current package map, command surface, and boundary rules.
+
+Current migration phase: **final stabilization**. Static project boundaries are clean,
+project-native `tvu-*` commands are defined, and artifact/manifest contracts now cover
+the evaluation outputs that were hardened during this reorganization.
+
+This is an AI-first project: migration decisions should be documented as they are made so
+future AI agents can ground themselves in repo facts rather than chat history.
+
+Legacy `python3 src/...` commands remain for compatibility, but new workflows should use
+the project-native `tvu-*` commands listed in
+`docs/migration/project-native-commands.md`. For example, `tvu-pilot-ingest-category`
+is parser-owned, while `tvu-normalize-category` is normalizer-owned and consumes the
+parser JSONL output under `data/processed/pilot_categories/...`.
+
+Useful migration checks:
+
+```bash
+python3 scripts/check-boundaries.py
+python3 scripts/check-boundaries.py --strict
+python3 scripts/run-project-tests.py retrieval
+python3 scripts/workspace-check.py
 ```
 
 ## Phase Plan

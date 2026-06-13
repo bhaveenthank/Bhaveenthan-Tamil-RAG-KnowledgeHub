@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/artifact_manifest.schema.json",
+  "title": "TamilVU Artifact Manifest",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "schema_version",
+    "producer",
+    "record_count",
+    "created_at"
+  ],
+  "properties": {
+    "artifact_id": { "type": "string" },
+    "artifact_type": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "producer": { "type": "string" },
+    "producer_version": { "type": "string" },
+    "source_artifacts": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "record_count": { "type": "integer" },
+    "checksums": { "type": "object" },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "created_at": { "type": "string" }
+  },
+  "additionalProperties": true
+}
