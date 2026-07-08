@@ -1,0 +1,11 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - ops/cloudrun/thevaram-fetch-failures.Dockerfile
+      - -t
+      - asia-south1-docker.pkg.dev/tvu-corpus-e22051-260606/tvu-jobs/thevaram-fetch-failures:latest
+      - .
+images:
+  - asia-south1-docker.pkg.dev/tvu-corpus-e22051-260606/tvu-jobs/thevaram-fetch-failures:latest

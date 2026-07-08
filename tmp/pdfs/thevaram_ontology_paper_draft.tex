@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{fontspec}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\setmainfont{Helvetica}
+\newfontfamily\tamilfont{Tamil Sangam MN}
+\newcommand{\ta}[1]{{\tamilfont #1}}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\title{\textbf{A Semantic Ontology for Thevaram Literary Analysis:\\Modeling Deities, Sacred Places, Iconography, Nature Imagery, and Commentary Evidence}}
+\author{Draft reading copy}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+Classical Tamil literary question answering requires more than passage retrieval. A user may ask which hymns invoke Shiva through specific epithets, which sacred places are associated with particular imagery, how commentary explains mythological references, or where nature images function as iconographic evidence. Such questions require a semantic layer that preserves textual evidence while modeling deities, sacred places, epithets, objects, natural imagery, theological concepts, music, and relations. This paper presents a corpus-driven ontology and annotation framework for Thevaram literary analysis. The ontology defines 25 entity types, 29 relation types, 14 attributes, and a 20-item mythological event canon. A deterministic annotation pass over the Thevaram 1-8 normalized corpus produced 624 registry rows, 823 aliases, 107761 entity mentions, 4491 relationship records, and 30710 cross-type overlap records. Validation checks found zero invalid bounds, zero span text mismatches, and zero duplicate mention identifiers. We position the ontology as a review-aware semantic evidence layer for future citation-grounded Tamil literary retrieval and question answering, while explicitly distinguishing it from a final expert-validated scholarly ontology.
+
+\section{Introduction}
+The first step in building useful computational tools for Tamil literature is to create reliable corpora. The next step is to make those corpora semantically usable. A verse-level corpus can support search for exact words and citations, but many literary questions require more structure. For example, a reader may ask: Which hymns refer to Shiva through iconographic signs? Which sacred places are associated with rivers or flowers? Which verses mention Vishnu or Brahma in relation to Shiva? Which commentary passages explain a mythological event? These questions cannot be answered safely by raw keyword search alone.
+
+This paper presents a semantic ontology and annotation framework for Thevaram literary analysis. It builds on a normalized Thevaram 1-8 corpus and introduces a structured vocabulary for agents, sacred places, objects, nature imagery, body imagery, mythological events, theological concepts, devotional acts, musical metadata, and textual works. The goal is not to replace expert reading. The goal is to create a typed, citation-grounded evidence layer that helps retrieval systems, annotation workflows, and future question-answering systems know what kind of evidence they are using.
+
+\section{Ontology Design}
+The Thevaram ontology v1 is a corpus-driven draft ontology. It defines 25 entity types organized across major branches: agents, places, objects and nature, events and concepts, and literary or musical metadata.
+
+\begin{longtable}{p{0.25\linewidth}p{0.65\linewidth}}
+\toprule
+Branch & Entity types \\
+\midrule
+Agent & DEITY, MANIFESTATION, DIVINE\_EPITHET, MYTH\_FIGURE, SAINT, PERSON, REL\_GROUP \\
+Place & SACRED\_PLACE, REGION, MYTHIC\_PLACE, RIVER, MOUNTAIN \\
+Object / nature / body & SACRED\_OBJECT, FLORA, FAUNA, CELESTIAL, BODY\_PART \\
+Event / concept / practice & MYTH\_EVENT, THEO\_CONCEPT, COSMO\_CONCEPT, DEVOTIONAL\_ACT, RITUAL \\
+Literary / music / text & PAN, INSTRUMENT, TEXT\_WORK \\
+\bottomrule
+\end{longtable}
+
+The ontology also defines 29 relation types, including iconographic relations such as \texttt{wears}, \texttt{holds}, \texttt{rides}, and \texttt{smeared\_with}; divine relations such as \texttt{consort\_of}, \texttt{parent\_of}, and \texttt{manifestation\_of}; linking relations such as \texttt{refers\_to}; event relations such as \texttt{agent\_of} and \texttt{patient\_of}; place relations such as \texttt{enshrined\_at}; and literary relations such as \texttt{composed\_by} and \texttt{set\_in\_pan}.
+
+This relation model matters because many Thevaram expressions are not isolated named entities. For example, in \ta{தோடு உடைய செவியன், விடை ஏறி, ஓர் தூ வெண்மதி சூடி}, the phrase \ta{தோடு உடைய செவியன்} functions as a divine epithet, while \ta{தோடு}, \ta{விடை}, and \ta{வெண்மதி} also carry object, animal, and celestial imagery.
+
+\section{Migration from an Earlier Annotation Layer}
+The ontology supersedes an earlier six-type annotation layer. That earlier layer was useful as a seed, but it was too broad for literary analysis. In particular, \texttt{NATURE} mixed animals, flowers, rivers, mountains, and celestial objects. \texttt{ACTION} treated event-like phrases as entities, even though mythological events are better modeled as event anchors with participants and instruments.
+
+The v1 migration stance is to convert \texttt{ACTION} to canonical \texttt{MYTH\_EVENT} anchors, split \texttt{NATURE} into \texttt{FLORA}, \texttt{FAUNA}, \texttt{RIVER}, \texttt{MOUNTAIN}, and \texttt{CELESTIAL}, narrow \texttt{SACRED\_OBJECT}, and queue ambiguous lexemes such as \ta{பதி}, \ta{பசு}, \ta{மெய்}, and \ta{மால்} for word-sense review.
+
+\section{Annotation Pipeline and Results}
+The annotation layer uses a deterministic seed-lexicon approach. It loads registry entries and aliases, scans normalized Thevaram fields, records offsets against the normalized corpus, suppresses same-type nested overlaps, and keeps cross-type overlaps where poetic imagery legitimately supports more than one category. Each mention receives a review status such as \texttt{auto\_accepted}, \texttt{context\_supported}, \texttt{needs\_context\_review}, or \texttt{ambiguous\_review}.
+
+\begin{longtable}{lr}
+\toprule
+Metric & Count \\
+\midrule
+Entity registry rows & 624 \\
+Entity aliases & 823 \\
+Seed terms loaded & 823 \\
+Entity mentions & 107761 \\
+Entity relationships & 4491 \\
+Cross-type overlap records & 30710 \\
+Suppressed same-type overlapping candidates & 12578 \\
+Invalid bounds & 0 \\
+Span text mismatches & 0 \\
+Duplicate mention IDs & 0 \\
+\bottomrule
+\end{longtable}
+
+The largest mention categories were nature, body parts, sacred objects, deities, theological concepts, temples, and weapons.
+
+\begin{longtable}{lr}
+\toprule
+Entity type & Mentions \\
+\midrule
+NATURE & 23831 \\
+BODY\_PART & 17304 \\
+SACRED\_OBJECT & 16191 \\
+DEITY & 13847 \\
+THEOLOGICAL\_CONCEPT & 11238 \\
+TEMPLE & 4036 \\
+WEAPON & 3772 \\
+ICONOGRAPHIC\_FEATURE & 2373 \\
+SACRED\_RIVER & 2303 \\
+RELATIONSHIP & 2000 \\
+\bottomrule
+\end{longtable}
+
+Mentions occur across both poem and commentary layers: 39618 in \texttt{commentaries.kurippurai}, 37803 in \texttt{commentaries.pozhppurai}, and 30340 in \texttt{paadalgal.paadal\_text}.
+
+\section{Relationship Layer}
+The current relationship output contains 4491 relationship records. Most are corpus co-occurrence edges, while a smaller number are curated ontology relations.
+
+\begin{longtable}{lr}
+\toprule
+Relationship type & Count \\
+\midrule
+co\_occurs\_in\_paadal & 4474 \\
+performed\_by & 6 \\
+associated\_with & 3 \\
+consort\_of & 2 \\
+defeats & 2 \\
+epithet\_of & 1 \\
+manifestation\_of & 1 \\
+weapon\_of & 1 \\
+worn\_or\_held\_by & 1 \\
+\bottomrule
+\end{longtable}
+
+This distribution shows that the relation layer is still early. Co-occurrence is useful for discovery and candidate generation, but scholarly claims need curated or reviewed relations.
+
+\section{Evaluation and Readiness}
+A small entity extraction pilot covered deity, author, place, and work entities. It reported precision 1.0000, recall 0.8571, F1 0.9231, and exact match 0.8571 over seven expected entities. The false negative was \ta{பிரமன்}. This is encouraging, but it is a pilot rather than a corpus-wide gold evaluation.
+
+Annotation readiness was measured at 59.8/100 overall. Entity annotation readiness was 72.0, deity annotation 68.0, author annotation 66.0, motif annotation 62.0, epithet annotation 58.0, simile annotation 56.0, metaphor annotation 50.0, and relationship annotation 46.0. These numbers indicate that the framework is ready for controlled annotation expansion but not yet ready for automated literary claims about motifs, metaphors, or relationships.
+
+\section{Use Cases}
+The ontology supports future question types such as: Which hymns invoke Shiva using a particular epithet? Which sacred places are associated with river, flower, or mountain imagery? Which commentary passages explain references to Brahma, Vishnu, Yama, or Ravana? Which verses combine body imagery and iconographic objects? Which hymns mention a deity in verse text versus commentary?
+
+Without the ontology, these questions are reduced to brittle keyword search. With the ontology, a system can return typed evidence with source fields and review statuses.
+
+\section{Limitations}
+The current ontology is draft v1, not a final scholarly authority. It needs review by Tamil literary and Saiva studies experts. Deterministic annotation is not interpretation; it can identify candidate mentions, but it cannot reliably resolve every metaphor, simile, theological usage, or ambiguous word sense. Relation extraction remains early, and most current relationship records are co-occurrence edges. Inter-annotator agreement has not yet been measured. The current v3 annotation labels still include legacy categories; the v1 ontology defines the cleaner target model for migration.
+
+\section{Conclusion}
+This paper presented a semantic ontology and annotation framework for Thevaram literary analysis. The ontology defines 25 entity types, 29 relation types, 14 attributes, and a mythological event canon. A deterministic annotation pass over Thevaram 1-8 produced 107761 entity mentions and 4491 relationship records, with technical validation showing zero invalid bounds, zero span mismatches, and zero duplicate mention identifiers.
+
+The main contribution is not a claim that Thevaram interpretation has been automated. The contribution is a typed, review-aware semantic evidence layer that can support future Tamil literary retrieval, annotation, and citation-grounded question answering.
+
+\section*{Resource Notes}
+Tamil Virtual Academy/TamilVU source material: \url{https://www.tamilvu.org/}.
+
+Ontology file: \texttt{data/knowledge/ontology/thevaram\_ontology\_v1.json}.
+
+Relation file: \texttt{data/knowledge/ontology/thevaram\_relations\_v1.json}.
+
+Annotation output: \texttt{data/processed/thevaram\_entity\_annotations\_v3/}.
+
+\end{document}

@@ -1,0 +1,7 @@
+legacy_type,target_type,rule,review_required
+DEITY,DEITY,Keep proper worshipped deities; split Yama/Kama/Ravana/Daksha to MYTH_FIGURE; split Ganga/Soma by context,true
+BODY_PART,BODY_PART,Keep narrowed divine/iconographic body parts; person-referring forms move to DIVINE_EPITHET,true
+NATURE,FLORA|FAUNA|RIVER|MOUNTAIN|CELESTIAL,Retype by intrinsic natural kind; demote water/earth/honey to attribute lexicon,true
+SACRED_OBJECT,SACRED_OBJECT,Keep narrowed artefacts/substances only; natural objects move to intrinsic type plus relation,true
+THEOLOGICAL_CONCEPT,THEO_CONCEPT|DEVOTIONAL_ACT|SAINT|TEXT_WORK,Keep narrowed concepts; split acts and phala-sruti strings,true
+ACTION,MYTH_EVENT,Convert clause entities to canonical mythological event anchors,false

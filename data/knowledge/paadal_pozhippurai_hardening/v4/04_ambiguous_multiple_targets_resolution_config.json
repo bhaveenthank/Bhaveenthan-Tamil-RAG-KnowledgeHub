@@ -1,0 +1,48 @@
+{
+  "problem": "low_ambiguous_multiple_targets",
+  "decision_rule": "If best and second-best targets are close, do not choose by raw score alone. Use global assignment, neighbor evidence, relation cues, and gold repeated patterns.",
+  "margin_thresholds": {
+    "high_confidence_required_margin": 0.15,
+    "medium_confidence_margin": 0.08,
+    "ambiguous_if_margin_below": 0.08
+  },
+  "algorithms": [
+    {
+      "name": "global_sequence_assignment",
+      "method": "Viterbi dynamic programming over source_span_index and target_clause_index",
+      "why": "Prevents several adjacent source phrases from all selecting the same broad target.",
+      "constraints": [
+        "one source can map to one primary target",
+        "target reuse allowed only for explains_line or parent diagnostic",
+        "split children may map to subclauses"
+      ]
+    },
+    {
+      "name": "local_neighbor_reranking",
+      "method": "Use previous and next accepted links as anchors.",
+      "features": [
+        "prev_target_distance",
+        "next_target_distance",
+        "same_relation_family_as_neighbor",
+        "same_entity_family_as_neighbor"
+      ],
+      "why": "The correct target often lies between two accepted neighbour targets."
+    },
+    {
+      "name": "gold_pattern_reranker",
+      "method": "Match candidate to v3/v4 gold patterns such as crescent, Ganga, Ravana, worship-result.",
+      "why": "Repeated devotional and iconographic patterns should resolve ambiguity even with low surface overlap."
+    },
+    {
+      "name": "span_granularity_penalty",
+      "method": "Penalize targets that contain multiple unrelated concepts if a shorter subspan exists.",
+      "why": "Ambiguous rows often choose a long commentary phrase that includes both correct and incorrect material."
+    }
+  ],
+  "manual_review_trigger": {
+    "if_best_second_margin_below": 0.05,
+    "if_global_assignment_disagrees_with_local_best": true,
+    "if_relation_cue_score_below": 0.2,
+    "if_target_too_broad_ratio_above": 3.0
+  }
+}

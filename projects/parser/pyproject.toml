@@ -10,7 +10,10 @@ tvu-scrape-pilot-hymn = "scraper.pilot_hymn_scraper:main"
 tvu-build-irandaam-thirumurai = "scraper.irandaam_thirumurai_builder:main"
 tvu-pilot-ingest-thirumurai = "scraper.pilot_ingest_thirumurai:main"
 tvu-pilot-ingest-category = "scraper.pilot_ingest_category:main"
+tvu-build-thevaram-tables = "scraper.thevaram_corpus:main"
 tvu-validate-sample-hymn = "validation.sample_hymn_validator:main"
+tvu-audit-thevaram-tables = "validation.thevaram_table_quality:main"
+tvu-sample-thevaram-qa = "validation.thevaram_manual_qa:main"
 
 [build-system]
 requires = ["hatchling"]

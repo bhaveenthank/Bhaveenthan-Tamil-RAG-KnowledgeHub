@@ -1,0 +1,9 @@
+﻿cue_id,subject_type,relation,object_type,paadal_cues,pozhppurai_cues,relationship_bias,score_effect
+ONTO_WEAR_001,DEITY.SIVA,wears_on_head,SACRED_OBJECT.CRESCENT_MOON,பிறை|திங்கள்|மதி + முடி|சடை|சூடி,வெண்பிறை|திங்கள் + சூடி|முடிமேல்,interprets_image,+0.12
+ONTO_HAIR_002,DEITY.SIVA,contains_in_hair,NATURE.GANGA_WATER,சடை + புனல்|கங்கை,சடையில் கங்கை|சடைமுடியில் கங்கையைத் தரித்த,interprets_image,+0.12
+ONTO_RIDE_003,DEITY.SIVA,rides,SACRED_OBJECT.BULL,விடை|எருது|ஏறு + ஏற,விடை மீது ஏறி|எருது ஏறி,interprets_image,+0.12
+ONTO_WORSHIP_004,DEVOTEE,worships,DEITY.SIVA,தொழ|பணிந்து|ஏத்தி|கூப்புவீர்|மலர் தூவி,வழிபட|அருச்சித்து|துதித்து|போற்றி|மனங்கொள்ள,theological_explanation,+0.14
+ONTO_GRACE_005,DEITY.SIVA,grants,GRACE_OR_BENEFIT,அருள்செய்த|அருளுமே|பயன்|இன்பம்|செல்வம்|உயர்வு,அருள் புரிந்த|அருளுவீராக|இன்பம் பெறுவது|செல்வம் பெருகும்|உயர்வு பெறுவர்,theological_explanation,+0.15
+ONTO_REMOVES_006,DEITY.SIVA_OR_WORSHIP,removes,SUFFERING_OR_KARMA,பாசவினை போமே|பிணி கெட்டு|காலன் வீடு|இடர் களை,வினைகள் நீங்கும்|பிணிகளிலிருந்து விடுபட்டு|எமபயம் இன்றி|துன்பம் நீக்கும்,theological_explanation,+0.15
+ONTO_MYTH_RAVANA_007,DEITY.SIVA,subdues,MYTHIC_ANTAGONIST.RAVANA,பத்துத்தலையோன்|அரக்கன்|விரல் ஊன்றி|கத்த,இராவணன்|கால் விரலால் நெரித்த|கதறி அழுமாறு,interprets_image,+0.16
+ONTO_ENTITY_PLACE_008,DEITY_OR_SAINT,resides_or_originates_at,THALAM,ஆலவாய்|முதுகுன்றம்|மிழலை|அண்ணாமலை|காழி,உறைபவர்|எழுந்தருளிய|விளங்கும்|பதியில் தோன்றி|கோயிலிலுள்ள,describes_entity,+0.13

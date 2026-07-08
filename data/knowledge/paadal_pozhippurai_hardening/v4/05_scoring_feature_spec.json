@@ -1,0 +1,122 @@
+{
+  "version": "v4_hardening_feature_spec",
+  "score_formula": "final_score = sigmoid(linear_sum(features) - penalties)",
+  "confidence_policy": {
+    "high": "final_score >= 0.78 and no critical warning",
+    "medium": "0.50 <= final_score < 0.78 or broad/case-ending but semantically valid",
+    "low": "0.25 <= final_score < 0.50 or evidence is weak/ambiguous",
+    "no_link": "no usable pozhppurai/kurippurai target, numeric/noise source, or final_score < 0.25"
+  },
+  "features": [
+    {
+      "name": "surface_token_overlap",
+      "range": "0..1",
+      "weight": 0.1,
+      "description": "Direct normalized token overlap between paadal span and target span."
+    },
+    {
+      "name": "char_ngram_overlap",
+      "range": "0..1",
+      "weight": 0.05,
+      "description": "Character n-gram similarity for sandhi-like and compound variants."
+    },
+    {
+      "name": "semantic_lexicon_score",
+      "range": "0..1",
+      "weight": 0.16,
+      "description": "Match from semantic lexicon families: deity, thalam, sacred object, theology, myth."
+    },
+    {
+      "name": "morphology_stem_score",
+      "range": "0..1",
+      "weight": 0.1,
+      "description": "Match after case suffix stripping, verb stem normalization, and compound segmentation."
+    },
+    {
+      "name": "shared_entity_anchor_score",
+      "range": "0..1",
+      "weight": 0.13,
+      "description": "Accepted or inferred shared anchors for deity, thalam, object, body part, myth event."
+    },
+    {
+      "name": "ontology_relation_score",
+      "range": "0..1",
+      "weight": 0.14,
+      "description": "Subject-relation-object cues such as Siva wears crescent, devotee worships Siva."
+    },
+    {
+      "name": "relationship_cue_score",
+      "range": "0..1",
+      "weight": 0.12,
+      "description": "Cue family score for explains_phrase/glosses_word/interprets_image/theological/describes_entity."
+    },
+    {
+      "name": "sequence_consistency_score",
+      "range": "0..1",
+      "weight": 0.07,
+      "description": "Global monotonic or reverse-order alignment coherence."
+    },
+    {
+      "name": "neighbor_anchor_score",
+      "range": "0..1",
+      "weight": 0.06,
+      "description": "Previous/next accepted links support the target location."
+    },
+    {
+      "name": "gold_pattern_similarity",
+      "range": "0..1",
+      "weight": 0.1,
+      "description": "Similarity to accepted_high_ready, v3 corrected usable, v4 gold seed examples."
+    },
+    {
+      "name": "target_granularity_score",
+      "range": "0..1",
+      "weight": 0.07,
+      "description": "Reward exact compact target spans; penalize whole paragraphs when shorter span exists."
+    },
+    {
+      "name": "field_preference_score",
+      "range": "0..1",
+      "weight": 0.04,
+      "description": "Pozhppurai preferred; kurippurai allowed when meaning is absent in pozhppurai."
+    }
+  ],
+  "penalties": [
+    {
+      "name": "order_only_penalty",
+      "value": 0.2,
+      "condition": "order score is the only supporting evidence"
+    },
+    {
+      "name": "ambiguous_margin_penalty",
+      "value": 0.12,
+      "condition": "best-second score margin < 0.08"
+    },
+    {
+      "name": "missing_entity_anchor_penalty",
+      "value": 0.08,
+      "condition": "no shared entity and no ontology relation cue"
+    },
+    {
+      "name": "target_too_broad_penalty",
+      "value": 0.1,
+      "condition": "target token length/source token length > 3.0 and no explains_line"
+    },
+    {
+      "name": "polysemy_without_context_penalty",
+      "value": 0.1,
+      "condition": "ambiguous term such as மதி/விடை/அரவு/அடி without disambiguating cue"
+    },
+    {
+      "name": "empty_pozhippurai_penalty",
+      "value": 999,
+      "condition": "no usable pozhppurai and no kurippurai fallback"
+    }
+  ],
+  "upgrade_rules_for_medium_confidence": [
+    "If medium row matches a v4 gold pattern and relation cue score >= 0.35, upgrade to high.",
+    "If target field is kurippurai but exact gloss exists and pozhppurai lacks meaning, allow high but mark target_field_preference=kurippurai.",
+    "If case ending is the only mismatch and entity anchor is clear, upgrade low to medium or medium to high depending score.",
+    "If score is medium but best-second margin < 0.08, keep medium/low and add manual_review_required."
+  ]
+}

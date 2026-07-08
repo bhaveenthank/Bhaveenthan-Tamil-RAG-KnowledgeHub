@@ -1,0 +1,77 @@
+{
+  "problem": "low_order_only_support",
+  "principle": "Do not accept a link only because its source and target appear at similar order positions. Confirm with local evidence, reverse-order evidence, and relation cues.",
+  "algorithms": [
+    {
+      "name": "monotonic_global_sequence_assignment",
+      "recommended_method": "dynamic_programming_viterbi_or_needleman_wunsch",
+      "use_when": "Most commentary explains paadal phrases in the same order.",
+      "inputs": [
+        "source_span_sequence",
+        "target_clause_sequence",
+        "pairwise_link_scores"
+      ],
+      "constraints": [
+        "Prefer increasing source_index -> increasing target_index.",
+        "Allow skip source and skip target states.",
+        "Use gap penalty for unmatched spans.",
+        "Use relation cue score as pair emission score."
+      ],
+      "formula": "dp[i][j] = max(dp[i-1][j-1] + pair_score(i,j) + order_bonus, dp[i-1][j] - source_gap_penalty, dp[i][j-1] - target_gap_penalty)",
+      "output_features": [
+        "global_assignment_score",
+        "sequence_consistency_score",
+        "alignment_gap_count"
+      ]
+    },
+    {
+      "name": "reverse_order_alignment",
+      "recommended_method": "run the same DP once forward and once with target sequence reversed",
+      "use_when": "Commentary explains a line in reverse or summary-first order.",
+      "decision": "If reverse_score > forward_score + margin, allow reverse mapping and mark sequence_alignment_method='reverse_order'.",
+      "margin": 0.08,
+      "output_features": [
+        "reverse_alignment_score",
+        "forward_reverse_margin"
+      ]
+    },
+    {
+      "name": "neighboring_span_constraints",
+      "recommended_method": "local coherence reranker",
+      "use_when": "A row has weak evidence but previous/next accepted links are strong.",
+      "constraints": [
+        "If previous source maps to target k and next source maps to target k+2, current source should prefer target k+1.",
+        "Penalize targets far outside the previous-next window.",
+        "Boost candidate if it shares entity or relation family with neighbor row."
+      ],
+      "output_features": [
+        "prev_anchor_score",
+        "next_anchor_score",
+        "local_window_score"
+      ]
+    },
+    {
+      "name": "relation_cue_confirmation",
+      "recommended_method": "relationship-specific cue scoring",
+      "use_when": "Order score is high but lexical score is low.",
+      "rule": "Do not upgrade confidence unless relation cue score >= threshold.",
+      "thresholds": {
+        "interprets_image": 0.35,
+        "theological_explanation": 0.35,
+        "describes_entity": 0.3,
+        "explains_phrase": 0.25,
+        "glosses_word": 0.4
+      },
+      "output_features": [
+        "relation_cue_score",
+        "relation_cue_family"
+      ]
+    }
+  ],
+  "scoring_update": {
+    "old_issue": "order_score can dominate even when semantic support is absent",
+    "new_rule": "order_score alone cannot raise confidence above low",
+    "max_confidence_if_only_order": "low",
+    "upgrade_condition": "semantic_lexicon_score + ontology_relation_score + relation_cue_score + neighbor_score >= 0.45"
+  }
+}

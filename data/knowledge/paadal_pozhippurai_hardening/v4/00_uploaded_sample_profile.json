@@ -1,0 +1,23 @@
+{
+  "uploaded_sample_count": 150,
+  "hardening_category_counts": {
+    "low_ambiguous_multiple_targets": 25,
+    "low_missing_entity_anchor": 25,
+    "low_order_only_support": 25,
+    "low_surface_vocab_gap": 25,
+    "low_weak_similarity": 25,
+    "medium_review_sample": 25
+  },
+  "relationship_type_counts": {
+    "interprets_image": 29,
+    "explains_line": 2,
+    "explains_phrase": 44,
+    "theological_explanation": 20,
+    "describes_entity": 45,
+    "glosses_word": 10
+  },
+  "confidence_counts": {
+    "low": 125,
+    "medium": 25
+  }
+}

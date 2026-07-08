@@ -1,0 +1,13 @@
+{
+  "code_counts": {},
+  "counts": {
+    "commentaries": 9012,
+    "paadal_thogupugal": 841,
+    "paadalgal": 9012,
+    "text_spans": 64073,
+    "thirumurai_books": 8
+  },
+  "issue_counts": {},
+  "issues": [],
+  "table_root": "data/processed/thevaram"
+}

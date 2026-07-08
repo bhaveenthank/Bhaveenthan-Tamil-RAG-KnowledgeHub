@@ -23,6 +23,7 @@ The reorganized workspace exposes stable `tvu-*` console commands from the root
 | `tvu-build-irandaam-thirumurai` | `projects/parser` | `python3 src/scraper/irandaam_thirumurai_builder.py` |
 | `tvu-pilot-ingest-thirumurai` | `projects/parser` | `python3 src/corpus/pilot_ingest_thirumurai.py` |
 | `tvu-pilot-ingest-category` | `projects/parser` | `python3 src/corpus/pilot_ingest_category.py` |
+| `tvu-build-thevaram-tables` | `projects/parser` | new contract-first Thevaram 1-8 table builder |
 | `tvu-validate-sample-hymn` | `projects/parser` | `python3 src/validation/sample_hymn_validator.py` |
 
 ## Normalizer
@@ -75,6 +76,13 @@ The reorganized workspace exposes stable `tvu-*` console commands from the root
 | `tvu-analyze-annotation-readiness` | `projects/knowledge` | `python3 src/knowledge/analyze_annotation_readiness.py` |
 | `tvu-evaluate-entity-extraction` | `projects/knowledge` | `python3 src/knowledge/evaluate_entity_extraction.py` |
 | `tvu-analyze-extraction-readiness` | `projects/knowledge` | `python3 src/knowledge/analyze_extraction_readiness.py` |
+| `tvu-link-thevaram-pozhppurai` | `projects/knowledge` | Thevaram paadal-to-pozhppurai v2 linker |
+| `tvu-annotate-thevaram-entities-v3` | `projects/knowledge` | Expanded Thevaram entity ontology v3 with relationships |
+| `tvu-link-thevaram-pozhppurai-v3` | `projects/knowledge` | Focused-QA-backed Thevaram paadal-to-pozhppurai v3 linker |
+| `tvu-build-pozhppurai-links-v4` | `projects/knowledge` | Gold-seed-backed Thevaram paadal-to-pozhppurai v4 linker |
+| `tvu-build-pozhppurai-link-qa-pack` | `projects/knowledge` | Build balanced manual QA packs for paadal-to-pozhppurai links |
+| `tvu-review-pozhppurai-link-qa-pack` | `projects/knowledge` | Fill/check Phase 3 review columns for QA packs |
+| `tvu-build-pozhppurai-review-viewer` | `projects/knowledge` | Build local HTML review page with full paadal and full pozhppurai context |
 
 ## Compatibility Policy
 

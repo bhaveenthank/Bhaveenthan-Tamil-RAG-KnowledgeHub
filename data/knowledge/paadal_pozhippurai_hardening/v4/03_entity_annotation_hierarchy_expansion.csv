@@ -1,0 +1,33 @@
+﻿entity_type,subtype_l1,subtype_l2,canonical,aliases,context_rules,linker_use
+DEITY,SIVA,generic_lord_epithet,சிவன்,சிவன்|சிவபிரான்|சிவபெருமான்|இறைவன்|இறைவர்|பெருமான்|அண்ணல்|ஐயன்|அத்தன்|எந்தை|நம்பன்|பெம்மான்|ஒருவன்,"Accept as deity when near thalam, worship, divine body/object, or pozhppurai target contains இறை/சிவ",describes_entity anchor
+DEITY,SIVA,place_based_epithet,ஆலவாய் இறைவன்,ஆலவாயிலான்|ஆலவாயிலார்|ஆலவாய் இறைவன்|கூடல் ஆலவாய்|சோமசுந்தரப் பெருமான்,Place + deity suffix; allow case endings இறைவனை/இறைவரை/இறைவனது,thalam-deity joint anchor
+DEITY,SIVA,place_based_epithet,முதுகுன்றத்து இறைவன்,முதுகுன்றை|முதுகுன்றில் ஐயா|முதுகுன்றத்து ஈசன்|முதுகுன்றத்துத் தலைவன்,Accept if pozhppurai mentions திருமுதுகுன்றம் + இறைவன்/சிவபிரான்,thalam-deity joint anchor
+DEITY,SIVA,place_based_epithet,திருவீழிமிழலை இறைவன்,மிழலையீர்|வீழிமிழலைமேல்|திருவீழிமிழலையில் உறைபவர்|மிழலை இறைவர்,Vocative -யீர் often maps to deity resident at place,vocative entity anchor
+DEITY,SIVA,form_epithet,நீலகண்டன்,நீலமாமிடற்று|நீலநிற கண்டம்|கண்டம் கறுத்தவர்|நஞ்சு உண்டவர்|ஆலநஞ்சு உண்டவர்,"Poison/throat cues; image if poison event, describes_entity if epithet",myth + entity anchor
+DEITY,PARVATI_UMA,consort_or_half_form,உமையம்மை,உமை|உமையம்மை|மலைமகள்|மலைச்செல்வி|பார்வதி|இள மங்கை|மங்கை பாகம்,Accept near பாகம்/தழுவுதல்/இடப்பாகம்/ஒருபாகம்,deity relation + image anchor
+DEITY,BRAHMA,creator_lotus,நான்முகன்,அயன்|நான்முகன்|மலரான்|ஏடு உடைய மலரான்|பிரமன்,Can be worshipper of Siva or participant in search myth,myth/theology anchor
+DEITY,VISHNU,search_myth,திருமால்,மால்|திருமால்|அரி|மாயோன்,Often paired with Brahma in அடிமுடி search myth,myth/theology anchor
+THALAM,SAIVA_STHALAM,place_variant,பிரமபுரம்,பிரமாபுரம்|பிரமபுரம்|பீடு உடைய பிரமபுரம்,Place of Siva; target often எழுந்தருளியுள்ள,describes_entity/place anchor
+THALAM,SAIVA_STHALAM,place_variant,திருவண்ணாமலை,அண்ணாமலை|திருவண்ணாமலை|அண்ணாமலை அண்ணல்,Landscape + deity place; support image and describes_entity,place anchor
+THALAM,SAIVA_STHALAM,place_variant,திருமுதுகுன்றம்,முதுகுன்றை|முதுகுன்றில்|திருமுதுகுன்றம்|மொய் ஆர் முதுகுன்றில்,Many devotional result links in user gold,place anchor
+THALAM,SAIVA_STHALAM,place_variant,திருவீழிமிழலை,மிழலை|வீழிமிழலை|திருவீழிமிழலை|மிழலையீர்,Vocative place-deity; often theological request,place-vocative anchor
+THALAM,SAIVA_STHALAM,place_variant,ஆலவாய்,ஆலவாய்|ஆலவாயிலான்|ஆலவாயிலார்|கூடல் ஆலவாய்|நான்மாடக்கூடல்,Place + deity suffix; allow genitive/accusative,place/deity anchor
+THALAM,SAIVA_STHALAM,place_variant,சீகாழி,காழி|காழி மா நகர்|சீகாழி,Sambandar origin place,saint-place anchor
+SACRED_OBJECT,WORN_OBJECT,crescent_moon,பிறை,பிறை|வெண்பிறை|இளவெண் பிறை|திங்கள்|வெண்திங்கள்|மதி|பிறைமதி,Accept as crescent only near சடை/முடி/சூடி; otherwise மதி ambiguous,interprets_image
+SACRED_OBJECT,WORN_OBJECT,sacred_ash,திருநீறு,திருநீறு|திருவெண்ணீறு|சாம்பல்|சாம்பற் பொடி|சுடலைப் பொடி|சுண்ணம்|பொடி,Require பூசி/அணிந்து/சுடலை context,interprets_image
+SACRED_OBJECT,MOUNT,bull,விடை,விடை|எருது|ஏறு|ஆனேறு|ஆடல் ஏறு,Require ஏறுதல்/ஏற்றினான் or Siva context; விடை can also be answer,interprets_image
+SACRED_OBJECT,HELD_OBJECT,axe_weapon,மழு,மழு|வெண்மழு|மழுப்படை|படை,Require கையில்/ஏந்தி for weapon; படை can be army,interprets_image
+SACRED_OBJECT,BOWL,skull_bowl,கபாலம்,வெண்தலை|தலையோடு|தலையோட்டை|கபாலம்|உண்கலம்|கலன்,Require பிரமன்/பலி/உணவு/கலன் cues,interprets_image
+SACRED_OBJECT,FLOWER,konrai_and_worship_flowers,கொன்றை,கொன்றை|குரவம்|குரா|மலர்|வாசமலர்|கமழ் மலர்,Worn flower => image; offered flower => theology/worship,image or theology depending relation
+SACRED_OBJECT,SERPENT,snake_serpent,பாம்பு,பாம்பு|நாகம்|அரவு|அரவம்,அரவம் may mean sound; disambiguate with target cues,polysemy anchor
+BODY_PART,DIVINE_BODY,foot,திருவடி,அடி|கழல் அடி|திருவடி|இணையடி|பந்தி ஆர் கழல்,Physical/deity feet if target has திருவடி/கழல்; theological refuge if worship/result cues,body + theology anchor
+BODY_PART,DIVINE_BODY,throat,கண்டம்,கண்டம்|மிடறு|நீலமாமிடற்று|கழுத்து,Poison cue creates blue-throat deity epithet,image/entity anchor
+BODY_PART,DIVINE_BODY,hair,சடை,சடை|சடைமுடி|முடி|முதிரும் சடை,Near Ganga/crescent/serpent => image anchor,image anchor
+BODY_PART,DIVINE_BODY,hand,கை,கை|கைகள்|கரம்,Avoid false match inside கங்கை; require token boundary,body/action anchor
+BODY_PART,DIVINE_BODY,shoulder,தோள்,தோள்|தோள்கள்,Low-value unless direct gloss or descriptive target exists,review anchor only
+MYTH_EVENT,RAVANA_SUBDUING,toe_crushing,இராவணன் அடக்கம்,பத்துத்தலையோன்|அரக்கன்|இராவணன்|விரல் ஊன்றும்|நெரித்த|கத்த,Strong if target has கால் விரலால் நெரித்த or இராவணன்,interprets_image/theology cue
+MYTH_EVENT,GAJASAMHARA,elephant_hide,யானைத் தோல் போர்த்தல்,மத்தயானை|மதயானை|உரி போர்த்த|தோலை உரித்துப் போர்த்த,Strong mythic image,interprets_image
+MYTH_EVENT,POISON_DRINKING,blue_throat,நஞ்சு உண்டல்,நஞ்சு|ஆலநஞ்சு|பருகி|உண்டு|கண்டம் கறுத்த|நீலமிடறு,"If source is just blue-throat epithet, describes_entity; full event, interprets_image",image/entity
+MYTH_EVENT,BRAHMA_VISHNU_SEARCH,infinite_form,அடிமுடி காணாமை,அயனும் மாலும்|இருவர் அறியாத|அடிமுடி|முடியினீர்|அளந்தும் காணா,Transcendence => theological_explanation; epithet => describes_entity,theology/entity
+MYTH_EVENT,TRIPURA_BURNING,three_cities,முப்புரம் எரித்தல்,முப்புரம்|திரிபுரம்|மூன்று புரம்|அம்பு|எரித்த|செற்ற,Strong if target has முப்புரத்தை அழித்த/எரித்த,interprets_image
+MYTH_EVENT,YAMA_MARKANDEYA,death_conquest,காலனை வென்றல்,காலன்|காலகாலன்|எமன்|எமபயம்|காலன் வீடவே,death-conquest epithet or fear-of-death result,describes_entity or theological_explanation

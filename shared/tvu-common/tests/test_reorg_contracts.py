@@ -41,6 +41,7 @@ def test_schema_registry_exposes_expected_schemas() -> None:
         "artifact_manifest.schema.json",
         "evaluation_result.schema.json",
         "analytics_observations.schema.json",
+        "thevaram_relational_tables.schema.json",
     ]
 
     for name in expected:

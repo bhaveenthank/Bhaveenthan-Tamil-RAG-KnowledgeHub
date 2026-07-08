@@ -1,0 +1,90 @@
+{
+  "attribute_count": 14,
+  "deprecated_v2_types": [
+    "ACTION",
+    "NATURE"
+  ],
+  "entity_type_count": 25,
+  "measured_counts": {
+    "v2": {
+      "cross_type_overlap_spans": 7809,
+      "mention_counts_by_type": {
+        "ACTION": 121,
+        "BODY_PART": 14374,
+        "DEITY": 1303,
+        "NATURE": 15330,
+        "SACRED_OBJECT": 11829,
+        "THEOLOGICAL_CONCEPT": 6005
+      },
+      "mentions": 48962,
+      "registry_entities": 195
+    },
+    "v3": {
+      "mention_counts_by_type": {
+        "ACTION": 121,
+        "BODY_PART": 17304,
+        "DEITY": 13847,
+        "DIVINE_EPITHET": 347,
+        "DIVINE_FORM": 4,
+        "FESTIVAL": 33,
+        "ICONOGRAPHIC_FEATURE": 2373,
+        "MUSICAL_INSTRUMENT": 741,
+        "MYTHOLOGICAL_CHARACTER": 1556,
+        "MYTHOLOGICAL_EVENT": 398,
+        "NATURE": 23831,
+        "RELATIONSHIP": 2000,
+        "RITUAL": 1624,
+        "SACRED_FLOWER": 1062,
+        "SACRED_MOUNTAIN": 1160,
+        "SACRED_OBJECT": 16191,
+        "SACRED_RIVER": 2303,
+        "SACRED_TREE": 1828,
+        "SAINT": 949,
+        "TEMPLE": 4036,
+        "TEMPLE_ARCHITECTURE": 1043,
+        "THEOLOGICAL_CONCEPT": 11238,
+        "WEAPON": 3772
+      },
+      "mentions": 107761,
+      "paadapatta_thalam_mentions": 4036,
+      "registry_entities": 624,
+      "relationship_count": 4491,
+      "temple_mentions": 4036
+    }
+  },
+  "migration_path": "data/knowledge/ontology/migration/v2_to_v1_type_map.csv",
+  "myth_event_count": 20,
+  "ontology_path": "data/knowledge/ontology/thevaram_ontology_v1.json",
+  "relation_count": 29,
+  "relations_path": "data/knowledge/ontology/thevaram_relations_v1.json",
+  "required_types_present": [
+    "BODY_PART",
+    "CELESTIAL",
+    "DEITY",
+    "DEVOTIONAL_ACT",
+    "DIVINE_EPITHET",
+    "FAUNA",
+    "FLORA",
+    "INSTRUMENT",
+    "MOUNTAIN",
+    "MYTH_EVENT",
+    "MYTH_FIGURE",
+    "PAN",
+    "REL_GROUP",
+    "RITUAL",
+    "RIVER",
+    "SACRED_OBJECT",
+    "SACRED_PLACE",
+    "SAINT",
+    "TEXT_WORK",
+    "THEO_CONCEPT"
+  ],
+  "status": "VALID",
+  "summary_version": "thevaram-ontology-validation-v1",
+  "tier_counts": {
+    "1": 13,
+    "2": 11,
+    "3": 1
+  },
+  "validation_errors": []
+}
