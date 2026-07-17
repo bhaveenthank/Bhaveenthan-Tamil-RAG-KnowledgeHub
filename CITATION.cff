@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this corpus or code, please cite the repository and the Zenodo DOI once published."
+title: "Tamil Literary KnowledgeHub: Irandaam Thirumurai Corpus v1 and Tools"
+type: dataset
+authors:
+  - family-names: Kajanikanth
+    given-names: Bhaveenthan
+    affiliation: University of Peradeniya
+    email: e22051@eng.pdn.ac.lk
+  - family-names: Thayasivam
+    given-names: Uthayasanker
+    affiliation: University of Moratuwa
+    email: rtuthaya@cse.mrt.ac.lk
+repository-code: "https://github.com/bhaveenthank/Bhaveenthan-Tamil-RAG-KnowledgeHub"
+date-released: "2026-07-17"
+keywords:
+  - Tamil
+  - Thevaram
+  - digital libraries
+  - corpus
+  - retrieval
+license: MIT
+

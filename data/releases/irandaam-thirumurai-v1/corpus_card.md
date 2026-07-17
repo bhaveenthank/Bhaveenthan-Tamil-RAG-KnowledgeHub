@@ -4,6 +4,11 @@
 
 This corpus preserves structured Tamil devotional poetry and commentary records for Irandaam Thirumurai, supporting future Tamil literary research, corpus analysis, citation-aware search, and educational applications.
 
+## Creators
+
+- Bhaveenthan Kajanikanth, University of Peradeniya, `e22051@eng.pdn.ac.lk`
+- Prof. Uthayasanker Thayasivam, University of Moratuwa, `rtuthaya@cse.mrt.ac.lk`
+
 ## Source
 
 - Source: Tamil Virtual Academy / TamilVU
@@ -57,6 +62,16 @@ See `schema.json` for the release schema.
 - Do not fabricate missing commentary sections.
 - Do not use the corpus to make unsupported religious, historical, or scholarly claims without human review.
 - Do not use this release as a substitute for expert Tamil scholarship where precision matters.
+
+## Rights And Access
+
+Project software, schemas, scripts, and original documentation are released under the repository license. TamilVU-derived source text may be subject to separate rights. Preserve TamilVU attribution and source URLs. If full-text redistribution permission is not confirmed before DOI publication, publish either a restricted-file Zenodo record or an open metadata/schema/checksum/sample package.
+
+See `RIGHTS_AND_ACCESS.md`.
+
+## AI-Use Statement
+
+AI tools, including OpenAI Codex/ChatGPT, were used to assist with repository documentation, code and script drafting, validation planning, analysis summaries, and manuscript drafting. The named authors remain responsible for checking all code, corpus records, statistics, claims, and release decisions before publication or submission.
 
 ## Version
 

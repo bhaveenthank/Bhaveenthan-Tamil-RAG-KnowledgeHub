@@ -80,6 +80,7 @@ The reorganized workspace exposes stable `tvu-*` console commands from the root
 | `tvu-annotate-thevaram-entities-v3` | `projects/knowledge` | Expanded Thevaram entity ontology v3 with relationships |
 | `tvu-link-thevaram-pozhppurai-v3` | `projects/knowledge` | Focused-QA-backed Thevaram paadal-to-pozhppurai v3 linker |
 | `tvu-build-pozhppurai-links-v4` | `projects/knowledge` | Gold-seed-backed Thevaram paadal-to-pozhppurai v4 linker |
+| `tvu-build-pozhppurai-links-v5-auto-hardened` | `projects/knowledge` | Auto-hardened v5 Paadal-to-Pozhippurai linker with anchor/paraphrase rules and acceptance gates |
 | `tvu-build-pozhppurai-link-qa-pack` | `projects/knowledge` | Build balanced manual QA packs for paadal-to-pozhppurai links |
 | `tvu-review-pozhppurai-link-qa-pack` | `projects/knowledge` | Fill/check Phase 3 review columns for QA packs |
 | `tvu-build-pozhppurai-review-viewer` | `projects/knowledge` | Build local HTML review page with full paadal and full pozhppurai context |

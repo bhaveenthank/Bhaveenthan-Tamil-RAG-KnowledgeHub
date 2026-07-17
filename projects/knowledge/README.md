@@ -251,3 +251,20 @@ Main outputs:
 - `paadal_pozhippurai_links_v4_hardened_corrected_usable.iob.conll`
 - `paadal_pozhippurai_links_v4_hardened_summary.json`
 - `paadal_pozhippurai_links_v4_hardened_report.md`
+
+## Thevaram Pozhippurai Linker v5 Auto-Hardened
+
+Use `knowledge.build_pozhippurai_links_v5_auto_hardened` after
+`v4_combined_learned` exists. v5 reads the existing v3/v4/v4-combined outputs,
+error-analysis artifacts, gold and review files, ontology resources, and hardening
+rules, then writes only to
+`data/processed/thevaram_pozhippurai_links/v5_auto_hardened/`.
+
+```bash
+python3 -m knowledge.build_pozhippurai_links_v5_auto_hardened
+```
+
+The v5 acceptance gate preserves all prior high-confidence primary links, rejects
+order-only high promotions, and requires missing-anchor, ambiguous-span, and broad-target
+counts to improve. Treat it as a conservative RAG/linking improvement layer, not final
+scholarly gold accuracy.

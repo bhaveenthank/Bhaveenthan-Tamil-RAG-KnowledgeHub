@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "title": "Irandaam Thirumurai Corpus v1: A Citation-Grounded Tamil Literary Corpus Release",
+    "upload_type": "dataset",
+    "description": "A structured, provenance-preserving corpus release for Irandaam Thirumurai derived from Tamil Virtual Academy/TamilVU source pages. The package includes JSONL verse-with-commentary records, JSON Schema, corpus card, datasheet, audit reports, coverage report, checksums, rights/access statement, and reuse commands. Source text is attributed to Tamil Virtual Academy/TamilVU and may be subject to separate rights.",
+    "creators": [
+      {
+        "name": "Kajanikanth, Bhaveenthan",
+        "affiliation": "University of Peradeniya"
+      },
+      {
+        "name": "Thayasivam, Uthayasanker",
+        "affiliation": "University of Moratuwa"
+      }
+    ],
+    "access_right": "open",
+    "license": "other-open",
+    "keywords": [
+      "Tamil",
+      "Thevaram",
+      "Irandaam Thirumurai",
+      "digital libraries",
+      "corpus",
+      "Tamil Virtual Academy",
+      "retrieval",
+      "FAIR data"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/bhaveenthank/Bhaveenthan-Tamil-RAG-KnowledgeHub",
+        "relation": "isSupplementedBy",
+        "resource_type": "software"
+      },
+      {
+        "identifier": "https://www.tamilvu.org/",
+        "relation": "isDerivedFrom",
+        "resource_type": "dataset"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Tamil Virtual Academy",
+        "type": "DataCollector",
+        "affiliation": "Tamil Virtual Academy"
+      }
+    ],
+    "notes": "This is not an official Tamil Virtual Academy/TamilVU release or mirror. Preserve TamilVU source attribution and verify reuse permissions for TamilVU-derived text."
+  }
+}
+

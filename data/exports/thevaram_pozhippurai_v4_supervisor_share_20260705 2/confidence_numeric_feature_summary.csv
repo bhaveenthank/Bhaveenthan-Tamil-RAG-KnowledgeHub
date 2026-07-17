@@ -1,5 +1,0 @@
-confidence,rows,pct,avg_score,median_score,avg_source_tokens,avg_target_tokens,avg_token_overlap,avg_char_overlap,avg_containment_score,avg_source_entities,avg_target_entities,avg_shared_entities,manual_review_rows,numeric_source_rows,no_tamil_source_rows
-high,975,1.99,0.6352,0.5731,4.7969,8.2164,0.2516,0.3289,0.5925,1.0359,1.0708,0.9795,27,0,0
-medium,10316,21.04,0.3758,0.3603,5.1007,13.4148,0.0881,0.1589,0.4416,0.6872,1.088,0.5527,75,2,2
-low,30859,62.95,0.2286,0.2186,4.7015,14.0029,0.0186,0.0753,0.1352,0.1962,0.7435,0.0216,30859,1333,1333
-no_link,6869,14.01,0.0,0.0,6.4385,0.0,0.0,0.0,0.0,0.3771,0.0,0.0,6869,17,17

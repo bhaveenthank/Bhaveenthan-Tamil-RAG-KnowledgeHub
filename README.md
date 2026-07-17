@@ -1,14 +1,120 @@
-# TamilVU Literary Corpus Workspace
+# Tamil Literary KnowledgeHub
 
-Workspace for building a Tamil literary knowledge store from Tamil Virtual Academy
-library pages. The repository is being migrated from a single package into a
-contract-first monorepo with independent project packages.
+Public research repository for building citation-grounded Tamil literary corpus
+resources from Tamil Virtual Academy/TamilVU source pages. The current reviewed
+release package is the **Irandaam Thirumurai Corpus v1**, prepared for reuse in
+digital libraries, Tamil literary retrieval, corpus analysis, and future
+retrieval-augmented question answering.
+
+## Current Public Release
+
+Release directory:
+
+`data/releases/irandaam-thirumurai-v1/`
+
+Release contents:
+
+- `irandaam_thirumurai.jsonl`: 1331 verse-with-commentary records.
+- `schema.json`: JSON Schema for release records.
+- `corpus_checksum.sha256`: checksums for integrity verification.
+- `corpus_card.md` and `DATASHEET.md`: dataset documentation.
+- `RIGHTS_AND_ACCESS.md`: source attribution and rights-safe release model.
+- `USAGE.md`: setup, validation, and small reuse examples.
+- audit, coverage, schema-validation, and manual-sample reports.
+
+Release summary:
+
+- Source: Tamil Virtual Academy / TamilVU, `https://www.tamilvu.org/`
+- Scope: Irandaam Thirumurai only.
+- Hymns: `122`
+- Verse records: `1331`
+- Missing verse text records: `0`
+- Duplicate song numbers: `0`
+- Schema violations: `0`
+- Sampled coverage: `100%`
+
+This repository is not an official TamilVU mirror. Source pages are attributed to
+Tamil Virtual Academy/TamilVU. See
+`data/releases/irandaam-thirumurai-v1/RIGHTS_AND_ACCESS.md` before redistributing
+TamilVU-derived text.
+
+## Quick Start
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -e .
+python3 scripts/validate-artifact.py data/releases/irandaam-thirumurai-v1/corpus_manifest.json
+```
+
+Verify release checksums:
+
+```bash
+cd data/releases/irandaam-thirumurai-v1
+shasum -a 256 -c corpus_checksum.sha256
+```
+
+Print the first three records:
+
+```bash
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+path = Path("data/releases/irandaam-thirumurai-v1/irandaam_thirumurai.jsonl")
+with path.open(encoding="utf-8") as handle:
+    for index, line in enumerate(handle, start=1):
+        record = json.loads(line)
+        print(record["song_no"], record["hymn_url"])
+        print(record["verse_text"].splitlines()[0])
+        print()
+        if index == 3:
+            break
+PY
+```
+
+## Zenodo / DOI Status
+
+Zenodo metadata is prepared in:
+
+- `.zenodo.json`
+- `data/releases/irandaam-thirumurai-v1/zenodo_metadata.json`
+- `docs/zenodo-release.md`
+
+Draft upload helper:
+
+```bash
+python3 scripts/zenodo_upload_release.py --dry-run
+```
+
+Before publishing a DOI, confirm the final source-text redistribution decision.
+If explicit TamilVU full-text redistribution permission is not confirmed, use the
+rights-safe alternatives documented in `docs/zenodo-release.md`.
+
+## AI-Use Statement
+
+AI tools, including OpenAI Codex/ChatGPT, were used to assist with repository
+documentation, code and script drafting, validation planning, analysis summaries,
+and manuscript drafting. The named authors remain responsible for checking all
+code, corpus records, statistics, claims, and release decisions before
+publication or submission.
+
+## License
+
+Project software, schemas, scripts, and original documentation are released under
+the MIT License. TamilVU-derived source text may be subject to separate rights.
+See `LICENSE` and `data/releases/irandaam-thirumurai-v1/RIGHTS_AND_ACCESS.md`.
+
+## Project Context
 
 The first target catalog is:
 
 https://www.tamilvu.org/ta/library-libcontnt-273141
 
-This repository is intentionally set up in phases. It does not scrape the full site; it defines the architecture, storage layout, data contracts, crawler boundaries, and one controlled one-hymn pilot scrape.
+This repository is intentionally phase-based. It does not authorize broad
+uncontrolled scraping; it defines architecture, storage layout, data contracts,
+crawler boundaries, controlled pilot extraction, normalized releases, and
+auditable retrieval layers.
 
 ## Goals
 

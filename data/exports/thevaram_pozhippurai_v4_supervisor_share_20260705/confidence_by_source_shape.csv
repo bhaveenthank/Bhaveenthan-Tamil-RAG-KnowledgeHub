@@ -1,7 +1,0 @@
-source_shape,total,high,medium,low,no_link,high_pct,medium_pct,low_pct,no_link_pct
-punctuated_phrase,26459,536,5908,15533,4482,2.03,22.33,58.71,16.94
-ordinary_phrase,14347,338,3564,9112,1333,2.36,24.84,63.51,9.29
-single_token,4172,49,349,3572,202,1.17,8.37,85.62,4.84
-question,1353,38,210,629,476,2.81,15.52,46.49,35.18
-numeric_only,1352,0,2,1333,17,0.0,0.15,98.59,1.26
-long_line,1336,14,283,680,359,1.05,21.18,50.9,26.87

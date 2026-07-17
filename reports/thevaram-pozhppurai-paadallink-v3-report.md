@@ -11,10 +11,10 @@ diagnostics and are not promoted to positive training data.
 
 - Output root: `data/processed/thevaram_pozhippurai_links/v3`
 - Schema version: `thevaram-pozhppurai-paadallink-v3`
-- Total links / coverage rows: `48951`
-- Positive training links: `11126`
-- Manual review required: `37825`
-- No-link rows: `6869`
+- Total links / coverage rows: `47599`
+- Positive training links: `24190`
+- Manual review required: `23409`
+- No-link rows: `6852`
 - Split/child or split-parent diagnostic rows: `195`
 - Rules loaded: `159`
 - Rules matched in corpus: `157`
@@ -27,22 +27,22 @@ diagnostics and are not promoted to positive training data.
 
 | Confidence | Rows |
 | --- | ---: |
-| `high` | 914 |
-| `low` | 30859 |
-| `medium` | 10309 |
-| `no_link` | 6869 |
+| `high` | 2928 |
+| `low` | 16424 |
+| `medium` | 21395 |
+| `no_link` | 6852 |
 
 ## Relationship Distribution
 
 | Relationship | Rows |
 | --- | ---: |
-| `describes_entity` | 7053 |
-| `explains_line` | 1068 |
-| `explains_phrase` | 11139 |
-| `glosses_word` | 3139 |
-| `interprets_image` | 10066 |
-| `theological_explanation` | 9617 |
-| `unlinked` | 6869 |
+| `describes_entity` | 6833 |
+| `explains_line` | 1238 |
+| `explains_phrase` | 11235 |
+| `glosses_word` | 3656 |
+| `interprets_image` | 8973 |
+| `theological_explanation` | 8812 |
+| `unlinked` | 6852 |
 
 ## Thirumurai Distribution
 
@@ -50,7 +50,7 @@ diagnostics and are not promoted to positive training data.
 | --- | ---: |
 | `1` | 8073 |
 | `2` | 7760 |
-| `3` | 9182 |
+| `3` | 7830 |
 | `4` | 4304 |
 | `5` | 4074 |
 | `6` | 7881 |

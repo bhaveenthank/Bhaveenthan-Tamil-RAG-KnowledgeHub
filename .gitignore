@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 *.pyc
+.DS_Store
 .env
 .env.*
 !.env.example
@@ -11,6 +12,10 @@ __pycache__/
 *.secrets.zsh
 service-account*.json
 *-service-account.json
+output/
+tmp/
+dist/
+data/exports/
 
 data/raw/**
 data/processed/**
