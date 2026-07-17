@@ -12,7 +12,7 @@
 
 \begin{document}
 
-\title[Audit-First Tamil Literary Corpus]{An Audit-First Corpus Resource for Citation-Grounded Tamil Literary Research}
+\title[Thevaram 1--8 Corpus Resource]{An Audit-First Public Corpus Resource for Thevaram 1--8}
 
 \author{Bhaveenthan Kajanikanth}
 \affiliation{%
@@ -31,7 +31,7 @@
 \renewcommand{\shortauthors}{Kajanikanth and Thayasivam}
 
 \begin{abstract}
-Tamil literary material is increasingly available through digital libraries, but web access alone does not make a collection reusable for computational research. Classical Tamil corpora need stable source provenance, preserved literary hierarchy, Unicode-safe normalization, and clear separation between poem text and commentary. We present an audit-first corpus resource built from Tamil Virtual Academy/TamilVU Thevaram material. The broader normalized resource covers Thevaram books 1--8 with 8 books, 841 paadal thogupugal, 9012 paadalgal, 9012 commentary records, and 64073 text spans. A freeze-ready Irandaam Thirumurai v1 release subset contains 122 hymns and 1331 verse records, with schema validation, checksums, a corpus card, and audit reports. The resource includes reusable schemas, extraction and normalization code, quality reports, and experimental evidence layers for entity mentions and paadal-pozhppurai linking. We argue that audit-first corpus construction is a necessary foundation for citation-grounded Tamil literary search, digital humanities, and future retrieval-augmented question answering.
+Tamil literary works are increasingly available through digital libraries, but web access alone does not make them reusable research corpora. Computational use needs stable identifiers, source provenance, preserved literary hierarchy, Unicode-safe normalization, and clear separation between poem text and commentary. We present a public GitHub resource for Thevaram books 1--8 derived from Tamil Virtual Academy/TamilVU source pages. The resource contains 8 Thirumurai books, 841 paadal thogupugal, 9012 paadalgal, 9012 commentary records, and 64073 text spans. It includes normalized JSONL tables, schema files, checksums, corpus documentation, rights/access notes, setup commands, and experimental evidence layers for entity annotation and paadal-pozhppurai linking. The Irandaam Thirumurai v1 package is provided as the strongest audited subset, with 122 hymns, 1331 verse records, schema validation, checksums, and audit reports. The contribution is an audit-first resource model for Tamil digital-library research: it makes structure, provenance, quality, and uncertainty visible before downstream retrieval or question answering.
 \end{abstract}
 
 \begin{CCSXML}
@@ -64,32 +64,32 @@ Tamil literary material is increasingly available through digital libraries, but
 
 \section{Introduction}
 
-Tamil Virtual Academy/TamilVU provides important online access to Tamil literary and educational material \cite{tamilvu,tamilvulibrary}. Yet a set of web pages is not the same as a reusable research corpus. A scholar may read a hymn page in a browser, but a retrieval system needs stable record identifiers, source URLs, text boundaries, metadata, and known gaps. This problem is sharper for classical Tamil literature because a useful record is not only a block of text. It may include a poem, commentary, book and hymn identifiers, author metadata, line order, and source-specific URLs.
+Tamil Virtual Academy/TamilVU provides important public access to Tamil literary and educational material \cite{tamilvu,tamilvulibrary}. Yet a page that can be read in a browser is not automatically a reusable digital-library resource. A retrieval system, corpus analyst, or annotation workflow needs more than page text. It needs source URLs, stable record identifiers, poem boundaries, commentary fields, book and hymn metadata, known gaps, and validation evidence.
 
-This paper presents an audit-first corpus resource for Thevaram, a major Tamil Saiva devotional corpus. The resource is designed for digital library reuse, Tamil literary research, and future citation-grounded retrieval. Its main idea is simple: before building search, analytics, or a chat system, the corpus must make provenance, structure, and uncertainty visible.
+This paper presents an audit-first public corpus resource for Thevaram books 1--8, a major Tamil Saiva devotional collection. The resource is designed for Tamil literary research, digital humanities, citation-aware search, and future retrieval-augmented question answering. Its central principle is simple: before building models or interfaces, the corpus must expose provenance, structure, and uncertainty.
 
 Our contributions are:
 
 \begin{enumerate}
-  \item a normalized Thevaram 1--8 corpus resource with 8 books, 841 paadal thogupugal, 9012 paadalgal, 9012 commentary records, and 64073 text spans;
-  \item a freeze-ready Irandaam Thirumurai v1 release subset with 122 hymns, 1331 verse records, schema validation, checksums, and a corpus card;
-  \item a reusable pipeline for extraction, Unicode normalization, schema validation, quality reporting, and corpus release packaging;
-  \item experimental evidence layers for entity mentions and paadal-pozhppurai linking, clearly marked as review aids rather than gold scholarly annotation.
+  \item a public GitHub resource containing normalized Thevaram 1--8 JSONL tables with 8 books, 841 paadal thogupugal, 9012 paadalgal, 9012 commentary records, and 64073 text spans;
+  \item reviewer-facing documentation including schema, checksums, corpus card, datasheet, reuse commands, and rights notes;
+  \item an audited Irandaam Thirumurai v1 subset with 122 hymns and 1331 verse records, schema validation, checksums, and audit reports;
+  \item experimental evidence layers for entity annotation and commentary linking, explicitly marked as review aids rather than gold expert annotation.
 \end{enumerate}
 
-The public repository is available as the \href{https://github.com/bhaveenthank/Bhaveenthan-Tamil-RAG-KnowledgeHub}{Tamil Literary KnowledgeHub}. The Zenodo DOI will be added after final rights review. Project code and original documentation are released under the MIT License; TamilVU-derived source text is attributed to Tamil Virtual Academy/TamilVU and may be subject to separate rights.
+The public resource is available as the \href{https://github.com/bhaveenthank/Bhaveenthan-Tamil-RAG-KnowledgeHub}{Tamil Literary KnowledgeHub GitHub repository}. Project software, schemas, scripts, and original documentation are released under the MIT License. TamilVU-derived source text is attributed to Tamil Virtual Academy/TamilVU and may be subject to separate rights.
 
 \section{Related Work and Resource Gap}
 
-The JCDL Resources Track asks for open, reusable resources that support transparent and reproducible digital library research \cite{jcdl2026resources}. The resource is also shaped by FAIR principles, which frame data as findable, accessible, interoperable, and reusable for both people and machines \cite{wilkinson2016fair}. We follow the spirit of datasheets for datasets by documenting motivation, composition, collection process, recommended uses, and limits \cite{gebru2021datasheets}.
+The JCDL Resources Track emphasizes public resources that are reusable, documented, and accessible without review barriers \cite{jcdl2026resources}. Our resource follows the FAIR view that research data should be findable, accessible, interoperable, and reusable \cite{wilkinson2016fair}. We also follow the spirit of datasheets for datasets by documenting composition, collection process, intended uses, and limitations \cite{gebru2021datasheets}.
 
-Prior work on Indian language resources has shown the value of repositories and language resources for technology development \cite{choudhary2021ldcil}. In cultural heritage, the ``collections as data'' view argues that digitized collections, metadata, and transcriptions should support computational reuse, not only page-level reading \cite{ziegler2020opendata}. Tamil-specific scholarly infrastructure is also growing. For example, Tamilex aims to connect Classical Tamil texts, commentaries, concordances, and lexicographic resources for philological research \cite{tamilex2026}.
+Language-resource repositories such as LDC-IL show the importance of curated resources for Indian language technology \cite{choudhary2021ldcil}. Cultural-heritage work has also argued that collections should support computational reuse, not only page-level display \cite{ziegler2020opendata}. Tamil scholarly infrastructure is growing as well; for example, Tamilex connects Classical Tamil texts, commentaries, concordances, and lexicographic resources for philological work \cite{tamilex2026}.
 
-Our resource fills a different and practical gap. It does not claim to replace scholarly editions or expert annotation. Instead, it provides a reproducible, provenance-preserving engineering layer for Tamil literary material from TamilVU. The novelty is not only that text is extracted. The contribution is the release discipline: verse/commentary separation, source URLs, stable schemas, audit reports, checksums, and explicit distinction between mature records and experimental evidence layers.
+The gap addressed here is practical. Tamil literary material exists online, but reusable computational research needs a disciplined data layer. This resource contributes that layer for Thevaram 1--8: normalized tables, source provenance, text spans, validation, release documentation, and evidence layers for future retrieval and annotation.
 
 \section{Resource Design}
 
-The pipeline follows the architecture in Figure~\ref{fig:pipeline}. It starts from TamilVU source pages, stores source-linked records, normalizes Tamil text, validates schema and table quality, and produces release artifacts. The design avoids broad claims that cannot be audited. Raw source, normalized corpus records, quality reports, and retrieval evidence layers are kept separate.
+Figure~\ref{fig:pipeline} shows the audit-first pipeline. The design separates source inspection, extraction, normalization, validation, release documentation, and downstream evidence layers. This separation is important because literary corpora are easy to flatten. A single page may contain a hymn, poem lines, commentary, source parameters, place names, musical metadata, and navigation context.
 
 \begin{figure}[t]
   \centering
@@ -97,25 +97,25 @@ The pipeline follows the architecture in Figure~\ref{fig:pipeline}. It starts fr
     \begin{minipage}{0.94\columnwidth}
       \small
       \textbf{TamilVU pages}
-      $\rightarrow$ source inspection
+      $\rightarrow$ inspected source URLs
       $\rightarrow$ extraction
       $\rightarrow$ normalized JSONL tables
-      $\rightarrow$ schema and audit reports
-      $\rightarrow$ release package
-      $\rightarrow$ retrieval and annotation layers
+      $\rightarrow$ schema and checksums
+      $\rightarrow$ corpus card and datasheet
+      $\rightarrow$ retrieval and annotation evidence
     \end{minipage}}
-  \caption{Audit-first resource pipeline. Each stage keeps source provenance and produces reviewable artifacts.}
-  \Description{A linear pipeline from TamilVU pages to source inspection, extraction, normalized JSONL tables, schema and audit reports, release package, and retrieval or annotation layers.}
+  \caption{Audit-first resource pipeline. Each stage preserves source provenance and produces reviewable artifacts.}
+  \Description{A pipeline from TamilVU pages to inspected source URLs, extraction, normalized JSONL tables, schema and checksums, corpus card and datasheet, and retrieval or annotation evidence.}
   \label{fig:pipeline}
 \end{figure}
 
-The core schema separates five record families: book records, paadal thogupugal, paadal records, commentary records, and text spans. This is more conservative than storing one document per page. It allows a future system to know whether evidence comes from a poem line, a commentary field, metadata, or an uncertain derived link.
+The core schema uses five families: Thirumurai books, paadal thogupugal, paadal records, commentary records, and text spans. This structure keeps poem text separate from commentary and keeps span-level evidence linked to parent records. The normalized tables are stored as JSONL to make them easy to inspect, stream, validate, and reuse in Python or other tools.
 
-Normalization uses NFC Unicode normalization, removes unsafe invisible/control characters, collapses repeated spaces within lines, trims line edges, and rebuilds span offsets. Line boundaries are preserved because they are part of the poem structure. The quality reports check schema validity, missing text, duplicate identifiers, source URL presence, and table consistency.
+Normalization applies NFC Unicode normalization, removes unsafe invisible/control characters, collapses repeated spaces within lines, trims line edges, and rebuilds span offsets. Poem line boundaries are preserved because line order is part of the literary structure. The repository includes schemas, checksums, and validation reports so that users can check whether a local copy matches the public resource.
 
-\section{Corpus Contents}
+\section{Contents and Documentation}
 
-Table~\ref{tab:scope} summarizes the current Thevaram 1--8 normalized resource. These counts describe the broad resource under active curation. The Irandaam Thirumurai v1 subset is the strongest freeze-ready release.
+Table~\ref{tab:scope} summarizes the current Thevaram 1--8 normalized resource. These counts describe the full public GitHub resource. The Irandaam Thirumurai v1 package is the most mature audited subset within it.
 
 \begin{table}[t]
   \caption{Thevaram 1--8 normalized corpus scope.}
@@ -140,13 +140,24 @@ Table~\ref{tab:scope} summarizes the current Thevaram 1--8 normalized resource. 
   \end{tabular}
 \end{table}
 
-The release package includes JSONL records, JSON Schema, a corpus manifest, checksums, release notes, a corpus card, schema validation report, coverage report, and manual audit sample. The Irandaam Thirumurai v1 release contains 122 hymns and 1331 verse records. Its audit reports record zero schema violations, zero duplicate song numbers, zero missing verse text records, and 100\% sampled coverage. Seven records have partial commentary because one commentary field appears absent in the source.
+The resource includes a top-level README, MIT license for project-owned material, citation metadata, a schema, corpus card, datasheet, usage examples, rights/access statement, and checksum files. A minimal reuse path is:
 
-The broader Thevaram 1--8 corpus also records commentary coverage. This matters because a retrieval system should not answer from commentary that is not present. Pozhppurai coverage is high for books 2--6, lower for book 7, and absent in the current normalized table for book 8. The paper therefore presents book 8 as poem-level coverage, not commentary-complete coverage.
+\begin{verbatim}
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -e .
+cd data/processed/thevaram_normalized
+python3 -m json.tool normalization_summary.json
+cd ../../..
+shasum -a 256 -c \
+  data/releases/thevaram-1-8-v1/corpus_checksum.sha256
+\end{verbatim}
 
-\section{Reuse and Review Criteria}
+The Irandaam Thirumurai v1 subset contains 122 hymns and 1331 verse records. Its audit reports record zero schema violations, zero duplicate song numbers, zero missing verse text records, and complete sampled coverage. This subset is useful for users who want the strictest frozen package before working with the broader 1--8 tables.
 
-Table~\ref{tab:review} maps the resource to the JCDL resource-review criteria. This table is included deliberately: it makes the reviewer path explicit.
+\section{Quality Evidence and Reuse}
+
+Table~\ref{tab:review} maps the resource to the JCDL review criteria. This is included to make the resource value explicit.
 
 \begin{table}[t]
   \caption{Resource review criteria and supporting evidence.}
@@ -155,43 +166,31 @@ Table~\ref{tab:review} maps the resource to the JCDL resource-review criteria. T
   \small
   \begin{tabular}{p{0.20\columnwidth}p{0.70\columnwidth}}
     \toprule
-    Criterion & Evidence in the resource \\
+    Criterion & Evidence \\
     \midrule
-    Novelty & Audit-first Tamil literary corpus design with verse/commentary separation, source URLs, schemas, checksums, and quality reports. \\
-    Availability & Public repository or DOI, release package, documentation, and license. \textbf{[Complete before submission.] }\\
-    Utility & JSONL records, schema, corpus card, setup commands, audit reports, and example retrieval/analysis workflows. \\
-    Impact & Enables citation-aware Tamil literary search, corpus analysis, annotation review, and future retrieval-augmented QA. \\
+    Novelty & Audit-first Tamil literary corpus model with hierarchy, source URLs, poem/commentary separation, checksums, and reviewable evidence layers. \\
+    Availability & Public GitHub repository, documentation, setup commands, license, and rights/access statement. \\
+    Utility & JSONL tables, schema, corpus card, datasheet, checksums, audit subset, and examples for validation and reuse. \\
+    Impact & Supports citation-aware Tamil literary search, corpus analysis, annotation workflows, and future Tamil QA. \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-Typical reuse tasks include: locating all occurrences of a phrase in poem text, comparing commentary coverage by book, building a Tamil lexical or hybrid retrieval index, creating annotation tasks for deities and places, and testing citation-grounded answer generation. A minimal usage example is:
+Typical reuse tasks include phrase search over poem text, commentary coverage analysis by book, Tamil lexical or hybrid retrieval, entity review workflows, and citation-grounded question answering experiments. The resource also helps users distinguish evidence types: a poem span, a commentary span, metadata, or a derived annotation are not treated as the same kind of evidence.
 
-\begin{verbatim}
-python -m json.tool schema.json
-python scripts/validate-artifact.py \
-  data/releases/irandaam-thirumurai-v1
-\end{verbatim}
+Two derived layers are included as experimental evidence. The entity layer contains deterministic mentions linked to registries for deities, temples, nature terms, sacred objects, body parts, and theological concepts. It reports 107761 entity mentions, 624 registry rows, and zero invalid bounds or span mismatches. The paadal-pozhppurai linking layer aligns poem spans to explanatory commentary spans and is best treated as a diagnostic review layer. Many links require review because classical poetic language and prose explanation often do not share surface vocabulary.
 
-\section{Experimental Evidence Layers}
+\section{Ethics, Rights, AI Use, and Limitations}
 
-Two derived layers support future research. The entity layer contains deterministic mentions linked to registries for deities, temples, nature terms, sacred objects, body parts, and theological concepts. It is useful for retrieval and review queues, but it is not final expert annotation.
+The resource is derived from Tamil Virtual Academy/TamilVU pages. It is not an official TamilVU release or mirror. Source text and commentary are attributed to Tamil Virtual Academy/TamilVU. Project-owned code, schemas, scripts, and documentation are MIT licensed; TamilVU-derived source text may be subject to separate rights. Users should check source terms before redistributing source-derived full text.
 
-The paadal-pozhppurai linking layer aligns poem spans to explanatory commentary spans. It currently contains 49019 span-level link records across 9012 paadalgal. The confidence distribution is diagnostic: high-confidence links are a small minority, while many rows require review because classical poetic language and prose explanation often do not share surface vocabulary. This is an important result for digital library design. Commentary alignment should be treated as evidence management, not as a solved string-matching task.
+No human participants or sensitive personal data are involved. AI tools, including OpenAI Codex/ChatGPT, were used to assist with code and script drafting, validation planning, analysis summaries, documentation, and manuscript drafting. The named authors remain responsible for all corpus records, statistics, claims, rights decisions, and final manuscript content.
 
-\section{Ethics, Rights, and AI Use}
-
-The source material comes from Tamil Virtual Academy/TamilVU. The resource must not be presented as an official TamilVU mirror. The final public release should state what can be redistributed, what is provided as metadata or derived statistics, and how users should cite the source. No human participants or sensitive personal data are involved.
-
-If AI tools were used to conduct the research lifecycle, including code generation, extraction design, testing, validation, analysis, or figure creation, the final submission must disclose that use according to the ACM policy cited by JCDL. AI assistance used only for writing does not need disclosure under the current ACM rule, but the named authors remain responsible for all content.
-
-\section{Limitations and Maintenance}
-
-The full Thevaram 1--8 resource is not a fully expert-reviewed scholarly edition. The Irandaam Thirumurai v1 release is the most mature audited subset. Commentary coverage is uneven, especially for book 8 in the current normalized tables. Entity mentions and commentary links are review aids, not gold labels. Future work will expand manual review, improve commentary coverage, publish stable release DOIs, and add retrieval benchmarks with citation-grounding checks.
+The resource has limitations. It is not a complete TamilVU corpus and not an expert-verified scholarly edition. Commentary coverage is uneven: book 8 currently has poem-level coverage but no pozhppurai or kurippurai coverage in the normalized commentary table. Entity annotations and paadal-pozhppurai links are review aids, not gold labels. Future work will expand manual review, improve commentary coverage, add retrieval benchmarks, and create a DOI-backed archive when the final rights/access model is settled.
 
 \section{Conclusion}
 
-We presented an audit-first Tamil literary corpus resource for Thevaram material from TamilVU. The resource combines normalized records, source provenance, schema validation, release packaging, and quality reports. Its main contribution is not only extracted text, but a reusable method for turning digital library pages into a trustworthy corpus foundation. This foundation can support Tamil literary search, digital humanities research, and future citation-grounded Tamil question answering.
+We presented an audit-first public corpus resource for Thevaram books 1--8. The resource turns TamilVU pages into normalized, source-linked, documented, and checkable corpus tables. Its contribution is not only extracted text, but a reusable method for making Tamil literary data suitable for digital-library research. By preserving provenance, hierarchy, validation evidence, and uncertainty, the resource provides a foundation for citation-grounded Tamil literary search, corpus analysis, annotation review, and future Tamil question answering.
 
 \begin{acks}
 The authors thank Tamil Virtual Academy/TamilVU for making Tamil literary materials available online. This paper is not an official TamilVU publication or mirror.

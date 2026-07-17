@@ -1,10 +1,14 @@
-# Zenodo Release Plan
+# Optional Zenodo Release Plan
+
+Zenodo is not required for the current JCDL submission because the public GitHub
+repository is the primary resource. Use this plan later only when creating a
+frozen DOI-backed archive.
 
 ## Intended Record
 
 Title:
 
-`Irandaam Thirumurai Corpus v1: A Citation-Grounded Tamil Literary Corpus Release`
+`Tamil Literary KnowledgeHub: Thevaram 1-8 Corpus Resource and Tools`
 
 Resource type:
 
@@ -15,9 +19,12 @@ Creators:
 - Kajanikanth, Bhaveenthan; University of Peradeniya
 - Thayasivam, Uthayasanker; University of Moratuwa
 
-Primary package:
+Recommended first DOI package:
 
-`data/releases/irandaam-thirumurai-v1/`
+Use either a rights-safe Thevaram 1-8 package or the stricter audited subset:
+
+- Full resource documentation and code from the public GitHub repository.
+- Audited subset package: `data/releases/irandaam-thirumurai-v1/`.
 
 Metadata source:
 
@@ -25,7 +32,8 @@ Metadata source:
 
 ## Files To Upload
 
-Upload the release directory contents, not the full repository working tree:
+If uploading the existing audited subset, upload the release directory contents,
+not the full repository working tree:
 
 - `irandaam_thirumurai.jsonl`
 - `schema.json`

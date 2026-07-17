@@ -1,12 +1,48 @@
 # Tamil Literary KnowledgeHub
 
 Public research repository for building citation-grounded Tamil literary corpus
-resources from Tamil Virtual Academy/TamilVU source pages. The current reviewed
-release package is the **Irandaam Thirumurai Corpus v1**, prepared for reuse in
-digital libraries, Tamil literary retrieval, corpus analysis, and future
-retrieval-augmented question answering.
+resources from Tamil Virtual Academy/TamilVU source pages. The current JCDL
+resource is a public GitHub repository containing a normalized **Thevaram 1-8**
+corpus resource, reusable processing code, documentation, release checks, and
+experimental evidence layers for Tamil literary retrieval and analysis.
 
-## Current Public Release
+The most mature frozen subset is **Irandaam Thirumurai Corpus v1**. It is kept
+as a stricter audited release package inside the broader Thevaram 1-8 resource.
+
+## Current Public Resource
+
+Primary public repository:
+
+`https://github.com/bhaveenthank/Bhaveenthan-Tamil-RAG-KnowledgeHub`
+
+Main Thevaram 1-8 normalized tables:
+
+- `data/processed/thevaram_normalized/thirumurai_books.jsonl`
+- `data/processed/thevaram_normalized/paadal_thogupugal.jsonl`
+- `data/processed/thevaram_normalized/paadalgal.jsonl`
+- `data/processed/thevaram_normalized/commentaries.jsonl`
+- `data/processed/thevaram_normalized/text_spans.jsonl`
+
+Reviewer-facing resource documentation:
+
+`data/releases/thevaram-1-8-v1/`
+
+Resource summary:
+
+- Source: Tamil Virtual Academy / TamilVU, `https://www.tamilvu.org/`
+- Scope: Thevaram books 1-8.
+- Thirumurai books: `8`
+- Paadal thogupugal: `841`
+- Paadalgal: `9012`
+- Commentary records: `9012`
+- Text spans: `64073`
+- Normalization version: `thevaram-normalized-v1`
+
+The broader Thevaram 1-8 tables are under active curation. The repository also
+contains experimental entity and paadal-pozhppurai evidence layers that should
+be treated as review aids, not expert-verified scholarly annotation.
+
+## Audited Subset
 
 Release directory:
 
@@ -44,6 +80,7 @@ TamilVU-derived text.
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -e .
+python3 -m json.tool data/processed/thevaram_normalized/normalization_summary.json
 python3 scripts/validate-artifact.py data/releases/irandaam-thirumurai-v1/corpus_manifest.json
 ```
 
@@ -73,23 +110,11 @@ with path.open(encoding="utf-8") as handle:
 PY
 ```
 
-## Zenodo / DOI Status
+## DOI Status
 
-Zenodo metadata is prepared in:
-
-- `.zenodo.json`
-- `data/releases/irandaam-thirumurai-v1/zenodo_metadata.json`
-- `docs/zenodo-release.md`
-
-Draft upload helper:
-
-```bash
-python3 scripts/zenodo_upload_release.py --dry-run
-```
-
-Before publishing a DOI, confirm the final source-text redistribution decision.
-If explicit TamilVU full-text redistribution permission is not confirmed, use the
-rights-safe alternatives documented in `docs/zenodo-release.md`.
+No Zenodo DOI is required for the current JCDL submission because the resource is
+publicly available through GitHub. A Zenodo record can be created later for a
+frozen archived version after the final rights/access decision is confirmed.
 
 ## AI-Use Statement
 

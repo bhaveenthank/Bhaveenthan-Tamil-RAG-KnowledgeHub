@@ -1,98 +1,125 @@
 # JCDL 2026 Resource Paper Strategy
 
-## Best Positioning
+## Core Positioning
 
-Submit this as a resource paper about a reusable Tamil literary corpus pipeline and pilot release, not as a generic scraper paper.
+Submit the work as a **full public GitHub resource** for Tamil digital-library
+research:
+
+> Tamil literary works are visible on the web, but they are not automatically
+> reusable research corpora. This resource turns TamilVU Thevaram pages into a
+> structured, provenance-preserving, auditable corpus resource for citation-
+> grounded search, analysis, annotation, and future Tamil literary QA.
 
 Recommended title:
 
-**An Audit-First Corpus Resource for Citation-Grounded Tamil Literary Research**
+**An Audit-First Public Corpus Resource for Thevaram 1-8**
 
-Core claim:
+The paper should not be framed as a scraper paper. The strong claim is the
+resource design:
 
-> We present an audit-first pipeline and release package that transforms TamilVU Thevaram material into a provenance-preserving, citation-grounded Tamil literary corpus resource, with clear separation between release-ready records, audit reports, and experimental evidence layers.
+- public GitHub repository available without login;
+- normalized Thevaram 1-8 JSONL tables;
+- schema and checksums;
+- corpus card and datasheet;
+- source URLs and source parameters;
+- poem/commentary separation;
+- Irandaam Thirumurai as the strongest audited subset;
+- entity and commentary-linking layers marked as experimental evidence, not gold
+  annotation.
 
-This is strong for JCDL because the Resources Track values public datasets, reusable pipelines, documentation, provenance, open access, FAIR alignment, and impact for digital libraries.
+## Reviewer View
 
-## Reviewer Lens
+### Novelty
 
-Reviewers will likely ask four questions:
+The novelty is not simply that Tamil text was collected. The contribution is an
+audit-first corpus model for classical Tamil literature: literary hierarchy,
+source provenance, Unicode normalization, verse/commentary boundaries, table
+quality checks, release documentation, and derived evidence layers.
 
-1. **Novelty:** Is this more than scraping?
-   Answer: Yes. The novelty is the audit-first resource design: literary hierarchy, verse/commentary separation, source URLs, immutable provenance, schema validation, quality reports, and retrieval-ready evidence layers.
+### Availability
 
-2. **Availability:** Can reviewers access it?
-   Answer needed before submission: create a public GitHub or Zenodo record. The paper currently uses placeholders. Do not submit until those links work without login.
+The public GitHub repository is enough for the JCDL requirement because the call
+allows stable public repositories such as GitHub, Zenodo, or institutional
+repositories. Zenodo can be created later, but it is not mandatory for
+submission.
 
-3. **Utility:** Can others reuse it?
-   Answer: Provide JSONL data or a rights-safe sample, schemas, corpus card, checksums, quality reports, and commands.
+The paper should point to:
 
-4. **Impact:** What research does it enable?
-   Answer: citation-aware Tamil literary search, corpus analysis, digital humanities, annotation workflows, Tamil literary QA/RAG, and evaluation of retrieval over verse-plus-commentary material.
+`https://github.com/bhaveenthank/Bhaveenthan-Tamil-RAG-KnowledgeHub`
 
-## Strongest Narrative
+### Utility
 
-Open with this problem:
+Make reuse concrete. Mention:
 
-Tamil literary works are online, but online pages are not reusable research corpora. A useful corpus must preserve source trails, hierarchy, verse/commentary boundaries, Unicode integrity, and known gaps.
+- JSONL tables for books, groups, poems, commentaries, and spans;
+- `schema.json`;
+- checksum file;
+- `README`, `DATASHEET.md`, `corpus_card.md`, `RIGHTS_AND_ACCESS.md`,
+  `USAGE.md`;
+- command-line examples;
+- existing tests and validation reports.
 
-Then show the answer:
+### Impact
 
-An audit-first pipeline for Thevaram books 1-8, with a freeze-ready Irandaam Thirumurai v1 release subset.
+The resource enables:
 
-Then show evidence:
+- Tamil literary search with citations;
+- comparative corpus analysis across Thirumurai books;
+- commentary-aware retrieval;
+- annotation review workflows for entities, places, deities, imagery, and
+  concepts;
+- future retrieval-augmented Tamil literary question answering.
 
-- 8 Thirumurai books.
-- 841 paadal thogupugal.
-- 9012 paadalgal.
-- 9012 commentary records.
-- 64073 text spans.
-- 122 hymns and 1331 verse records in the freeze-ready Irandaam Thirumurai v1 release.
-- 0 schema violations in the release subset.
-- Checksums, corpus card, schema, audit reports, and sample audit evidence.
+## Required Honesty
 
-Then be honest:
+Be explicit about limitations. This will make the paper stronger, not weaker.
 
-The full 1-8 resource is broad normalized coverage under curation. The Irandaam Thirumurai subset is the strongest audited release. Entity annotation and paadal-pozhppurai links are evidence layers, not gold scholarly annotation.
+Use:
 
-## What To Include In The Final Submission
-
-- Stable public repository or Zenodo DOI.
-- Explicit license for code and data, or a rights-safe release model if full text cannot be redistributed.
-- Corpus card or datasheet.
-- Schema file.
-- Checksums.
-- Setup and reuse commands.
-- One small usage example.
-- Clear limitations.
-- AI-use statement if AI was used for research code, data construction, validation, analysis, figures, or other research lifecycle steps.
-
-## What Not To Claim
+> Thevaram 1-8 is the full public corpus resource. Irandaam Thirumurai v1 is the
+> most mature audited subset. Entity annotation and paadal-pozhppurai linking are
+> experimental evidence layers.
 
 Avoid:
 
-- "Complete TamilVU corpus."
-- "Official TamilVU mirror."
-- "Gold-standard annotations."
-- "Expert-verified every record."
-- "Solved Tamil literary QA."
+- "complete TamilVU corpus";
+- "official TamilVU mirror";
+- "gold-standard annotations";
+- "expert-verified every record";
+- "solved Tamil literary QA";
+- "full open redistribution license for TamilVU text."
 
-Use instead:
+## Paper Structure
 
-- "Provenance-preserving corpus resource."
-- "Audit-first pipeline."
-- "Release-ready audited subset."
-- "Experimental evidence layers for retrieval and review."
-- "Citation-grounded foundation for future Tamil literary QA."
+1. **Problem:** web access is not enough for reusable corpus research.
+2. **Resource:** public GitHub resource for Thevaram 1-8.
+3. **Design:** source-linked relational JSONL tables with strict separation of
+   poem text, commentary, metadata, and spans.
+4. **Documentation:** schema, datasheet, corpus card, checksums, rights/access,
+   usage examples.
+5. **Evidence:** corpus counts, commentary coverage, Irandaam audited subset,
+   entity layer, commentary-linking layer.
+6. **Limitations:** rights, uneven commentary, experimental layers, no claim of
+   official status.
+7. **Impact:** citation-grounded Tamil literary search, digital humanities, and
+   future QA.
 
-## Suggested Submission Checklist
+## Best Reviewer-Safe Claim
 
-- Replace all placeholders in the LaTeX file.
-- Make the repository public or deposit a release on Zenodo.
-- Add a `LICENSE` file.
-- Add a short `README` with installation and reuse commands.
-- Add a `DATASHEET.md` or expand `corpus_card.md`.
-- Confirm source rights and redistribution rules.
-- Compile in ACM `sigconf` format and keep the body within 2-4 pages excluding references.
-- Submit by July 31, 2026 AoE.
+> We contribute a public, documented, and reproducible Thevaram 1-8 corpus
+> resource that makes Tamil literary text reusable for computational research
+> while preserving provenance, literary hierarchy, and uncertainty.
+
+## Submission Checklist
+
+- Public GitHub repository works without login.
+- Top-level `README.md` explains setup, reuse, limits, and AI use.
+- `LICENSE` explains MIT project material and separate source-text rights.
+- `data/releases/thevaram-1-8-v1/` contains corpus card, datasheet, schema,
+  checksums, usage, and rights/access files.
+- Paper is 2-4 pages excluding references in ACM `sigconf`.
+- Paper uses author names because JCDL Resources is single-blind.
+- AI-use statement is included because AI assisted research code, validation
+  planning, analysis summaries, and drafting.
+- DOI language is removed or marked optional.
 

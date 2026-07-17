@@ -1,7 +1,7 @@
 {
-  "title": "Tamil Literary KnowledgeHub: Irandaam Thirumurai Corpus v1 and Tools",
+  "title": "Tamil Literary KnowledgeHub: Thevaram 1-8 Corpus Resource and Tools",
   "upload_type": "dataset",
-  "description": "A provenance-preserving Tamil literary corpus release package and reusable processing tools for Irandaam Thirumurai, derived from Tamil Virtual Academy/TamilVU source pages. The release includes JSONL records, schema, corpus card, datasheet, checksums, audit reports, source URLs, and reuse instructions. Source text is attributed to Tamil Virtual Academy/TamilVU and may be subject to separate rights.",
+  "description": "A provenance-preserving Tamil literary corpus resource and reusable processing toolkit for Thevaram books 1-8, derived from Tamil Virtual Academy/TamilVU source pages. The repository includes normalized JSONL tables, schemas, documentation, checksums, audit reports, source URLs, an audited Irandaam Thirumurai subset, and reuse instructions. Source text is attributed to Tamil Virtual Academy/TamilVU and may be subject to separate rights.",
   "creators": [
     {
       "name": "Kajanikanth, Bhaveenthan",
@@ -36,4 +36,3 @@
     }
   ]
 }
-

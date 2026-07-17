@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this corpus or code, please cite the repository and the Zenodo DOI once published."
-title: "Tamil Literary KnowledgeHub: Irandaam Thirumurai Corpus v1 and Tools"
+message: "If you use this corpus or code, please cite the public repository. A Zenodo DOI may be added in a later archived release."
+title: "Tamil Literary KnowledgeHub: Thevaram 1-8 Corpus Resource and Tools"
 type: dataset
 authors:
   - family-names: Kajanikanth
@@ -16,8 +16,8 @@ date-released: "2026-07-17"
 keywords:
   - Tamil
   - Thevaram
+  - Thirumurai
   - digital libraries
   - corpus
   - retrieval
 license: MIT
-

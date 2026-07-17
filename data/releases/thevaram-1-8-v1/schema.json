@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tvu-corpus.local/schemas/thevaram_relational_tables.schema.json",
+  "title": "ThevaramRelationalTables",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "tables"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "thevaram-relational-v1"
+    },
+    "tables": {
+      "type": "object",
+      "required": [
+        "thirumurai_books",
+        "paadal_thogupugal",
+        "paadalgal",
+        "commentaries",
+        "text_spans"
+      ],
+      "properties": {
+        "thirumurai_books": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/thirumurai_book" }
+        },
+        "paadal_thogupugal": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/paadal_thogupu" }
+        },
+        "paadalgal": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/paadal" }
+        },
+        "commentaries": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/commentary" }
+        },
+        "text_spans": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/text_span" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "thirumurai_book": {
+      "type": "object",
+      "required": ["thirumurai_no", "corpus_id", "title", "author", "source_url"],
+      "properties": {
+        "schema_version": { "const": "thevaram-relational-v1" },
+        "thirumurai_no": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "corpus_id": { "type": "string" },
+        "title": { "type": "string" },
+        "work_id": { "type": "string" },
+        "work_title": { "type": "string" },
+        "author": { "type": "string" },
+        "nayanmar": { "type": "string" },
+        "source_url": { "type": "string" },
+        "verified_navigation": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "paadal_thogupu": {
+      "type": "object",
+      "required": ["thogupu_id", "thirumurai_no", "ordinal", "title", "source_url"],
+      "properties": {
+        "schema_version": { "const": "thevaram-relational-v1" },
+        "thogupu_id": { "type": "string" },
+        "thirumurai_no": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "ordinal": { "type": "integer", "minimum": 1 },
+        "title": { "type": "string" },
+        "paadapatta_thalam": { "type": "string" },
+        "title_note": { "type": "string" },
+        "pann": { "type": "string" },
+        "source_url": { "type": "string" },
+        "source_subid": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "paadal": {
+      "type": "object",
+      "required": ["paadal_id", "thogupu_id", "thirumurai_no", "paadal_text"],
+      "properties": {
+        "schema_version": { "const": "thevaram-relational-v1" },
+        "paadal_id": { "type": "string" },
+        "thogupu_id": { "type": "string" },
+        "thirumurai_no": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "global_song_no": { "type": "string" },
+        "source_song_no": { "type": "string" },
+        "local_song_no": { "type": "string" },
+        "verse_index_in_thogupu": { "type": "integer", "minimum": 1 },
+        "paadal_text": { "type": "string" },
+        "tokenized_paadal": { "type": "array", "items": { "type": "string" } },
+        "source_url": { "type": "string" },
+        "commentary_url": { "type": "string" },
+        "source_parameters": { "type": "object", "additionalProperties": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "commentary": {
+      "type": "object",
+      "required": ["commentary_id", "paadal_id", "kurippurai", "pozhppurai", "extraction_status"],
+      "properties": {
+        "schema_version": { "const": "thevaram-relational-v1" },
+        "commentary_id": { "type": "string" },
+        "paadal_id": { "type": "string" },
+        "kurippurai": { "type": "string" },
+        "pozhppurai": { "type": "string" },
+        "extraction_status": { "type": "string" },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "text_span": {
+      "type": "object",
+      "required": ["span_id", "parent_id", "field_name", "span_type", "start_char", "end_char", "text"],
+      "properties": {
+        "schema_version": { "const": "thevaram-relational-v1" },
+        "span_id": { "type": "string" },
+        "parent_id": { "type": "string" },
+        "field_name": { "type": "string" },
+        "span_type": { "type": "string" },
+        "start_char": { "type": "integer", "minimum": 0 },
+        "end_char": { "type": "integer", "minimum": 0 },
+        "text": { "type": "string" },
+        "metadata": { "type": "object", "additionalProperties": { "type": "string" } }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

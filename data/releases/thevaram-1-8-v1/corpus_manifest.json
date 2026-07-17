@@ -1,0 +1,55 @@
+{
+  "artifact_id": "thevaram-1-8-corpus-resource-v1",
+  "artifact_type": "corpus_resource",
+  "corpus_name": "Thevaram 1-8 Corpus Resource",
+  "version": "v1",
+  "schema_version": "thevaram-relational-v1",
+  "record_count": 9012,
+  "producer": "Tamil Literary KnowledgeHub",
+  "producer_version": "thevaram-normalized-v1",
+  "source": "TamilVU",
+  "source_url": "https://www.tamilvu.org/",
+  "created_at": "2026-07-17",
+  "creators": [
+    {
+      "name": "Bhaveenthan Kajanikanth",
+      "affiliation": "University of Peradeniya",
+      "email": "e22051@eng.pdn.ac.lk"
+    },
+    {
+      "name": "Uthayasanker Thayasivam",
+      "affiliation": "University of Moratuwa",
+      "email": "rtuthaya@cse.mrt.ac.lk"
+    }
+  ],
+  "counts": {
+    "thirumurai_books": 8,
+    "paadal_thogupugal": 841,
+    "paadalgal": 9012,
+    "commentaries": 9012,
+    "text_spans": 64073
+  },
+  "primary_files": [
+    "data/processed/thevaram_normalized/thirumurai_books.jsonl",
+    "data/processed/thevaram_normalized/paadal_thogupugal.jsonl",
+    "data/processed/thevaram_normalized/paadalgal.jsonl",
+    "data/processed/thevaram_normalized/commentaries.jsonl",
+    "data/processed/thevaram_normalized/text_spans.jsonl",
+    "data/processed/thevaram_normalized/normalization_summary.json"
+  ],
+  "documentation_files": [
+    "data/releases/thevaram-1-8-v1/README.md",
+    "data/releases/thevaram-1-8-v1/DATASHEET.md",
+    "data/releases/thevaram-1-8-v1/corpus_card.md",
+    "data/releases/thevaram-1-8-v1/RIGHTS_AND_ACCESS.md",
+    "data/releases/thevaram-1-8-v1/USAGE.md",
+    "data/releases/thevaram-1-8-v1/schema.json",
+    "data/releases/thevaram-1-8-v1/corpus_checksum.sha256"
+  ],
+  "audited_subset": "data/releases/irandaam-thirumurai-v1/",
+  "warnings": [
+    "TamilVU-derived source text may be subject to separate rights. See RIGHTS_AND_ACCESS.md.",
+    "This is not an official Tamil Virtual Academy/TamilVU release.",
+    "Entity and paadal-pozhppurai outputs are experimental evidence layers, not expert gold annotations."
+  ]
+}
